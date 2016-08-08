@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+  <meta charset="UTF-8">
+  <script language="JavaScript">
+    function showInput() {
+    one  = document.getElementById("recipeName").value;
+    two  = document.getElementById("recipeDescription").value;
+    three  = document.getElementById("cookTime").value;
+
+four = document.getElementById("prepTime").value;
+
+        document.getElementById('display').innerHTML = one + two + three + "<h1>" + four + "</h1>"
+
+
+
+
+    }
+  </script>
+
+  </head>
+<body>
+
+  <form>
+    <br>NAME: <input type="text" name="message" id="recipeName">
+    <br>DESC: <input type="text" name="message" id="recipeDescription">
+    <br>COOK TIME: <input type="text" name="message" id="cookTime">
+    <br>PREP TIME: <input type="text" name="message" id="prepTime">
+
+
+
+  </form>
+
+
+
+
+  <input type="submit" onclick="showInput();"><br/>
+  <label>Your input: </label>
+  <p id='display'></p>
+
+
+</body>
+</html>

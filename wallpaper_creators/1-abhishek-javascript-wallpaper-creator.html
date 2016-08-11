@@ -15,9 +15,6 @@ function randRGBA(min,max)
 
     colorRGBA = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 1)";
 
-    /* colorRGBA = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16); */
-
-
 /* Getting the text from the form */
     headingName = document.getElementById("headingName").value ;
     textSize = document.getElementById("textSize").value ;
@@ -29,8 +26,10 @@ function randRGBA(min,max)
 
     footerText = "Made with <i class=\"fa fa-heart\"></i> by " + fromName + " for " + toName;
 
-    rulerTop = "<img src='orn3top.png' width='90%'><br><br>";
-    rulerBottom = "<br><br><img src='orn3bottom.png' width='90%'>";
+    ornamentStyle = document.getElementById("ornamentStyle").value ;
+
+    rulerTop = "<img src='" + ornamentStyle + "orntop.png' width='90%'><br><br>";
+    rulerBottom = "<br><br><img src='" + ornamentStyle + "ornbottom.png' width='90%'>";
 
 /********* Printing the formmated text to an ID in the HTML page ******/
 document.getElementById("randcolorRGBA").innerHTML = "<div style=\"font-size:" + textSize + "px ;background-color:" + colorRGBA + ";\"><i class=\"fa fa-heart fa-2x\"></i><p>" + headingName + "</p>" + rulerTop + quoteText + rulerBottom + "<p>" + footerText + "</p>" + logoImageUrl + "</div>";
@@ -86,6 +85,14 @@ p {
 <br>Made by :<br><input type="text" name="message" id="fromName" value="abhishek">
 <br>Made For :<br><input type="text" name="message" id="toName" value="darling anupama">
 <br>Logo URL :<br><input type="text" name="message" id="logoImageUrl" value="https://dl.dropboxusercontent.com/u/6378027/logos/logos-concepro/Concepro-Shadow.png">
+
+<br>Ornamental Style :<br>
+<select name="cars" id="ornamentStyle">
+  <option value="1" selected>Style 1</option>
+  <option value="2">Style 2</option>
+  <option value="3">Style 3</option>
+</select>
+
 </form>
 
 <br>QUOTE:<br>

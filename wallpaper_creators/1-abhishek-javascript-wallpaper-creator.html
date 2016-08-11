@@ -20,9 +20,11 @@ function randRGBA(min,max)
 
 /********* Printing the formmated text to an ID in the HTML page ******/
 document.getElementById("randcolorRGBAconcepro").innerHTML = "<div style=\"background-color:" + colorRGBA + ";\"><i class=\"fa fa-quote-left fa-2x\"></i><br>" + quoteText + "<br>+<br><img class=\"logoconcepro\" height=\"90px\"/></div></div>";
+document.getElementById("randcolorRGBAconceprowhite").innerHTML = "<div style=\"background-color:" + colorRGBA + ";\"><i class=\"fa fa-quote-left fa-2x\"></i><br>" + quoteText + "<br>+<br><img class=\"logoconceprowhite\" height=\"90px\"/></div></div>";
 document.getElementById("randcolorRGBAtextconcepro").innerHTML = "<div style=\"color:" + colorRGBA + ";\"><i class=\"fa fa-quote-left fa-2x\"></i><br>" + quoteText + "<br>+<br><img class=\"logoconcepro\" height=\"90px\"/></div></div>";
 
 document.getElementById("randcolorRGBAmggk").innerHTML = "<div style=\"background-color:" + colorRGBA + ";\"><i class=\"fa fa-quote-left fa-2x\"></i><br>" + quoteText + "<br>+<br><img class=\"logomggk\" height=\"90px\"/></div></div>";
+document.getElementById("randcolorRGBAmggkwhite").innerHTML = "<div style=\"background-color:" + colorRGBA + ";\"><i class=\"fa fa-quote-left fa-2x\"></i><br>" + quoteText + "<br>+<br><img class=\"logomggkwhite\" height=\"90px\"/></div></div>";
 document.getElementById("randcolorRGBAtextmggk").innerHTML = "<div style=\"color:" + colorRGBA + ";\"><i class=\"fa fa-quote-left fa-2x\"></i><br>" + quoteText + "<br>+<br><img class=\"logomggk\" height=\"90px\"/></div></div>";
 
 }
@@ -35,8 +37,8 @@ html, body {
 }
 
 div {
-    width: 80vw;
-    height: 80vh;
+    /* width: 100vw; */
+    /* height: 80vh; */
     padding: 20px;
     margin: 0px;
     color: white;
@@ -45,15 +47,26 @@ div {
     font-weight: 700;
     line-height:1;
     text-transform: capitalize;
+    text-align:center;
 }
 
 .logoconcepro {
  content:url("http://concepro.com/concepro-landing/images/concepro-logo-400px.png");
 }
 
+.logoconceprowhite {
+ content:url("http://concepro.com/concepro-landing/images/concepro-logo-400px.png");
+}
+
+
 .logomggk{
    content:url("http://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/mggk-new-logo-transparent-150px.png");
 }
+
+.logomggkwhite{
+   content:url("http://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/mggk-new-logo-transparent-150px.png");
+}
+
 
 @media print {
     h1,div {page-break-before: always;}
@@ -69,9 +82,11 @@ QUOTE: <input type="text" name="message" id="quoteText">
 </form>
 <input type="submit" onclick="randRGBA(0,255);"><br/>
 
+<br><br><span id="randcolorRGBAconceprowhite"></span>
 <br><br><span id="randcolorRGBAconcepro"></span>
 <br><br><span id="randcolorRGBAtextconcepro"></span>
 
+<br><br><span id="randcolorRGBAmggkwhite"></span>
 <br><br><span id="randcolorRGBAmggk"></span>
 <br><br><span id="randcolorRGBAtextmggk"></span>
 

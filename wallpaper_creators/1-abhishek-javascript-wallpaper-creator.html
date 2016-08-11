@@ -28,11 +28,9 @@ function randRGBA(min,max)
           logoImageUrl = "<img src='" + logoImageUrl + "' height='100px'>" ;
 
     footerText = "Made with <i class=\"fa fa-heart\"></i> by " + fromName + " for " + toName;
-    headfootTextSize = textSize/2;
 
-
-rulerTop = "<img src='orn_header1.png' width='90%'><br>";
-rulerBottom = "<br><img src='orn_header2.png' width='90%'>";
+rulerTop = "<img src='orn_header1.png' width='90%'><br><br>";
+rulerBottom = "<br><br><img src='orn_header2.png' width='90%'>";
 
 /********* Printing the formmated text to an ID in the HTML page ******/
 document.getElementById("randcolorRGBAconcepro").innerHTML = "<div style=\"font-size:" + textSize + "px ;background-color:" + colorRGBA + ";\"><i class=\"fa fa-quote-left fa-2x\"></i><p>" + headingName + "</p>" + rulerTop + quoteText + rulerBottom + "<p>" + footerText + "</p>" + logoImageUrl + "</div>";

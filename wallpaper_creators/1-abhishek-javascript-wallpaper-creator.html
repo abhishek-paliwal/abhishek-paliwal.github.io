@@ -33,7 +33,9 @@ function randRGBA(min,max)
     rulerBottom = "<br><br><img src='orn3bottom.png' width='90%'>";
 
 /********* Printing the formmated text to an ID in the HTML page ******/
-document.getElementById("randcolorRGBAconcepro").innerHTML = "<div style=\"font-size:" + textSize + "px ;background-color:" + colorRGBA + ";\"><i class=\"fa fa-heart fa-2x\"></i><p>" + headingName + "</p>" + rulerTop + quoteText + rulerBottom + "<p>" + footerText + "</p>" + logoImageUrl + "</div>";
+document.getElementById("randcolorRGBA").innerHTML = "<div style=\"font-size:" + textSize + "px ;background-color:" + colorRGBA + ";\"><i class=\"fa fa-heart fa-2x\"></i><p>" + headingName + "</p>" + rulerTop + quoteText + rulerBottom + "<p>" + footerText + "</p>" + logoImageUrl + "</div>";
+
+document.getElementById("randcolorRGBAtext").innerHTML = "<div style=\"font-size:" + textSize + "px ;color:" + colorRGBA + ";\"><i class=\"fa fa-heart fa-2x\"></i><p class='dark'>" + headingName + "</p>" + rulerTop + quoteText + rulerBottom + "<p class='dark'>" + footerText + "</p>" + logoImageUrl + "</div>";
 
 
 }
@@ -59,37 +61,20 @@ div {
 }
 
 p {
-
-    padding: 5px;
+    padding: 7px;
     margin: 0px;
-    color: white;
     font-family: 'Times New Roman', serif;
+    color: white;
     font-size: 20px;
     font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 10px;
 }
 
-.logoconcepro {
- content:url("http://concepro.com/concepro-landing/images/concepro-logo-400px.png");
+.dark {
+  color:black;
 }
 
-.logoconceprowhite {
- content:url("https://dl.dropboxusercontent.com/u/6378027/logos/logos-concepro/Concepro-Shadow.png");
-}
-
-
-.logomggk{
-   content:url("http://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/mggk-new-logo-transparent-150px.png");
-}
-
-.logomggkwhite{
-   content:url("https://dl.dropboxusercontent.com/u/6378027/logos/logos-mggk/Mggk-New-Logo-All-White-4000Px.png");
-}
-
-@media print {
-    h1,div {page-break-before: always;}
-}
 </style>
 
 </head>
@@ -102,23 +87,17 @@ p {
 <br>Made For :<br><input type="text" name="message" id="toName" value="darling anupama">
 <br>Logo URL :<br><input type="text" name="message" id="logoImageUrl" value="http://concepro.com/concepro-landing/images/concepro-logo-400px.png">
 </form>
+
 <br>QUOTE:<br>
 <textarea name="comment" rows="5" cols="50" id="quoteText" form="myform">If you wish to achieve worthwhile things in your personal and career life, you must become a worthwhile person in your own self-development.</textarea>
+
 <br>
 <input type="submit" onclick="randRGBA(0,255);"><br/>
 
 <hr>
 
-<br><br><span id="randcolorRGBAconceprowhite"></span>
-<br><br><span id="randcolorRGBAconcepro"></span>
-<br><br><span id="randcolorRGBAtextconcepro"></span>
-
-<br><br><span id="randcolorRGBAmggkwhite"></span>
-<br><br><span id="randcolorRGBAmggk"></span>
-<br><br><span id="randcolorRGBAtextmggk"></span>
-
-
-
+<br><br><span id="randcolorRGBA"></span>
+<br><br><span id="randcolorRGBAtext"></span>
 
 </body>
 </html>

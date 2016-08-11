@@ -29,11 +29,11 @@ function randRGBA(min,max)
 
     footerText = "Made with <i class=\"fa fa-heart\"></i> by " + fromName + " for " + toName;
 
-rulerTop = "<img src='orn_header1.png' width='90%'><br><br>";
-rulerBottom = "<br><br><img src='orn_header2.png' width='90%'>";
+    rulerTop = "<img src='orn3top.png' width='90%'><br><br>";
+    rulerBottom = "<br><br><img src='orn3bottom.png' width='90%'>";
 
 /********* Printing the formmated text to an ID in the HTML page ******/
-document.getElementById("randcolorRGBAconcepro").innerHTML = "<div style=\"font-size:" + textSize + "px ;background-color:" + colorRGBA + ";\"><i class=\"fa fa-quote-left fa-2x\"></i><p>" + headingName + "</p>" + rulerTop + quoteText + rulerBottom + "<p>" + footerText + "</p>" + logoImageUrl + "</div>";
+document.getElementById("randcolorRGBAconcepro").innerHTML = "<div style=\"font-size:" + textSize + "px ;background-color:" + colorRGBA + ";\"><i class=\"fa fa-heart fa-2x\"></i><p>" + headingName + "</p>" + rulerTop + quoteText + rulerBottom + "<p>" + footerText + "</p>" + logoImageUrl + "</div>";
 
 
 }
@@ -97,6 +97,7 @@ p {
 <body>
 
 
+<table width="100%"><tr><td>
 <form id="myform">
 <br>Heading :<br><input type="text" name="message" id="headingName" value="A Love Letter">
 <br>Text size :<br><input type="text" name="message" id="textSize" value="35">
@@ -109,7 +110,7 @@ p {
 <br>
 <input type="submit" onclick="randRGBA(0,255);"><br/>
 
-<hr>
+</td><td>
 
 <br><br><span id="randcolorRGBAconceprowhite"></span>
 <br><br><span id="randcolorRGBAconcepro"></span>
@@ -118,6 +119,9 @@ p {
 <br><br><span id="randcolorRGBAmggkwhite"></span>
 <br><br><span id="randcolorRGBAmggk"></span>
 <br><br><span id="randcolorRGBAtextmggk"></span>
+
+
+</td></tr></table>
 
 </body>
 </html>

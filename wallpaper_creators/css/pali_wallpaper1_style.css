@@ -16,16 +16,24 @@ div.pali {
     text-align:center;
 }
 
-p {
+p.light {
     padding: 7px;
     margin: 0px;
     font-family: 'Times New Roman', serif;
+    color: white;
     font-size: 20px;
     font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 10px;
 }
 
-.light { color:white;}
-
-.dark {color:black;}
+p.dark {
+    padding: 7px;
+    margin: 0px;
+    font-family: 'Times New Roman', serif;
+    color: black;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}

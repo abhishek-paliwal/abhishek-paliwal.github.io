@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Abhishek Paliwal Designs | Greetings</title>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/bin/materialize.js"></script>
+  <script src="js/bin/init.js"></script>
+  <script src="js/bin/pali-wallpaper-maker1.js"></script>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/pali_wallpaper1_style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="grey darken-3" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+
+      <h3 class="header center materialize-red-text"><i class="medium material-icons">favorite</i><br>Design With Love</h3>
+
+      <div class="row center">
+        <h5 class="header col s12 light"><strong>A MODERN FRONT-END FOR DESIGNING THE GREETINGS FOR YOUR LOVED ONES.</strong>
+          <br><br>Design your own by entering the required details below.</h5>
+      </div>
+
+    <div class="divider materialize-red"></div>
+
+    </div>
+  </div>
+
+
+<!-- ############# FORM BEGINS ############# -->
+
+  <div class="row">
+
+      <form class="col s12">
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="headingName" type="text" class="validate">
+            <label for="headingName">Heading</label>
+          </div>
+
+
+        </div>
+
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="fromName" type="text" class="validate">
+            <label for="last_name">Designed By</label>
+          </div>
+
+          <div class="input-field col s6">
+            <input id="toName" type="text" class="validate">
+            <label for="toName">Designed For</label>
+          </div>
+        </div>
+
+
+       <div class="row">
+          <div class="input-field col s12">
+            <input id="logoImageUrl" type="url" class="validate">
+            <label for="logoImageUrl" data-error="wrong" data-success="right">Logo URL</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s6">
+              <select id="ornamentStyle" class="icons">
+                <option value="1" selected>Style 1</option>
+                <option value="2">Style 2</option>
+                <option value="3">Style 3</option>
+              </select>
+              <label>Select Ornamental Style To Use</label>
+            </div>
+
+<!--
+            <div class="input-field col s6">
+              <input id="textSize" type="number" value="35" class="validate">
+              <label for="textSize" data-error="Value should be between 20 and 100" data-success="right">Text Size</label>
+            </div>
+-->
+
+            <div class="range-field col s6">
+              <label for="textSize" data-error="Value should be between 20 and 100" data-success="right">Text Size Slider</label>
+              <input type="range" id="textSize" min="20" max="100" value="35"/>
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+            <div class="input-field col s12">
+              <textarea id="quoteText" class="materialize-textarea"  length="200"></textarea>
+              <label for="quoteText">Enter Quote Text Here</label>
+            </div>
+        </div>
+
+
+      </form>
+
+<div class="row center">
+      <a class="waves-effect waves-light btn-large materialize-red"  onclick="randRGBA(0,255);"><i class="material-icons right">favorite</i>Design My Greetings</a>
+</div>
+
+    </div>
+
+    <!-- ############# FORM ENDS ############# -->
+
+    <div class="row center">
+
+
+
+    </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+
+<h4 class="header center light-blue-text">Your Design Will Appear Below</h4>
+
+          <br><br><span id="randcolorRGBA"></span>
+          <br><br><span id="randcolorRGBAtext"></span>
+
+      </div>
+
+    </div>
+    <br><br>
+
+    <div class="section">
+
+    </div>
+  </div>
+
+  <footer class="page-footer materialize-red">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="light-blue-text text-lighten-3" href="http://www.AbhishekPaliwal.com">Abhishek Paliwal</a>
+      </div>
+    </div>
+  </footer>
+
+
+  </body>
+</html>

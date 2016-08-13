@@ -1,0 +1,31 @@
+html, body {
+  height: 100vh;
+  width: 100vw;
+}
+
+div.pali {
+    /* width: 100vw; */
+    /* height: 80vh; */
+    padding: 10px;
+    margin: 0px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height:1;
+    text-transform: capitalize;
+    text-align:center;
+}
+
+p {
+    padding: 7px;
+    margin: 0px;
+    font-family: 'Times New Roman', serif;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.light { color:white;}
+
+.dark {color:black;}

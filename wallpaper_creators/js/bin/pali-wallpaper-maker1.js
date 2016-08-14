@@ -14,7 +14,7 @@ function randRGBA(min,max)
     toName = document.getElementById("toName").value ;
     quoteText = document.getElementById("quoteText").value ;
     logoImageUrl = document.getElementById("logoImageUrl").value ;
-          logoImageUrl = "<img src='" + logoImageUrl + "' height='100px'>" ;
+          logoImageUrl = "<img src='" + logoImageUrl + "' height='90px'>" ;
 
     footerText = "Made with <i class=\"fa fa-heart\"></i> by " + fromName + " for " + toName;
 

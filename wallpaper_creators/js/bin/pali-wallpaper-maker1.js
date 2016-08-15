@@ -13,11 +13,12 @@ function randRGBA(min,max)
     textSize = document.getElementById("textSize").value ;
     fromName = document.getElementById("fromName").value ;
     toName = document.getElementById("toName").value ;
+          toname = " for " + toName;
     quoteText = document.getElementById("quoteText").value ;
     logoImageUrl = document.getElementById("logoImageUrl").value ;
           logoImageUrl = "<img src='" + logoImageUrl + "' height='90px'>" ;
 
-    footerText = "Made with <i class=\"fa fa-heart\"></i> by " + fromName + " for " + toName;
+    footerText = "Made with <i class=\"fa fa-heart\"></i> by " + fromName + toName;
 
     ornamentStyle = document.getElementById("ornamentStyle").value ;
 

@@ -13,7 +13,12 @@ function randRGBA(min,max)
     textSize = document.getElementById("textSize").value ;
     fromName = document.getElementById("fromName").value ;
     toName = document.getElementById("toName").value ;
-          toName = " for " + toName;
+          if (toName != "") {
+              toName = " for " + toName;
+            } else {
+              toName = "";
+            }
+
     quoteText = document.getElementById("quoteText").value ;
     logoImageUrl = document.getElementById("logoImageUrl").value ;
           logoImageUrl = "<img src='" + logoImageUrl + "' height='90px'>" ;

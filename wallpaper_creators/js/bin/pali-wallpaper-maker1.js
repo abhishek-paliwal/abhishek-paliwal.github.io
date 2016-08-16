@@ -21,6 +21,22 @@ function randRGBA(min,max)
 
     quoteText = document.getElementById("quoteText").value ;
     logoImageUrl = document.getElementById("logoImageUrl").value ;
+            if (logoImageUrl == "ap1") {
+                logoImageUrl = "https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png";
+            } else if (logoImageUrl == "ap2") {
+              logoImageUrl = "https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Abhishek-Paliwal-125-Circle-fullname.png";
+            } else if (logoImageUrl == "ap3") {
+              logoImageUrl  = "https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Album-Cover-Abhishek-Paliwal-Lorez.jpg";
+            } else if (logoImageUrl == "ap4") {
+              logoImageUrl  = "https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png";
+            } else if (logoImageUrl == "anu1") {
+              logoImageUrl = "https://dl.dropboxusercontent.com/u/6378027/logos/2-logos-anupama/Anupama-Paliwal-787Px-Black-White-Fullname.png";
+            } else if (logoImageUrl == "anu2") {
+              logoImageUrl = "https://dl.dropboxusercontent.com/u/6378027/logos/2-logos-anupama/Anupama-Paliwal-787Px-Colored-Fullname.png";
+            } else {
+              logoImageUrl = logoImageUrl;
+            }
+
           logoImageUrl = "<img src='" + logoImageUrl + "' height='90px'>" ;
 
     footerText = "Made with <i class=\"fa fa-heart\"></i> by " + fromName + toName;

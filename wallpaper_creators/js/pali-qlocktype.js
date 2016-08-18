@@ -37,6 +37,6 @@ function randRGBA(min,max)
 
         document.getElementById("demo1").innerHTML = "<p class='dark'>" + headingName + "</p>" + "<div class='pali' style=\"background-color:" + colorRGBA + ";\">" + text + "</div>" + "<br><img src='https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/From-The-Desk-Of-Abhishek-Royal.png' height='100px'>" ;
 
-        document.getElementById("demo1text").innerHTML = "<p class='dark'>" + headingName + "</p>" + "<div class='pali' style=\"color:" + colorRGBA + ";\">" + text + "</div>"+ "<br><img src='https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Abhishek-Paliwal-125-Circle-fullname.png' height='100px'>" ;
+        document.getElementById("demo1text").innerHTML = "<p class='dark'>" + headingName + "</p>" + "<div class='pali' style=\"color:" + colorRGBA + ";\">" + text + "</div>"+ "<p class='dark'>&mdash; DESIGN BY &mdash;</p><img src='https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Abhishek-Paliwal-125-Circle-fullname.png' height='100px'>" ;
 
 }

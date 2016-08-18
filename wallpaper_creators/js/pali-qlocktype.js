@@ -35,7 +35,7 @@ function randRGBA(min,max)
 
         }
 
-        document.getElementById("demo1").innerHTML = "<div class='pali' style=\"background-color:" + colorRGBA + ";\">" + text + "</div>";
+        document.getElementById("demo1").innerHTML = "<div class='pali' style=\"background-color:" + colorRGBA + ";\">" + headingName + "<hr>" + text + "</div>";
 
         document.getElementById("demo1text").innerHTML = "<div class='pali' style=\"color:" + colorRGBA + ";\">" + text + "</div>";
 

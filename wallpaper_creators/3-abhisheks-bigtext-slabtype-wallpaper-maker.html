@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>BigText Wallpaper Creator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script src="https://use.fontawesome.com/8cd0876759.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
+
+<style type="text/css">
+
+div {
+  display: block;
+  border:4px solid black;
+  padding: 10px;
+  font-family: 'Playfair Display', serif;
+  margin: auto;
+  font-weight: 400;
+}
+
+#bigtext{
+  width:90vw;
+  line-height:0.9;
+  text-transform: uppercase;
+  margin: auto;
+}
+
+#heading {
+  font-family: sans-serif;
+  font-weight: normal;
+  letter-spacing: auto;
+  text-transform: lowercase;
+}
+
+#mycolor {
+  color: #c0c0c0;
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 25vw;
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://zachleat.github.io/BigText/dist/bigtext.js"></script>
+</head>
+
+<body>
+
+<div id="bigtext">
+  <span id="heading">&mdash; The title &mdash;</span>
+  <span id="mycolor">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</span>
+
+  <span>SOME are not ready</span>
+  <span>FOR THIS HIPSTER</span>
+  <span>QUOTE about</span>
+  <span>LIVES</span>
+
+  <span id="mycolor">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</span>
+
+  <img src="https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png">
+
+</div>
+
+
+<script>
+$('#bigtext').bigtext();
+</script>
+
+
+</body>
+</html>

@@ -1,9 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>BigText Wallpaper Creator</title>
+<title>Abhishek | BigText Wallpaper Creator</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<script src="https://use.fontawesome.com/8cd0876759.js"></script>
 <script src="js/pali-bigtext-slabtype.js"></script>
 
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
@@ -19,11 +18,15 @@ div {
   font-weight: 400;
 }
 
-#bigtext{
+#bigtext, #bigtext2, #bigtext_example {
   width:90vw;
   line-height:0.9;
   text-transform: uppercase;
   margin: auto;
+}
+
+#bigtext2 {
+  color: #FFFFFF;
 }
 
 #heading {
@@ -47,32 +50,35 @@ img {
   font-size: 20px;
   color: blue;
 }
+
+button {
+  background-color: rgb(0,0,255);
+  color: white;
+  font-weight: bold;
+  font-size: 200%;
+  text-transform: uppercase;
+}
+
 </style>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://zachleat.github.io/BigText/dist/bigtext.js"></script>
 </head>
 
 <body>
+<div>
+<img src="https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png">
+</div>
+
 <h1> BigText SlabType Wallpaper Maker</h1>
   <form id="myform">
-* HEADING *<br><input type="text" name="message" id="headingName" size="50" value="A Love Letter">
+* HEADING *<br><input type="text" name="message" id="headingName" size="50" value="Words of Wisdom">
   <br><br>* TEXT SIZE *<br><input type="text" name="message" id="textSize" value="35">
-  <br><br>* MADE BY *<br><input type="text" name="message" id="fromName" value="abhishek">
-  <br><br>* MADE FOR *<br><input type="text" name="message" id="toName" value="anupama">
   <br><br>* LOGO URL *<br><input type="text" name="message" size="50" id="logoImageUrl" value="https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png">
-
-  <br><br>* ORNAMENTAL STYLE *<br>
-  <select name="cars" id="ornamentStyle">
-    <option value="1" selected>Style 1</option>
-    <option value="2">Style 2</option>
-    <option value="3">Style 3</option>
-  </select>
 
   </form>
 
   <br>* QUOTE TEXT *<br>
-  <textarea name="comment" rows="10" cols="50" id="quoteText" form="myform">If you wish to achieve
+  <textarea name="comment" rows="10" cols="50" id="quoteText" form="myform">
+If you wish to achieve
 worthwhile things in your
 personal and career life,
 you must become a
@@ -81,17 +87,35 @@ in your own
 self-development.</textarea>
 
   <br>
-  <input type="submit" onclick="randRGBA(0,255);"><br/>
+  <!-- <input type="submit" onclick="randRGBA(0,255);"><br/> -->
+  <button type="submit" value="Submit" onclick="randRGBA(0,255);">Submit</button>
 
-  <hr>
+  <br/><hr>
+
+  <br><br><span id="randcolorRGBAtext"></span>
 
   <br><br><span id="randcolorRGBA"></span>
 
 
-<script>
-$('#bigtext').bigtext();
-</script>
+  <br><br>
+  <div id="bigtext_example" style="width: 300px">
+    <span>THIS WEBAPP IS MADE BY</span>
+    <span>ABHISHEK</span>
+    <span>PALIWAL</span>
+    <span><a href="http://www.AbhishekPaliwal.com">www.AbhishekPaliwal.com</a></span>
+ </div>
 
+
+<!-- JQUERY FILE LOADING -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ <script src="https://zachleat.github.io/BigText/dist/bigtext.js"></script>
+
+<!-- VARIABLE DIV'S BIGTEXT JQUERY -->
+<script>$('#bigtext_example').bigtext();</script>
+
+<!-- The following Jquery event should fire after the text variable has been inputted and loaded. Thus, the following Jquery will be fired at the end in the file js/pali-bigtext-slabtype.js -->
+
+<!-- <script>$('#bigtext').bigtext();</script> -->
 
 </body>
 </html>

@@ -1,0 +1,159 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Abhishek | Text on Image Wallpaper Creator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script>
+function randRGBA(min,max)
+{
+/* Random RGBA color generation */
+    randnumberRed = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberGreen = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberBlue = Math.floor(Math.random()*(max-min+1)+min);
+
+    colorRGBA = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 1)";
+
+/* Getting the text from the form */
+    headingName = document.getElementById("headingName").value ;
+    textSize = document.getElementById("textSize").value ;
+
+    quoteText = document.getElementById("quoteText").value ;
+
+/* ******** Printing the formmated text to an ID in the HTML page ***** */
+
+document.getElementById("randcolorRGBA").innerHTML = "<h2 style=\"font-size: " + textSize + "rem;\">" + quoteText + "</h2>" ;
+
+}
+
+</script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
+<style type="text/css">
+
+body {
+    display: block;
+    margin: 0px;
+}
+/*In .module, the gradient is from top to bottom*/
+/* Change the rgba values to change the gradient colors.*/
+.module {
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.4)
+    ),
+ url(https://source.unsplash.com/featured/500x750/);
+  background-size: cover;
+  width: 500px;
+  height: 750px;
+  margin: 0px 0px 0px 0px;
+  position: relative;
+  float: left;
+}
+
+.mid h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  color: white;
+  text-transform: capitalize;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.bottom {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  color: white;
+  margin: 0;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  font-size: 1.5rem;
+  transform: translate(-50%, -50%);
+}
+
+img {
+    display: block;
+    /* margin: auto; */
+    width: 20vw;
+}
+
+#myform, #headingName, #textSize, #fromName, #toName, #logoImageUrl, #quoteText {
+  font-size: 20px;
+  color: blue;
+}
+
+button {
+  background-color: rgb(0,0,255);
+  color: white;
+  font-weight: bold;
+  font-size: 200%;
+  text-transform: uppercase;
+}
+
+.city {
+   float: left;
+   margin: 10px;
+   padding: 10px;
+   border: 1px solid black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img src="https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png">
+<hr>
+
+<div class="city">
+
+<h1>Text on Image Wallpaper Creator</h1>
+
+  <form id="myform">
+* HEADING *<br><input type="text" name="message" id="headingName" size="50" value="Words of Wisdom">
+  <br><br>* TEXT SIZE (in 'rem' units)*<br><input type="text" name="message" id="textSize" value="2.5">
+  <br><br>* LOGO URL *<br><input type="text" name="message" size="50" id="logoImageUrl" value="https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png">
+
+  </form>
+
+  <br>* QUOTE TEXT *<br>
+  <textarea name="comment" rows="10" cols="50" id="quoteText" form="myform">
+If you wish to achieve worthwhile things in your personal and career life, you must become a worthwhile person in your own self-development.</textarea>
+
+  <br>
+  <!-- <input type="submit" onclick="randRGBA(0,255);"><br/> -->
+  <button type="submit" value="Submit" onclick="randRGBA(0,255);">Submit</button>
+
+</div>
+
+<div class="city">
+
+<div class="module mid">
+
+<span id="randcolorRGBA"></span>
+
+<span class="bottom">www.AbhishekPaliwal.com<span>
+</div>
+
+
+
+
+</div>
+
+<div style="clear: both;"></div>
+
+<hr>
+THIS WEBAPP IS MADE BY <a href="http://www.AbhishekPaliwal.com">ABHISHEK PALIWAL</a>
+
+
+</body>
+</html>

@@ -21,7 +21,10 @@ function randRGBA(min,max)
 
 /* ******** Printing the formmated text to an ID in the HTML page ***** */
 
-document.getElementById("randcolorRGBA").innerHTML = "<h2 style=\"font-size: " + textSize + "rem;\">" + quoteText + "</h2>" ;
+document.getElementById("randcolorRGBA").innerHTML = "<h2 style=\"background-color: rgba(0,0,0,0.4); color: white; border: 5px double white; font-size: " + textSize + "rem;\">" + quoteText + "</h2>" ;
+
+document.getElementById("randcolorRGBAtext").innerHTML = "<h2 style=\"background-color: rgba(255,255,255,0.6); color: black; border: 5px double black; font-size: " + textSize + "rem;\">" + quoteText + "</h2>" ;
+
 
 }
 
@@ -53,27 +56,27 @@ body {
 }
 
 .mid h2 {
+  padding: 15px;
   font-family: 'Oswald', sans-serif;
   font-weight: 400;
-  line-height: 1;
-  color: white;
+  line-height: 1.1;
   text-transform: capitalize;
   margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
-
   transform: translate(-50%, -50%);
 }
 
 .bottom {
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
+  letter-spacing: 2px;
   line-height: 1;
   color: white;
   margin: 0;
   position: absolute;
-  bottom: 5%;
+  bottom: 10px;
   left: 50%;
   font-size: 1.5rem;
   transform: translate(-50%, -50%);
@@ -81,8 +84,16 @@ body {
 
 img {
     display: block;
-    /* margin: auto; */
+    margin: auto;
     width: 20vw;
+    padding: 5px;
+}
+
+img.footer {
+    /* display: block; */
+    margin: auto;
+    width: 40px;
+    padding: 5px;
 }
 
 #myform, #headingName, #textSize, #fromName, #toName, #logoImageUrl, #quoteText {
@@ -120,7 +131,7 @@ button {
 
   <form id="myform">
 * HEADING *<br><input type="text" name="message" id="headingName" size="50" value="Words of Wisdom">
-  <br><br>* TEXT SIZE (in 'rem' units)*<br><input type="text" name="message" id="textSize" value="2.5">
+  <br><br>* TEXT SIZE (in 'rem' units)*<br><input type="text" name="message" id="textSize" value="2.1">
   <br><br>* LOGO URL *<br><input type="text" name="message" size="50" id="logoImageUrl" value="https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png">
 
   </form>
@@ -141,11 +152,25 @@ If you wish to achieve worthwhile things in your personal and career life, you m
 
 <span id="randcolorRGBA"></span>
 
-<span class="bottom">www.AbhishekPaliwal.com<span>
+<span class="bottom">
+  <img class="footer" src="https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Favicon-Abhishek-Paliwal-Website.png">
+www.AbhishekPaliwal.com
+<span>
 </div>
 
+</div>
 
+<div class="city">
 
+<div class="module mid">
+
+<span id="randcolorRGBAtext"></span>
+
+<span class="bottom">
+  <img class="footer" src="https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Favicon-Abhishek-Paliwal-Website.png">
+  www.AbhishekPaliwal.com
+  <span>
+</div>
 
 </div>
 

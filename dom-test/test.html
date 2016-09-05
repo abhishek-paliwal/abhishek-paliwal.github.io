@@ -22,14 +22,15 @@ p {
 </style>
 
 <script src="dom-to-image.js" />
+
 <script>
-domtoimage.toJpeg(document.getElementById('my-node'), { quality: 0.98 })
-      .then(function (dataUrl) {
-          var link = document.createElement('a');
-          link.download = 'my-image-name.jpeg';
-          link.href = dataUrl;
-          link.click();
-      });
+domtoimage.toJpeg(document.getElementById('my-node'), { quality: 0.95 })
+    .then(function (dataUrl) {
+        var link = document.createElement('a');
+        link.download = 'my-image-name.jpeg';
+        link.href = dataUrl;
+        link.click();
+    });
 </script>
 
 </head>

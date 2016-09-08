@@ -63,7 +63,7 @@ part1 = "<div class='polaroid' style='background-color:" + colorRGBAlight + "; b
 
 part2 = "<div class='container' style='font-size: " + textSize + "em; line-height: " + lineHeight + ";'><i class='fa fa-quote-left'></i> " + quoteText + " <i class='fa fa-quote-right'></i></div>" ;
 
-part3logo = "<div class='footer'>" + headingName + "<br>&bull;&bull;&bull;&bull;&bull;&bull;&bull;<br><IMG SRC='" + logoImageUrl +"' style='height:15vw'></div>";
+part3logo = "<div class='footer' style='color:" + colorRGBA + ";'>" + headingName + "<br>&bull;&bull;&bull;&bull;&bull;&bull;&bull;<br><IMG SRC='" + logoImageUrl +"' style='height:15vw'></div>";
 
 part4end = "</div>";
 
@@ -135,7 +135,7 @@ div.myform {
     font-weight: bold;
     color: black;
     font-family: 'Raleway', sans-serif;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 /* Add your custom style code below this line. Do not touch any CSS above this line. */
@@ -145,17 +145,17 @@ display: block;
 margin: auto;
 width: 90vw;
 box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
-border-radius: 7px;
+border-radius: 20px;
 }
 
 div.container {
-padding: 15px;
+padding: 20px;
 text-align: left;
 text-transform: capitalize;
 letter-spacing: 0px;
 color: black;
 font-family: 'Raleway', sans-serif;
-font-weight: 300;
+font-weight: 400;
 }
 
 div.footer {
@@ -187,7 +187,7 @@ font-weight: 400;
 <input type="text" name="headingName" id="headingName" value="Words of Wisdom">
 
 <label for="textSize">Text Size (in 'em' units)</label>
-<input type="text" name="textSize" id="textSize" value="1.6">
+<input type="text" name="textSize" id="textSize" value="2.1">
 
 <label for="lineHeight">Line Height</label>
 <input type="text" name="lineHeight" id="lineHeight" value="1.1">
@@ -242,7 +242,7 @@ font-weight: 400;
     <i class="fa fa-quote-left"></i> This Is The Example Block Test. It Is Just A Test To See That The Page Loads The Image And Text Correctly. <i class="fa fa-quote-right"></i>
 </div>
 
-<div class='footer'>
+<div class='footer' style='color:rgba(0,0,255,1);'>
 
   words of wisdom<br>&bull;&bull;&bull;&bull;&bull;&bull;&bull;<br>
   <IMG SRC='https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png' style='height:15vw'>

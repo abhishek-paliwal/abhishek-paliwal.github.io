@@ -31,6 +31,8 @@ function randRGBA(min,max)
 
     lineHeight = document.getElementById("lineHeight").value ;
 
+    fontWeight = document.getElementById("fontWeight").value ;
+
     quoteText = document.getElementById("quoteText").value ;
 
     logoImageUrl = document.getElementById("logoImageUrl").value ;
@@ -61,7 +63,7 @@ function randRGBA(min,max)
 
 part1 = "<div class='polaroid' style='background-color:" + colorRGBAlight + "; border-top: 15px double " + colorRGBA + "; border-bottom: 15px solid " + colorRGBA + ";'>";
 
-part2 = "<div class='container' style='font-size: " + textSize + "em; line-height: " + lineHeight + ";'><i class='fa fa-quote-left'></i> " + quoteText + " <i class='fa fa-quote-right'></i></div>" ;
+part2 = "<div class='container' style='font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";'><i class='fa fa-quote-left'></i> " + quoteText + " <i class='fa fa-quote-right'></i></div>" ;
 
 part3logo = "<div class='footer' style='color:" + colorRGBA + ";'>" + headingName + "<br>&bull;&bull;&bull;&bull;&bull;&bull;&bull;<br><IMG SRC='" + logoImageUrl +"' style='height:15vw'></div>";
 
@@ -93,7 +95,7 @@ img.logo {
     padding: 5px;
 }
 
-input, textarea, select {
+input, textarea, select, table {
     display: inline-block;
     width: 100%;
     padding: 12px;
@@ -186,11 +188,53 @@ font-weight: 400;
 <label for="headingName">Heading Text</label>
 <input type="text" name="headingName" id="headingName" value="Words of Wisdom">
 
-<label for="textSize">Text Size (in 'em' units)</label>
-<input type="text" name="textSize" id="textSize" value="2.1">
+<table border="0">
 
-<label for="lineHeight">Line Height</label>
-<input type="text" name="lineHeight" id="lineHeight" value="1.1">
+    <tr>
+    		<td>
+          <label for="textSize">Text Size (in 'em' units)</label>
+          <input type="text" name="textSize" id="textSize" value="2.1">
+        </td>
+
+        <td>
+          <label for="lineHeight">Line Height</label>
+          <input type="text" name="lineHeight" id="lineHeight" value="1.1">
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+          <label for="fontWeight">Font Weight</label>
+             <select id="fontWeight" name="fontWeight">
+               <option value="100">100</option>
+               <option value="200">200</option>
+               <option value="300">300</option>
+               <option value="400" selected>400</option>
+               <option value="500">500</option>
+               <option value="600">600</option>
+               <option value="700">700</option>
+               <option value="800">800</option>
+               <option value="900">900</option>
+            </select>
+        </td>
+
+        <td>
+          <label for="imageCategory">Image Category (Courtesy: <a href="https://source.unsplash.com">UnSplash)</a></label>
+             <select id="imageCategory" name="imageCategory">
+               <option value="people">People</option>
+               <option value="buildings">Buildings</option>
+               <option value="food">Food</option>
+               <option value="nature">Nature</option>
+               <option value="technology">Technology</option>
+               <option value="objects">Objects</option>
+             </select>
+        </td>
+
+    </tr>
+
+</table>
+
 
 <label for="colorCode">Your Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
 <input type="text" name="colorCode" id="colorCode" value="Surprise Me">
@@ -199,15 +243,6 @@ font-weight: 400;
 <label for="logoImageUrl">Logo URL</label>
 <input type="text" name="logoImageUrl" id="logoImageUrl" value="ap3">
 
-<label for="imageCategory">Image Category (Courtesy: <a href="https://source.unsplash.com">UnSplash)</a></label>
-   <select id="imageCategory" name="imageCategory">
-     <option value="people">People</option>
-     <option value="buildings">Buildings</option>
-     <option value="food">Food</option>
-     <option value="nature">Nature</option>
-     <option value="technology">Technology</option>
-     <option value="objects">Objects</option>
-   </select>
 
 <label for="quoteText">Quote Text</label>
    <textarea name="quoteText" rows="5" id="quoteText" form="myform">My mission in life is not merely to survive, but to thrive; and to do so with some passion, some compassion, some humor, and some style.</textarea>

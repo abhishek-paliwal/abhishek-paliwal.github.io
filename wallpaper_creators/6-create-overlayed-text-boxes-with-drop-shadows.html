@@ -52,27 +52,23 @@ function randRGBA(min,max)
               logoImageUrl = logoImageUrl;
             }
 
-    imageCategory = document.getElementById("imageCategory").value ;
-
-    finalImage = "<img src='https://source.unsplash.com/category/" + imageCategory + "/900x600/' style='width:100%'>";
-
-
+    fontColor = document.getElementById("fontColor").value ;
 
 
 /* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
 
 partbegin = "<div class='main'>" ;
 
-partfourth = "<div class ='fourth' style='background-color: " + colorRGBA + "; font-size:" + textSize*1.15 + "vw;'><div class='heading' style='font-size: " + (textSize/2)*1.15 + "vw;'>" + headingName + "</div><div class='text'>"+ quoteText + "<br>&mdash;<br><img class='footer' src='" + logoImageUrl +"'></div></div>";
+partfourth = "<div class ='fourth' style='line-height: " + lineHeight + "; color: " + fontColor + "; font-weight: "+ fontWeight + "; background-color: " + colorRGBA + "; font-size:" + textSize*1.15 + "vw;'><div class='heading' style='font-size: " + (textSize/2)*1.15 + "vw;'>" + headingName + "</div><div class='text'>"+ quoteText + "<br>&mdash;<br><img class='footer' src='" + logoImageUrl +"'></div></div>";
 
 
-partthird = "<div class ='third' style='background-color: " + colorRGBA + "; font-size:" + textSize*1.10 + "vw;'><div class='heading' style='font-size: " + (textSize/2)*1.10 + "vw;'>" + headingName + "</div><div class='text'>"+ quoteText + "<br>&mdash;<br><img class='footer' src='" + logoImageUrl +"'></div></div>";
+partthird = "<div class ='third' style='line-height: " + lineHeight + "; color: " + fontColor + "; font-weight: "+ fontWeight + "; background-color: " + colorRGBA + "; font-size:" + textSize*1.10 + "vw;'><div class='heading' style='font-size: " + (textSize/2)*1.10 + "vw;'>" + headingName + "</div><div class='text'>"+ quoteText + "<br>&mdash;<br><img class='footer' src='" + logoImageUrl +"'></div></div>";
 
 
-partsecond = "<div class ='second' style='background-color: " + colorRGBA + "; font-size:" + textSize*1.05 + "vw;'><div class='heading' style='font-size: " + (textSize/2)*1.05 + "vw;'>" + headingName + "</div><div class='text'>"+ quoteText + "<br>&mdash;<br><img class='footer' src='" + logoImageUrl +"'></div></div>";
+partsecond = "<div class ='second' style='line-height: " + lineHeight + "; color: " + fontColor + "; font-weight: "+ fontWeight + "; background-color: " + colorRGBA + "; font-size:" + textSize*1.05 + "vw;'><div class='heading' style='font-size: " + (textSize/2)*1.05 + "vw;'>" + headingName + "</div><div class='text'>"+ quoteText + "<br>&mdash;<br><img class='footer' src='" + logoImageUrl +"'></div></div>";
 
 
-partfirst = "<div class ='first' style='background-color: " + colorRGBA + "; font-size:" + textSize + "vw;'><div class='heading' style='font-size: " + (textSize/2) + "vw;'>" + headingName + "</div><div class='text'>"+ quoteText + "<br>&mdash;<br><img class='footer' src='" + logoImageUrl +"'></div></div>";
+partfirst = "<div class ='first' style='line-height: " + lineHeight + "; color: " + fontColor + "; font-weight: "+ fontWeight + "; background-color: " + colorRGBA + "; font-size:" + textSize + "vw;'><div class='heading' style='font-size: " + (textSize/2) + "vw;'>" + headingName + "</div><div class='text'>"+ quoteText + "<br>&mdash;<br><img class='footer' src='" + logoImageUrl +"'></div></div>";
 
 partend = "<div style='position: relative;'>&nbsp;</div></div>";
 
@@ -158,7 +154,6 @@ h1 {
   text-align: right;
   text-transform: uppercase;
   font-family: 'Raleway', sans-serif;
-  font-weight: 900;
 }
 
 .heading {
@@ -191,7 +186,7 @@ h1 {
   height: 75vh;
   width: 75vw;
   font-size: 7.5vw; /* 1/10th of width */
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .second {
@@ -202,7 +197,7 @@ h1 {
   width: 80vw;
   background-color: rgba(255, 200, 0, 1);
   font-size: 8vw; /* 1/10th of width */
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .third {
@@ -213,7 +208,7 @@ h1 {
   width: 85vw;
   background-color: rgba(255, 200, 0, 1);
   font-size: 8.5vw; /* 1/10th of width */
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .fourth {
@@ -224,7 +219,7 @@ h1 {
   width: 90vw;
   background-color: rgba(255, 200, 0, 1);
   font-size: 9vw; /* 1/10th of width */
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 img.footer {
@@ -254,7 +249,7 @@ img.footer {
     <tr>
     		<td>
           <label for="textSize">Text Size (in ViewPort 'vw' units)</label>
-          <input type="text" name="textSize" id="textSize" value="7.5">
+          <input type="text" name="textSize" id="textSize" value="7.1">
         </td>
 
         <td>
@@ -281,14 +276,18 @@ img.footer {
         </td>
 
         <td>
-          <label for="imageCategory">Image Category (Courtesy: <a href="https://source.unsplash.com">UnSplash)</a></label>
-             <select id="imageCategory" name="imageCategory">
-               <option value="people">People</option>
-               <option value="buildings">Buildings</option>
-               <option value="food">Food</option>
-               <option value="nature">Nature</option>
-               <option value="technology">Technology</option>
-               <option value="objects">Objects</option>
+          <label for="fontColor">Font Color</label>
+             <select id="fontColor" name="fontColor">
+               <option value="white" selected>White</option>
+               <option value="black">Black</option>
+               <option value="red">Red</option>
+               <option value="green">Green</option>
+               <option value="blue">Blue</option>
+               <option value="yellow">Yellow</option>
+               <option value="DeepPink">DeepPink</option>
+               <option value="orange">Orange</option>
+               <option value="lime">Lime</option>
+
              </select>
         </td>
 
@@ -302,7 +301,7 @@ img.footer {
 
 
 <label for="logoImageUrl">Logo URL</label>
-<input type="text" name="logoImageUrl" id="logoImageUrl" value="ap3">
+<input type="text" name="logoImageUrl" id="logoImageUrl" value="ap1">
 
 
 <label for="quoteText">Quote Text</label>

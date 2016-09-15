@@ -65,7 +65,7 @@ function randRGBA(min,max)
 
                 randwidth = Math.floor(Math.random()*(40) + 55); /*random value from 55 to 95 */
 
-                finalText += "<div class ='mybox' style='height: "+ textSize +"px; line-height: " + lineHeight + "; color: " + fontColor + "; font-weight: "+ fontWeight + "; background-color: " + colorRGBA + "; font-size:" + textSize + "px; width: " + randwidth + "vw;'>" + warray[i] + "</div>&nbsp;" ;
+                finalText += "<div class ='mybox' style='height: auto; line-height: " + lineHeight + "; color: " + fontColor + "; font-weight: "+ fontWeight + "; background-color: " + colorRGBA + "; font-size:" + textSize + "px; width: " + randwidth + "vw;'>" + warray[i] + "</div>&nbsp;" ;
 
             }
 
@@ -160,10 +160,10 @@ img.footer {
 div.mybox {
   display: block;
   padding: 10px;
-  height: 35px; /* height should be same as font-size */
+  height: auto;
   color: black;
   background-color: yellow;
-  font-size: 35px;
+  font-size: 45px;
   text-transform: uppercase;
   line-height: 1.0;
   font-weight: 800;
@@ -197,7 +197,7 @@ img.footer {
     <tr>
     		<td>
           <label for="textSize">Text Size (in pixels)</label>
-          <input type="text" name="textSize" id="textSize" value="35">
+          <input type="text" name="textSize" id="textSize" value="45">
         </td>
 
         <td>

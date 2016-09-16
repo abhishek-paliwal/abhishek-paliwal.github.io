@@ -1,0 +1,193 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Abhishek | Text on Image - Polygonal Wallpaper Creator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script>
+function randRGBA(min,max)
+{
+/* Random RGBA color generation */
+    randnumberRed = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberGreen = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberBlue = Math.floor(Math.random()*(max-min+1)+min);
+
+    colorRGBA = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 1)";
+
+/* Getting the text from the form */
+    headingName = document.getElementById("headingName").value ;
+
+    if (headingName != "") {
+        headingName = "<br>&bull;&bull;&bull;&bull;&bull;<b><br>" + headingName + "</b>";
+    } else {
+      headingName = "";
+    }
+
+
+    textSize = document.getElementById("textSize").value ;
+
+    quoteText = document.getElementById("quoteText").value ;
+
+    endlogo = "<span class='bottom'><img class='footer' src='https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Favicon-Abhishek-Paliwal-Website.png'>www.AbhishekPaliwal.com<span>";
+
+    imageNumber = Math.floor((Math.random() * 46) + 1);
+    divgradient = "background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.4)),url(\"http://downloads.concepro.com/30-Free-Polygonal-Low-Poly-Textures/low-poly-texture-" + imageNumber + ".jpg\")" ;
+
+/* ******** Printing the formmated text to an ID in the HTML page ***** */
+
+document.getElementById("randcolorRGBA").innerHTML = "<div class='module2 mid' style='width:500px; height: 750px; " + divgradient + ";'><h2 style=\"background-color: rgba(0,0,0,0.4); color: white; border: 2px solid white; outline: 15px solid rgba(0,0,0,0.4); font-size: " + textSize + "rem;\">" + quoteText + headingName + "</h2>" + endlogo + "</div>" ;
+
+document.getElementById("randcolorRGBAtext").innerHTML = "<div class='module2 mid' style='width:500px; height: 750px; " + divgradient + ";'><h2 style=\"background-color: rgba(255,255,255,0.6); color: black; border: 2px solid black; outline: 15px solid rgba(255,255,255,0.6); font-size: " + textSize + "rem;\">" + quoteText + headingName + "</h2>" + endlogo + "</div>" ;
+
+document.getElementById("randcolorRGBAtext2").innerHTML = "<div class='module2 mid' style='width:750px; height: 750px; " + divgradient + ";'><h2 style=\"background-color: rgba(255,255,255,0.6); color: black; border: 15px solid rgba(255,255,255,0.6); outline: 5px solid black; font-size: " + textSize + "rem;\">" + quoteText + headingName + "</h2>" + endlogo + "</div>" ;
+
+
+}
+
+</script>
+
+
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
+<style type="text/css">
+
+body {
+    display: block;
+    margin: 0px;
+}
+/*In .module, the gradient is from top to bottom*/
+/* Change the rgba values to change the gradient colors.*/
+.module {
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.4)
+    ),
+ url(http://downloads.concepro.com/30-Free-Polygonal-Low-Poly-Textures/low-poly-texture-2.jpg);
+  background-size: cover;
+  width: 500px;
+  height: 750px;
+  margin: 0px 0px 0px 0px;
+  position: relative;
+  float: left;
+}
+
+.module2 {
+  background-size: cover;
+  width: 500px;
+  height: 750px;
+  margin: 0px 0px 0px 0px;
+  position: relative;
+  float: left;
+}
+
+.mid h2 {
+  padding: 15px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  line-height: 1.1;
+  text-transform: capitalize;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bottom {
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: white;
+  margin: 0;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  font-size: 1.2rem;
+  transform: translate(-50%, -50%);
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 20vw;
+    padding: 5px;
+}
+
+img.footer {
+    /* display: block; */
+    margin: auto;
+    width: 40px;
+    padding: 5px;
+}
+
+#myform, #headingName, #textSize, #fromName, #toName, #logoImageUrl, #quoteText {
+  font-size: 20px;
+  color: blue;
+}
+
+button {
+  background-color: rgb(0,0,255);
+  color: white;
+  font-weight: bold;
+  font-size: 200%;
+  text-transform: uppercase;
+}
+
+.city {
+   float: left;
+   margin: 10px;
+   padding: 10px;
+   border: 1px solid black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img src="https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png">
+<hr>
+
+<div class="city">
+
+<h1>Create Text on Image - Polygonal Wallpaper</h1>
+
+  <form id="myform">
+* HEADING *<br><input type="text" name="message" id="headingName" size="50" value="A quote by abhishek Paliwal">
+  <br><br>* TEXT SIZE (in 'rem' units)*<br><input type="text" name="message" id="textSize" value="1.7">
+  <br><br>* LOGO URL *<br><input type="text" name="message" size="50" id="logoImageUrl" value="https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png">
+
+  </form>
+
+  <br>* QUOTE TEXT *<br>
+  <textarea name="comment" rows="10" cols="50" id="quoteText" form="myform">&ldquo; If you wish to achieve worthwhile things in your personal and career life, you must become a worthwhile person in your own self development. &rdquo;</textarea>
+
+  <br>
+  <!-- <input type="submit" onclick="randRGBA(0,255);"><br/> -->
+  <button type="submit" value="Submit" onclick="randRGBA(0,255);">Submit</button>
+
+</div>
+
+<div class="city">
+<span id="randcolorRGBA"></span>
+</div>
+
+<div class="city">
+<span id="randcolorRGBAtext"></span>
+</div>
+
+<div class="city">
+<span id="randcolorRGBAtext2"></span>
+</div>
+
+
+<!-- Clearing the floats for the div below -->
+<div style="clear: both;"></div>
+
+<hr>
+THIS WEBAPP IS MADE BY <a href="http://www.AbhishekPaliwal.com">ABHISHEK PALIWAL</a>
+
+
+</body>
+</html>

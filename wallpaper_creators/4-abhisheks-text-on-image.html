@@ -15,17 +15,25 @@ function randRGBA(min,max)
 
 /* Getting the text from the form */
     headingName = document.getElementById("headingName").value ;
+
+    if (headingName != "") {
+        headingName = "<br>&bull;&bull;&bull;&bull;&bull;<b><br>" + headingName + "</b>";
+    } else {
+      headingName = "";
+    }
+
+
     textSize = document.getElementById("textSize").value ;
 
     quoteText = document.getElementById("quoteText").value ;
 
 /* ******** Printing the formmated text to an ID in the HTML page ***** */
 
-document.getElementById("randcolorRGBA").innerHTML = "<h2 style=\"background-color: rgba(0,0,0,0.4); color: white; border: 2px solid white; outline: 15px solid rgba(0,0,0,0.4); font-size: " + textSize + "rem;\">" + quoteText + "</h2>" ;
+document.getElementById("randcolorRGBA").innerHTML = "<h2 style=\"background-color: rgba(0,0,0,0.4); color: white; border: 2px solid white; outline: 15px solid rgba(0,0,0,0.4); font-size: " + textSize + "rem;\">" + quoteText + headingName + "</h2>" ;
 
-document.getElementById("randcolorRGBAtext").innerHTML = "<h2 style=\"background-color: rgba(255,255,255,0.6); color: black; border: 2px solid black; outline: 15px solid rgba(255,255,255,0.6); font-size: " + textSize + "rem;\">" + quoteText + "</h2>" ;
+document.getElementById("randcolorRGBAtext").innerHTML = "<h2 style=\"background-color: rgba(255,255,255,0.6); color: black; border: 2px solid black; outline: 15px solid rgba(255,255,255,0.6); font-size: " + textSize + "rem;\">" + quoteText + headingName + "</h2>" ;
 
-document.getElementById("randcolorRGBAtext2").innerHTML = "<h2 style=\"background-color: rgba(255,255,255,0.6); color: black; border: 15px solid rgba(255,255,255,0.6); outline: 5px solid black; font-size: " + textSize + "rem;\">" + quoteText + "</h2>" ;
+document.getElementById("randcolorRGBAtext2").innerHTML = "<h2 style=\"background-color: rgba(255,255,255,0.6); color: black; border: 15px solid rgba(255,255,255,0.6); outline: 5px solid black; font-size: " + textSize + "rem;\">" + quoteText + headingName + "</h2>" ;
 
 
 }
@@ -33,7 +41,7 @@ document.getElementById("randcolorRGBAtext2").innerHTML = "<h2 style=\"backgroun
 </script>
 
 
-<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
 <style type="text/css">
 
 body {
@@ -59,7 +67,7 @@ body {
 
 .mid h2 {
   padding: 15px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 400;
   line-height: 1.1;
   text-transform: capitalize;
@@ -71,7 +79,7 @@ body {
 }
 
 .bottom {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 300;
   letter-spacing: 2px;
   line-height: 1;
@@ -80,7 +88,7 @@ body {
   position: absolute;
   bottom: 10px;
   left: 50%;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   transform: translate(-50%, -50%);
 }
 
@@ -132,15 +140,14 @@ button {
 <h1>Text on Image Wallpaper Creator</h1>
 
   <form id="myform">
-* HEADING *<br><input type="text" name="message" id="headingName" size="50" value="Words of Wisdom">
-  <br><br>* TEXT SIZE (in 'rem' units)*<br><input type="text" name="message" id="textSize" value="2.1">
+* HEADING *<br><input type="text" name="message" id="headingName" size="50" value="A quote by abhishek Paliwal">
+  <br><br>* TEXT SIZE (in 'rem' units)*<br><input type="text" name="message" id="textSize" value="1.7">
   <br><br>* LOGO URL *<br><input type="text" name="message" size="50" id="logoImageUrl" value="https://dl.dropboxusercontent.com/u/6378027/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png">
 
   </form>
 
   <br>* QUOTE TEXT *<br>
-  <textarea name="comment" rows="10" cols="50" id="quoteText" form="myform">
-If you wish to achieve worthwhile things in your personal and career life, you must become a worthwhile person in your own self-development.</textarea>
+  <textarea name="comment" rows="10" cols="50" id="quoteText" form="myform">&ldquo; If you wish to achieve worthwhile things in your personal and career life, you must become a worthwhile person in your own self development. &rdquo;</textarea>
 
   <br>
   <!-- <input type="submit" onclick="randRGBA(0,255);"><br/> -->
@@ -176,7 +183,7 @@ www.AbhishekPaliwal.com
 </div>
 
 <div class="city">
-<div class="module mid">
+<div class="module mid" style="width:750px; height: 750px;">
 
 <span id="randcolorRGBAtext2"></span>
 

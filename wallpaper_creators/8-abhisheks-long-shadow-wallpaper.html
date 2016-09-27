@@ -59,14 +59,18 @@ function randRGBA(min,max)
 
 var j;
 var longShadowLength = "";
-for (j = 1; j < 1000; j++) {
+var longShadowLength1 = "";
+
+for (j = 1; j < 500; j++) {
    longShadowLength += j + "px " + j + "px " + colorRGBA + ", " ;
+   longShadowLength1 += j + "px " + j + "px " + "#3B3B4E" + ", " ;
 }
-longShadowLength = longShadowLength + "1000px 1000px rgba(0,0,0,0);";
+
+longShadowLength = longShadowLength + "500px 500px rgba(0,0,0,0);";
+longShadowLength1 = longShadowLength1 + "500px 500px rgba(0,0,0,0);";
 
 
-/* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
-
+/* ******** RGBAsection: Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
 
 part1 = "<div class='main' style='text-shadow: " + longShadowLength + "background-color:" + colorRGBAlight + "; color: " + fontColor + "; font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";'><i class='fa fa-quote-left'></i> " + quoteText + " <i class='fa fa-quote-right'></i>";
 
@@ -75,6 +79,19 @@ part2logo = "<h2 style='color:" + fontColor + ";'>" + headingName + "<br>&bull;&
 partend = "</div>";
 
 document.getElementById("randcolorRGBA").innerHTML = part1 + part2logo + partend ;
+
+
+/* ******** RGBAtextsection: Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
+
+part11 = "<div class='main' style='text-shadow: " + longShadowLength1 + "background-color: " + "white" + "; color: " + colorRGBA + "; font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";'><i class='fa fa-quote-left'></i> " + quoteText + " <i class='fa fa-quote-right'></i>";
+
+part2logo1 = "<h2 style='color:" + colorRGBAlight + ";'>" + headingName + "<br>&bull;&bull;&bull;&bull;&bull;&bull;&bull;<br><IMG SRC='" + logoImageUrl +"' style='height:20vw'></h2>";
+
+partend1 = "</div>";
+
+document.getElementById("randcolorRGBAtext").innerHTML = part11 + part2logo1 + partend1 ;
+
+
 
 }
 
@@ -263,6 +280,11 @@ color: white;
 
 
 <span id="randcolorRGBA"></span>
+
+<br><br>
+
+<span id="randcolorRGBAtext"></span>
+
 
 
 <br><br><hr>

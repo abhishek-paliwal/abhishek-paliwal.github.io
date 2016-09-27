@@ -63,7 +63,7 @@ var longShadowLength1 = "";
 
 for (j = 1; j < 500; j++) {
    longShadowLength += j + "px " + j + "px " + colorRGBA + ", " ;
-   longShadowLength1 += j + "px " + j + "px " + "rgb(60,60,60)" + ", " ;
+   longShadowLength1 += j + "px " + j + "px " + "rgb(40,40,40)" + ", " ;
 }
 
 longShadowLength = longShadowLength + "500px 500px rgba(0,0,0,0);";
@@ -90,6 +90,16 @@ part2logo1 = "<h2 style='color:" + "white" + ";'>" + headingName + "<br>&bull;&b
 partend1 = "</div>";
 
 document.getElementById("randcolorRGBAtext").innerHTML = part11 + part2logo1 + partend1 ;
+
+/* ******** RGBAtextsection2: Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
+
+part12 = "<div class='main' style='font-family: Times, serif; text-shadow: " + longShadowLength1 + "background-color: " + colorRGBA + "; color: " + fontColor + "; font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";'>&ldquo; " + quoteText + "&rdquo;";
+
+part2logo2 = "<h2 style='font-family: Arial, sans-serif; color:" + "white" + ";'>" + headingName + "<br>&bull;&bull;&bull;&bull;&bull;&bull;&bull;<br><IMG SRC='" + logoImageUrl +"' style='height:20vw'></h2>";
+
+partend2 = "</div>";
+
+document.getElementById("randcolorRGBAtext2").innerHTML = part12 + part2logo2 + partend2 ;
 
 
 
@@ -169,7 +179,7 @@ h1 {
 
 div.main {
 display: block;
-padding: 20px;
+padding: 30px;
 text-transform: uppercase;
 }
 
@@ -285,6 +295,9 @@ color: white;
 
 <span id="randcolorRGBAtext"></span>
 
+<br><br><br><br><br><br><br>
+
+<span id="randcolorRGBAtext2"></span>
 
 
 <br><br><hr>

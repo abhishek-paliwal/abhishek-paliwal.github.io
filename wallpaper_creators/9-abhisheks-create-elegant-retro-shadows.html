@@ -62,14 +62,31 @@ document.getElementById("colorPrinting").innerHTML = "<h3 style='color: " + colo
 quoteleft = "<span style='color: " + colorRGBA + ";'><i class='fa fa-quote-left'></i> </span>";
 quoteright = "<span style='color: " + colorRGBA + ";'> <i class='fa fa-quote-right'></i></span>";
 
-/* ******** RGBAsection: Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
+/********* Compiling the variables and Printing the formmated text to an ID in the HTML page ******/
 
-part1 = "<h1 class='elegantshadow' style='font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";'>" + quoteleft + quoteText + quoteright + "</h1>";
+partlogo = "<h2 style='color:" + colorRGBA + ";'>" + headingName + "<br>&bull;&bull;&bull;&bull;&bull;&bull;&bull;<br><IMG SRC='" + logoImageUrl +"' style='height:15vw'></h2>";
 
-part2logo = "<h2 style='color:" + colorRGBA + ";'>" + headingName + "<br>&bull;&bull;&bull;&bull;&bull;&bull;&bull;<br><IMG SRC='" + logoImageUrl +"' style='height:15vw'></h2>";
+partelegant = "<h1 class='elegantshadow' style='font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";'>" + quoteleft + quoteText + quoteright + "</h1>";
+document.getElementById("elegantshadow").innerHTML = partelegant + partlogo ;
 
-document.getElementById("randcolorRGBA").innerHTML = part1 + part2logo ;
+partdeep = "<h1 class='deepshadow' style='font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";'>" + quoteleft + quoteText + quoteright + "</h1>";
+document.getElementById("deepshadow").innerHTML = partdeep + partlogo ;
 
+partinset = "<h1 class='insetshadow' style='font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";'>" + quoteleft + quoteText + quoteright + "</h1>";
+document.getElementById("insetshadow").innerHTML = partinset + partlogo ;
+
+partretro = "<h1 class='retroshadow' style='font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";'>" + quoteleft + quoteText + quoteright + "</h1>";
+document.getElementById("retroshadow").innerHTML = partretro + partlogo ;
+
+
+quoteleft1 = "<span style='color: " + fontColor + ";'><i class='fa fa-quote-left'></i> </span>";
+quoteright1 = "<span style='color: " + fontColor + ";'> <i class='fa fa-quote-right'></i></span>";
+
+partretro1 = "<h1 class='retroshadow1' style='color: " + colorRGBA + "; background-color: #c0c0c0; text-shadow: 4px 4px 0px #c0c0c0, 7px 7px 0px " + colorRGBAlight + "; font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";'>" + quoteleft1 + quoteText + quoteright1 + "</h1>";
+document.getElementById("retroshadow1").innerHTML = partretro1 + partlogo ;
+
+partretro2 = "<h1 class='retroshadow2' style='background-color: " + colorRGBA + "; text-shadow: 4px 4px 0px " + colorRGBA + ", 7px 7px 0px rgba(0,0,0,0.2); font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";'>" + quoteleft1 + quoteText + quoteright1 + "</h1>";
+document.getElementById("retroshadow2").innerHTML = partretro2 + partlogo ;
 
 
 }
@@ -191,6 +208,7 @@ h1.insetshadow {
   text-shadow: -1px -1px 1px #111, 2px 2px 1px #363636;
 }
 h1.retroshadow {
+  font-family: "Times New Roman", serif;
   color: #2c2c2c;
   background-color: #c0c0c0;
   text-shadow: 4px 4px 0px #c0c0c0, 7px 7px 0px rgba(0, 0, 0, 0.2);
@@ -245,10 +263,10 @@ h1.retroshadow2 {
                <option value="100">100</option>
                <option value="200">200</option>
                <option value="300">300</option>
-               <option value="400" selected>400</option>
+               <option value="400">400</option>
                <option value="500">500</option>
                <option value="600">600</option>
-               <option value="700">700</option>
+               <option value="700" selected>700</option>
                <option value="800">800</option>
                <option value="900">900</option>
             </select>
@@ -303,32 +321,37 @@ h1.retroshadow2 {
 
 <br>
 
-<span id="randcolorRGBA"></span>
+<span id="elegantshadow"></span>
 
 <br>
 
-<span id="randcolorRGBAtext1"></span>
+<span id="deepshadow"></span>
 
 <br>
 
-<span id="randcolorRGBAtext2"></span>
+<span id="insetshadow"></span>
 
 <br>
 
-<span id="randcolorRGBAtext3"></span>
+<span id="retroshadow"></span>
 
 <br>
 
-<span id="randcolorRGBAtext4"></span>
+<span id="retroshadow1"></span>
 
 <br>
+
+<span id="retroshadow2"></span>
+
+<br>
+
 
 <h1 class="header">See Some Examples Below.</h1>
 
 <h1 class='elegantshadow'>I am a champion!</h1>
 <h1 class='deepshadow'>I am a champion!</h1>
 <h1 class='insetshadow'>I am a champion!</h1>
-<h1 class='retroshadow'><span style='color: rgba(255,0,100,1);'>&ldquo;</span> I am a champion!. <span style='color: rgba(255,0,100,1);'>&rdquo;</span></h1>
+<h1 class='retroshadow'><span style='color: rgba(255,0,100,1);'>&ldquo;</span> I am a champion! <span style='color: rgba(255,0,100,1);'>&rdquo;</span></h1>
 <h1 class='retroshadow1'>&ldquo; I am a champion! &rdquo;</h1>
 <h1 class='retroshadow2'>&ldquo; I am a champion! &rdquo;</h1>
 

@@ -22,7 +22,23 @@ function randRGBA(min,max)
             }
 /* QuoteText calculations end */
 
-    logoImageUrl = document.getElementById("logoImageUrl").value ;
+logoImageUrl = document.getElementById("logoImageUrl").value ;
+        if (logoImageUrl == "ap1") {
+            logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png";
+        } else if (logoImageUrl == "ap2") {
+          logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Circle-fullname.png";
+        } else if (logoImageUrl == "ap3") {
+          logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Album-Cover-Abhishek-Paliwal-Lorez.jpg";
+        } else if (logoImageUrl == "ap4") {
+          logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png";
+        } else if (logoImageUrl == "anu1") {
+          logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Black-White-Fullname.png";
+        } else if (logoImageUrl == "anu2") {
+          logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Colored-Fullname.png";
+        } else {
+          logoImageUrl = logoImageUrl;
+        }
+        
           logoImageUrl = "<img src='" + logoImageUrl + "'>";
 
     separator = "&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;";

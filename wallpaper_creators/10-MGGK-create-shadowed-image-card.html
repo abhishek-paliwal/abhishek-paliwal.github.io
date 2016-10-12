@@ -1,0 +1,301 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Abhishek | Create MGGK Card </title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script>
+function randRGBA(min,max)
+{
+/* Random RGBA color generation */
+    randnumberRed = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberGreen = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberBlue = Math.floor(Math.random()*(max-min+1)+min);
+
+    colorRGBA = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 1)";
+    colorRGBAlight = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 0.2)";
+
+/* Checking if the color code is present or not. If present, then it is chosen instead of random. */
+    colorCode = document.getElementById("colorCode").value ;
+
+    if (colorCode =="Surprise Me") {
+        colorRGBA = colorRGBA ;
+        colorRGBAlight = colorRGBAlight ;
+      } else {
+        colorRGBA = "rgba(" + colorCode + ", 1)";
+        colorRGBAlight = "rgba(" + colorCode + ", 0.2)";
+      }
+
+/* Getting the text from the form */
+    headingName = document.getElementById("headingName").value ;
+    textSize = document.getElementById("textSize").value ;
+
+    lineHeight = document.getElementById("lineHeight").value ;
+
+    fontWeight = document.getElementById("fontWeight").value ;
+
+    quoteText = document.getElementById("quoteText").value ;
+
+    logoImageUrl = document.getElementById("logoImageUrl").value ;
+            if (logoImageUrl == "ap1") {
+                logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png";
+            } else if (logoImageUrl == "ap2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Circle-fullname.png";
+            } else if (logoImageUrl == "ap3") {
+              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/6-logos-album-covers/Album-Cover-Abhishek-Paliwal-Lorez.jpg";
+            } else if (logoImageUrl == "ap4") {
+              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png";
+            } else if (logoImageUrl == "anu1") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Black-White-Fullname.png";
+            } else if (logoImageUrl == "anu2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Colored-Fullname.png";
+            } else if (logoImageUrl == "mggk1") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/5-logos-mggk/Mggk-New-Logo-Transparent-4000Px.png";
+            } else {
+              logoImageUrl = logoImageUrl;
+            }
+
+    imageCategory = document.getElementById("imageCategory").value ;
+
+    finalImage = "<img src='https://source.unsplash.com/category/" + imageCategory + "/900x300/' style='width:100%'>";
+
+
+
+
+/* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
+
+part1 = "<div class='polaroid' style='background-color:" + colorRGBAlight + "; border-top: 15px solid " + colorRGBA + "; border-bottom: 15px solid " + colorRGBA + ";'>";
+
+part2 = "<div class='container' style='font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";'>" + quoteText + "</div>" ;
+
+part3logo = "<div class='footer' style='color:" + colorRGBA + ";'>&mdash;<br>" + headingName + "<br><br><IMG SRC='" + logoImageUrl +"' style='height:15vw'></div>";
+
+part4end = "</div>";
+
+
+document.getElementById("randcolorRGBA").innerHTML = part1 + finalImage + part2 + part3logo + part4end ;
+
+}
+
+</script>
+
+<script src="https://use.fontawesome.com/8cd0876759.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,900" rel="stylesheet">
+
+<style type="text/css">
+
+body {
+  display:block;
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+}
+
+img.logo {
+    display: block;
+    margin: auto;
+    width: 20vw;
+    padding: 5px;
+}
+
+input, textarea, select, table {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #c0c0c0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+button, input[type=submit] {
+    width: 100%;
+    background-color: #ff8700;
+    color: white;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+button:hover, input[type=submit]:hover {
+    background-color: black;
+}
+
+div.myform {
+    display: block;
+    width: 90vw;
+    margin: auto;
+    border-radius: 5px;
+    border: 2px solid orange;
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+h1 {
+  color: orange;
+}
+
+/* Add your custom style code below this line. Do not touch any CSS above this line. */
+
+div.polaroid {
+display: block;
+margin: auto;
+width: 90vw;
+box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
+/* border-radius: 20px; */
+}
+
+div.container {
+padding: 20px;
+text-align: left;
+text-transform: capitalize;
+letter-spacing: 0px;
+color: black;
+font-family: 'Raleway', sans-serif;
+font-weight: 400;
+}
+
+div.footer {
+font-size:1em;
+padding: 5px;
+text-align: center;
+text-transform: uppercase;
+letter-spacing: 5px;
+color: white;
+font-family: 'Times', serif;
+font-weight: 400;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img class="logo" src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png">
+<hr>
+
+<h1>Create Your MGGK Image Card</h1>
+
+<div class="myform"> <!-- floating div start -->
+<form id="myform">
+
+<label for="headingName">Heading Text</label>
+<input type="text" name="headingName" id="headingName" value="Brought to you by">
+
+<table border="0">
+
+    <tr>
+    		<td>
+          <label for="textSize">Text Size (in 'em' units)</label>
+          <input type="text" name="textSize" id="textSize" value="2.1">
+        </td>
+
+        <td>
+          <label for="lineHeight">Line Height</label>
+          <input type="text" name="lineHeight" id="lineHeight" value="1.1">
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+          <label for="fontWeight">Font Weight</label>
+             <select id="fontWeight" name="fontWeight">
+               <option value="100">100</option>
+               <option value="200">200</option>
+               <option value="300">300</option>
+               <option value="400">400</option>
+               <option value="500">500</option>
+               <option value="600">600</option>
+               <option value="700">700</option>
+               <option value="800">800</option>
+               <option value="900" selected>900</option>
+            </select>
+        </td>
+
+        <td>
+          <label for="imageCategory">Image Category (Courtesy: <a href="https://source.unsplash.com">UnSplash)</a></label>
+             <select id="imageCategory" name="imageCategory">
+               <option value="people">People</option>
+               <option value="buildings">Buildings</option>
+               <option value="food" selected>Food</option>
+               <option value="nature">Nature</option>
+               <option value="technology">Technology</option>
+               <option value="objects">Objects</option>
+             </select>
+        </td>
+
+    </tr>
+
+</table>
+
+
+<label for="colorCode">Your Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
+<input type="text" name="colorCode" id="colorCode" value="Surprise Me">
+
+
+<label for="logoImageUrl">Logo URL</label>
+<input type="text" name="logoImageUrl" id="logoImageUrl" value="mggk1">
+
+
+<label for="quoteText">Quote Text</label>
+   <textarea name="quoteText" rows="5" id="quoteText" form="myform">Top 10 Tips for better cooking</textarea>
+
+<!-- Somehow the input button below does not work. Seems like a known JS problem. So the BUTTON code outside the form is used. -->
+
+<!--
+<input type="submit" value="Submit" onclick="randRGBA(0,255);" />
+-->
+
+</form>
+
+<button type="submit" value="Submit" onclick="randRGBA(0,255);">Submit</button>
+
+</div>
+
+<hr>
+<h2>Press the button above, and your image card should appear below.</h2>
+<br><br>
+
+
+<span id="randcolorRGBA"></span>
+
+
+<br><br><hr>
+
+<div class='polaroid' style='background-color: rgba(255,0,80,0.2); border-top: 15px solid rgba(255,0,80,1); border-bottom: 15px solid rgba(255,0,80,1);'>
+
+<img src='https://source.unsplash.com/category/food/900x300/' style='width:100%'>
+
+<div class='container' style='font-size: 3.6em; line-height: 1.1; font-weight:900;'>
+    This Is The Example Block Test.
+</div>
+
+<div class='footer' style='color:rgba(255,0,80,1);'>
+
+  words of wisdom<br>&mdash;<br>
+  <IMG SRC='http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png' style='height:15vw'>
+</div>
+
+</div>
+
+
+
+
+<br><br><hr>
+This Webapp Is Made By <a href="http://www.AbhishekPaliwal.com">Abhishek Paliwal</a>
+
+</body>
+</html>

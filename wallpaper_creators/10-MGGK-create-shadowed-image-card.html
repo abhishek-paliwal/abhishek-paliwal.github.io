@@ -70,7 +70,7 @@ part1 = "<div class='polaroid' style='background-color:" + colorRGBAlight + "; b
 
 part2 = "<div class='container' style='font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";'>" + quoteText + "</div>" ;
 
-part3logo = "<div class='footer' style='color:" + colorRGBA + ";'>&mdash;<br>" + headingName + "<br><br><IMG SRC='" + logoImageUrl +"' style='height:15vw'></div>";
+part3logo = "<div class='footer' style='color:" + colorRGBA + ";'>" + headingName + "<br>&mdash;<br><IMG SRC='" + logoImageUrl +"' style='height:15vw'></div>";
 
 part4end = "</div>";
 
@@ -157,7 +157,8 @@ h1 {
 div.polaroid {
 display: block;
 margin: auto;
-width: 90vw;
+width: 61.6vw;
+height: 92.4vw;
 box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
 /* border-radius: 20px; */
 }
@@ -205,7 +206,7 @@ font-weight: 400;
     <tr>
     		<td>
           <label for="textSize">Text Size (in 'em' units)</label>
-          <input type="text" name="textSize" id="textSize" value="4.1">
+          <input type="text" name="textSize" id="textSize" value="3.7">
         </td>
 
         <td>
@@ -268,7 +269,7 @@ font-weight: 400;
 </div>
 
 <hr>
-<h2>Press the button above, and your image card should appear below.</h2>
+<h2>Press the button above, and your image card should appear below in a resolution of 420 X 280 px.</h2>
 <br><br>
 
 
@@ -277,18 +278,18 @@ font-weight: 400;
 
 <br><br><hr>
 
-<div class='polaroid' style='width: 560px; height: 840px; background-color: rgba(255,0,80,0.2); border-top: 15px solid rgba(255,0,80,1); border-bottom: 15px solid rgba(255,0,80,1);'>
+<div class='polaroid' style='width: 61.6vw; height: 91.4vw; background-color: rgba(255,0,80,0.2); border-top: 15px solid rgba(255,0,80,1); border-bottom: 15px solid rgba(255,0,80,1);'>
 
-<img src='https://source.unsplash.com/category/food/900x300/' style='width:100%'>
+<img src='https://source.unsplash.com/category/food/900x400/' style='width:100%'>
 
-<div class='container' style='font-size: 3.6em; line-height: 1.1; font-weight:900;'>
-    This Is The Example Block Test.
+<div class='container' style='font-size: 3.7em; line-height: 1.1; font-weight:900;'>
+    THIS IS THE <span style='color: rgba(205, 28, 98,1)'>EXAMPLE</span> BLOCK TEST.
 </div>
 
 <div class='footer' style='color:rgba(255,0,80,1);'>
 
   words of wisdom<br>&mdash;<br>
-  <IMG SRC='http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png' style='height:15vw'>
+  <IMG SRC='http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Name-Stamp-black.png' style='height:15vw'>
 </div>
 
 </div>

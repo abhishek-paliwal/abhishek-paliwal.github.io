@@ -67,6 +67,7 @@ function randRGBA(min,max)
 
     ImageUrl2 = document.getElementById("ImageUrl2").value ;
 
+    DishNameletterSpacing = document.getElementById("DishNameletterSpacing").value ;
 
 /* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
 
@@ -76,9 +77,9 @@ varImageUrl1 = "<img src='" + ImageUrl1 +"'>" ;
 varImageUrl2 = "<img src='" + ImageUrl2 +"'>" ;
 varQuoteText = quoteText + "<br>";
 
-partRecipeName = "<div class='container' style=';font-weight: " + fontWeight + ";letter-spacing: " + alphabetTextSize + "px;font-size: " + textSize + "px; color: " + colorRGBA + "'>" + headingName + "</div>" ;
+partRecipeName = "<div class='containerDish' style='line-height: " + lineHeight + ";font-weight: " + fontWeight + ";letter-spacing: " + DishNameletterSpacing + "px;font-size: " + textSize + "px; color: " + colorRGBA + "'>" + headingName + "</div>" ;
 
-partDescription = "<div class='container' style='letter-spacing: " + alphabetTextSize + "px;font-size: " + alphabetTextSize + "vw; color: rgba(0,0,0,1);'>" + varQuoteText + "&mdash;<br><span style='color: " + colorRGBA + ";'>" + alphabetText + "</span><br>&mdash;</div>" ;
+partDescription = "<div class='container' style='line-height: " + 1.3 + ";letter-spacing: " + alphabetTextSize + "px;font-size: " + alphabetTextSize + "vw; color: rgba(0,0,0,1);'>" + varQuoteText + "&bull;&bull;&bull;<br><span style='color: " + colorRGBA + ";'>" + alphabetText + "</span><br>&bull;&bull;&bull;</div>" ;
 
 partEnd = "</div>";
 
@@ -187,9 +188,17 @@ text-align: center;
 /* text-transform: lowercase; */
 letter-spacing: 2.5px;
 color: black;
-font-family: 'Playfair Display', serif;
-font-weight: 700;
+/* font-family: 'Playfair Display', serif; */
+font-family: 'Oswald', sans-serif;
+font-weight: 400;
 font-size: 2.5vw;
+line-height: 1.5;
+}
+
+div.containerDish {
+padding: 5px;
+text-align: center;
+font-family: 'Playfair Display', serif;
 }
 
 div.footer {
@@ -231,13 +240,18 @@ font-weight: 900;
 
     <tr>
     		<td>
-          <label for="textSize">Text Size (in 'px' units)</label>
-          <input type="text" name="textSize" id="textSize" value="100">
+          <label for="textSize">Dish Name Text Size (in pixels)</label>
+          <input type="text" name="textSize" id="textSize" value="70">
         </td>
 
         <td>
           <label for="lineHeight">Line Height</label>
-          <input type="text" name="lineHeight" id="lineHeight" value="1.1">
+          <input type="text" name="lineHeight" id="lineHeight" value="1.0">
+        </td>
+
+        <td>
+          <label for="DishNameletterSpacing">Dish Name letter Spacing (in pixels)</label>
+          <input type="text" name="DishNameletterSpacing" id="DishNameletterSpacing" value="10">
         </td>
 
     </tr>
@@ -328,12 +342,12 @@ font-weight: 900;
 
 <img src="http://www.mygingergarlickitchen.com/wp-content/uploads/2016/09/recipe-Dal-Baati-Churma-anupama-paliwal-my-ginger-garlic-kitchen-8.jpg">
 
-<div class='container' style='line-height: 1.1; letter-spacing: 2.5px; font-size: 5vw; color:rgba(255,0,100,1);'>
+<div class='container' style="font-family: 'Playfair Display', serif; line-height: 1.1; letter-spacing: 2.5px; font-size: 5vw; color:rgba(255,0,100,1);">
 CAKE & COFFEE
 </div>
 
-<div class='container' style='line-height: 1.1; letter-spacing: 2.5px; font-size: 2.5vw; color:rgba(0,0,0,1);'>
-This is some description of this recipe dish which I hope you will definitely like.<br>&mdash;<br><span style="color: rgba(255,0,100,1);">www.MyGingerGarlicKitchen.com</span><br>&mdash;
+<div class='container' style='line-height: 1.3; letter-spacing: 2.5px; font-size: 2.5vw; color:rgba(0,0,0,1);'>
+This is some description of this recipe dish which I hope you will definitely like.<br>&bull;&bull;&bull;<br><span style="color: rgba(255,0,100,1);">www.MyGingerGarlicKitchen.com</span><br>&bull;&bull;&bull;
 </div>
 
 <img src="http://www.mygingergarlickitchen.com/wp-content/uploads/2016/09/recipe-Dal-Baati-Churma-anupama-paliwal-my-ginger-garlic-kitchen-6.jpg">

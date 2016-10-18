@@ -1,0 +1,354 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Abhishek | Create Pinterest Food Cover Image Card </title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script>
+function randRGBA(min,max)
+{
+/* Random RGBA color generation */
+    randnumberRed = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberGreen = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberBlue = Math.floor(Math.random()*(max-min+1)+min);
+
+    colorRGBA = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 1)";
+    colorRGBAlight = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 0.6)";
+
+/* Checking if the color code is present or not. If present, then it is chosen instead of random. */
+    colorCode = document.getElementById("colorCode").value ;
+
+    if (colorCode =="Surprise Me") {
+        colorRGBA = colorRGBA ;
+        colorRGBAlight = colorRGBAlight ;
+      } else {
+        colorRGBA = "rgba(" + colorCode + ", 1)";
+        colorRGBAlight = "rgba(" + colorCode + ", 0.8)";
+      }
+
+/* Getting the text from the form */
+    headingName = document.getElementById("headingName").value ;
+    textSize = document.getElementById("textSize").value ;
+
+    lineHeight = document.getElementById("lineHeight").value ;
+
+    fontWeight = document.getElementById("fontWeight").value ;
+
+    quoteText = document.getElementById("quoteText").value ;
+
+    logoImageUrl = document.getElementById("logoImageUrl").value ;
+            if (logoImageUrl == "ap1") {
+                logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png";
+            } else if (logoImageUrl == "ap2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Circle-fullname.png";
+            } else if (logoImageUrl == "ap3") {
+              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/6-logos-album-covers/Album-Cover-Abhishek-Paliwal-Lorez.jpg";
+            } else if (logoImageUrl == "ap4") {
+              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png";
+            } else if (logoImageUrl == "anu1") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Black-White-Fullname.png";
+            } else if (logoImageUrl == "anu2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Colored-Fullname.png";
+            } else if (logoImageUrl == "mggk1") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/5-logos-mggk/Mggk-New-Logo-Transparent-4000Px.png";
+            } else if (logoImageUrl == "ap0") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Name-Stamp-black.png";
+
+            } else {
+              logoImageUrl = logoImageUrl;
+            }
+
+    imageBorder = document.getElementById("imageBorder").value ;
+
+    alphabetText = document.getElementById("alphabetText").value ;
+
+    alphabetTextSize = document.getElementById("alphabetTextSize").value ;
+
+    ImageUrl1 = document.getElementById("ImageUrl1").value ;
+
+    ImageUrl2 = document.getElementById("ImageUrl2").value ;
+
+
+/* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
+
+part1 = "<div class='polaroid' style='font-size: " + textSize + "px; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";border: " + imageBorder + "px solid " + colorRGBA + ";'>";
+
+varImageUrl1 = "<img src='" + ImageUrl1 +"'>" ;
+varImageUrl2 = "<img src='" + ImageUrl2 +"'>" ;
+varQuoteText = quoteText + "<br>";
+
+partRecipeName = "<div class='container' style=';font-weight: " + fontWeight + ";letter-spacing: " + alphabetTextSize + "px;font-size: " + textSize + "px; color: " + colorRGBA + "'>" + headingName + "</div>" ;
+
+partDescription = "<div class='container' style='letter-spacing: " + alphabetTextSize + "px;font-size: " + alphabetTextSize + "vw; color: rgba(0,0,0,1);'>" + varQuoteText + "&mdash;<br><span style='color: " + colorRGBA + ";'>" + alphabetText + "</span><br>&mdash;</div>" ;
+
+partEnd = "</div>";
+
+partOptionalFooter = "<div class='footer'>Find more such recipes at<br><IMG SRC='http://downloads.concepro.com/dropbox-public-files/logos/5-logos-mggk/Mggk-New-Logo-Transparent-4000Px.png' style='height:15vw'></div>";
+
+document.getElementById("randcolorRGBA").innerHTML = part1 + varImageUrl1 + partRecipeName + partDescription + varImageUrl2 + partEnd + partOptionalFooter;
+
+/************ Printing out the codes for the random colors generated ********/
+document.getElementById("colorPrinting").innerHTML = "<h3 style='color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</h3>";
+
+
+
+}
+
+</script>
+
+<script src="https://use.fontawesome.com/8cd0876759.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
+
+<style type="text/css">
+
+body {
+  display:block;
+  width: 100%;
+  font-family: 'Playfair Display', serif;
+}
+
+img.logo {
+    display: block;
+    margin: auto;
+    width: 20vw;
+    padding: 5px;
+}
+
+input, textarea, select, table {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #c0c0c0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+}
+
+button, input[type=submit] {
+    width: 100%;
+    background-color: rgba(255,0,100,1);
+    color: white;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    border-radius: 100px;
+}
+
+button:hover, input[type=submit]:hover {
+    background-color: black;
+}
+
+div.myform {
+    display: block;
+    width: 90vw;
+    margin: auto;
+    border-radius: 5px;
+    border: 2px solid rgba(255,0,100,1);
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: black;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+}
+
+h1 {
+  color: rgba(255,0,100,1);
+}
+
+/* Add your custom style code below this line. Do not touch any CSS above this line. */
+
+div.polaroid {
+display: block;
+margin: auto;
+width: 800px;
+padding: 10px;
+text-align: center;
+/* text-transform: uppercase; */
+letter-spacing: 0px;
+color: black;
+font-family: 'Oswald', sans-serif;
+font-weight: 400;
+}
+
+div.container {
+padding: 5px;
+text-align: center;
+/* text-transform: lowercase; */
+letter-spacing: 2.5px;
+color: black;
+font-family: 'Playfair Display', serif;
+font-weight: 700;
+font-size: 2.5vw;
+}
+
+div.footer {
+font-size: 3em;
+padding: 10px;
+text-align: center;
+text-transform: uppercase;
+letter-spacing: 5px;
+color: black;
+font-family: 'Oswald', sans-serif;
+font-weight: 900;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img class="logo" src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png">
+<hr>
+
+<h1>Create Pinterest Food Cover Image Card</h1>
+
+<div class="myform"> <!-- floating div start -->
+<form id="myform">
+
+<label for="headingName">Name of the dish</label>
+<input type="text" name="headingName" id="headingName" value="COFFEE & CAKE">
+
+<label for="ImageUrl1">First Image URL</label>
+<input type="text" name="ImageUrl1" id="ImageUrl1" value="http://www.mygingergarlickitchen.com/wp-content/uploads/2016/09/recipe-Dal-Baati-Churma-anupama-paliwal-my-ginger-garlic-kitchen-8.jpg">
+
+<label for="ImageUrl2">Second Image URL</label>
+<input type="text" name="ImageUrl2" id="ImageUrl2" value="http://www.mygingergarlickitchen.com/wp-content/uploads/2016/09/recipe-Dal-Baati-Churma-anupama-paliwal-my-ginger-garlic-kitchen-6.jpg">
+
+
+<table border="0">
+
+    <tr>
+    		<td>
+          <label for="textSize">Text Size (in 'px' units)</label>
+          <input type="text" name="textSize" id="textSize" value="100">
+        </td>
+
+        <td>
+          <label for="lineHeight">Line Height</label>
+          <input type="text" name="lineHeight" id="lineHeight" value="1.1">
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+          <label for="fontWeight">Font Weight</label>
+             <select id="fontWeight" name="fontWeight">
+
+               <option value="300">300</option>
+               <option value="400">400</option>
+               <option value="700" selected>700</option>
+
+            </select>
+        </td>
+
+        <td>
+          <label for="imageBorder">Image border in pixels</label>
+             <select id="imageBorder" name="imageBorder">
+              <option value="0">0 px</option>
+               <option value="5">5 px</option>
+               <option value="10" selected>10 px</option>
+               <option value="20">20 px</option>
+               <option value="30">30 px</option>
+               <option value="50">50 px</option>
+             </select>
+        </td>
+
+    </tr>
+
+</table>
+
+
+<table border="0">
+
+    <tr>
+    		<td>
+          <label for="alphabetTextSize">Website (and Description) Text Size (in 'vw' units)</label>
+          <input type="text" name="alphabetTextSize" id="alphabetTextSize" value="2.5">
+        </td>
+
+        <td>
+          <label for="alphabetText">Website URL Address</label>
+          <input type="text" name="alphabetText" id="alphabetText" value="www.MyGingerGarlicKitchen.com">
+        </td>
+
+    </tr>
+</table>
+
+
+<label for="colorCode">Your Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
+<input type="text" name="colorCode" id="colorCode" value="Surprise Me">
+
+
+<label for="logoImageUrl">Logo URL</label>
+<input type="text" name="logoImageUrl" id="logoImageUrl" value="mggk1">
+
+
+<label for="quoteText">Description (or NOTES) Text</label>
+   <textarea name="quoteText" rows="5" id="quoteText" form="myform">This is some description of this recipe dish which I hope you will definitely like.</textarea>
+
+<!-- Somehow the input button below does not work. Seems like a known JS problem. So the BUTTON code outside the form is used. -->
+
+<!--
+<input type="submit" value="Submit" onclick="randRGBA(0,255);" />
+-->
+
+</form>
+
+<button type="submit" value="Submit" onclick="randRGBA(0,255);">Submit</button>
+
+</div>
+
+<hr>
+<h2>Press the button above, and your image card should appear below.</h2>
+<span id="colorPrinting"></span>
+<br><br>
+
+
+<span id="randcolorRGBA"></span>
+
+
+<br><br><hr>
+<h2>Following is an example image card.</h2>
+<br><br>
+
+<div class='polaroid' style='font-size: 5em; line-height: 1.1; font-weight:700; border: 10px solid rgba(255,0,100,1);'>
+
+<img src="http://www.mygingergarlickitchen.com/wp-content/uploads/2016/09/recipe-Dal-Baati-Churma-anupama-paliwal-my-ginger-garlic-kitchen-8.jpg">
+
+<div class='container' style='line-height: 1.1; letter-spacing: 2.5px; font-size: 5vw; color:rgba(255,0,100,1);'>
+CAKE & COFFEE
+</div>
+
+<div class='container' style='line-height: 1.1; letter-spacing: 2.5px; font-size: 2.5vw; color:rgba(0,0,0,1);'>
+This is some description of this recipe dish which I hope you will definitely like.<br>&mdash;<br><span style="color: rgba(255,0,100,1);">www.MyGingerGarlicKitchen.com</span><br>&mdash;
+</div>
+
+<img src="http://www.mygingergarlickitchen.com/wp-content/uploads/2016/09/recipe-Dal-Baati-Churma-anupama-paliwal-my-ginger-garlic-kitchen-6.jpg">
+
+</div>
+
+<div class='footer'>
+Find more such recipes at<br>
+<IMG SRC='http://downloads.concepro.com/dropbox-public-files/logos/5-logos-mggk/Mggk-New-Logo-Transparent-4000Px.png' style='height:15vw'>
+</div>
+
+
+
+<br><br><hr>
+This Webapp Is Made By <a href="http://www.AbhishekPaliwal.com">Abhishek Paliwal</a>
+
+</body>
+</html>

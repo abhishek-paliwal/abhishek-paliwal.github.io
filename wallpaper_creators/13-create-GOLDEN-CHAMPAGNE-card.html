@@ -1,0 +1,370 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Abhishek | Create Golden Champagne Card</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script>
+function randRGBA(min,max)
+{
+/* Random RGBA color generation */
+    randnumberRed = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberGreen = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberBlue = Math.floor(Math.random()*(max-min+1)+min);
+
+    colorRGBA = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 1)";
+    colorRGBAlight = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 0.6)";
+
+/* Checking if the color code is present or not. If present, then it is chosen instead of random. */
+    colorCode = document.getElementById("colorCode").value ;
+
+    if (colorCode =="Surprise Me") {
+        colorRGBA = colorRGBA ;
+        colorRGBAlight = colorRGBAlight ;
+      } else {
+        colorRGBA = "rgba(" + colorCode + ", 1)";
+        colorRGBAlight = "rgba(" + colorCode + ", 0.8)";
+      }
+
+/* Getting the text from the form */
+    headingName = document.getElementById("headingName").value ;
+
+    headingtextSize = document.getElementById("headingtextSize").value ;
+
+    headinglineHeight = document.getElementById("headinglineHeight").value ;
+
+    headingletterSpacing = document.getElementById("headingletterSpacing").value ;
+
+
+    textSize = document.getElementById("textSize").value ;
+
+    lineHeight = document.getElementById("lineHeight").value ;
+
+    fontWeight = document.getElementById("fontWeight").value ;
+
+    quoteText = document.getElementById("quoteText").value ;
+
+    logoImageUrl = document.getElementById("logoImageUrl").value ;
+            if (logoImageUrl == "ap1") {
+                logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png";
+            } else if (logoImageUrl == "ap2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Circle-fullname.png";
+            } else if (logoImageUrl == "ap3") {
+              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/6-logos-album-covers/Album-Cover-Abhishek-Paliwal-Lorez.jpg";
+            } else if (logoImageUrl == "ap4") {
+              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png";
+            } else if (logoImageUrl == "anu1") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Black-White-Fullname.png";
+            } else if (logoImageUrl == "anu2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Colored-Fullname.png";
+            } else if (logoImageUrl == "mggk1") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/5-logos-mggk/Mggk-New-Logo-Transparent-4000Px.png";
+            } else if (logoImageUrl == "ap0") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Name-Stamp-black.png";
+
+            } else {
+              logoImageUrl = logoImageUrl;
+            }
+
+    imageBorder = document.getElementById("imageBorder").value ;
+
+    letterSpacing = document.getElementById("letterSpacing").value ;
+
+    backgroundColor = document.getElementById("backgroundColor").value ;
+
+
+/* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
+
+logoImageUrl = "<IMG SRC='" + logoImageUrl + "' style='height:15vw'>" ;
+
+separator = "<br>&bull;&bull;&bull;&bull;&bull;<br>" ;
+
+part1 = "<div class='polaroid' style='border: " + imageBorder + "px solid " + colorRGBA + ";letter-spacing: " + letterSpacing + "px;line-height: " + lineHeight + ";font-size: " + textSize + "px;'>" + headingName + separator + quoteText + "<br>&mdash;<br>" + logoImageUrl + "</div>" ;
+
+part2 = "<div class='footer' style='letter-spacing: " + headingletterSpacing + "px;line-height: " + headinglineHeight + ";font-size: " + headingtextSize + "px;color: RGB(151, 124, 45); background-color: rgba(15, 27, 35,1);'>" + logoImageUrl + separator + headingName + "</div>" ;
+
+part3 = "<div class='footer' style='font-weight: " + fontWeight + ";letter-spacing: " + letterSpacing + "px;line-height: " + lineHeight + ";font-size: " + textSize + "px;color: RGB(186, 146, 67); background-color: rgba(255,255,255,1);'>" + quoteText + separator + logoImageUrl + "</div>" ;
+
+
+document.getElementById("randcolorRGBA").innerHTML = part1  + "<br><br><br><br>" + part2 + part3 ;
+
+/************ Printing out the codes for the random colors generated ********/
+document.getElementById("colorPrinting").innerHTML = "<h3 style='color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</h3>";
+
+}
+
+</script>
+
+<script src="https://use.fontawesome.com/8cd0876759.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,400i,500,600,700" rel="stylesheet">
+
+<style type="text/css">
+
+body {
+  display:block;
+  width: 100%;
+  font-family: 'Cormorant Garamond', serif;
+  background-color: rgba(42,43,48,1);
+}
+
+img.logo {
+    display: block;
+    margin: auto;
+    width: 20vw;
+    padding: 5px;
+}
+
+input, textarea, select, table {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #c0c0c0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+}
+
+button, input[type=submit] {
+    width: 100%;
+    background-color: rgba(158, 104, 45, 1);
+    color: white;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1em;
+    font-weight: 700;
+    border-radius: 100px;
+    letter-spacing: 10px;
+}
+
+button:hover, input[type=submit]:hover {
+    background-color: black;
+}
+
+div.myform {
+    display: block;
+    width: 90vw;
+    margin: auto;
+    border-radius: 5px;
+    border: 2px solid rgba(236,163,115,1);
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: black;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+}
+
+h1, h2 {
+  color: rgba(236,163,115,1);
+}
+
+/* Add your custom style code below this line. Do not touch any CSS above this line. */
+
+div.polaroid {
+display: block;
+width: 80vw;
+margin: auto;
+padding: 20px;
+text-align: center;
+background: -webkit-linear-gradient(rgba(236,163,115,1), rgba(189,126,91,0.6));
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+color: white;
+font-family: 'Cormorant Garamond', serif;
+font-weight: 400;
+font-size: 3em;
+}
+
+div.footer {
+font-size: 2em;
+padding: 15px;
+text-align: center;
+letter-spacing: 5px;
+color: white;
+font-family: 'Cormorant Garamond', serif;
+font-weight: 700;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img class="logo" src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png">
+<hr>
+
+<h1>Create Golden Champagne Card</h1>
+
+<div class="myform"> <!-- floating div start -->
+<form id="myform">
+
+<label for="headingName">Heading Text</label>
+<input type="text" name="headingName" id="headingName" value="LIFE & WISDOM">
+
+<table border="0">
+
+    <tr>
+    		<td>
+          <label for="headingtextSize">Heading Text Size (in pixels)</label>
+          <input type="text" name="headingtextSize" id="headingtextSize" value="70">
+        </td>
+
+        <td>
+          <label for="headinglineHeight">Heading Line Height</label>
+          <input type="text" name="headinglineHeight" id="headinglineHeight" value="0.9">
+        </td>
+
+        <td>
+          <label for="headingletterSpacing">Heading Letter Spacing (in pixels)</label>
+          <input type="text" name="headingletterSpacing" id="headingletterSpacing" value="5">
+        </td>
+
+    </tr>
+
+</table>
+
+<table border="0">
+
+    <tr>
+    		<td>
+          <label for="textSize">Text Size (in pixels)</label>
+          <input type="text" name="textSize" id="textSize" value="50">
+        </td>
+
+        <td>
+          <label for="lineHeight">Line Height</label>
+          <input type="text" name="lineHeight" id="lineHeight" value="1.0">
+        </td>
+
+        <td>
+          <label for="letterSpacing">Letter Spacing (in pixels)</label>
+          <input type="text" name="letterSpacing" id="letterSpacing" value="5">
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+          <label for="fontWeight">Font Weight</label>
+             <select id="fontWeight" name="fontWeight">
+
+               <option value="300" selected>300</option>
+               <option value="400">400</option>
+               <option value="500">500</option>
+               <option value="600">600</option>
+               <option value="700">700</option>
+
+            </select>
+        </td>
+
+        <td>
+          <label for="imageBorder">Image border in pixels</label>
+             <select id="imageBorder" name="imageBorder">
+              <option value="0">0 px</option>
+              <option value="2" selected>2 px</option>
+               <option value="5">5 px</option>
+               <option value="10">10 px</option>
+               <option value="20">20 px</option>
+               <option value="30">30 px</option>
+               <option value="50">50 px</option>
+             </select>
+        </td>
+
+
+        <td>
+          <label for="backgroundColor">Background Color</label>
+             <select id="backgroundColor" name="backgroundColor">
+               <option value="white" selected>White</option>
+                <option value="black">Black</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+                <option value="DeepPink">DeepPink</option>
+                <option value="orange">Orange</option>
+                <option value="lime">Lime</option>
+              </select>
+        </td>
+
+    </tr>
+
+</table>
+
+
+
+<label for="colorCode">Your Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
+<input type="text" name="colorCode" id="colorCode" value="Surprise Me">
+
+
+<label for="logoImageUrl">Logo URL</label>
+<input type="text" name="logoImageUrl" id="logoImageUrl" value="ap0">
+
+
+<label for="quoteText">Quote Text</label>
+   <textarea name="quoteText" rows="5" id="quoteText" form="myform">It is during our darkest moments that we must focus to see the light.</textarea>
+
+<!-- Somehow the input button below does not work. Seems like a known JS problem. So the BUTTON code outside the form is used. -->
+
+<!--
+<input type="submit" value="Submit" onclick="randRGBA(0,255);" />
+-->
+
+</form>
+
+<button type="submit" value="Submit" onclick="randRGBA(0,255);">SUBMIT</button>
+
+</div>
+
+<hr>
+<h2>Press the button above, and your image card should appear below.</h2>
+<span id="colorPrinting"></span>
+<br><br>
+
+
+<span id="randcolorRGBA"></span>
+
+
+<br><br><hr>
+<h2>Following is an example image card.</h2>
+<br><br>
+
+<div class='polaroid'>
+It is during our darkest moments that we must focus to see the light.
+</div>
+
+<div class='footer'>
+<IMG SRC='http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Name-Stamp-black.png' style='height:15vw'>
+</div>
+
+
+<HR>
+
+<div class='footer' style="color: RGB(151, 124, 45); background-color: rgba(15, 27, 35,1);">
+<IMG SRC='http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Name-Stamp-black.png' style='height:15vw'>
+<br>&bull;&bull;&bull;&bull;&bull;<br>
+This is the heading
+</div>
+
+
+<div class='footer' style="color: RGB(186, 146, 67); background-color: rgba(255,255,255,1);">
+  IT IS DURING OUR DARKEST MOMENTS THAT WE MUST FOCUS TO SEE THE LIGHT.
+<br>&bull;&bull;&bull;&bull;&bull;<br>
+<IMG SRC='http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Name-Stamp-black.png' style='height:15vw'>
+</div>
+
+
+
+<br><br><hr>
+This Webapp Is Made By <a href="http://www.AbhishekPaliwal.com">Abhishek Paliwal</a>
+
+</body>
+</html>

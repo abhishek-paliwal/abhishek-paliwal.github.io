@@ -80,9 +80,9 @@ separator = "<br>&bull;&bull;&bull;&bull;&bull;<br>" ;
 
 part1 = "<div class='polaroid' style='border: " + imageBorder + "px solid " + colorRGBA + ";letter-spacing: " + letterSpacing + "px;line-height: " + lineHeight + ";font-size: " + textSize + "em;'>" + headingName + separator + quoteText + "<br>&mdash;<br>" + logoImageUrl + "</div>" ;
 
-part2 = "<div class='footer' style='letter-spacing: " + headingletterSpacing + "px;line-height: " + headinglineHeight + ";font-size: " + headingtextSize + "em;color: RGB(151, 124, 45); background-color: rgba(15, 27, 35,1);'>" + logoImageUrl + separator + headingName + "</div>" ;
+part2 = "<div class='footer' style='letter-spacing: " + headingletterSpacing + "px;line-height: " + headinglineHeight + ";font-size: " + headingtextSize + "em;color: RGB(151, 124, 45); background-color: rgba(15, 27, 35,1);'>" + "<br>" + logoImageUrl + separator + headingName + "</div>" ;
 
-part3 = "<div class='footer' style='font-weight: " + fontWeight + ";letter-spacing: " + letterSpacing + "px;line-height: " + lineHeight + ";font-size: " + textSize + "em;color: RGB(186, 146, 67); background-color: rgba(255,255,255,1);'>" + quoteText + separator + logoImageUrl + "</div>" ;
+part3 = "<div class='footer' style='font-weight: " + fontWeight + ";letter-spacing: " + letterSpacing + "px;line-height: " + lineHeight + ";font-size: " + textSize + "em;color: RGB(186, 146, 67); background-color: rgba(255,255,255,1);'>" + quoteText + separator + logoImageUrl + "<br>&nbsp;" + "</div>" ;
 
 
 document.getElementById("randcolorRGBA").innerHTML = part1  + "<br><br><br><br>" + part2 + part3 ;

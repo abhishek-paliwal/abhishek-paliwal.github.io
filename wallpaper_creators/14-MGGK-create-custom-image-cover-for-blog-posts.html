@@ -1,0 +1,358 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>MGGK | Create Custom Image Cover For Blog Posts </title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script>
+function randRGBA(min,max)
+{
+/* Random RGBA color generation */
+    randnumberRed = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberGreen = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberBlue = Math.floor(Math.random()*(max-min+1)+min);
+
+    colorRGBA = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 1)";
+    colorRGBAlight = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 0.8)";
+
+/* Checking if the color code is present or not. If present, then it is chosen instead of random. */
+    colorCode = document.getElementById("colorCode").value ;
+
+    if (colorCode =="Surprise Me") {
+        colorRGBA = colorRGBA ;
+        colorRGBAlight = colorRGBAlight ;
+      } else {
+        colorRGBA = "rgba(" + colorCode + ", 1)";
+        colorRGBAlight = "rgba(" + colorCode + ", 0.8)";
+      }
+
+/* Getting the text from the form */
+    headingName = document.getElementById("headingName").value ;
+
+    textSize = document.getElementById("textSize").value ;
+
+    lineHeight = document.getElementById("lineHeight").value ;
+
+    fontWeight = document.getElementById("fontWeight").value ;
+
+    logoImageUrl = document.getElementById("logoImageUrl").value ;
+            if (logoImageUrl == "ap1") {
+                logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png";
+            } else if (logoImageUrl == "ap2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Circle-fullname.png";
+            } else if (logoImageUrl == "ap3") {
+              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/6-logos-album-covers/Album-Cover-Abhishek-Paliwal-Lorez.jpg";
+            } else if (logoImageUrl == "ap4") {
+              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png";
+            } else if (logoImageUrl == "anu1") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Black-White-Fullname.png";
+            } else if (logoImageUrl == "anu2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Colored-Fullname.png";
+            } else if (logoImageUrl == "mggk1") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/5-logos-mggk/Mggk-New-Logo-Transparent-4000Px.png";
+            } else if (logoImageUrl == "ap0") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Name-Stamp-black.png";
+
+            } else {
+              logoImageUrl = logoImageUrl;
+            }
+
+
+    imageBorder = document.getElementById("imageBorder").value ;
+
+    ImageUrl1 = document.getElementById("ImageUrl1").value ;
+
+    letterSpacing = document.getElementById("letterSpacing").value ;
+
+    fontColor = document.getElementById("fontColor").value ;
+
+
+/* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
+
+part1dark = "<div class='module' style='background: url(" + ImageUrl1 + ");border: " + imageBorder + "px solid " + colorRGBA + ";'>";
+
+part1light = "<div class='module opp' style='background: url(" + ImageUrl1 + ");border: " + imageBorder + "px solid " + colorRGBA + ";'>";
+
+part2 = "<h3 style='background-color: " + colorRGBAlight + ";color: " + fontColor + ";font-size: " + textSize + "px; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";letter-spacing: " + letterSpacing + "px;'>" ;
+part2Nocolor = "<h3 style='font-size: " + textSize + "px; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";letter-spacing: " + letterSpacing + "px;'>" ;
+
+icontop = "<i class='material-icons md-size'>favorite</i><br><br>";
+logoImageUrlFinal = "<br>&mdash;<br><IMG SRC='" + logoImageUrl + "' style='height:120px'>";
+
+partEnd = "</h3></div>";
+
+document.getElementById("randcolorRGBAdark").innerHTML = part1dark + part2 + icontop + headingName + logoImageUrlFinal + partEnd ;
+document.getElementById("randcolorRGBAdarkDefault").innerHTML = part1dark + part2Nocolor + icontop + headingName + logoImageUrlFinal + partEnd ;
+
+document.getElementById("randcolorRGBAlight").innerHTML = part1light + part2 + icontop + headingName + logoImageUrlFinal + partEnd ;
+document.getElementById("randcolorRGBAlightDefault").innerHTML = part1light + part2Nocolor + icontop + headingName + logoImageUrlFinal + partEnd ;
+
+
+/************ Printing out the codes for the random colors generated ********/
+document.getElementById("colorPrinting").innerHTML = "<h2 style='color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</h2>";
+
+}
+
+</script>
+
+<script src="https://use.fontawesome.com/8cd0876759.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<style type="text/css">
+
+body {
+  display:block;
+  width: 95%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+img.logo {
+    display: block;
+    margin: auto;
+    width: 20vw;
+    padding: 5px;
+}
+
+input, textarea, select, table {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #c0c0c0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+button, input[type=submit] {
+    width: 100%;
+    background-color: rgba(255,0,100,1);
+    color: white;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+   font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    border-radius: 100px;
+}
+
+button:hover, input[type=submit]:hover {
+    background-color: black;
+}
+
+div.myform {
+    display: block;
+    width: 90vw;
+    margin: auto;
+    border-radius: 5px;
+    border: 2px solid rgba(255,0,100,1);
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+h1 {
+  color: rgba(255,0,100,1);
+}
+
+/* Add your custom style code below this line. Do not touch any CSS above this line. */
+
+.module {
+            display: block;
+            width: 800px;
+            height: 1200px;
+            background: url(http://downloads.concepro.com/30-Free-Polygonal-Low-Poly-Textures/low-poly-texture-20.jpg);
+            font-size: 80px;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            position: relative;
+            display:block;
+            width: 500px; /** 500 + 120 (left margin) + 120 (right margin) + 30 (left padding)+ 30 (right padding) = 800 = total DIV width **/
+            /* height: 1000px; */
+            left: 120px;
+            top: 120px;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 30px;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            line-height:1;
+            vertical-align: middle;
+            font-weight: 700;
+        }
+
+        .opp h3 {
+            background: rgba(255, 255, 255, 0.75);
+            color: black;
+            vertical-align: middle;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        /* Rules for sizing the icon. */
+
+        .material-icons.md-size {
+            font-size: 90px;
+            color: rgba(255, 0, 100, 1);
+        }
+
+
+</style>
+
+</head>
+
+<body>
+
+<img class="logo" src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png">
+<hr>
+
+<h1>Create Custom Image Cover For Blog Posts (800 &times; 1200 px)</h1>
+
+<div class="myform"> <!-- floating div start -->
+<form id="myform">
+
+<label for="headingName">Big Title goes here</label>
+<input type="text" name="headingName" id="headingName" value="100<br>best Sweets & Snacks Of All Time">
+
+<label for="ImageUrl1">First Image URL (<a href="http://downloads.concepro.com/30-Free-Polygonal-Low-Poly-Textures/" target="_blank">List of Polygonal Backgrounds URLs</a>)</label>
+<input type="text" name="ImageUrl1" id="ImageUrl1" value="http://www.mygingergarlickitchen.com/wp-content/uploads/2016/10/recipes-Butternut-Spaghetti-Squash-Pineapple-Bean-Boats-anupama-paliwal-my-ginger-garlic-kitchen-1.jpg">
+
+
+<table border="0">
+
+    <tr>
+    		<td>
+          <label for="textSize">Text Size (in pixels)</label>
+          <input type="text" name="textSize" id="textSize" value="65">
+        </td>
+
+        <td>
+          <label for="lineHeight">Line Height</label>
+          <input type="text" name="lineHeight" id="lineHeight" value="1.0">
+        </td>
+
+        <td>
+          <label for="letterSpacing">Letter Spacing (in pixels)</label>
+          <input type="text" name="letterSpacing" id="letterSpacing" value="10">
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+          <label for="fontWeight">Font Weight</label>
+             <select id="fontWeight" name="fontWeight">
+               <option value="400">400</option>
+               <option value="700" selected>700</option>
+               <option value="900">900</option>
+
+            </select>
+        </td>
+
+        <td>
+          <label for="imageBorder">Image border in pixels</label>
+             <select id="imageBorder" name="imageBorder">
+              <option value="0" selected>0 px</option>
+               <option value="5">5 px</option>
+               <option value="10">10 px</option>
+               <option value="20">20 px</option>
+               <option value="30">30 px</option>
+               <option value="50">50 px</option>
+             </select>
+        </td>
+
+
+        <td>
+          <label for="fontColor">Font Color</label>
+             <select id="fontColor" name="fontColor">
+               <option value="white" selected>White</option>
+                <option value="black">Black</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+                <option value="DeepPink">DeepPink</option>
+                <option value="orange">Orange</option>
+                <option value="lime">Lime</option>
+              </select>
+        </td>
+
+    </tr>
+
+</table>
+
+
+<label for="colorCode">Your Background Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
+<input type="text" name="colorCode" id="colorCode" value="Surprise Me">
+
+
+<label for="logoImageUrl">Logo URL</label>
+<input type="text" name="logoImageUrl" id="logoImageUrl" value="mggk1">
+
+
+<!-- Somehow the input button below does not work. Seems like a known JS problem. So the BUTTON code outside the form is used. -->
+
+<!--
+<input type="submit" value="Submit" onclick="randRGBA(0,255);" />
+-->
+
+</form>
+
+<button type="submit" value="Submit" onclick="randRGBA(0,255);">Submit</button>
+
+</div>
+
+<hr>
+<h2>Press the button above, and <span style="color: deeppink;">4 VERSIONS IN 2 DIFFERENT FONTS</span> of your image card should appear below.</h2>
+<span id="colorPrinting"></span>
+<br>
+
+
+<span id="randcolorRGBAlight"></span>
+<br>
+<span id="randcolorRGBAlightDefault"></span>
+<br>
+<span id="randcolorRGBAdark"></span>
+<br>
+<span id="randcolorRGBAdarkDefault"></span>
+
+
+<br><br><hr>
+<h2>Following are examples of custom image card.</h2>
+<br>
+
+<div class="module">
+    <h3><i class="material-icons md-size">favorite</i><br><br>
+    100<br>best recipes of all time<br><br>
+    <i class="material-icons md-size">linear_scale</i></h3>
+</div>
+
+<br>
+
+<div class="module opp">
+    <h3><i class="material-icons md-size">favorite</i><br><br>
+    50<br>Best recipes of all time<br><br>
+    <i class="material-icons md-size">linear_scale</i></h3>
+</div>
+
+
+
+<br><br><hr>
+This Webapp Is Made By <a href="http://www.AbhishekPaliwal.com">Abhishek Paliwal</a>
+
+</body>
+</html>

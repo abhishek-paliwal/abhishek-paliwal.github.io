@@ -25,11 +25,20 @@ function randRGBA(min,max)
 
     textSize = document.getElementById("textSize").value ;
 
-    quoteText = document.getElementById("quoteText").value ;
+    webAddress = document.getElementById("webAddress").value ;
 
-    endlogo = "<span class='bottom'><img class='footer' src='http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Favicon-Abhishek-Paliwal-Website.png'>www.AbhishekPaliwal.com<span>";
+    quoteText = document.getElementById("quoteText").value ;
+        quoteText = "&#10077;" + quoteText + "&#10078;";
+
+
+    logoSize = document.getElementById("logoSize").value ;
+
+    logoImageUrl = document.getElementById("logoImageUrl").value ;
+        endlogo = "<span class='bottom'><img class='footer' src='" + logoImageUrl + "' style='width:" + logoSize + ";'>" + webAddress + "<span>";
+
 
     imageNumber = Math.floor((Math.random() * 46) + 1);
+
     divgradient = "background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.4)),url(\"http://downloads.concepro.com/30-Free-Polygonal-Low-Poly-Textures/low-poly-texture-" + imageNumber + ".jpg\")" ;
 
 /* ******** Printing the formmated text to an ID in the HTML page ***** */
@@ -116,11 +125,11 @@ img {
 img.footer {
     /* display: block; */
     margin: auto;
-    width: 40px;
+  /*  width: 20vw; */
     padding: 5px;
 }
 
-#myform, #headingName, #textSize, #fromName, #toName, #logoImageUrl, #quoteText {
+#myform, #headingName, #textSize, #fromName, #toName, #logoImageUrl, #quoteText, #webAddress, #logoSize {
   font-size: 20px;
   color: blue;
 }
@@ -156,12 +165,16 @@ button {
   <form id="myform">
 * HEADING *<br><input type="text" name="message" id="headingName" size="50" value="A quote by abhishek Paliwal">
   <br><br>* TEXT SIZE (in 'rem' units)*<br><input type="text" name="message" id="textSize" value="1.7">
-  <br><br>* LOGO URL *<br><input type="text" name="message" size="50" id="logoImageUrl" value="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png">
+
+  <br><br>* LOGO URL *<br><input type="text" name="message" size="50" id="logoImageUrl" value="http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/Concepro-Shadow.png">
+  <br><br>* LOGO SIZE (in 'VW' units)*<br><input type="text" name="message" id="logoSize" value="20vw">
+
+  <br><br>* Website Address *<br><input type="text" name="message" size="50" id="webAddress" value="www.concepro.com">
 
   </form>
 
   <br>* QUOTE TEXT *<br>
-  <textarea name="comment" rows="10" cols="50" id="quoteText" form="myform">&ldquo; If you wish to achieve worthwhile things in your personal and career life, you must become a worthwhile person in your own self development. &rdquo;</textarea>
+  <textarea name="comment" rows="10" cols="40" id="quoteText" form="myform">If you wish to achieve worthwhile things in your personal and career life, you must become a worthwhile person in your own self development.</textarea>
 
   <br>
   <!-- <input type="submit" onclick="randRGBA(0,255);"><br/> -->

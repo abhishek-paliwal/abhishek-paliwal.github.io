@@ -51,5 +51,7 @@ document.getElementById("randcolorRGBA").innerHTML = "<div class='pali' style=\"
 
 document.getElementById("randcolorRGBAtext").innerHTML = "<div class='pali' style=\"font-size:" + textSize + "px ;color:" + colorRGBA + ";\">" + greetingType + "<p class='dark'>" + headingName + "</p>" + rulerTop + quoteText + rulerBottom + "<p class='dark'>" + footerText + "</p>" + logoImageUrl + "</div>";
 
+document.getElementById("randcolorRGBAtextBorder").innerHTML = "<div class='pali' style='border: 10px double " + colorRGBA + ";font-size:" + textSize + "px ;color:" + colorRGBA + ";'>" + greetingType + "<p class='dark'>" + headingName + "</p>" + rulerTop + quoteText + rulerBottom + "<p class='dark'>" + footerText + "</p>" + logoImageUrl + "</div>";
+
 
 }

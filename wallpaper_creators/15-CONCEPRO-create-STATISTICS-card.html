@@ -103,13 +103,30 @@ partHeading = "<div class='container' style='padding-top: 0px; padding-bottom: 0
 
 partDescription = "<div class='container' style='padding-top: 0px; font-size: " + textSize + "em; line-height: " + lineHeight + ";'>" + quoteText + "</div>" ;
 
-
 partlogo = "<div class='footer' style='color:" + colorRGBA + ";'>" + "&bull;&bull;&bull;&bull;&bull;&bull;&bull;<br>" + titleName + "<br><br><IMG SRC='" + logoImageUrl +"' style='height:15vw'></div>";
 
 partEnd = "</div>";
 
-
 document.getElementById("randcolorRGBA").innerHTML = part1 + partIcons + partHeading + partDescription + partlogo + partEnd ;
+
+
+/************************ STATS with colored background **************/
+          totalIcons = totalIcons1 + "<span style='color: " + "black" + ";'>" + totalIcons2 + "</span>" ;
+
+part1A = "<div class='polaroid' style='background-color:" + colorRGBA + "; border: 15px solid " + colorRGBA + ";'>";
+
+partIconsA = "<div class='container' style='text-align: center; color: " + "white" + ";padding-bottom: 0px; letter-spacing: " + letterSpacing + ";font-size: " + textSize + "em; line-height: " + lineHeight + ";'>"  + totalIcons + "</div>" ;
+
+partHeadingA = "<div class='container' style='padding-top: 0px; padding-bottom: 0px; color: " + "white" + ";font-size: " + headingTextSize + "em; font-weight: " + fontWeight + ";'>" + headingName + "</div>" ;
+
+partDescriptionA = "<div class='container' style='padding-top: 0px; font-size: " + textSize + "em; line-height: " + lineHeight + ";'>" + quoteText + "</div>" ;
+
+partlogoA = "<div class='footer' style='color:" + "white" + ";'>" + "&bull;&bull;&bull;&bull;&bull;&bull;&bull;<br>" + titleName + "<br><br><IMG SRC='" + logoImageUrl +"' style='height:15vw'></div>";
+
+partEndA = "</div>";
+
+document.getElementById("randcolorRGBAcolored").innerHTML = part1A + partIconsA + partHeadingA + partDescriptionA + partlogoA + partEndA ;
+
 
 }
 
@@ -229,7 +246,7 @@ font-weight: 700;
 <table border="0">
 
   <label for="titleName">TITLE OF THE STATISTICS</label>
-  <input type="text" name="titleName" id="titleName" value="MARKETING STATISTICS<br>">
+  <input type="text" name="titleName" id="titleName" value="MARKETING STATISTICS">
 
 <tr>
     <td>
@@ -329,6 +346,9 @@ font-weight: 700;
 
 
 <span id="randcolorRGBA"></span>
+
+<br><br><hr>
+<span id="randcolorRGBAcolored"></span>
 
 
 <br><br><hr>

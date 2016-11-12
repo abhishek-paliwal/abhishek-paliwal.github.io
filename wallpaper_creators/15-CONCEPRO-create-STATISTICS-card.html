@@ -127,6 +127,24 @@ partEndA = "</div>";
 
 document.getElementById("randcolorRGBAcolored").innerHTML = part1A + partIconsA + partHeadingA + partDescriptionA + partlogoA + partEndA ;
 
+/************************ STATS with DARK background **************/
+          totalIcons = totalIcons1 + "<span style='color: " + "white" + ";'>" + totalIcons2 + "</span>" ;
+
+part1B = "<div class='polaroid' style='background-color:" + "rgba(40,40,40,1)" + "; border: 15px solid " + "rgba(40,40,40,1)" + ";'>";
+
+partIconsB = "<div class='container' style='text-align: center; color: " + colorRGBA + ";padding-bottom: 0px; letter-spacing: " + letterSpacing + ";font-size: " + textSize + "em; line-height: " + lineHeight + ";'>"  + totalIcons + "</div>" ;
+
+partHeadingB = "<div class='container' style='padding-top: 0px; padding-bottom: 0px; color: " + colorRGBA + ";font-size: " + headingTextSize + "em; font-weight: " + fontWeight + ";'>" + headingName + "</div>" ;
+
+partDescriptionB = "<div class='container' style='color: " + "white" + ";padding-top: 0px; font-size: " + textSize + "em; line-height: " + lineHeight + ";'>" + quoteText + "</div>" ;
+
+partlogoB = "<div class='footer' style='color:" + colorRGBA + ";'>" + "&bull;&bull;&bull;&bull;&bull;&bull;&bull;<br>" + titleName + "<br><br><IMG SRC='" + logoImageUrl +"' style='height:15vw'></div>";
+
+partEndB = "</div>";
+
+document.getElementById("randcolorRGBAdark").innerHTML = part1B + partIconsB + partHeadingB + partDescriptionB + partlogoB + partEndB ;
+
+
 
 }
 
@@ -341,14 +359,17 @@ font-weight: 700;
 </div>
 
 <hr>
-<h2>Press the button above, and your image card should appear below.</h2>
+<h2>Press the button above, and 3 different image card versions should appear below.</h2>
 <br><br>
 
 
-<span id="randcolorRGBA"></span>
+<span id="randcolorRGBAdark"></span>
 
 <br><br><hr>
 <span id="randcolorRGBAcolored"></span>
+
+<br><br><hr>
+<span id="randcolorRGBA"></span>
 
 
 <br><br><hr>

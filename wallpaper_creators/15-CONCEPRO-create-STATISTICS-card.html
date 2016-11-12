@@ -1,0 +1,358 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Abhishek | Create Statistics Card </title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+<script src="https://use.fonticons.com/ffe176a3.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,900" rel="stylesheet">
+
+<script>
+function randRGBA(min,max)
+{
+/* Random RGBA color generation */
+    randnumberRed = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberGreen = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberBlue = Math.floor(Math.random()*(max-min+1)+min);
+
+    colorRGBA = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 1)";
+    colorRGBAlight = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 0.25)";
+
+/* Checking if the color code is present or not. If present, then it is chosen instead of random. */
+    colorCode = document.getElementById("colorCode").value ;
+
+    if (colorCode =="Surprise Me") {
+        colorRGBA = colorRGBA ;
+        colorRGBAlight = colorRGBAlight ;
+      } else {
+        colorRGBA = "rgba(" + colorCode + ", 1)";
+        colorRGBAlight = "rgba(" + colorCode + ", 0.25)";
+      }
+
+/* Getting the text from the form */
+    titleName = document.getElementById("titleName").value ;
+
+    headingName = document.getElementById("headingName").value ;
+
+    textSize = document.getElementById("textSize").value ;
+
+    headingTextSize = document.getElementById("headingTextSize").value ;
+
+    lineHeight = document.getElementById("lineHeight").value ;
+
+    fontWeight = document.getElementById("fontWeight").value ;
+
+    letterSpacing = document.getElementById("letterSpacing").value ;
+
+    quoteText = document.getElementById("quoteText").value ;
+
+    logoImageUrl = document.getElementById("logoImageUrl").value ;
+
+            if (logoImageUrl == "ap0") {
+                logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Name-Stamp-black.png";
+            } else if (logoImageUrl == "ap1") {
+                logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png";
+            } else if (logoImageUrl == "ap2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Circle-fullname.png";
+            } else if (logoImageUrl == "ap3") {
+              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/6-logos-album-covers/Album-Cover-Abhishek-Paliwal-Lorez.jpg";
+            } else if (logoImageUrl == "ap4") {
+              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png";
+            } else if (logoImageUrl == "anu1") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Black-White-Fullname.png";
+            } else if (logoImageUrl == "anu2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Colored-Fullname.png";
+            } else if (logoImageUrl == "concepro1") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/Concepro-Shadow.png";
+            } else if (logoImageUrl == "concepro2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/201406-Concepro-New-Logo-With-Subtitle.png";
+            } else if (logoImageUrl == "concepro3") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/201408-Concepro-New-Logo-With-White-Blue-Background.png";
+            } else {
+              logoImageUrl = logoImageUrl;
+            }
+
+    iconCategory = document.getElementById("iconCategory").value ;
+        /* iconCategory = '<i class=\"fa ' + iconCategory + '\"></i>'; */
+
+    iconCategoryRepeat = document.getElementById("iconCategoryRepeat").value ;
+
+    BlackIconRepeat = document.getElementById("BlackIconRepeat").value ;
+
+          totalIcons1 = ""; /* All the dark-colored icons added one after another. */
+          i = 0 ;
+          for (i = 1; i <= iconCategoryRepeat; i++) {
+              totalIcons1 += iconCategory ;
+          }
+
+          totalIcons2 = ""; /* All the light-colored icons added one after another. */
+          j = 0 ;
+          for (j = 1 ; j <= BlackIconRepeat; j++) {
+              totalIcons2 += iconCategory ;
+          }
+
+          totalIcons = totalIcons1 + "<span style='color: " + colorRGBAlight + ";'>" + totalIcons2 + "</span>" ;
+
+/* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
+
+part1 = "<div class='polaroid' style='background-color:" + "white" + "; border: 15px solid " + colorRGBA + ";'>";
+
+partIcons = "<div class='container' style='text-align: center; color: " + colorRGBA + ";padding-bottom: 0px; letter-spacing: " + letterSpacing + ";font-size: " + textSize + "em; line-height: " + lineHeight + ";'>"  + totalIcons + "</div>" ;
+
+partHeading = "<div class='container' style='padding-top: 0px; padding-bottom: 0px; color: " + colorRGBA + ";font-size: " + headingTextSize + "em; font-weight: " + fontWeight + ";'>" + headingName + "</div>" ;
+
+partDescription = "<div class='container' style='padding-top: 0px; font-size: " + textSize + "em; line-height: " + lineHeight + ";'>" + quoteText + "</div>" ;
+
+
+partlogo = "<div class='footer' style='color:" + colorRGBA + ";'>" + "&bull;&bull;&bull;&bull;&bull;&bull;&bull;<br>" + titleName + "<br><br><IMG SRC='" + logoImageUrl +"' style='height:15vw'></div>";
+
+partEnd = "</div>";
+
+
+document.getElementById("randcolorRGBA").innerHTML = part1 + partIcons + partHeading + partDescription + partlogo + partEnd ;
+
+}
+
+</script>
+
+<style type="text/css">
+
+body {
+  display:block;
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+}
+
+img.logo {
+    display: block;
+    margin: auto;
+    width: 20vw;
+    padding: 5px;
+}
+
+input, textarea, select, table {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #c0c0c0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+button, input[type=submit] {
+    width: 100%;
+    background-color: #ff8700;
+    color: white;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+button:hover, input[type=submit]:hover {
+    background-color: black;
+}
+
+div.myform {
+    display: block;
+    width: 90vw;
+    margin: auto;
+    border-radius: 5px;
+    border: 2px solid orange;
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+h1 {
+  color: orange;
+}
+
+/* Add your custom style code below this line. Do not touch any CSS above this line. */
+
+div.polaroid {
+display: block;
+margin: auto;
+width: 90vw;
+}
+
+div.container {
+padding: 20px;
+text-align: center;
+/* text-transform: capitalize; */
+letter-spacing: 0px;
+color: black;
+font-family: 'Raleway', sans-serif;
+font-weight: 400;
+text-align: center;
+}
+
+div.footer {
+font-size:1em;
+padding-top: 5px;
+padding-right: 10px;
+padding-left: 10px;
+padding-bottom: 20px;
+text-align: center;
+text-transform: uppercase;
+letter-spacing: 10px;
+color: white;
+font-family: 'Times', serif;
+font-weight: 700;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img class="logo" src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png">
+<hr>
+
+<h1>Create Your Statistics Image Card</h1>
+
+<div class="myform"> <!-- floating div start -->
+<form id="myform">
+
+<table border="0">
+
+  <label for="titleName">TITLE OF THE STATISTICS</label>
+  <input type="text" name="titleName" id="titleName" value="MARKETING STATISTICS<br>">
+
+<tr>
+    <td>
+    <label for="headingName">Heading Text</label>
+    <input type="text" name="headingName" id="headingName" value="7 out of 20">
+</td>
+
+    <td>
+      <label for="headingTextSize">Heading Text Size (in 'em' units)</label>
+      <input type="text" name="headingtextSize" id="headingTextSize" value="7">
+    </td>
+  </tr>
+
+</table>
+
+<table border="0">
+
+    <tr>
+    		<td>
+          <label for="textSize">Description Text Size (in 'em' units)</label>
+          <input type="text" name="textSize" id="textSize" value="4.0">
+        </td>
+
+        <td>
+          <label for="lineHeight">Line Height</label>
+          <input type="text" name="lineHeight" id="lineHeight" value="1.1">
+        </td>
+
+        <td>
+          <label for="letterSpacing">Icon + Letter Spacing</label>
+          <input type="text" name="letterSpacing" id="letterSpacing" value="10px">
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+          <label for="fontWeight">Font Weight</label>
+             <select id="fontWeight" name="fontWeight">
+               <option value="100">100</option>
+               <option value="200">200</option>
+               <option value="300">300</option>
+               <option value="400">400</option>
+               <option value="500">500</option>
+               <option value="600">600</option>
+               <option value="700">700</option>
+               <option value="800">800</option>
+               <option value="900" selected>900</option>
+            </select>
+        </td>
+
+        <td>
+          <label for="iconCategory">Font Awesome Icon Code Name (Find here: <a href="http://fontawesome.io/cheatsheet/">FA-CheatSheet)</a></label>
+             <input type="text" name="iconCategory" id="iconCategory" value="<i class='fa fa-female'></i>">
+        </td>
+
+
+        <td>
+          <label for="iconCategoryRepeat">Icon Repeat Times</label>
+             <input type="text" name="iconCategoryRepeat" id="iconCategoryRepeat" value="7">
+        </td>
+
+    </tr>
+
+</table>
+
+<label for="BlackIconRepeat">Black Icon Repeat Times</label>
+<input type="text" name="BlackIconRepeat" id="BlackIconRepeat" value="13">
+
+
+<label for="colorCode">Your Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
+<input type="text" name="colorCode" id="colorCode" value="Surprise Me">
+
+
+<label for="logoImageUrl">Logo URL</label>
+<input type="text" name="logoImageUrl" id="logoImageUrl" value="concepro3">
+
+
+<label for="quoteText">Quote Text</label>
+   <textarea name="quoteText" rows="3" id="quoteText" form="myform">people use internet daily in cities.</textarea>
+
+<!-- Somehow the input button below does not work. Seems like a known JS problem. So the BUTTON code outside the form is used. -->
+
+<!--
+<input type="submit" value="Submit" onclick="randRGBA(0,255);" />
+-->
+
+</form>
+
+<button type="submit" value="Submit" onclick="randRGBA(0,255);">Submit</button>
+
+</div>
+
+<hr>
+<h2>Press the button above, and your image card should appear below.</h2>
+<br><br>
+
+
+<span id="randcolorRGBA"></span>
+
+
+<br><br><hr>
+<h2>Below is an example of how it should look like after rendering.</h2>
+<br><br>
+
+<div class="polaroid" style="background-color:white; border: 15px solid rgba(234, 40, 200, 1);">
+
+  <div class="container" style="text-align: center; color: rgba(234, 40, 200, 1);padding-bottom: 0px; letter-spacing: 10px;font-size: 4.0em; line-height: 1.1;">
+    <i class="fa fa-female"></i><i class="fa fa-female"></i><i class="fa fa-female"></i><i class="fa fa-female"></i><i class="fa fa-female"></i><i class="fa fa-female"></i><i class="fa fa-female"></i>
+
+    <span style="color: rgba(234, 40, 200, 0.25);"><i class="fa fa-female"></i><i class="fa fa-female"></i><i class="fa fa-female"></i><i class="fa fa-female"></i><i class="fa fa-female"></i><i class="fa fa-female"></i><i class="fa fa-female"></i>
+      <i class="fa fa-female"></i><i class="fa fa-female"></i><i class="fa fa-female"></i><i class="fa fa-female"></i><i class="fa fa-female"></i><i class="fa fa-female"></i></span>
+  </div>
+
+  <div class="container" style="padding-top: 0px; padding-bottom: 0px; color: rgba(234, 40, 200, 1);font-size: 7em; font-weight: 900;">7 out of 20</div><div class="container" style="padding-top: 0px; font-size: 4.0em; line-height: 1.1;">people use internet daily in cities.</div>
+
+  <div class="footer" style="color:rgba(234, 40, 200, 1);">MARKETING STATISTICS<br>•••••••<br><img src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Name-Stamp-black.png" style="height:15vw"></div></div>
+
+
+
+
+<br><br><hr>
+This Webapp Is Made By <a href="http://www.AbhishekPaliwal.com">Abhishek Paliwal</a>
+
+</body>
+</html>

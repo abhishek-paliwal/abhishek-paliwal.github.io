@@ -75,7 +75,9 @@ part1light = "<div class='module opp' style='background: url(" + ImageUrl1 + ");
 part2 = "<h3 style='background-color: " + colorRGBAlight + ";color: " + fontColor + ";font-size: " + textSize + "px; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";letter-spacing: " + letterSpacing + "px;'>" ;
 part2Nocolor = "<h3 style='font-size: " + textSize + "px; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";letter-spacing: " + letterSpacing + "px;'>" ;
 
-icontop = "<i class='material-icons md-size'>favorite</i><br><br>";
+icontop = document.getElementById("icontop").value ;
+      icontop = "<i class='material-icons md-size'>" + icontop + "</i><br><br>";
+
 logoImageUrlFinal = "<br>&mdash;<br><IMG SRC='" + logoImageUrl + "' style='height:120px'>";
 
 partEnd = "</h3></div>";
@@ -305,10 +307,22 @@ h1 {
 
 </table>
 
+<table border="0">
 
+    <tr>
+    		<td>
 <label for="colorCode">Your Background Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
 <input type="text" name="colorCode" id="colorCode" value="Surprise Me">
+      </td>
 
+      <td>
+<label for="icontop">Font Awesome Icon (<a href="http://fontawesome.io/cheatsheet/">Full List here</a>)</label>
+<input type="text" name="icontop" id="icontop" value="favorite">
+    </td>
+
+    </tr>
+
+</table>
 
 <label for="logoImageUrl">Logo URL</label>
 <input type="text" name="logoImageUrl" id="logoImageUrl" value="mggk1">

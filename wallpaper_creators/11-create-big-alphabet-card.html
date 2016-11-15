@@ -67,15 +67,28 @@ function randRGBA(min,max)
 /* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
 
 part1 = "<div class='polaroid' style='font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";border: " + imageBorder + "px solid " + colorRGBA + ";'>" + quoteText;
-
 part2 = "<div class='container' style='font-size: " + alphabetTextSize + "vw; color: " + colorRGBAlight + "'>" + alphabetText + "</div>" ;
-
 part3logo = "<div class='footer' style='font-size: " + 0.5 + "em;'>" + headingName + "<br> + <br><IMG SRC='" + logoImageUrl +"' style='height:15vw'></div>";
-
 part4end = "</div>";
 
-
 document.getElementById("randcolorRGBA").innerHTML = part1 + part2 + part3logo + part4end ;
+
+/* ******** Colored text + black alphabet text version ***** */
+
+part1A = "<div class='polaroid' style='color: " + colorRGBA + ";font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";border: " + imageBorder + "px solid " + colorRGBA + ";'>" + quoteText;
+part2A = "<div class='container' style='font-size: " + alphabetTextSize + "vw; color: " + "rgba(0,0,0,0.7)" + "'>" + alphabetText + "</div>" ;
+part3logoA = "<div class='footer' style='color: " + colorRGBA + ";font-size: " + 0.5 + "em;'>" + headingName + "<br> + <br><IMG SRC='" + logoImageUrl +"' style='height:15vw'></div>";
+part4endA = "</div>";
+
+document.getElementById("randcolorRGBAtext").innerHTML = part1A + part2A + part3logoA + part4endA ;
+
+/******* dark border version **********/
+part1B = "<div class='polaroid' style='background-color: " + colorRGBA + ";color: " + "white" + ";font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";border: " + imageBorder + "px solid " + "black" + ";'>" + quoteText;
+logoImageUrlB = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername-white.png";
+part3logoB = "<div class='footer' style='color: " + "white" + ";font-size: " + 0.5 + "em;'>" + headingName + "<br> + <br><IMG SRC='" + logoImageUrlB +"' style='height:15vw'></div>";
+
+document.getElementById("randcolorRGBAtextDark").innerHTML = part1B + part2A + part3logoB + part4endA ;
+
 
 }
 
@@ -238,10 +251,10 @@ font-weight: 900;
         <td>
           <label for="imageBorder">Image border in pixels</label>
              <select id="imageBorder" name="imageBorder">
-              <option value="0" selected>0 px</option>
+              <option value="0">0 px</option>
                <option value="5">5 px</option>
                <option value="10">10 px</option>
-               <option value="20">20 px</option>
+               <option value="20" selected>20 px</option>
                <option value="30">30 px</option>
                <option value="50">50 px</option>
              </select>
@@ -298,6 +311,10 @@ font-weight: 900;
 
 
 <span id="randcolorRGBA"></span>
+<br><br><br>
+<span id="randcolorRGBAtext"></span>
+<br><br><br>
+<span id="randcolorRGBAtextDark"></span>
 
 
 <br><br><hr>

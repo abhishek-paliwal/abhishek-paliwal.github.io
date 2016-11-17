@@ -73,10 +73,9 @@ function randRGBA(min,max)
             }
 
     iconCategory = document.getElementById("iconCategory").value ;
-        /* iconCategory = '<i class=\"fa ' + iconCategory + '\"></i>'; */
-
     iconCategoryRepeat = document.getElementById("iconCategoryRepeat").value ;
 
+    BlackiconCategory = document.getElementById("BlackiconCategory").value ;
     BlackIconRepeat = document.getElementById("BlackIconRepeat").value ;
 
           totalIcons1 = ""; /* All the dark-colored icons added one after another. */
@@ -88,7 +87,7 @@ function randRGBA(min,max)
           totalIcons2 = ""; /* All the light-colored icons added one after another. */
           j = 0 ;
           for (j = 1 ; j <= BlackIconRepeat; j++) {
-              totalIcons2 += iconCategory ;
+              totalIcons2 += BlackiconCategory ;
           }
 
           totalIcons = totalIcons1 + "<span style='color: " + colorRGBAlight + ";'>" + totalIcons2 + "</span>" ;
@@ -329,12 +328,24 @@ font-weight: 700;
         </td>
 
     </tr>
-
 </table>
 
-<label for="BlackIconRepeat">Black Icon Repeat Times</label>
-<input type="text" name="BlackIconRepeat" id="BlackIconRepeat" value="13">
+<table border="0">
 
+<tr>
+    <td>
+        <label for="BlackiconCategory">Font Awesome Icon - Dark</label>
+        <input type="text" name="BlackiconCategory" id="BlackiconCategory" value="<i class='fa fa-female'></i>">
+    </td>
+
+    <td>
+        <label for="BlackIconRepeat">Black Icon Repeat Times</label>
+        <input type="text" name="BlackIconRepeat" id="BlackIconRepeat" value="13">
+    </td>
+
+  </tr>
+
+</table>
 
 <label for="colorCode">Your Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
 <input type="text" name="colorCode" id="colorCode" value="Surprise Me">

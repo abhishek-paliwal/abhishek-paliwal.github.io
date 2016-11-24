@@ -73,7 +73,9 @@ function randRGBA(min,max)
 
 footerlogo = "<br><img class='footer' src='" + logoImageUrl + "'>";
 
-document.getElementById("randcolorRGBA").innerHTML = finalText + footerlogo;
+headerPart = "<div class ='mybox' style='line-height: " + lineHeight + "; color: " + colorRGBA + "; font-weight: "+ fontWeight + "; background-color: " + "white" + "; font-size:" + textSize + "px; width: " + randwidth + "vw;'>" + headingName + "</div>&nbsp;" ;
+
+document.getElementById("randcolorRGBA").innerHTML = headerPart + finalText + footerlogo;
 
 }
 

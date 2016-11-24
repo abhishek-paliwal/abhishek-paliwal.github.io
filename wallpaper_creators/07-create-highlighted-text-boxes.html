@@ -30,6 +30,7 @@ function randRGBA(min,max)
     textSize = document.getElementById("textSize").value ;
 
     lineHeight = document.getElementById("lineHeight").value ;
+    headingDIVcolor = document.getElementById("headingDIVcolor").value ;
 
     fontWeight = document.getElementById("fontWeight").value ;
 
@@ -53,6 +54,8 @@ function randRGBA(min,max)
 
     fontColor = document.getElementById("fontColor").value ;
 
+    mainDivBGcolor = document.getElementById("mainDivBGcolor").value ;
+
     quoteText = document.getElementById("quoteText").value ;
 
             /* Calculations begin */
@@ -73,9 +76,9 @@ function randRGBA(min,max)
 
 footerlogo = "<br><img class='footer' src='" + logoImageUrl + "'>";
 
-headerPart = "<div class ='mybox' style='line-height: " + lineHeight + "; color: " + colorRGBA + "; font-weight: "+ fontWeight + "; background-color: " + "white" + "; font-size:" + textSize + "px; width: " + randwidth + "vw;'>" + headingName + "</div>&nbsp;" ;
+headerPart = "<div class ='mybox' style='line-height: " + lineHeight + "; color: " + colorRGBA + "; font-weight: "+ fontWeight + "; background-color: " + headingDIVcolor + "; font-size:" + textSize + "px; width: " + randwidth + "vw;'>" + headingName + "</div>&nbsp;" ;
 
-document.getElementById("randcolorRGBA").innerHTML = headerPart + finalText + footerlogo;
+document.getElementById("randcolorRGBA").innerHTML = "<div class='main' style='background-color:" + mainDivBGcolor + ";'>" + headerPart + finalText + footerlogo + "</div>";
 
 }
 
@@ -158,6 +161,11 @@ img.footer {
 }
 
 /* Add your custom style code below this line. Do not touch any CSS above this line. */
+div.main {
+  display: block;
+  padding: 10px;
+  height: auto;
+}
 
 div.mybox {
   display: block;
@@ -170,6 +178,7 @@ div.mybox {
   line-height: 1.0;
   font-weight: 800;
   text-align: left;
+  border-radius: 0px 300px 300px 0px;
 }
 
 img.footer {
@@ -207,6 +216,11 @@ img.footer {
           <input type="text" name="lineHeight" id="lineHeight" value="1.0">
         </td>
 
+        <td>
+          <label for="headingDIVcolor">Heading DIV Color (RGBA/HEX/Name)</label>
+          <input type="text" name="headingDIVcolor" id="headingDIVcolor" value="black">
+        </td>
+
     </tr>
 
     <tr>
@@ -230,6 +244,22 @@ img.footer {
              <select id="fontColor" name="fontColor">
                <option value="white">White</option>
                <option value="black" selected>Black</option>
+               <option value="red">Red</option>
+               <option value="green">Green</option>
+               <option value="blue">Blue</option>
+               <option value="yellow">Yellow</option>
+               <option value="DeepPink">DeepPink</option>
+               <option value="orange">Orange</option>
+               <option value="lime">Lime</option>
+
+             </select>
+        </td>
+
+        <td>
+          <label for="mainDivBGcolor">Main DIV Background Color</label>
+             <select id="mainDivBGcolor" name="mainDivBGcolor">
+               <option value="white" selected>White</option>
+               <option value="black">Black</option>
                <option value="red">Red</option>
                <option value="green">Green</option>
                <option value="blue">Blue</option>

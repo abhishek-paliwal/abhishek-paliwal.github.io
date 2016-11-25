@@ -1,0 +1,448 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Abhishek | Create Two-Color Gradient Text Quote</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script>
+function randRGBA(min,max)
+{
+/* Random RGBA color generation */
+    randnumberRed = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberGreen = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberBlue = Math.floor(Math.random()*(max-min+1)+min);
+
+    colorRGBA = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 1)";
+    colorRGBAlight = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 0.2)";
+
+/* Checking if the color code is present or not. If present, then it is chosen instead of random. */
+    colorCode = document.getElementById("colorCode").value ;
+
+    if (colorCode =="Surprise Me") {
+        colorRGBA = colorRGBA ;
+        colorRGBAlight = colorRGBAlight ;
+      } else {
+        colorRGBA = "rgba(" + colorCode + ", 1)";
+        colorRGBAlight = "rgba(" + colorCode + ", 0.2)";
+      }
+
+/* Getting the text from the form */
+    headingName = document.getElementById("headingName").value ;
+    textAlignment = document.getElementById("textAlignment").value ;
+    textSize = document.getElementById("textSize").value ;
+
+    lineHeight = document.getElementById("lineHeight").value ;
+    headingDIVcolor = document.getElementById("headingDIVcolor").value ;
+
+    fontWeight = document.getElementById("fontWeight").value ;
+
+
+    logoImageUrl = document.getElementById("logoImageUrl").value ;
+            if (logoImageUrl == "ap1") {
+                logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername-white.png";
+            } else if (logoImageUrl == "ap0") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Name-Stamp-black.png";
+
+            } else if (logoImageUrl == "ap2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Circle-fullname.png";
+            } else if (logoImageUrl == "ap3") {
+              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/6-logos-album-covers/Album-Cover-Abhishek-Paliwal-Lorez.jpg";
+            } else if (logoImageUrl == "ap4") {
+              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png";
+            } else if (logoImageUrl == "anu1") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Black-White-Fullname.png";
+            } else if (logoImageUrl == "anu2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Colored-Fullname.png";
+            } else if (logoImageUrl == "fin1") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/7-logos-clients/I-Love-Finland.jpg";
+            } else if (logoImageUrl == "fin2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/7-logos-clients/I-Love-Finland-Circle.png";
+            } else {
+              logoImageUrl = logoImageUrl;
+            }
+
+
+    textColor = document.getElementById("textColor").value ;
+
+    mainDivBGcolor = document.getElementById("mainDivBGcolor").value ;
+
+
+    /* Obtating the values of the two gradient colors. Keep this block before quoteText calculations. */
+
+    red1 = document.getElementById("red1").value ;
+    green1 = document.getElementById("green1").value ;
+    blue1 = document.getElementById("blue1").value ;
+
+    red2 = document.getElementById("red2").value ;
+    green2 = document.getElementById("green2").value ;
+    blue2 = document.getElementById("blue2").value ;
+
+
+    quoteText = document.getElementById("quoteText").value ;
+
+            /* Calculations begin */
+            warray = quoteText.split('\n');
+
+            i=0;
+            finalColorCodes = "";
+            finalTextWithDiv ="";
+            finalTextWithSpan ="";
+
+
+            for (i = 0; i < warray.length; i++) {
+
+                redDiff = Math.abs( red1- Math.floor( i*(red1-red2)/(warray.length-1) ) );
+                greenDiff = Math.abs( green1 - Math.floor( i*(green1-green2)/(warray.length-1) ) );
+                blueDiff = Math.abs( blue1 - Math.floor( i*(blue1-blue2)/(warray.length-1) ) );
+
+                fontColor = "rgba(" + redDiff + "," + greenDiff + "," + blueDiff + ",1)" ;
+
+                /* Generating the block with prespecified DIV's */
+                finalTextWithDiv += "<div class ='mybox' style='text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor + "; font-size:" + textSize + "px; '>" + warray[i] + "</div>" ;
+
+                /* Generating the block with SPANS with linebreaks */
+                finalTextWithSpan += "<span style='display: block; text-align: " + textAlignment + ";text-transform: uppercase; line-height: " + lineHeight + "; color: " + fontColor + "; font-weight: "+ fontWeight + "; background-color: " + mainDivBGcolor + "; font-size:" + textSize + "px; '>" + warray[i] + "</span><br>" ;
+
+                /* Lising the RGBA codes for all the calculated colors */
+                finalColorCodes += "<span style='color: " + fontColor + ";'>" + warray[i] + " // " + fontColor + "</span><br>" ;
+
+            }
+
+
+/* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
+
+footerlogo = "<br><img class='footer' src='" + logoImageUrl + "'>";
+
+headerPartDiv = "<div class ='mybox' style='text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + colorRGBA + "; font-weight: "+ fontWeight + "; background-color: " + headingDIVcolor + "; font-size:" + textSize + "px; '>" + headingName + "</div>" ;
+
+headerPartSpan = "<span style='display: block; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + colorRGBA + "; font-weight: "+ fontWeight + "; background-color: " + headingDIVcolor + "; font-size:" + textSize + "px; '>" + headingName + "</span><br>" ;
+
+
+/**** Rendering all the blocks for final outputs ****/
+document.getElementById("randcolorRGBADiv").innerHTML = "<div class='main' style='background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithDiv + footerlogo + "</div>";
+
+document.getElementById("randcolorRGBASpan").innerHTML = "<div class='main' style='background-color:" + mainDivBGcolor + ";'>" + headerPartSpan + finalTextWithSpan + footerlogo + "</div>";
+
+document.getElementById("ShowfinalColorcodes").innerHTML = "<strong>Below are the RGB codes for all the calculated gradient color values, between the two input colors.<br>" + finalColorCodes + "</strong>";
+
+}
+
+</script>
+
+<script src="https://use.fontawesome.com/8cd0876759.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,900" rel="stylesheet">
+
+<style type="text/css">
+
+body {
+  display:block;
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  background-color: white;
+}
+
+img.logo {
+    display: block;
+    margin: auto;
+    width: 20vw;
+    padding: 5px;
+}
+
+input, textarea, select, table {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #c0c0c0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+button, input[type=submit] {
+    width: 100%;
+    background-color: blue;
+    color: black;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+}
+
+button:hover, input[type=submit]:hover {
+    background-color: #c0c0c0;
+}
+
+div.myform {
+    display: block;
+    width: 90vw;
+    margin: auto;
+    border-radius: 5px;
+    border: 2px solid blue;
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+h1, h2, h3 {
+  color: blue;
+}
+
+img.footer {
+  display: block;
+  margin: auto;
+  height: 120px;
+
+}
+
+/* Add your custom style code below this line. Do not touch any CSS above this line. */
+div.main {
+  display: block;
+  padding: 10px;
+  height: auto;
+}
+
+div.mybox {
+  display: block;
+  padding: 10px;
+  height: auto;
+  color: black;
+  background-color: white;
+  font-size: 35px;
+  text-transform: uppercase;
+  line-height: 1.0;
+  font-weight: 800;
+  text-align: center;
+}
+
+img.footer {
+  height: 120px;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<img class="logo" src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-White.png">
+<hr>
+
+<h1>Create Two-Color Gradient Text Quote</h1>
+
+<div class="myform"> <!-- floating div start -->
+<form id="myform">
+
+<label for="headingName">Heading Text</label>
+<input type="text" name="headingName" id="headingName" value="&bull; Words of Wisdom &bull;">
+
+
+<label for="textAlignment">Text Alignment</label>
+   <select id="textAlignment" name="textAlignment">
+     <option value="left">Left</option>
+     <option value="center" selected>Center</option>
+     <option value="right">Right</option>
+   </select>
+
+<table border="0">
+<strong>Gradient color codes for two colors, as RGB values:</strong>
+    <tr>
+    		<td>
+          <label for="red1">RED - color 1</label>
+          <input type="text" name="red1" id="red1" value="213">
+        </td>
+
+        <td>
+          <label for="green1">GREEN - color 1</label>
+          <input type="text" name="green1" id="green1" value="176">
+        </td>
+
+        <td>
+          <label for="blue1">BLUE - color 1</label>
+          <input type="text" name="blue1" id="blue1" value="108">
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+          <label for="red2">RED - color 2</label>
+          <input type="text" name="red2" id="red2" value="255">
+        </td>
+
+        <td>
+          <label for="green2">GREEN - color 2</label>
+          <input type="text" name="green2" id="green2" value="255">
+        </td>
+
+        <td>
+          <label for="blue2">BLUE - color 2</label>
+          <input type="text" name="blue2" id="blue2" value="255">
+        </td>
+
+    </tr>
+
+</table>
+
+
+<table border="0">
+
+    <tr>
+    		<td>
+          <label for="textSize">Text Size (in pixels)</label>
+          <input type="text" name="textSize" id="textSize" value="35">
+        </td>
+
+        <td>
+          <label for="lineHeight">Line Height</label>
+          <input type="text" name="lineHeight" id="lineHeight" value="0.4">
+        </td>
+
+        <td>
+          <label for="headingDIVcolor">Heading DIV Color (RGBA/HEX/Name)</label>
+          <select id="headingDIVcolor" name="headingDIVcolor">
+            <option value="white" selected>White</option>
+            <option value="black">Black</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="yellow">Yellow</option>
+            <option value="DeepPink">DeepPink</option>
+            <option value="orange">Orange</option>
+            <option value="lime">Lime</option>
+
+          </select>
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+          <label for="fontWeight">Font Weight</label>
+             <select id="fontWeight" name="fontWeight">
+               <option value="100">100</option>
+               <option value="200" selected>200</option>
+               <option value="300">300</option>
+               <option value="400">400</option>
+               <option value="500">500</option>
+               <option value="600">600</option>
+               <option value="700">700</option>
+               <option value="800">800</option>
+               <option value="900">900</option>
+            </select>
+        </td>
+
+        <td>
+          <label for="textColor">Font Color</label>
+             <select id="textColor" name="textColor">
+               <option value="white">White</option>
+               <option value="black" selected>Black</option>
+               <option value="red">Red</option>
+               <option value="green">Green</option>
+               <option value="blue">Blue</option>
+               <option value="yellow">Yellow</option>
+               <option value="DeepPink">DeepPink</option>
+               <option value="orange">Orange</option>
+               <option value="lime">Lime</option>
+
+             </select>
+        </td>
+
+        <td>
+          <label for="mainDivBGcolor">Main DIV Background Color</label>
+             <select id="mainDivBGcolor" name="mainDivBGcolor">
+               <option value="white" selected>White</option>
+               <option value="black">Black</option>
+               <option value="red">Red</option>
+               <option value="green">Green</option>
+               <option value="blue">Blue</option>
+               <option value="yellow">Yellow</option>
+               <option value="DeepPink">DeepPink</option>
+               <option value="orange">Orange</option>
+               <option value="lime">Lime</option>
+
+             </select>
+        </td>
+
+    </tr>
+
+</table>
+
+
+<label for="colorCode">Your Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
+<input type="text" name="colorCode" id="colorCode" value="Surprise Me">
+
+
+<label for="logoImageUrl">Logo URL</label>
+<input type="text" name="logoImageUrl" id="logoImageUrl" value="fin1">
+
+
+<label for="quoteText">Quote Text</label>
+   <textarea name="quoteText" rows="7" id="quoteText" form="myform">&mdash;
+My mission in life is
+not merely to survive,
+but to thrive; and
+to do so with
+some passion,
+some compassion,
+some humor,
+and some style.
+&mdash;</textarea>
+
+<!-- Somehow the input button below does not work. Seems like a known JS problem. So the BUTTON code outside the form is used. -->
+
+<!--
+<input type="submit" value="Submit" onclick="randRGBA(0,255);" />
+-->
+
+</form>
+
+<button type="submit" value="Submit" onclick="randRGBA(0,255);">Submit</button>
+
+</div>
+
+<hr>
+<h2>Press the button above, and your image should appear below.</h2>
+<br><br>
+
+<span id="ShowfinalColorcodes"></span>
+<br><br>
+<span id="randcolorRGBASpan"></span>
+<br><br>
+<span id="randcolorRGBADiv"></span>
+
+
+<br><br><hr>
+
+<h3>Example Graphics Below</h3><br><br>
+
+<div class="mybox" style="width:100%;background-color:#333;color:white;">
+This is a good one
+</div>
+
+<div class="mybox" style="width:100%;background-color:#666;color:white;">
+good one
+</div>
+
+<div class="mybox" style="width:100%;background-color:#999;color:white;">
+another good one.
+</div>
+
+
+<div class="endfooter">
+<br><br><hr>
+This Webapp Is Made By <a href="http://www.AbhishekPaliwal.com">Abhishek Paliwal</a>
+</div>
+
+</body>
+</html>

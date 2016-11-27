@@ -38,7 +38,7 @@ logoImageUrl = document.getElementById("logoImageUrl").value ;
         } else {
           logoImageUrl = logoImageUrl;
         }
-        
+
           logoImageUrl = "<img src='" + logoImageUrl + "'>";
 
     separator = "&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;";
@@ -47,7 +47,7 @@ logoImageUrl = document.getElementById("logoImageUrl").value ;
 
 document.getElementById("randcolorRGBAtext").innerHTML = "<div id=\"bigtext\"><span id=\"heading\">&mdash; " + headingName + " &mdash;</span><span id=\"mycolor\">" + separator + "</span>" + quoteText1 + "<span id=\"mycolor\">" + separator + "</span>" + logoImageUrl + "</div>" ;
 
-document.getElementById("randcolorRGBA").innerHTML = "<div id=\"bigtext2\" style=\"background-color: " + colorRGBA + ";\"> <span id=\"heading\">&mdash; " + headingName + " &mdash;</span><span id=\"mycolor\">" + separator + "</span>" + quoteText1 + "<span id=\"mycolor\">" + separator + "</span>" + logoImageUrl + "</div>" ;
+document.getElementById("randcolorRGBA").innerHTML = "<div id=\"bigtext2\" style='background-color: " + colorRGBA + "; '> <span id=\"heading\">&mdash; " + headingName + " &mdash;</span><span id=\"mycolor\">" + separator + "</span>" + quoteText1 + "<span id=\"mycolor\">" + separator + "</span>" + logoImageUrl + "</div>" ;
 
 /* Make sure the following Jquery only gets fired at the end of this function block. */
 /* It's because it needs the text variable values to be loaded before this gets fired. */

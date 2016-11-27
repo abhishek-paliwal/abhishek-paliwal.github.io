@@ -6,13 +6,16 @@
 <script>
 function randRGBA(min,max)
 {
+
+backgroundOpacity = document.getElementById("backgroundOpacity").value ;
+
 /* Random RGBA color generation */
     randnumberRed = Math.floor(Math.random()*(max-min+1)+min);
     randnumberGreen = Math.floor(Math.random()*(max-min+1)+min);
     randnumberBlue = Math.floor(Math.random()*(max-min+1)+min);
 
     colorRGBA = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 1)";
-    colorRGBAlight = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 0.8)";
+    colorRGBAlight = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", " + backgroundOpacity + ")";
 
 /* Checking if the color code is present or not. If present, then it is chosen instead of random. */
     colorCode = document.getElementById("colorCode").value ;
@@ -22,7 +25,7 @@ function randRGBA(min,max)
         colorRGBAlight = colorRGBAlight ;
       } else {
         colorRGBA = "rgba(" + colorCode + ", 1)";
-        colorRGBAlight = "rgba(" + colorCode + ", 0.8)";
+        colorRGBAlight = "rgba(" + colorCode + ", " + backgroundOpacity + ")" ;
       }
 
 /* Getting the text from the form */
@@ -319,6 +322,11 @@ h1 {
 <label for="icontop">GOOGLE Material Icon (<a href="https://material.io/icons/" target="_blank">Full List here</a>)</label>
 <input type="text" name="icontop" id="icontop" value="favorite">
     </td>
+
+    <td>
+<label for="backgroundOpacity">Background Opacity</label>
+<input type="text" name="backgroundOpacity" id="backgroundOpacity" value="0.8">
+  </td>
 
     </tr>
 

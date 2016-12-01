@@ -14,6 +14,7 @@ function randRGBA(min,max)
     colorRGBA = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 1)";
 
 /* Getting the text from the form */
+
     headingName = document.getElementById("headingName").value ;
 
     if (headingName != "") {
@@ -22,18 +23,32 @@ function randRGBA(min,max)
       headingName = "";
     }
 
+    letterSpacing = document.getElementById("letterSpacing").value ;
 
     textSize = document.getElementById("textSize").value ;
+
+    fontWeight = document.getElementById("fontWeight").value ;
+
+    lineHeight = document.getElementById("lineHeight").value ;
+
+    backgroundOpacity = document.getElementById("backgroundOpacity").value ;
+
+    textAlign = document.getElementById("textAlign").value ;
 
     quoteText = document.getElementById("quoteText").value ;
 
 /* ******** Printing the formmated text to an ID in the HTML page ***** */
 
-document.getElementById("randcolorRGBA").innerHTML = "<h2 style=\"background-color: rgba(0,0,0,0.4); color: white; border: 2px solid white; outline: 15px solid rgba(0,0,0,0.4); font-size: " + textSize + "rem;\">" + quoteText + headingName + "</h2>" ;
+color1 = "rgba(0,0,0," + backgroundOpacity + ")";
+color2 = "rgba(255,255,255," + backgroundOpacity + ")";
 
-document.getElementById("randcolorRGBAtext").innerHTML = "<h2 style=\"background-color: rgba(255,255,255,0.6); color: black; border: 2px solid black; outline: 15px solid rgba(255,255,255,0.6); font-size: " + textSize + "rem;\">" + quoteText + headingName + "</h2>" ;
+document.getElementById("randcolorRGBA").innerHTML = "<h2 style='letter-spacing: " + letterSpacing + ";line-height: " + lineHeight + ";font-weight: " + fontWeight + ";text-align: " + textAlign + ";background-color: " + color1 + "; color: white; border: 2px solid white; outline: 15px solid " + color1 + "; font-size: " + textSize + "rem;'>" + quoteText + headingName + "</h2>" ;
 
-document.getElementById("randcolorRGBAtext2").innerHTML = "<h2 style=\"background-color: rgba(255,255,255,0.6); color: black; border: 15px solid rgba(255,255,255,0.6); outline: 5px solid black; font-size: " + textSize + "rem;\">" + quoteText + headingName + "</h2>" ;
+document.getElementById("randcolorRGBAtext").innerHTML = "<h2 style='letter-spacing: " + letterSpacing + ";line-height: " + lineHeight + ";font-weight: " + fontWeight + ";text-align: " + textAlign + ";background-color: " + color2 + "; color: black; border: 2px solid black; outline: 15px solid " + color2 + "; font-size: " + textSize + "rem;'>" + quoteText + headingName + "</h2>" ;
+
+document.getElementById("randcolorRGBAtext2").innerHTML = "<h2 style='letter-spacing: " + letterSpacing + ";line-height: " + lineHeight + ";font-weight: " + fontWeight + ";text-align: " + textAlign + ";background-color: " + color2 + "; color: black; border: 15px solid " + color2 + "; outline: 5px solid black; font-size: " + textSize + "rem;'>" + quoteText + headingName + "</h2>" ;
+
+document.getElementById("randcolorRGBAtext3").innerHTML = "<h2 style='letter-spacing: " + letterSpacing + ";line-height: " + lineHeight + ";font-weight: " + fontWeight + ";text-align: " + textAlign + ";background-color: " + color1 + "; color: white; border: 15px solid " + color2 + "; outline: 5px solid black; font-size: " + textSize + "rem;'>" + quoteText + headingName + "</h2>" ;
 
 
 }
@@ -56,7 +71,7 @@ body {
       rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.4)
     ),
- url(https://source.unsplash.com/featured/500x750/);
+ url(https://source.unsplash.com/featured/);
   background-size: cover;
   width: 500px;
   height: 750px;
@@ -106,7 +121,7 @@ img.footer {
     padding: 5px;
 }
 
-#myform, #headingName, #textSize, #fromName, #toName, #logoImageUrl, #quoteText {
+#myform, #headingName, #textSize, #fromName, #toName, #logoImageUrl, #quoteText, #backgroundOpacity, #textAlign, #fontWeight, #lineHeight {
   font-size: 20px;
   color: blue;
 }
@@ -140,13 +155,56 @@ button {
 <h1>Text on Image Wallpaper Creator</h1>
 
   <form id="myform">
-* HEADING *<br><input type="text" name="message" id="headingName" size="50" value="A quote by abhishek Paliwal">
-  <br><br>* TEXT SIZE (in 'rem' units)*<br><input type="text" name="message" id="textSize" value="1.7">
-  <br><br>* LOGO URL *<br><input type="text" name="message" size="50" id="logoImageUrl" value="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png">
+
+<br><br>
+<table>
+<tr>
+<td>
+HEADING *<br><input type="text" name="message" id="headingName" size="40" value="A quote by abhishek Paliwal">
+</td>
+<td>
+LETTER SPACING (in pixels)*<br><input type="text" name="message" id="letterSpacing" value="1px">
+</td>
+</tr>
+</table>
+
+<br><br>
+<table>
+<tr>
+<td>
+TEXT SIZE (IN 'REM' UNITS)*<br><input type="text" name="message" id="textSize" value="1.5">
+</td>
+
+<td>
+FONT WEIGHT (400 / 700 / 900)*<br><input type="text" name="message" id="fontWeight" value="400">
+</td>
+
+<td>
+LINE HEIGHT*<br><input type="text" name="message" id="lineHeight" value="1.3">
+</td>
+
+</tr>
+</table>
+
+<br>
+<table>
+<tr>
+<td>
+TEXT ALIGNMENT (left / center /right)<br><input type="text" name="message" id="textAlign" value="center">
+</td>
+
+<td>
+BACKGROUND OPACITY (AS RGB ALPHA VALUE)*<br><input type="text" name="message" id="backgroundOpacity" value="0.7">
+</td>
+
+</tr>
+</table>
+
+<br>LOGO URL *<br><input type="text" name="message" size="50" id="logoImageUrl" value="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png">
 
   </form>
 
-  <br>* QUOTE TEXT *<br>
+QUOTE TEXT *<br>
   <textarea name="comment" rows="10" cols="50" id="quoteText" form="myform">&ldquo; If you wish to achieve worthwhile things in your personal and career life, you must become a worthwhile person in your own self development. &rdquo;</textarea>
 
   <br>
@@ -186,6 +244,18 @@ www.AbhishekPaliwal.com
 <div class="module mid" style="width:750px; height: 750px;">
 
 <span id="randcolorRGBAtext2"></span>
+
+<span class="bottom">
+  <img class="footer" src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Favicon-Abhishek-Paliwal-Website.png">
+  www.AbhishekPaliwal.com
+  <span>
+</div>
+</div>
+
+<div class="city">
+<div class="module mid" style="width:1000px; height: 750px;">
+
+<span id="randcolorRGBAtext3"></span>
 
 <span class="bottom">
   <img class="footer" src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Favicon-Abhishek-Paliwal-Website.png">

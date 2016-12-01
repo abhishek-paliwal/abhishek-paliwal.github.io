@@ -90,6 +90,12 @@ partOptionalFooter = "<div class='footer'>Find more such recipes at<br><IMG SRC=
 
 document.getElementById("randcolorRGBA").innerHTML = part1 + varImageUrl1 + partRecipeName + partDescription + varImageUrl2 + partEnd + partOptionalFooter;
 
+
+/******* Cursive font for heading ******/
+partRecipeNameCursive = "<div class='containerDish' style='font-family: Sacramento, cursive; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";font-size: " + textSize + "px; color: " + colorRGBA + "'>" + headingName + "</div>" ;
+
+document.getElementById("randcolorRGBACursive").innerHTML = part1 + varImageUrl1 + partRecipeNameCursive + partDescription + varImageUrl2 + partEnd + partOptionalFooter;
+
 /************ Printing out the codes for the random colors generated ********/
 document.getElementById("colorPrinting").innerHTML = "<h3 style='color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</h3>";
 
@@ -100,6 +106,7 @@ document.getElementById("colorPrinting").innerHTML = "<h3 style='color: " + colo
 <script src="https://use.fontawesome.com/8cd0876759.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 
 <style type="text/css">
 
@@ -349,6 +356,9 @@ font-weight: 900;
 
 
 <span id="randcolorRGBA"></span>
+
+<br><br>
+<span id="randcolorRGBACursive"></span>
 
 
 <br><br><hr>

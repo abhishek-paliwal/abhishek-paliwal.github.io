@@ -108,6 +108,36 @@ function randRGBA(min,max)
             }
 
 
+
+colorArrayInput = document.getElementById("colorArrayInput").value ;
+
+      /* Calculations begin */
+      colorArray = colorArrayInput.split('\n');
+
+      j=0;
+      finalColorCodesArray = "";
+      finalTextWithDivArray ="";
+      finalTextWithSpanArray ="";
+
+
+      for (j = 0; j < warray.length; j++) {
+
+          textVarColor = colorArray[j%colorArray.length] ;
+          /* textVarColor = colorArray[3]; */
+
+
+          /* Generating the block with prespecified DIV's */
+          finalTextWithDivArray += "<div class ='mybox' style='text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + textVarColor + "; font-size:" + textSize + "px; '>" + warray[j] + "</div>" ;
+
+          /* Generating the block with SPANS with linebreaks */
+          finalTextWithSpanArray += "<span style='display: block; text-align: " + textAlignment + ";text-transform: uppercase; line-height: " + lineHeight + "; color: " + textVarColor + "; font-weight: "+ fontWeight + "; background-color: " + mainDivBGcolor + "; font-size:" + textSize + "px; '>" + warray[j] + "</span><br>" ;
+
+          /* Lising the RGBA codes for all the calculated colors */
+          finalColorCodesArray += "<span style='color: " + textVarColor + ";'>" + warray[j] + " // " + textVarColor + "</span><br>" ;
+
+      }
+
+
 /* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
 
 footerlogo = "<br><img class='footer' src='" + logoImageUrl + "'>";
@@ -123,6 +153,14 @@ document.getElementById("randcolorRGBADiv").innerHTML = "<div class='main' style
 document.getElementById("randcolorRGBASpan").innerHTML = "<div class='main' style='background-color:" + mainDivBGcolor + ";'>" + headerPartSpan + finalTextWithSpan + footerlogo + "</div>";
 
 document.getElementById("ShowfinalColorcodes").innerHTML = "<strong>Below are the RGB codes for all the calculated gradient color values, between the two input colors.<br>" + finalColorCodes + "</strong>";
+
+
+/**** USING COLOR ARRAY: Rendering all the blocks for final outputs ****/
+document.getElementById("randcolorRGBADivArray").innerHTML = "<div class='main' style='background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithDivArray + footerlogo + "</div>";
+
+document.getElementById("randcolorRGBASpanArray").innerHTML = "<div class='main' style='background-color:" + mainDivBGcolor + ";'>" + headerPartSpan + finalTextWithSpanArray + footerlogo + "</div>";
+
+document.getElementById("ShowfinalColorcodesArray").innerHTML = "<strong>Below are the RGB codes for all the calculated color values, from the color array.<br>" + finalColorCodesArray + "</strong>";
 
 }
 
@@ -386,6 +424,19 @@ img.footer {
 <label for="logoImageUrl">Logo URL</label>
 <input type="text" name="logoImageUrl" id="logoImageUrl" value="fin1">
 
+<label for="colorArray">Color Array </label>
+<input type="text" name="colorArray" id="colorArray" value="Surprise Me">
+
+<label for="colorArray">Color Array (Insert colors as HEX /RGBA / RGB, one per line )</label>
+   <textarea name="colorArrayInput" rows="5" id="colorArrayInput" form="myform">rgba(77, 77, 77, 1)
+rgba(93, 165, 218, 1)
+rgba(250, 164, 58, 1)
+rgba(96, 189, 104, 1)
+rgba(241, 124, 176, 1)
+rgba(178, 145, 47, 1)
+rgba(178, 118, 178, 1)
+rgba(222, 207, 63, 1)
+rgba(241, 88, 84, 1)</textarea>
 
 <label for="quoteText">Quote Text</label>
    <textarea name="quoteText" rows="7" id="quoteText" form="myform">&mdash;
@@ -420,6 +471,13 @@ and some style.
 <span id="randcolorRGBASpan"></span>
 <br><br>
 <span id="randcolorRGBADiv"></span>
+
+<br><br>
+<span id="ShowfinalColorcodesArray"></span>
+<br><br>
+<span id="randcolorRGBASpanArray"></span>
+<br><br>
+<span id="randcolorRGBADivArray"></span>
 
 
 <br><br><hr>

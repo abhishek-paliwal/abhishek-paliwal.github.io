@@ -25,7 +25,7 @@ padding: 5px;
 margin: 0px;
 color: white;
 font-family: 'Roboto Mono', monospace;
-font-weight: 500;
+font-weight: 700;
 font-size: 16px;
 letter-spacing: 13px;
 line-height:1.5;
@@ -85,7 +85,12 @@ p.dark {
 
 <!-- ############# FORM BEGINS ############# -->
 
-  <div class="row">
+<div class="row">
+
+
+  <div class="col l6 s12">
+
+    <h4 class="header center light-blue-text">Fill-in the details below.</h4>
 
       <form class="col s12">
 
@@ -94,6 +99,7 @@ p.dark {
             <input id="headingName" type="text" class="validate" value="WISDOM AND LIFE">
             <label for="headingName">Heading</label>
           </div>
+        </div>
 
 
         <div class="row">
@@ -106,46 +112,38 @@ p.dark {
 
       </form>
 
-<div class="row center">
-      <a class="waves-effect waves-light btn-large materialize-red"  onclick="randRGBA(0,255);"><i class="material-icons right">favorite</i>Design My Greetings</a>
-</div>
+      <div class="row center">
+            <a class="waves-effect waves-light btn-large materialize-red"  onclick="randRGBA(0,255);"><i class="material-icons right">favorite</i>Design My Greetings</a>
 
-    </div>
-
-    <!-- ############# FORM ENDS ############# -->
-
-    <div class="row center">
-
-<div class="divider materialize-red"></div>
-
-    </div>
-
-
-  <div class="container">
-    <div class="section">
-
-      <!--   Icon Section   -->
-    <div class="row center">
-
-<h4 class="header center light-blue-text">Your Design Will Appear Below</h4>
-
-<h6 class="materialize-red-text"><strong>&mdash; TIP &mdash; </strong><br>To change the color, press the button again, and again, and again...till you are happy.</h6>
-
-          <br><br>
-          <span id="demo1"></span>
-
-          <br><br>
-          <span id="demo1text"></span>
+            <br><br>
+            <h6 class="materialize-red-text" ><strong>Design Tip</strong>: To change the color, press the button again, and again, and again, till you are happy.</h6>
 
       </div>
 
-    </div>
-    <br><br>
-
-    <div class="section">
-
-    </div>
   </div>
+
+
+  <div class="col l6 s12 center">
+
+    <h4 class="header center light-blue-text">Your Design Will Appear Below</h4>
+
+        
+              <span id="demo1"></span>
+
+              <br><br>
+              <span id="demo1text"></span>
+
+  </div>
+
+
+</div>
+
+    <!-- ############# FORM ENDS ############# -->
+
+<div class="divider materialize-red"></div>
+
+
+<!-- FOOTER BEGINS -->
 
   <footer class="page-footer materialize-red">
     <div class="container">

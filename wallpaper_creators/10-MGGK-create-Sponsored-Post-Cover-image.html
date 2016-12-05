@@ -61,7 +61,14 @@ function randRGBA(min,max)
 
     finalImage = "<img src='https://source.unsplash.com/category/" + imageCategory + "/900x400/' style='width:100%'>";
 
+    MyImageUrl = document.getElementById("MyImageUrl").value ;
 
+          if (imageCategory == 'Use-My-Image') {
+            finalImage = "<img src='" + MyImageUrl + "' style='width:100%'>";
+          }
+          else {
+            finalImage = finalImage ;
+          }
 
 
 /* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
@@ -231,6 +238,8 @@ font-weight: 400;
         <td>
           <label for="imageCategory">Image Category (Courtesy: <a href="https://source.unsplash.com">UnSplash)</a></label>
              <select id="imageCategory" name="imageCategory">
+
+               <option value="Use-My-Image">Use My Image</option>
                <option value="people">People</option>
                <option value="buildings">Buildings</option>
                <option value="food" selected>Food</option>
@@ -243,6 +252,9 @@ font-weight: 400;
     </tr>
 
 </table>
+
+<label for="MyImageUrl">My Cutom Image URL</label>
+<input type="text" name="MyImageUrl" id="MyImageUrl" value="">
 
 
 <label for="colorCode">Your Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>

@@ -13,7 +13,12 @@
   <script src="https://use.fontawesome.com/8cd0876759.js"></script>
 
   <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700,900|Fredericka+the+Great|Kranky|League+Script|Lobster|Monoton|Pinyon+Script|Sacramento|UnifrakturMaguntia" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700,900|Playfair+Display:400,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Condensed:300,400,700|Roboto+Mono:100,300,400,500,700|Roboto+Slab:100,300,400|Roboto:100,300,400,500,700,900" rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -132,25 +137,49 @@
               <label>Select Ornamental Style To Use</label>
             </div>
 
-<!--
-            <div class="input-field col s6">
-              <input id="textSize" type="number" value="35" class="validate">
-              <label for="textSize" data-error="Value should be between 20 and 100" data-success="right">Text Size</label>
-            </div>
--->
+          <div class="input-field col s6">
+            <select id="fontFamily" name="fontFamily">
 
-            <div class="range-field col s6">
-              <label for="textSize" data-error="Value should be between 20 and 100" data-success="right">Text Size Slider</label>
-              <input type="range" id="textSize" min="20" max="100" value="30"/>
-            </div>
+                  <option value=' "Montserrat", sans-serif'>Montserrat</option>
+                  <option value=' "Playfair Display SC", serif'>Playfair Display SC</option>
+                  <option value=' "Playfair Display", serif' selected>Playfair Display</option>
+                  <option value=' "Raleway", sans-serif'>Raleway</option>
+                   <option value=' "Roboto", sans-serif'>Roboto</option>
+                   <option value=' "Roboto Condensed", sans-serif'>Roboto Condensed</option>
+                   <option value=' "Roboto Slab", serif'>Roboto Slab</option>
+                   <option value=' "Roboto Mono", monospace'>Roboto Mono - Monospace</option>
+
+                   <option value=''> ------------------------- </option>
+
+                   <option value=' "Cinzel Decorative", cursive'>Cinzel Decorative, cursive</option>
+                   <option value=' "Fredericka the Great", cursive'>Fredericka the Great, cursive</option>
+                   <option value=' "Kranky", cursive'>Kranky, cursive</option>
+                   <option value=' "League Script", cursive'>League Script, cursive</option>
+                   <option value=' "Lobster", cursive'>Lobster, cursive</option>
+                   <option value=' "Monoton", cursive'>Monoton, cursive</option>
+                   <option value=' "Pinyon Script", cursive'>Pinyon Script, cursive</option>
+                   <option value=' "Sacramento", cursive'>Sacramento, cursive</option>
+                   <option value=' "UnifrakturMaguntia", cursive'>UnifrakturMaguntia, cursive</option>
+
+                 </select>
+                 <label>Select The Font</label>
+          </div>
 
 
+
+        </div>
+
+        <div class="row">
+          <div class="range-field col s12">
+            <label for="textSize" data-error="Value should be between 20 and 100" data-success="right">Text Size Slider</label>
+            <input type="range" id="textSize" min="20" max="100" value="30"/>
+          </div>
         </div>
 
 
         <div class="row">
             <div class="input-field col s12">
-              <textarea id="quoteText" class="materialize-textarea"  length="200"></textarea>
+              <textarea id="quoteText" class="materialize-textarea" length="200">This is some sample text.</textarea>
               <label for="quoteText">Enter Quote Text Here</label>
             </div>
         </div>

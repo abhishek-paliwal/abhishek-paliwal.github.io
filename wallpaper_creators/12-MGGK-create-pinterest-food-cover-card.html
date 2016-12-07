@@ -103,7 +103,8 @@ document.getElementById("randcolorRGBA").innerHTML = part1 + varImageUrl1 + part
 
 
 /************ Printing out the codes for the random colors generated ********/
-document.getElementById("colorPrinting").innerHTML = "<h3 style='color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</h3>";
+document.getElementById("colorPrinting").innerHTML = "<h3 style='text-align: center; color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</h3>";
+document.getElementById("FontDisplayPrinting").innerHTML = "<div style='font-weight: " + fontWeight + ";text-align: center; font-family: " + fontFamily + ";font-size: " + textSize + "px;color: " + colorRGBA + ";'>" + headingName + "</div>";
 
 }
 
@@ -236,71 +237,46 @@ font-weight: 900;
 <form id="myform">
 
 
-  <table border="0">
-  <tr>
-  <td>
+  <label for="headingName">Name of the dish</label>
+  <input type="text" name="headingName" id="headingName" value="Cake & Caviar">
 
-      <label for="headingName">Name of the dish</label>
-      <input type="text" name="headingName" id="headingName" value="Cake & Caviar">
-
- </td>
- <td>
-
-   <label for="fontFamily">Font Family</label>
-      <select id="fontFamily" name="fontFamily">
-
-        <option value=' "Aladin", cursive'>Aladin, cursive</option>
-        <option value=' "Amatic SC", cursive'>Amatic SC, cursive</option>
-        <option value=' "Butterfly Kids", cursive'>Butterfly Kids, cursive</option>
-        <option value=' "Dancing Script", cursive'>Dancing Script, cursive</option>
-        <option value=' "Gloria Hallelujah", cursive'>Gloria Hallelujah, cursive</option>
-        <option value=' "Homemade Apple", cursive'>Homemade Apple, cursive</option>
-        <option value=' "League Script", cursive'>League Script, cursive</option>
-        <option value=' "Pacifico", cursive'>Pacifico, cursive</option>
-        <option value=' "Permanent Marker", cursive'>Permanent Marker, cursive</option>
-        <option value=' "Pinyon Script", cursive'>Pinyon Script, cursive</option>
-        <option value=' "Sue Ellen Francisco", cursive'>Sue Ellen Francisco, cursive</option>
-        <option value=' "Sunshiney", cursive'>Sunshiney, cursive</option>
-
-        <option value=''> -------------------------- </option>
-
-        <option value=' "Oswald", sans-serif'> => Oswald, MGGK-THEME-FONT</option>
-        <option value=' "Sacramento", cursive' selected> => Sacramento, cursive</option>
-        <option value=' "Playfair Display SC", serif'> => Playfair Display SC</option>
-        <option value=' "Playfair Display", serif'> => Playfair Display</option>
-        <option value=' "Raleway", sans-serif'> => Raleway</option>
-      </select>
-  </td>
-  <tr>
-  </table>
 
 
 <label for="ImageUrl1">First Image URL</label>
-<input type="text" name="ImageUrl1" id="ImageUrl1" value="http://www.mygingergarlickitchen.com/wp-content/uploads/2016/10/recipes-Butternut-Spaghetti-Squash-Pineapple-Bean-Boats-anupama-paliwal-my-ginger-garlic-kitchen-1.jpg">
+<input type="text" name="ImageUrl1" id="ImageUrl1" value="http://www.mygingergarlickitchen.com/wp-content/uploads/2016/12/recipes-3-Ingredients-No-Bake-Gingerbread-Truffles-anupama-paliwal-my-ginger-garlic-kitchen-4.jpg">
 
 <label for="ImageUrl2">Second Image URL</label>
-<input type="text" name="ImageUrl2" id="ImageUrl2" value="http://www.mygingergarlickitchen.com/wp-content/uploads/2016/10/recipes-Kaju-Katli-Kaju-Burfi-anupama-paliwal-my-ginger-garlic-kitchen-1.jpg">
+<input type="text" name="ImageUrl2" id="ImageUrl2" value="http://www.mygingergarlickitchen.com/wp-content/uploads/2016/11/recipes-Eggless-Banana-Peanut-Butter-Chocolate-Brownies-anupama-paliwal-my-ginger-garlic-kitchen-7.jpg">
+
+
 
 
 <table border="0">
 
     <tr>
     		<td>
-          <label for="textSize">Dish Name Text Size (in pixels)</label>
-          <input type="text" name="textSize" id="textSize" value="140">
+          <label for="alphabetTextSize">Website (and Description) Text Size (in 'vw' units)</label>
+          <input type="text" name="alphabetTextSize" id="alphabetTextSize" value="2.5">
         </td>
 
         <td>
-          <label for="lineHeight">Line Height</label>
-          <input type="text" name="lineHeight" id="lineHeight" value="1.1">
-        </td>
-
-        <td>
-          <label for="DishNameletterSpacing">Dish Name letter Spacing (in pixels)</label>
-          <input type="text" name="DishNameletterSpacing" id="DishNameletterSpacing" value="0">
+          <label for="alphabetText">Website URL Address</label>
+          <input type="text" name="alphabetText" id="alphabetText" value="www.MyGingerGarlicKitchen.com">
         </td>
 
     </tr>
+</table>
+
+
+<label for="colorCode">Your Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
+<input type="text" name="colorCode" id="colorCode" value="Surprise Me">
+
+
+<label for="quoteText">Description (or NOTES) Text</label>
+<textarea name="quoteText" rows="2" id="quoteText" form="myform">Gluten Free | Vegan | Dairy Free</textarea>
+
+
+<table border="0">
 
     <tr>
         <td>
@@ -339,41 +315,74 @@ font-weight: 900;
                 <option value="DeepPink">DeepPink</option>
                 <option value="orange">Orange</option>
                 <option value="lime">Lime</option>
+                <option value="#cd1c62">MGGK - Pink</option>
+                <option value="#3498db">CONCEPRO - Blue</option>
+                <option value="rgb(220,220,220)">Light Gray, RGB(220,220,220)</option>
+                <option value="rgb(50,50,50)">Dark Gray, RGB(50,50,50)</option>
               </select>
         </td>
 
     </tr>
 
-</table>
-
-
-<table border="0">
-
     <tr>
     		<td>
-          <label for="alphabetTextSize">Website (and Description) Text Size (in 'vw' units)</label>
-          <input type="text" name="alphabetTextSize" id="alphabetTextSize" value="2.5">
+          <label for="textSize">Dish Name Text Size (in pixels)</label>
+          <input type="text" name="textSize" id="textSize" value="140">
         </td>
 
         <td>
-          <label for="alphabetText">Website URL Address</label>
-          <input type="text" name="alphabetText" id="alphabetText" value="www.MyGingerGarlicKitchen.com">
+          <label for="lineHeight">Line Height</label>
+          <input type="text" name="lineHeight" id="lineHeight" value="1.1">
+        </td>
+
+        <td>
+          <label for="DishNameletterSpacing">Dish Name letter Spacing (in pixels)</label>
+          <input type="text" name="DishNameletterSpacing" id="DishNameletterSpacing" value="0">
         </td>
 
     </tr>
+
+
 </table>
 
 
-<label for="colorCode">Your Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
-<input type="text" name="colorCode" id="colorCode" value="Surprise Me">
 
+<table border="0">
+<tr>
+<td>
+  <label for="logoImageUrl">Logo URL</label>
+  <input type="text" name="logoImageUrl" id="logoImageUrl" value="mggk1">
 
-<label for="logoImageUrl">Logo URL</label>
-<input type="text" name="logoImageUrl" id="logoImageUrl" value="mggk1">
+</td>
+<td>
 
+ <label for="fontFamily">Font Family</label>
+    <select id="fontFamily" name="fontFamily">
 
-<label for="quoteText">Description (or NOTES) Text</label>
-   <textarea name="quoteText" rows="3" id="quoteText" form="myform">Gluten Free | Vegan | Dairy Free</textarea>
+      <option value=' "Aladin", cursive'>Aladin, cursive</option>
+      <option value=' "Amatic SC", cursive'>Amatic SC, cursive</option>
+      <option value=' "Butterfly Kids", cursive'>Butterfly Kids, cursive</option>
+      <option value=' "Dancing Script", cursive'>Dancing Script, cursive</option>
+      <option value=' "Gloria Hallelujah", cursive'>Gloria Hallelujah, cursive</option>
+      <option value=' "Homemade Apple", cursive'>Homemade Apple, cursive</option>
+      <option value=' "League Script", cursive'>League Script, cursive</option>
+      <option value=' "Pacifico", cursive'>Pacifico, cursive</option>
+      <option value=' "Permanent Marker", cursive'>Permanent Marker, cursive</option>
+      <option value=' "Pinyon Script", cursive'>Pinyon Script, cursive</option>
+      <option value=' "Sue Ellen Francisco", cursive'>Sue Ellen Francisco, cursive</option>
+      <option value=' "Sunshiney", cursive'>Sunshiney, cursive</option>
+
+      <option value=''> -------------------------- </option>
+
+      <option value=' "Oswald", sans-serif'> => Oswald, MGGK-THEME-FONT</option>
+      <option value=' "Sacramento", cursive' selected> => Sacramento, cursive</option>
+      <option value=' "Playfair Display SC", serif'> => Playfair Display SC</option>
+      <option value=' "Playfair Display", serif'> => Playfair Display</option>
+      <option value=' "Raleway", sans-serif'> => Raleway</option>
+    </select>
+</td>
+<tr>
+</table>
 
 <!-- Somehow the input button below does not work. Seems like a known JS problem. So the BUTTON code outside the form is used. -->
 
@@ -390,8 +399,8 @@ font-weight: 900;
 <hr>
 <h2>Press the button above, and your image card should appear below.</h2>
 <span id="colorPrinting"></span>
-<br><br>
-
+<span id="FontDisplayPrinting"></span>
+<br>
 
 <span id="randcolorRGBA"></span>
 

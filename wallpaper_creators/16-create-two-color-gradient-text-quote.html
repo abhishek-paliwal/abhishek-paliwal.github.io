@@ -3,6 +3,13 @@
 <title>Abhishek | Create Two-Color Gradient Text Quote</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<script src="https://use.fontawesome.com/8cd0876759.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700,900|Playfair+Display:400,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Condensed:300,400,700|Roboto+Mono:100,300,400,500,700|Roboto+Slab:100,300,400|Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+
 <script>
 function randRGBA(min,max)
 {
@@ -28,6 +35,7 @@ function randRGBA(min,max)
 /* Getting the text from the form */
     headingName = document.getElementById("headingName").value ;
     textAlignment = document.getElementById("textAlignment").value ;
+    fontFamily = document.getElementById("fontFamily").value ;
     textSize = document.getElementById("textSize").value ;
 
     lineHeight = document.getElementById("lineHeight").value ;
@@ -100,7 +108,7 @@ function randRGBA(min,max)
                 finalTextWithDiv += "<div class ='mybox' style='text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor + "; font-size:" + textSize + "px; '>" + warray[i] + "</div>" ;
 
                 /* Generating the block with SPANS with linebreaks */
-                finalTextWithSpan += "<span style='display: block; text-align: " + textAlignment + ";text-transform: uppercase; line-height: " + lineHeight + "; color: " + fontColor + "; font-weight: "+ fontWeight + "; background-color: " + mainDivBGcolor + "; font-size:" + textSize + "px; '>" + warray[i] + "</span><br>" ;
+                finalTextWithSpan += "<span style='display: block; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + fontColor + "; font-weight: "+ fontWeight + "; background-color: " + mainDivBGcolor + "; font-size:" + textSize + "px; '>" + warray[i] + "</span><br>" ;
 
                 /* Lising the RGBA codes for all the calculated colors */
                 finalColorCodes += "<span style='color: " + fontColor + ";'>" + warray[i] + " // " + fontColor + "</span><br>" ;
@@ -130,7 +138,7 @@ colorArrayInput = document.getElementById("colorArrayInput").value ;
           finalTextWithDivArray += "<div class ='mybox' style='text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + textVarColor + "; font-size:" + textSize + "px; '>" + warray[j] + "</div>" ;
 
           /* Generating the block with SPANS with linebreaks */
-          finalTextWithSpanArray += "<span style='display: block; text-align: " + textAlignment + ";text-transform: uppercase; line-height: " + lineHeight + "; color: " + textVarColor + "; font-weight: "+ fontWeight + "; background-color: " + mainDivBGcolor + "; font-size:" + textSize + "px; '>" + warray[j] + "</span><br>" ;
+          finalTextWithSpanArray += "<span style='display: block; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textVarColor + "; font-weight: "+ fontWeight + "; background-color: " + mainDivBGcolor + "; font-size:" + textSize + "px; '>" + warray[j] + "</span><br>" ;
 
           /* Lising the RGBA codes for all the calculated colors */
           finalColorCodesArray += "<span style='color: " + textVarColor + ";'>" + warray[j] + " // " + textVarColor + "</span><br>" ;
@@ -148,17 +156,17 @@ headerPartSpan = "<span style='display: block; text-align: " + textAlignment + "
 
 
 /**** Rendering all the blocks for final outputs ****/
-document.getElementById("randcolorRGBADiv").innerHTML = "<div class='main' style='background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithDiv + footerlogo + "</div>";
+document.getElementById("randcolorRGBADiv").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithDiv + footerlogo + "</div>";
 
-document.getElementById("randcolorRGBASpan").innerHTML = "<div class='main' style='background-color:" + mainDivBGcolor + ";'>" + headerPartSpan + finalTextWithSpan + footerlogo + "</div>";
+document.getElementById("randcolorRGBASpan").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartSpan + finalTextWithSpan + footerlogo + "</div>";
 
 document.getElementById("ShowfinalColorcodes").innerHTML = "<strong>Below are the RGB codes for all the calculated gradient color values, between the two input colors.<br>" + finalColorCodes + "</strong>";
 
 
 /**** USING COLOR ARRAY: Rendering all the blocks for final outputs ****/
-document.getElementById("randcolorRGBADivArray").innerHTML = "<div class='main' style='background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithDivArray + footerlogo + "</div>";
+document.getElementById("randcolorRGBADivArray").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithDivArray + footerlogo + "</div>";
 
-document.getElementById("randcolorRGBASpanArray").innerHTML = "<div class='main' style='background-color:" + mainDivBGcolor + ";'>" + headerPartSpan + finalTextWithSpanArray + footerlogo + "</div>";
+document.getElementById("randcolorRGBASpanArray").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartSpan + finalTextWithSpanArray + footerlogo + "</div>";
 
 document.getElementById("ShowfinalColorcodesArray").innerHTML = "<strong>Below are the RGB codes for all the calculated color values, from the color array.<br>" + finalColorCodesArray + "</strong>";
 
@@ -166,16 +174,13 @@ document.getElementById("ShowfinalColorcodesArray").innerHTML = "<strong>Below a
 
 </script>
 
-<script src="https://use.fontawesome.com/8cd0876759.js"></script>
-
-<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,900" rel="stylesheet">
 
 <style type="text/css">
 
 body {
   display:block;
   width: 100%;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto Slab', serif;
   background-color: white;
 }
 
@@ -195,7 +200,7 @@ input, textarea, select, table {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 20px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 button, input[type=submit] {
@@ -208,7 +213,7 @@ button, input[type=submit] {
     border-radius: 4px;
     cursor: pointer;
     font-size: 20px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 button:hover, input[type=submit]:hover {
@@ -227,7 +232,7 @@ div.myform {
     text-transform: capitalize;
     font-weight: bold;
     color: black;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto Slab', serif;
     font-weight: 500;
 }
 
@@ -256,7 +261,7 @@ div.mybox {
   color: black;
   background-color: white;
   font-size: 35px;
-  text-transform: uppercase;
+/*   text-transform: uppercase; */
   line-height: 1.0;
   font-weight: 800;
   text-align: center;
@@ -282,9 +287,11 @@ img.footer {
 <form id="myform">
 
 <label for="headingName">Heading Text</label>
-<input type="text" name="headingName" id="headingName" value="&bull; Words of Wisdom &bull;">
+<input type="text" name="headingName" id="headingName" value="&bull; Words of Wisdom &bull;<br><br>">
 
-
+<table border="0">
+  <tr>
+    <td>
 <label for="textAlignment">Text Alignment</label>
    <select id="textAlignment" name="textAlignment">
      <option value="left">Left</option>
@@ -292,22 +299,40 @@ img.footer {
      <option value="right">Right</option>
    </select>
 
+ </td>
+ <td>
+
+   <label for="fontFamily">Font Family</label>
+      <select id="fontFamily" name="fontFamily">
+        <option value=' "Roboto", sans-serif'>Roboto</option>
+        <option value=' "Roboto Condensed", sans-serif'>Roboto Condensed</option>
+        <option value=' "Roboto Slab", serif'>Roboto Slab</option>
+        <option value=' "Roboto Mono", monospace'>Roboto Mono - Monospace</option>
+        <option value=' "Playfair Display SC", serif' selected>Playfair Display SC</option>
+        <option value=' "Playfair Display", serif'>Playfair Display</option>
+        <option value=' "Raleway", sans-serif'>Raleway</option>
+        <option value=' "Montserrat", sans-serif'>Montserrat</option>
+      </select>
+  </td>
+  <tr>
+  </table>
+
 <table border="0">
 <strong>Gradient color codes for two colors, as RGB values:</strong>
     <tr>
     		<td>
           <label for="red1">RED - color 1</label>
-          <input type="text" name="red1" id="red1" value="213">
+          <input type="text" name="red1" id="red1" value="255">
         </td>
 
         <td>
           <label for="green1">GREEN - color 1</label>
-          <input type="text" name="green1" id="green1" value="176">
+          <input type="text" name="green1" id="green1" value="0">
         </td>
 
         <td>
           <label for="blue1">BLUE - color 1</label>
-          <input type="text" name="blue1" id="blue1" value="108">
+          <input type="text" name="blue1" id="blue1" value="125">
         </td>
 
     </tr>
@@ -315,12 +340,12 @@ img.footer {
     <tr>
         <td>
           <label for="red2">RED - color 2</label>
-          <input type="text" name="red2" id="red2" value="255">
+          <input type="text" name="red2" id="red2" value="125">
         </td>
 
         <td>
           <label for="green2">GREEN - color 2</label>
-          <input type="text" name="green2" id="green2" value="255">
+          <input type="text" name="green2" id="green2" value="0">
         </td>
 
         <td>
@@ -374,10 +399,10 @@ img.footer {
                <option value="100">100</option>
                <option value="200">200</option>
                <option value="300">300</option>
-               <option value="400">400</option>
+               <option value="400" selected>400</option>
                <option value="500">500</option>
                <option value="600">600</option>
-               <option value="700" selected>700</option>
+               <option value="700">700</option>
                <option value="800">800</option>
                <option value="900">900</option>
             </select>
@@ -386,8 +411,8 @@ img.footer {
         <td>
           <label for="textColor">Font Color</label>
              <select id="textColor" name="textColor">
-               <option value="white">White</option>
-               <option value="black" selected>Black</option>
+               <option value="white" selected>White</option>
+               <option value="black">Black</option>
                <option value="red">Red</option>
                <option value="green">Green</option>
                <option value="blue">Blue</option>
@@ -478,7 +503,10 @@ and some style.
 <br><br>
 <span id="randcolorRGBADiv"></span>
 
-<br><br>
+<br>
+<hr style="border: 0; background-color:red; height: 5px;">
+<br>
+
 <span id="ShowfinalColorcodesArray"></span>
 <br><br>
 <span id="randcolorRGBASpanArray"></span>

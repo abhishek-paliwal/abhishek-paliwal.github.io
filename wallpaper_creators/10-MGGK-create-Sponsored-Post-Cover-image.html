@@ -3,6 +3,13 @@
 <title>Abhishek | Create MGGK Card </title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<script src="https://use.fontawesome.com/8cd0876759.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Aladin|Amatic+SC|Butterfly+Kids|Dancing+Script|Gloria+Hallelujah|Homemade+Apple|League+Script|Pacifico|Permanent+Marker|Pinyon+Script|Sue+Ellen+Francisco|Sunshiney" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700,900|Playfair+Display:400,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+
 <script>
 function randRGBA(min,max)
 {
@@ -28,6 +35,8 @@ function randRGBA(min,max)
 /* Getting the text from the form */
     headingName = document.getElementById("headingName").value ;
     textSize = document.getElementById("textSize").value ;
+
+    fontFamily = document.getElementById("fontFamily").value ;
 
     lineHeight = document.getElementById("lineHeight").value ;
 
@@ -75,7 +84,7 @@ function randRGBA(min,max)
 
 part1 = "<div class='polaroid' style='background-color:" + colorRGBAlight + "; border-top: 15px solid " + colorRGBA + "; border-bottom: 15px solid " + colorRGBA + ";'>";
 
-part2 = "<div class='container' style='font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";'>" + quoteText + "</div>" ;
+part2 = "<div class='container' style='font-family: " + fontFamily + ";font-size: " + textSize + "em; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";'>" + quoteText + "</div>" ;
 
 part3logo = "<div class='footer' style='color:" + colorRGBA + ";'>" + headingName + "<br>&mdash;<br><IMG SRC='" + logoImageUrl +"' style='height:15vw'></div>";
 
@@ -88,9 +97,6 @@ document.getElementById("randcolorRGBA").innerHTML = part1 + finalImage + part2 
 
 </script>
 
-<script src="https://use.fontawesome.com/8cd0876759.js"></script>
-
-<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
 
 <style type="text/css">
 
@@ -205,8 +211,44 @@ font-weight: 400;
 <div class="myform"> <!-- floating div start -->
 <form id="myform">
 
-<label for="headingName">Heading Text</label>
-<input type="text" name="headingName" id="headingName" value="Brought to you by">
+
+  <table border="0">
+
+  <tr>
+  <td>
+    <label for="headingName">Heading Text</label>
+    <input type="text" name="headingName" id="headingName" value="Brought to you by">
+
+</td>
+ <td>
+
+   <label for="fontFamily">Font Family</label>
+      <select id="fontFamily" name="fontFamily">
+
+        <option value=' "Aladin", cursive'>Aladin, cursive</option>
+        <option value=' "Amatic SC", cursive'>Amatic SC, cursive</option>
+        <option value=' "Butterfly Kids", cursive'>Butterfly Kids, cursive</option>
+        <option value=' "Dancing Script", cursive'>Dancing Script, cursive</option>
+        <option value=' "Gloria Hallelujah", cursive'>Gloria Hallelujah, cursive</option>
+        <option value=' "Homemade Apple", cursive'>Homemade Apple, cursive</option>
+        <option value=' "League Script", cursive'>League Script, cursive</option>
+        <option value=' "Pacifico", cursive'>Pacifico, cursive</option>
+        <option value=' "Permanent Marker", cursive'>Permanent Marker, cursive</option>
+        <option value=' "Pinyon Script", cursive'>Pinyon Script, cursive</option>
+        <option value=' "Sue Ellen Francisco", cursive'>Sue Ellen Francisco, cursive</option>
+        <option value=' "Sunshiney", cursive'>Sunshiney, cursive</option>
+
+        <option value=''> -------------------------- </option>
+
+        <option value=' "Oswald", sans-serif'> => Oswald, MGGK-THEME-FONT</option>
+        <option value=' "Sacramento", cursive' selected> => Sacramento, cursive</option>
+        <option value=' "Playfair Display SC", serif'> => Playfair Display SC</option>
+        <option value=' "Playfair Display", serif'> => Playfair Display</option>
+        <option value=' "Raleway", sans-serif'> => Raleway</option>
+      </select>
+  </td>
+  <tr>
+  </table>
 
 <table border="0">
 
@@ -229,8 +271,8 @@ font-weight: 400;
              <select id="fontWeight" name="fontWeight">
 
                <option value="300">300</option>
-               <option value="400">400</option>
-               <option value="700" selected>700</option>
+               <option value="400" selected>400</option>
+               <option value="700">700</option>
 
             </select>
         </td>
@@ -266,7 +308,7 @@ font-weight: 400;
 
 
 <label for="quoteText">Quote Text</label>
-   <textarea name="quoteText" rows="5" id="quoteText" form="myform"><span style='color: rgba(205, 28, 98,1)'>10 AWESOME</span> INDIAN COOKING HACKS</textarea>
+   <textarea name="quoteText" rows="5" id="quoteText" form="myform"><span style='color: rgba(205, 28, 98,1)'>10 Awesome</span> Indian Cooking Hacks</textarea>
 
 <!-- Somehow the input button below does not work. Seems like a known JS problem. So the BUTTON code outside the form is used. -->
 

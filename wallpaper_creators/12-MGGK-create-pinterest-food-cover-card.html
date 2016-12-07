@@ -3,6 +3,14 @@
 <title>Abhishek | Create Pinterest Food Cover Image Card </title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<script src="https://use.fontawesome.com/8cd0876759.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Aladin|Amatic+SC|Butterfly+Kids|Dancing+Script|Gloria+Hallelujah|Homemade+Apple|League+Script|Pacifico|Permanent+Marker|Pinyon+Script|Sue+Ellen+Francisco|Sunshiney" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700,900|Playfair+Display:400,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+
+
 <script>
 function randRGBA(min,max)
 {
@@ -27,6 +35,9 @@ function randRGBA(min,max)
 
 /* Getting the text from the form */
     headingName = document.getElementById("headingName").value ;
+
+    fontFamily = document.getElementById("fontFamily").value ;
+
     textSize = document.getElementById("textSize").value ;
 
     lineHeight = document.getElementById("lineHeight").value ;
@@ -80,7 +91,7 @@ varImageUrl1 = "<img src='" + ImageUrl1 +"'>" ;
 varImageUrl2 = "<img src='" + ImageUrl2 +"'>" ;
 varQuoteText = quoteText + "<br>";
 
-partRecipeName = "<div class='containerDish' style='line-height: " + lineHeight + ";font-weight: " + fontWeight + ";letter-spacing: " + DishNameletterSpacing + "px;font-size: " + textSize + "px; color: " + colorRGBA + "'>" + headingName + "</div>" ;
+partRecipeName = "<div class='containerDish' style='font-family: " + fontFamily + ";line-height: " + lineHeight + ";font-weight: " + fontWeight + ";letter-spacing: " + DishNameletterSpacing + "px;font-size: " + textSize + "px; color: " + colorRGBA + "'>" + headingName + "</div>" ;
 
 partDescription = "<div class='container' style='line-height: " + 1.3 + ";letter-spacing: " + alphabetTextSize + "px;font-size: " + alphabetTextSize + "vw; color: rgba(90,90,90,1);'>" + varQuoteText + "&bull;&bull;&bull;<br><span style='color: " + colorRGBA + ";'>" + alphabetText + "</span><br>&bull;&bull;&bull;</div>" ;
 
@@ -91,22 +102,12 @@ partOptionalFooter = "<div class='footer'>Find more such recipes at<br><IMG SRC=
 document.getElementById("randcolorRGBA").innerHTML = part1 + varImageUrl1 + partRecipeName + partDescription + varImageUrl2 + partEnd + partOptionalFooter;
 
 
-/******* Cursive font for heading ******/
-partRecipeNameCursive = "<div class='containerDish' style='font-family: Sacramento, cursive; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";font-size: " + textSize + "px; color: " + colorRGBA + "'>" + headingName + "</div>" ;
-
-document.getElementById("randcolorRGBACursive").innerHTML = part1 + varImageUrl1 + partRecipeNameCursive + partDescription + varImageUrl2 + partEnd + partOptionalFooter;
-
 /************ Printing out the codes for the random colors generated ********/
 document.getElementById("colorPrinting").innerHTML = "<h3 style='color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</h3>";
 
 }
 
 </script>
-
-<script src="https://use.fontawesome.com/8cd0876759.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 
 <style type="text/css">
 
@@ -234,8 +235,45 @@ font-weight: 900;
 <div class="myform"> <!-- floating div start -->
 <form id="myform">
 
-<label for="headingName">Name of the dish</label>
-<input type="text" name="headingName" id="headingName" value="Cake & Caviar">
+
+  <table border="0">
+  <tr>
+  <td>
+
+      <label for="headingName">Name of the dish</label>
+      <input type="text" name="headingName" id="headingName" value="Cake & Caviar">
+
+ </td>
+ <td>
+
+   <label for="fontFamily">Font Family</label>
+      <select id="fontFamily" name="fontFamily">
+
+        <option value=' "Aladin", cursive'>Aladin, cursive</option>
+        <option value=' "Amatic SC", cursive'>Amatic SC, cursive</option>
+        <option value=' "Butterfly Kids", cursive'>Butterfly Kids, cursive</option>
+        <option value=' "Dancing Script", cursive'>Dancing Script, cursive</option>
+        <option value=' "Gloria Hallelujah", cursive'>Gloria Hallelujah, cursive</option>
+        <option value=' "Homemade Apple", cursive'>Homemade Apple, cursive</option>
+        <option value=' "League Script", cursive'>League Script, cursive</option>
+        <option value=' "Pacifico", cursive'>Pacifico, cursive</option>
+        <option value=' "Permanent Marker", cursive'>Permanent Marker, cursive</option>
+        <option value=' "Pinyon Script", cursive'>Pinyon Script, cursive</option>
+        <option value=' "Sue Ellen Francisco", cursive'>Sue Ellen Francisco, cursive</option>
+        <option value=' "Sunshiney", cursive'>Sunshiney, cursive</option>
+
+        <option value=''> -------------------------- </option>
+
+        <option value=' "Oswald", sans-serif'> => Oswald, MGGK-THEME-FONT</option>
+        <option value=' "Sacramento", cursive' selected> => Sacramento, cursive</option>
+        <option value=' "Playfair Display SC", serif'> => Playfair Display SC</option>
+        <option value=' "Playfair Display", serif'> => Playfair Display</option>
+        <option value=' "Raleway", sans-serif'> => Raleway</option>
+      </select>
+  </td>
+  <tr>
+  </table>
+
 
 <label for="ImageUrl1">First Image URL</label>
 <input type="text" name="ImageUrl1" id="ImageUrl1" value="http://www.mygingergarlickitchen.com/wp-content/uploads/2016/10/recipes-Butternut-Spaghetti-Squash-Pineapple-Bean-Boats-anupama-paliwal-my-ginger-garlic-kitchen-1.jpg">
@@ -355,9 +393,6 @@ font-weight: 900;
 <br><br>
 
 
-<span id="randcolorRGBACursive"></span>
-
-<br><br>
 <span id="randcolorRGBA"></span>
 
 

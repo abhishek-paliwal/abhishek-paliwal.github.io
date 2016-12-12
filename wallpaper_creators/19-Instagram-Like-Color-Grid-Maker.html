@@ -1,0 +1,659 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Abhishek | Create Two-Color Gradient Text Quote</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script src="https://use.fontawesome.com/8cd0876759.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700,900|Playfair+Display:400,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Condensed:300,400,700|Roboto+Mono:100,300,400,500,700|Roboto+Slab:100,300,400|Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+
+<script>
+function randRGBA(min,max)
+{
+/* Random RGBA color generation */
+    randnumberRed = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberGreen = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberBlue = Math.floor(Math.random()*(max-min+1)+min);
+
+    colorRGBA = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 1)";
+    colorRGBAlight = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 0.2)";
+
+/* Checking if the color code is present or not. If present, then it is chosen instead of random. */
+    colorCode = document.getElementById("colorCode").value ;
+
+    if (colorCode =="Generate 4 Totally Random Colors") {
+        colorRGBA = colorRGBA ;
+        colorRGBAlight = colorRGBAlight ;
+      } else {
+        colorRGBA = "rgba(" + colorCode + ", 1)";
+        colorRGBAlight = "rgba(" + colorCode + ", 0.2)";
+      }
+
+/* Getting the text from the form */
+    headingName = document.getElementById("headingName").value ;
+    textAlignment = document.getElementById("textAlignment").value ;
+    fontFamily = document.getElementById("fontFamily").value ;
+    textSize = document.getElementById("textSize").value ;
+
+    lineHeight = document.getElementById("lineHeight").value ;
+    headingDIVcolor = document.getElementById("headingDIVcolor").value ;
+
+    fontWeight = document.getElementById("fontWeight").value ;
+
+
+    logoImageUrl = document.getElementById("logoImageUrl").value ;
+            if (logoImageUrl == "ap1") {
+                logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername-white.png";
+            } else if (logoImageUrl == "ap0") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Name-Stamp-black.png";
+
+            } else if (logoImageUrl == "ap2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Circle-fullname.png";
+            } else if (logoImageUrl == "ap3") {
+              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/6-logos-album-covers/Album-Cover-Abhishek-Paliwal-Lorez.jpg";
+            } else if (logoImageUrl == "ap4") {
+              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png";
+            } else if (logoImageUrl == "anu1") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Black-White-Fullname.png";
+            } else if (logoImageUrl == "anu2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Colored-Fullname.png";
+            } else if (logoImageUrl == "fin1") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/7-logos-clients/I-Love-Finland.jpg";
+            } else if (logoImageUrl == "fin2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/7-logos-clients/I-Love-Finland-Circle.png";
+            } else {
+              logoImageUrl = logoImageUrl;
+            }
+
+    borderRadius = document.getElementById("borderRadius").value ;
+
+    textColor = document.getElementById("textColor").value ;
+
+    mainDivBGcolor = document.getElementById("mainDivBGcolor").value ;
+
+
+    /* Obtating the values of the two gradient colors. Keep this block before quoteText calculations. */
+
+    red1 = document.getElementById("red1").value ;
+    green1 = document.getElementById("green1").value ;
+    blue1 = document.getElementById("blue1").value ;
+
+    red2 = document.getElementById("red2").value ;
+    green2 = document.getElementById("green2").value ;
+    blue2 = document.getElementById("blue2").value ;
+
+    red3 = document.getElementById("red3").value ;
+    green3 = document.getElementById("green3").value ;
+    blue3 = document.getElementById("blue3").value ;
+
+    red4 = document.getElementById("red4").value ;
+    green4 = document.getElementById("green4").value ;
+    blue4 = document.getElementById("blue4").value ;
+
+/******** Calculations for Random Colors *******/
+
+if (colorCode =="Generate Random RGB Triad Colors") {
+    red1 = green2 = blue3 = randnumberRed ;
+    green1 = blue2 = red3 = randnumberGreen ;
+    blue1 = red2 = green3 = randnumberBlue ;
+
+    red4 = green4 = blue4 = 255; /*** Last colors as white **/
+
+  }
+
+  if (colorCode =="Generate 4 Totally Random Colors") {
+      red1 = Math.floor(Math.random()*(max-min+1)+min);
+      green1 = Math.floor(Math.random()*(max-min+1)+min);
+      blue1 = Math.floor(Math.random()*(max-min+1)+min);
+
+      red2 = Math.floor(Math.random()*(max-min+1)+min);
+      green2 = Math.floor(Math.random()*(max-min+1)+min);
+      blue2 = Math.floor(Math.random()*(max-min+1)+min);
+
+      red3 = Math.floor(Math.random()*(max-min+1)+min);
+      green3 = Math.floor(Math.random()*(max-min+1)+min);
+      blue3 = Math.floor(Math.random()*(max-min+1)+min);
+
+      red4 = Math.floor(Math.random()*(max-min+1)+min);
+      green4 = Math.floor(Math.random()*(max-min+1)+min);
+      blue4 = Math.floor(Math.random()*(max-min+1)+min);
+
+    }
+
+/***** RANDOM COLOR GENERATION BLOCK ENDS ****/
+
+    totalRows = Number(document.getElementById("totalRows").value) ;
+    totalColumns = Number(document.getElementById("totalColumns").value) ;
+            totalBoxes = totalRows*totalColumns;
+
+    opacityMin = Number(document.getElementById("opacityMin").value) ;
+    opacityMax = Number(document.getElementById("opacityMax").value) ;
+
+
+      i=0; /**** Initialization for FOR  loops ***/
+
+/********** Making the boxes for Color1 and color2 gradients ****/
+      finalTextWithDiv12 ="";
+
+      for (i = 0; i < totalBoxes; i++) {
+
+      /* Gives out a value between opacityMin and opacityMax */
+                opacityValueRandom = Math.floor(Math.random()* ( opacityMax - opacityMin + 1 ) + opacityMin);
+                opacityValue = opacityValueRandom/10; /* Gives out a value between 0 and 1 */
+
+      /**** Finding the gradient color difference value - Color1 and color2 ***/
+                redDiff12 = Math.abs( red1- Math.floor( i*(red1-red2)/(totalBoxes-1) ) );
+                greenDiff12 = Math.abs( green1 - Math.floor( i*(green1-green2)/(totalBoxes-1) ) );
+                blueDiff12 = Math.abs( blue1 - Math.floor( i*(blue1-blue2)/(totalBoxes-1) ) );
+
+                fontColor12 = "rgba(" + redDiff12 + "," + greenDiff12 + "," + blueDiff12 + "," + opacityValue + ")" ;
+
+      /***** Generating the block with prespecified DIV's *****/
+                finalTextWithDiv12 += "<div class ='mybox' style='border-radius: " + borderRadius + ";width: 50px; height: 50px; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor12 + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
+
+        }
+
+/********** Making the boxes for Color2 and color3 gradients ****/
+        finalTextWithDiv23 ="";
+
+        for (i = 0; i < totalBoxes; i++) {
+
+        /* Gives out a value between opacityMin and opacityMax */
+                  opacityValueRandom = Math.floor(Math.random()* ( opacityMax - opacityMin + 1 ) + opacityMin);
+                  opacityValue = opacityValueRandom/10; /* Gives out a value between 0 and 1 */
+
+        /**** Finding the gradient color difference value - Color2 and color3 ***/
+                  redDiff23 = Math.abs( red2- Math.floor( i*(red2-red3)/(totalBoxes-1) ) );
+                  greenDiff23 = Math.abs( green2 - Math.floor( i*(green2-green3)/(totalBoxes-1) ) );
+                  blueDiff23 = Math.abs( blue2 - Math.floor( i*(blue2-blue3)/(totalBoxes-1) ) );
+
+                  fontColor23 = "rgba(" + redDiff23 + "," + greenDiff23 + "," + blueDiff23 + "," + opacityValue + ")" ;
+
+        /***** Generating the block with prespecified DIV's *****/
+                  finalTextWithDiv23 += "<div class ='mybox' style='border-radius: " + borderRadius + ";width: 50px; height: 50px; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor23 + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
+
+          }
+
+/********** Making the boxes for Color2 and color3 gradients ****/
+        finalTextWithDiv34 ="";
+
+        for (i = 0; i < totalBoxes; i++) {
+
+        /* Gives out a value between opacityMin and opacityMax */
+                  opacityValueRandom = Math.floor(Math.random()* ( opacityMax - opacityMin + 1 ) + opacityMin);
+                  opacityValue = opacityValueRandom/10; /* Gives out a value between 0 and 1 */
+
+        /**** Finding the gradient color difference value - Color2 and color3 ***/
+                  redDiff34 = Math.abs( red3- Math.floor( i*(red3-red4)/(totalBoxes-1) ) );
+                  greenDiff34 = Math.abs( green3 - Math.floor( i*(green3-green4)/(totalBoxes-1) ) );
+                  blueDiff34 = Math.abs( blue3 - Math.floor( i*(blue3-blue4)/(totalBoxes-1) ) );
+
+                  fontColor34 = "rgba(" + redDiff34 + "," + greenDiff34 + "," + blueDiff34 + "," + opacityValue + ")" ;
+
+        /***** Generating the block with prespecified DIV's *****/
+                  finalTextWithDiv34 += "<div class ='mybox' style='border-radius: " + borderRadius + ";width: 50px; height: 50px; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor34 + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
+
+          }
+
+
+/* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
+
+footerlogo = "<br><br><div style='clear:left;'><br><br><img class='footer' src='" + logoImageUrl + "'></div>";
+
+headerPartDiv = "<div class ='mybox' style='text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + colorRGBA + "; font-weight: "+ fontWeight + "; background-color: " + headingDIVcolor + "; font-size:" + textSize + "px; '>" + headingName + "</div>" ;
+
+/****************************************************/
+/**** Rendering all the blocks for final outputs ****/
+/****************************************************/
+document.getElementById("randcolorRGBADiv").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithDiv12 + finalTextWithDiv23 + finalTextWithDiv34 + footerlogo + "</div>";
+
+document.getElementById("ShowfinalColorcodes").innerHTML = "<strong>Below are the RGB codes for all the Final RGB Colors:<br><br>" +
+"<span style='background-color: rgb(" + red1 + ", " + green1 + ", " + blue1 + ");'>RGB1: " + red1 + ", " + green1 + ", " + blue1 + "</span><br>" +
+"<span style='background-color: rgb(" + red2 + ", " + green2 + ", " + blue2 + ");'>RGB2: " + red2 + ", " + green2 + ", " + blue2 + "<br>" +
+"<span style='background-color: rgb(" + red3 + ", " + green3 + ", " + blue3 + ");'>RGB3: " + red3 + ", " + green3 + ", " + blue3 + "<br>" +
+"<span style='background-color: rgb(" + red4 + ", " + green4 + ", " + blue4 + ");'>RGB4: " + red4 + ", " + green4 + ", " + blue4 + "<br>" +
+"</strong>";
+
+
+}
+
+</script>
+
+
+<style type="text/css">
+
+body {
+  display:block;
+  width: 100%;
+  font-family: 'Roboto Slab', serif;
+  background-color: white;
+}
+
+img.logo {
+    display: block;
+    margin: auto;
+    width: 20vw;
+    padding: 5px;
+}
+
+input, textarea, select, table {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #c0c0c0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+}
+
+button, input[type=submit] {
+    width: 100%;
+    background-color: blue;
+    color: black;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+}
+
+button:hover, input[type=submit]:hover {
+    background-color: #c0c0c0;
+}
+
+div.myform {
+    display: block;
+    width: 90vw;
+    margin: auto;
+    border-radius: 5px;
+    border: 2px solid blue;
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: black;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 500;
+}
+
+h1, h2, h3 {
+  color: blue;
+}
+
+img.footer {
+  display: block;
+  margin: auto;
+  height: 120px;
+
+}
+
+/* Add your custom style code below this line. Do not touch any CSS above this line. */
+div.main {
+  display: block;
+  padding: 10px;
+  height: auto;
+}
+
+div.mybox {
+  display: block;
+  padding: 10px;
+  height: auto;
+  color: black;
+  background-color: white;
+  font-size: 35px;
+/*   text-transform: uppercase; */
+  line-height: 1.0;
+  font-weight: 800;
+  text-align: center;
+}
+
+img.footer {
+  height: 120px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img class="logo" src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-White.png">
+<hr>
+
+<h1>Create Two-Color Gradient Text Quote</h1>
+
+<div class="myform"> <!-- floating div start -->
+<form id="myform">
+
+<label for="headingName">Heading Text</label>
+<input type="text" name="headingName" id="headingName" value="&bull; Words of Wisdom &bull;<br><br>">
+
+<table border="0">
+  <tr>
+    <td>
+<label for="textAlignment">Text Alignment</label>
+   <select id="textAlignment" name="textAlignment">
+     <option value="left">Left</option>
+     <option value="center" selected>Center</option>
+     <option value="right">Right</option>
+   </select>
+
+ </td>
+ <td>
+
+   <label for="fontFamily">Font Family</label>
+      <select id="fontFamily" name="fontFamily">
+        <option value=' "Roboto", sans-serif'>Roboto</option>
+        <option value=' "Roboto Condensed", sans-serif' selected>Roboto Condensed</option>
+        <option value=' "Roboto Slab", serif'>Roboto Slab</option>
+        <option value=' "Roboto Mono", monospace'>Roboto Mono - Monospace</option>
+        <option value=' "Playfair Display SC", serif'>Playfair Display SC</option>
+        <option value=' "Playfair Display", serif'>Playfair Display</option>
+        <option value=' "Raleway", sans-serif'>Raleway</option>
+        <option value=' "Montserrat", sans-serif'>Montserrat</option>
+      </select>
+  </td>
+  <tr>
+  </table>
+
+
+  <label for="colorCode">Generate Random colors OR Use Custom Colors</label>
+     <select id="colorCode" name="foncolorCodetFamily">
+       <option value='Use My Colors'>Use My Colors</option>
+       <option value='Generate Random RGB Triad Colors' selected>Generate Random RGB Triad Colors</option>
+       <option value='Generate 4 Totally Random Colors' selected>Generate 4 Totally Random Colors</option>
+
+       </select>
+
+
+
+<table border="0">
+<strong>Gradient color codes for 4 colors, as RGB values:</strong>
+    <tr>
+    		<td>
+          <label for="red1">RED - color 1</label>
+          <input type="text" name="red1" id="red1" value="255">
+        </td>
+
+        <td>
+          <label for="green1">GREEN - color 1</label>
+          <input type="text" name="green1" id="green1" value="255">
+        </td>
+
+        <td>
+          <label for="blue1">BLUE - color 1</label>
+          <input type="text" name="blue1" id="blue1" value="100">
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+          <label for="red2">RED - color 2</label>
+          <input type="text" name="red2" id="red2" value="255">
+        </td>
+
+        <td>
+          <label for="green2">GREEN - color 2</label>
+          <input type="text" name="green2" id="green2" value="0">
+        </td>
+
+        <td>
+          <label for="blue2">BLUE - color 2</label>
+          <input type="text" name="blue2" id="blue2" value="0">
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+          <label for="red3">RED - color 3</label>
+          <input type="text" name="red3" id="red3" value="0">
+        </td>
+
+        <td>
+          <label for="green3">GREEN - color 3</label>
+          <input type="text" name="green3" id="green3" value="0">
+        </td>
+
+        <td>
+          <label for="blue3">BLUE - color 3</label>
+          <input type="text" name="blue3" id="blue3" value="255">
+        </td>
+
+    </tr>
+
+    <tr>
+    		<td>
+          <label for="red4">RED - color 4</label>
+          <input type="text" name="red4" id="red4" value="100">
+        </td>
+
+        <td>
+          <label for="green4">GREEN - color 4</label>
+          <input type="text" name="green4" id="green4" value="255">
+        </td>
+
+        <td>
+          <label for="blue4">BLUE - color 4</label>
+          <input type="text" name="blue4" id="blue4" value="255">
+        </td>
+
+    </tr>
+
+</table>
+
+
+<table border="0">
+
+    <tr>
+    		<td>
+          <label for="textSize">Text Size (in pixels)</label>
+          <input type="text" name="textSize" id="textSize" value="35">
+        </td>
+
+        <td>
+          <label for="lineHeight">Line Height</label>
+          <input type="text" name="lineHeight" id="lineHeight" value="0.9">
+        </td>
+
+        <td>
+          <label for="headingDIVcolor">Heading DIV Color (RGBA/HEX/Name)</label>
+          <select id="headingDIVcolor" name="headingDIVcolor">
+            <option value="white" selected>White</option>
+            <option value="black">Black</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="yellow">Yellow</option>
+            <option value="DeepPink">DeepPink</option>
+            <option value="orange">Orange</option>
+            <option value="lime">Lime</option>
+            <option value="rgba(170,170,170,1)">GRAY - 170</option>
+            <option value="#3498db">CONCEPRO BLUE</option>
+            <option value="#CD1C62">MGGK PINK</option>
+
+          </select>
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+          <label for="fontWeight">Font Weight</label>
+             <select id="fontWeight" name="fontWeight">
+               <option value="100">100</option>
+               <option value="200">200</option>
+               <option value="300">300</option>
+               <option value="400" selected>400</option>
+               <option value="500">500</option>
+               <option value="600">600</option>
+               <option value="700">700</option>
+               <option value="800">800</option>
+               <option value="900">900</option>
+            </select>
+        </td>
+
+        <td>
+          <label for="textColor">Font Color</label>
+             <select id="textColor" name="textColor">
+               <option value="white" selected>White</option>
+               <option value="black">Black</option>
+               <option value="red">Red</option>
+               <option value="green">Green</option>
+               <option value="blue">Blue</option>
+               <option value="yellow">Yellow</option>
+               <option value="DeepPink">DeepPink</option>
+               <option value="orange">Orange</option>
+               <option value="lime">Lime</option>
+               <option value="rgba(170,170,170,1)">GRAY - 170</option>
+               <option value="#3498db">CONCEPRO BLUE</option>
+               <option value="#CD1C62">MGGK PINK</option>
+
+             </select>
+        </td>
+
+        <td>
+          <label for="mainDivBGcolor">Main DIV Background Color</label>
+             <select id="mainDivBGcolor" name="mainDivBGcolor">
+               <option value="white" selected>White</option>
+               <option value="black">Black</option>
+               <option value="red">Red</option>
+               <option value="green">Green</option>
+               <option value="blue">Blue</option>
+               <option value="yellow">Yellow</option>
+               <option value="DeepPink">DeepPink</option>
+               <option value="orange">Orange</option>
+               <option value="lime">Lime</option>
+               <option value="rgba(170,170,170,1)">GRAY - 170</option>
+               <option value="#3498db">CONCEPRO BLUE</option>
+               <option value="#CD1C62">MGGK PINK</option>
+
+             </select>
+        </td>
+
+    </tr>
+
+</table>
+
+
+
+<table border="0">
+<tr>
+<td>
+
+<label for="logoImageUrl">Logo URL</label>
+<input type="text" name="logoImageUrl" id="logoImageUrl" value="fin2">
+
+</td>
+<td>
+
+  <label for="borderRadius">Border Radius in Percentage (Use 50% for circular boxes)</label>
+  <input type="text" name="borderRadius" id="borderRadius" value="0%">
+
+</td>
+</tr>
+</table>
+
+
+
+<table border="0">
+<tr>
+<td>
+
+<label for="totalRows">Total Number Of Rows (Ideal Rows:Columns Ratio = 3:1)</label>
+<input type="text" name="totalRows" id="totalRows" value="18">
+
+</td>
+<td>
+
+<label for="totalColumns">Total Number Of Columns Per Gradient (4 colors = 3 gradients)</label>
+<input type="text" name="totalColumns" id="totalColumns" value="6">
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+  <label for="opacityMin">Color Opacity - Minimum Value (Integer Between 1 - 10)</label>
+  <input type="text" name="opacityMin" id="opacityMin" value="5">
+
+</td>
+<td>
+
+  <label for="opacityMax">Color Opacity - Maximum Value (Integer Between 1 - 10)</label>
+  <input type="text" name="opacityMax" id="opacityMax" value="8">
+
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+<!-- Somehow the input button below does not work. Seems like a known JS problem. So the BUTTON code outside the form is used. -->
+
+<!--
+<input type="submit" value="Submit" onclick="randRGBA(0,255);" />
+-->
+
+</form>
+
+<button type="submit" value="Submit" onclick="randRGBA(0,255);">Submit</button>
+
+</div>
+
+<hr>
+<h2>Press the button above, and your image should appear below.</h2>
+<strong><span style='color: red;'>(TIP: To remove the numbers from the boxes, enter the text size as 0, zero pixels in the form.)</span></strong>
+<br><br>
+
+<span id="ShowfinalColorcodes"></span>
+<br><br>
+<span id="randcolorRGBADiv"></span>
+
+
+<br>
+<hr style="border: 0; background-color:red; height: 5px;">
+<br>
+
+
+
+<br><br><hr>
+
+<h3>Example Graphics Below</h3><br><br>
+
+<img src='http://www.esaba.com/blog/wp-content/uploads/2014/02/instagram-book.jpg'>
+
+<div class="mybox" style="width:100px; height: 100px; background-color:#333;color:white;">
+1
+</div>
+
+<div class="mybox" style="width:100px; height: 100px; background-color:#666;color:white;">
+2
+</div>
+
+<div class="mybox" style="width:100px; height: 100px; background-color:#999;color:white;">
+3
+</div>
+
+
+<div class="endfooter">
+<br><br><hr>
+This Webapp Is Made By <a href="http://www.AbhishekPaliwal.com">Abhishek Paliwal</a>
+</div>
+
+</body>
+</html>

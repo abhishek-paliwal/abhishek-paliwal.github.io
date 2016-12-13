@@ -34,6 +34,13 @@ function randRGBA(min,max)
 
 /* Getting the text from the form */
     headingName = document.getElementById("headingName").value ;
+
+    boxWidth = document.getElementById("boxWidth").value ;
+    boxHeight = document.getElementById("boxHeight").value ;
+    headingName = document.getElementById("headingName").value ;
+
+    borderRadius = document.getElementById("borderRadius").value ;
+
     textAlignment = document.getElementById("textAlignment").value ;
     fontFamily = document.getElementById("fontFamily").value ;
     textSize = document.getElementById("textSize").value ;
@@ -131,6 +138,7 @@ colorArrayInput = document.getElementById("colorArrayInput").value ;
       finalTextWithDivArray ="";
       finalTextWithDivArrayVarWidth ="";
       finalTextWithSpanArray ="";
+      finalColorCodesArrayPrinting= "";
 
 
       for (j = 0; j < warray.length; j++) {
@@ -148,7 +156,11 @@ colorArrayInput = document.getElementById("colorArrayInput").value ;
           finalTextWithSpanArray += "<span style='display: block; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textVarColor + "; font-weight: "+ fontWeight + "; background-color: " + mainDivBGcolor + "; font-size:" + textSize + "px; '>" + warray[j] + "</span><br>" ;
 
           /* Lising the RGBA codes for all the calculated colors */
-          finalColorCodesArray += "<span style='color: " + textVarColor + ";'>" + warray[j] + " // " + textVarColor + "</span><br>" ;
+
+          finalColorCodesArray += "<div class='colorCodePrint' style='height: " + boxHeight + ";width: " + boxWidth + ";color: " + textColor + ";font-weight: "+ fontWeight + "; text-align: " + textAlignment + ";line-height: " + lineHeight + "; border-radius: " + borderRadius + "; font-size:" + textSize + "px; background-color: " + textVarColor + ";'>" + warray[j] + "</div>" ;
+
+
+          finalColorCodesArrayPrinting += "<span style='color: white; background-color: "+ textVarColor + ";'>" + textVarColor + "</span><br>" ;
 
       }
 
@@ -179,7 +191,10 @@ document.getElementById("randcolorRGBADivArrayVarWidth").innerHTML = "<div class
 
 document.getElementById("randcolorRGBASpanArray").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartSpan + finalTextWithSpanArray + footerlogo + "</div>";
 
-document.getElementById("ShowfinalColorcodesArray").innerHTML = "<strong>Below are the RGB codes for all the calculated color values, from the color array.<br>" + finalColorCodesArray + "</strong>";
+document.getElementById("ShowfinalColorcodesArray").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalColorCodesArray + "<div style='clear:left;'></div>" + footerlogo + "</div>" ;
+
+document.getElementById("ShowfinalColorcodesArrayPrinting").innerHTML = "Below are the RGB codes for all the input color values, from the color array.<br>" + finalColorCodesArrayPrinting ;
+
 
 }
 
@@ -278,6 +293,15 @@ div.mybox {
   text-align: center;
 }
 
+div.colorCodePrint {
+  float:left;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10%;
+}
+
 img.footer {
   height: 120px;
 }
@@ -297,7 +321,33 @@ img.footer {
 <form id="myform">
 
 <label for="headingName">Heading Text</label>
-<input type="text" name="headingName" id="headingName" value="&bull; Words of Wisdom &bull;<br><br>">
+<input type="text" name="headingName" id="headingName" value="• Words of Wisdom •<hr style='border: 0; background-color: #cd1c62; height: 5px; width: 300px;'>">
+
+
+<table border="0">
+  <tr>
+    <td>
+
+<label for="boxWidth">Color-Coded Box - Width</label>
+<input type="text" name="boxWidth" id="boxWidth" value="200px">
+
+</td>
+<td>
+
+<label for="boxHeight">Color-Coded Box - Height</label>
+<input type="text" name="boxHeight" id="boxHeight" value="200px">
+
+</td>
+<td>
+
+<label for="borderRadius">Border Radius for Printing Color-Coded Boxes (in percentage)</label>
+<input type="text" name="borderRadius" id="borderRadius" value="10%">
+
+</td>
+</tr>
+</table>
+
+
 
 <table border="0">
   <tr>
@@ -519,6 +569,9 @@ and some style.
 <hr style="border: 0; background-color:red; height: 5px;">
 <br>
 
+
+<span id="ShowfinalColorcodesArrayPrinting"></span>
+<br><br>
 <span id="ShowfinalColorcodesArray"></span>
 <br><br>
 <span id="randcolorRGBASpanArray"></span>

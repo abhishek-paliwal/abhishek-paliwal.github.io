@@ -75,24 +75,7 @@ function randRGBA(min,max)
     mainDivBGcolor = document.getElementById("mainDivBGcolor").value ;
 
 
-    /* Obtating the values of the two gradient colors. Keep this block before quoteText calculations. */
-
-    red1 = document.getElementById("red1").value ;
-    green1 = document.getElementById("green1").value ;
-    blue1 = document.getElementById("blue1").value ;
-
-    red2 = document.getElementById("red2").value ;
-    green2 = document.getElementById("green2").value ;
-    blue2 = document.getElementById("blue2").value ;
-
-    red3 = document.getElementById("red3").value ;
-    green3 = document.getElementById("green3").value ;
-    blue3 = document.getElementById("blue3").value ;
-
-    red4 = document.getElementById("red4").value ;
-    green4 = document.getElementById("green4").value ;
-    blue4 = document.getElementById("blue4").value ;
-
+/* Obtating the values of the two gradient colors. Keep this block before quoteText calculations. */
 /******** Calculations for Random Colors *******/
 
 if (colorCode =="Generate Random RGB Triad Colors") {
@@ -126,8 +109,6 @@ if (colorCode =="Generate Random RGB Triad Colors") {
 
     quoteText = document.getElementById("quoteText").value ;
 
-      /* Calculations begin */
-
 /*** Taking the whole array and separating elements by newlines. ***/
                 warray = quoteText.split('\n');
 
@@ -137,7 +118,7 @@ if (colorCode =="Generate Random RGB Triad Colors") {
                 ArrColor3 = warray[2].split(',');
                 ArrColor4 = warray[3].split(',');
 
-    if (colorCode =="Use Top 4 Colors from Color Array List") {
+    if (colorCode =="Use Following 4 Colors from Color Array List") {
         red1 = ArrColor1[0];
         green1 = ArrColor1[1];
         blue1 = ArrColor1[2];
@@ -402,95 +383,18 @@ img.footer {
 
   <label for="colorCode">Generate Random colors OR Use Custom Colors</label>
     <select id="colorCode" name="foncolorCodetFamily">
-       <option value='Use My Colors'>Use My Colors</option>
-       <option value='Use Top 4 Colors from Color Array List'>Use Top 4 Colors from Color Array List</option>
+       <option value='Generate 4 Totally Random Colors'>Generate 4 Totally Random Colors</option>
        <option value='Generate Random RGB Triad Colors'>Generate Random RGB Triad Colors</option>
-       <option value='Generate 4 Totally Random Colors' selected>Generate 4 Totally Random Colors</option>
+       <option value='Use Following 4 Colors from Color Array List' selected>Use Following 4 Colors from Color Array List</option>
     </select>
 
 
 
-<table border="0">
-<strong>Gradient color codes for 4 colors, as RGB values:</strong>
-    <tr>
-    		<td>
-          <label for="red1">RED - color 1</label>
-          <input type="text" name="red1" id="red1" value="255">
-        </td>
-
-        <td>
-          <label for="green1">GREEN - color 1</label>
-          <input type="text" name="green1" id="green1" value="255">
-        </td>
-
-        <td>
-          <label for="blue1">BLUE - color 1</label>
-          <input type="text" name="blue1" id="blue1" value="100">
-        </td>
-
-    </tr>
-
-    <tr>
-        <td>
-          <label for="red2">RED - color 2</label>
-          <input type="text" name="red2" id="red2" value="255">
-        </td>
-
-        <td>
-          <label for="green2">GREEN - color 2</label>
-          <input type="text" name="green2" id="green2" value="0">
-        </td>
-
-        <td>
-          <label for="blue2">BLUE - color 2</label>
-          <input type="text" name="blue2" id="blue2" value="0">
-        </td>
-
-    </tr>
-
-    <tr>
-        <td>
-          <label for="red3">RED - color 3</label>
-          <input type="text" name="red3" id="red3" value="0">
-        </td>
-
-        <td>
-          <label for="green3">GREEN - color 3</label>
-          <input type="text" name="green3" id="green3" value="0">
-        </td>
-
-        <td>
-          <label for="blue3">BLUE - color 3</label>
-          <input type="text" name="blue3" id="blue3" value="255">
-        </td>
-
-    </tr>
-
-    <tr>
-    		<td>
-          <label for="red4">RED - color 4</label>
-          <input type="text" name="red4" id="red4" value="100">
-        </td>
-
-        <td>
-          <label for="green4">GREEN - color 4</label>
-          <input type="text" name="green4" id="green4" value="255">
-        </td>
-
-        <td>
-          <label for="blue4">BLUE - color 4</label>
-          <input type="text" name="blue4" id="blue4" value="255">
-        </td>
-
-    </tr>
-
-</table>
-
 <label for="quoteText">4 Color Array List as RGB // Only 4 colors allowed. <a href="http://www.zonums.com/online/color_converter/" target='_blank'>(Bulk HEX to RGB converter)</a></label>
-   <textarea name="quoteText" rows="4" id="quoteText" form="myform">66,133,244
-52,168,83
-251,188,5
-234,67,53</textarea>
+   <textarea name="quoteText" rows="4" id="quoteText" form="myform">255,255,100
+255,0,0
+0,0,255
+100,255,255</textarea>
 
 <table border="0">
 

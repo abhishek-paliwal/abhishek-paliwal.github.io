@@ -123,6 +123,41 @@ if (colorCode =="Generate Random RGB Triad Colors") {
 
     }
 
+
+    quoteText = document.getElementById("quoteText").value ;
+
+      /* Calculations begin */
+
+/*** Taking the whole array and separating elements by newlines. ***/
+                warray = quoteText.split('\n');
+
+/*** Taking thus obtained element and separating them further by commas ***/
+                ArrColor1 = warray[0].split(','); /** R1,G1,B1 etc. **/
+                ArrColor2 = warray[1].split(',');
+                ArrColor3 = warray[2].split(',');
+                ArrColor4 = warray[3].split(',');
+
+    if (colorCode =="Use Top 4 Colors from Color Array List") {
+        red1 = ArrColor1[0];
+        green1 = ArrColor1[1];
+        blue1 = ArrColor1[2];
+
+        red2 = ArrColor2[0];
+        green2 = ArrColor2[1];
+        blue2 = ArrColor2[2];
+
+        red3 = ArrColor3[0];
+        green3 = ArrColor3[1];
+        blue3 = ArrColor3[2];
+
+        red4 = ArrColor4[0];
+        green4 = ArrColor4[1];
+        blue4 = ArrColor4[2];
+
+      }
+
+
+
 /***** RANDOM COLOR GENERATION BLOCK ENDS ****/
 
     totalRows = Number(document.getElementById("totalRows").value) ;
@@ -366,12 +401,12 @@ img.footer {
 
 
   <label for="colorCode">Generate Random colors OR Use Custom Colors</label>
-     <select id="colorCode" name="foncolorCodetFamily">
+    <select id="colorCode" name="foncolorCodetFamily">
        <option value='Use My Colors'>Use My Colors</option>
-       <option value='Generate Random RGB Triad Colors' selected>Generate Random RGB Triad Colors</option>
+       <option value='Use Top 4 Colors from Color Array List'>Use Top 4 Colors from Color Array List</option>
+       <option value='Generate Random RGB Triad Colors'>Generate Random RGB Triad Colors</option>
        <option value='Generate 4 Totally Random Colors' selected>Generate 4 Totally Random Colors</option>
-
-       </select>
+    </select>
 
 
 
@@ -451,6 +486,11 @@ img.footer {
 
 </table>
 
+<label for="quoteText">4 Color Array List as RGB // Only 4 colors allowed. <a href="http://www.zonums.com/online/color_converter/" target='_blank'>(Bulk HEX to RGB converter)</a></label>
+   <textarea name="quoteText" rows="4" id="quoteText" form="myform">66,133,244
+52,168,83
+251,188,5
+234,67,53</textarea>
 
 <table border="0">
 

@@ -122,7 +122,7 @@ function randRGBA(min,max)
                 finalTextWithSpan += "<span style='display: block; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + fontColor + "; font-weight: "+ fontWeight + "; background-color: " + mainDivBGcolor + "; font-size:" + textSize + "px; '>" + warray[i] + "</span><br>" ;
 
                 /* Lising the RGBA codes for all the calculated colors */
-                finalColorCodes += "<span style='color: " + fontColor + ";'>" + warray[i] + " // " + fontColor + "</span><br>" ;
+                finalColorCodes += "<span style='color: " + fontColor + ";'>" + fontColor + " // " + warray[i] + "</span><br>" ;
 
             }
 
@@ -160,7 +160,7 @@ colorArrayInput = document.getElementById("colorArrayInput").value ;
           finalColorCodesArray += "<div class='colorCodePrint' style='height: " + boxHeight + ";width: " + boxWidth + ";color: " + textColor + ";font-weight: "+ fontWeight + "; text-align: " + textAlignment + ";line-height: " + lineHeight + "; border-radius: " + borderRadius + "; font-size:" + textSize + "px; background-color: " + textVarColor + ";'>" + warray[j] + "</div>" ;
 
 
-          finalColorCodesArrayPrinting += "<span style='color: white; background-color: "+ textVarColor + ";'>" + textVarColor + "</span><br>" ;
+          finalColorCodesArrayPrinting += "<strong><span style='color: "+ textVarColor + ";'>" + textVarColor + " // " + warray[j] + "</span></strong><br>" ;
 
       }
 
@@ -193,7 +193,7 @@ document.getElementById("randcolorRGBASpanArray").innerHTML = "<div class='main'
 
 document.getElementById("ShowfinalColorcodesArray").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalColorCodesArray + "<div style='clear:left;'></div>" + footerlogo + "</div>" ;
 
-document.getElementById("ShowfinalColorcodesArrayPrinting").innerHTML = "Below are the RGB codes for all the input color values, from the color array.<br>" + finalColorCodesArrayPrinting ;
+document.getElementById("ShowfinalColorcodesArrayPrinting").innerHTML = "<h2 style='color:red;'>Total: " + warray.length + " Lines of text.</h2>Below are the RGB codes for all the input color values, from the color array.<br><br>" + finalColorCodesArrayPrinting ;
 
 
 }
@@ -329,13 +329,13 @@ img.footer {
     <td>
 
 <label for="boxWidth">Color-Coded Box - Width</label>
-<input type="text" name="boxWidth" id="boxWidth" value="200px">
+<input type="text" name="boxWidth" id="boxWidth" value="150px">
 
 </td>
 <td>
 
 <label for="boxHeight">Color-Coded Box - Height</label>
-<input type="text" name="boxHeight" id="boxHeight" value="200px">
+<input type="text" name="boxHeight" id="boxHeight" value="150px">
 
 </td>
 <td>
@@ -443,7 +443,8 @@ img.footer {
             <option value="DeepPink">DeepPink</option>
             <option value="orange">Orange</option>
             <option value="lime">Lime</option>
-            <option value="rgba(170,170,170,1)">GRAY - 170</option>
+            <option value="rgba(50,50,50,1)">Dark GRAY - 50</option>
+            <option value="rgba(225,225,225,1)">Light GRAY - 225</option>
             <option value="#3498db">CONCEPRO BLUE</option>
             <option value="#CD1C62">MGGK PINK</option>
 
@@ -480,7 +481,8 @@ img.footer {
                <option value="DeepPink">DeepPink</option>
                <option value="orange">Orange</option>
                <option value="lime">Lime</option>
-               <option value="rgba(170,170,170,1)">GRAY - 170</option>
+               <option value="rgba(50,50,50,1)">Dark GRAY - 50</option>
+               <option value="rgba(225,225,225,1)">Light GRAY - 225</option>
                <option value="#3498db">CONCEPRO BLUE</option>
                <option value="#CD1C62">MGGK PINK</option>
 
@@ -499,7 +501,8 @@ img.footer {
                <option value="DeepPink">DeepPink</option>
                <option value="orange">Orange</option>
                <option value="lime">Lime</option>
-               <option value="rgba(170,170,170,1)">GRAY - 170</option>
+               <option value="rgba(50,50,50,1)">Dark GRAY - 50</option>
+               <option value="rgba(225,225,225,1)">Light GRAY - 225</option>
                <option value="#3498db">CONCEPRO BLUE</option>
                <option value="#CD1C62">MGGK PINK</option>
 
@@ -555,19 +558,6 @@ and some style.
 
 <hr>
 <h2>Press the button above, and your image should appear below.</h2>
-<br><br>
-
-<span id="ShowfinalColorcodes"></span>
-<br><br>
-<span id="randcolorRGBASpan"></span>
-<br><br>
-<span id="randcolorRGBADiv"></span>
-<br><br>
-<span id="randcolorRGBADivVarWidth"></span>
-
-<br>
-<hr style="border: 0; background-color:red; height: 5px;">
-<br>
 
 
 <span id="ShowfinalColorcodesArrayPrinting"></span>
@@ -581,20 +571,33 @@ and some style.
 <span id="randcolorRGBADivArrayVarWidth"></span>
 
 
+<br>
+<hr style="border: 0; background-color:red; height: 5px;">
+<br>
+
+<span id="ShowfinalColorcodes"></span>
+<br><br>
+<span id="randcolorRGBASpan"></span>
+<br><br>
+<span id="randcolorRGBADiv"></span>
+<br><br>
+<span id="randcolorRGBADivVarWidth"></span>
+
+
 <br><br><hr>
 
 <h3>Example Graphics Below</h3><br><br>
 
 <div class="mybox" style="width:100%;background-color:#333;color:white;">
-This is a good one
+This Is A Good One
 </div>
 
 <div class="mybox" style="width:100%;background-color:#666;color:white;">
-good one
+Good One
 </div>
 
 <div class="mybox" style="width:100%;background-color:#999;color:white;">
-another good one.
+Another Good One.
 </div>
 
 

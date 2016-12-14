@@ -71,9 +71,9 @@ backgroundOpacity = document.getElementById("backgroundOpacity").value ;
 
 /* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
 
-part1dark = "<div class='module' style='background: url(" + ImageUrl1 + ");border: " + imageBorder + "px solid " + colorRGBA + ";'>";
+part1dark = "<div class='module' style='background: url(" + ImageUrl1 + "); background-size: cover; border: " + imageBorder + "px solid " + colorRGBA + ";'>";
 
-part1light = "<div class='module opp' style='background: url(" + ImageUrl1 + ");border: " + imageBorder + "px solid " + colorRGBA + ";'>";
+part1light = "<div class='module opp' style='background: url(" + ImageUrl1 + "); background-size: cover; border: " + imageBorder + "px solid " + colorRGBA + ";'>";
 
 part2 = "<h3 style='background-color: " + colorRGBAlight + ";color: " + fontColor + ";font-size: " + textSize + "px; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";letter-spacing: " + letterSpacing + "px;'>" ;
 part2Nocolor = "<h3 style='font-size: " + textSize + "px; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";letter-spacing: " + letterSpacing + "px;'>" ;
@@ -93,8 +93,8 @@ document.getElementById("randcolorRGBAlightDefault").innerHTML = part1light + pa
 
 /****** SQUARE VERSIONS - 800px wide and high ********/
 
-part1darkSquare = "<div class='module' style='height: 800px; background: url(" + ImageUrl1 + ");border: " + imageBorder + "px solid " + colorRGBA + ";'>";
-part1lightSquare = "<div class='module opp' style='height: 800px; background: url(" + ImageUrl1 + ");border: " + imageBorder + "px solid " + colorRGBA + ";'>";
+part1darkSquare = "<div class='module' style='height: 800px; background: url(" + ImageUrl1 + ");background-size: cover; border: " + imageBorder + "px solid " + colorRGBA + ";'>";
+part1lightSquare = "<div class='module opp' style='height: 800px; background: url(" + ImageUrl1 + ");background-size: cover; border: " + imageBorder + "px solid " + colorRGBA + ";'>";
 
 document.getElementById("randcolorRGBAlightSquare").innerHTML = part1lightSquare + part2 + icontop + headingName + logoImageUrlFinal + partEnd ;
 document.getElementById("randcolorRGBAlightDefaultSquare").innerHTML = part1lightSquare + part2Nocolor + icontop + headingName + logoImageUrlFinal + partEnd ;
@@ -244,7 +244,7 @@ h1 {
 <input type="text" name="headingName" id="headingName" value="100<br>best Sweets & Snacks Of All Time">
 
 <label for="ImageUrl1">First Image URL (<a href="http://downloads.concepro.com/30-Free-Polygonal-Low-Poly-Textures/" target="_blank">List of Polygonal Backgrounds URLs</a>)</label>
-<input type="text" name="ImageUrl1" id="ImageUrl1" value="http://www.mygingergarlickitchen.com/wp-content/uploads/2016/10/recipes-Butternut-Spaghetti-Squash-Pineapple-Bean-Boats-anupama-paliwal-my-ginger-garlic-kitchen-1.jpg">
+<input type="text" name="ImageUrl1" id="ImageUrl1" value="http://downloads.concepro.com/30-Free-Polygonal-Low-Poly-Textures/low-poly-texture-75.jpg">
 
 
 <table border="0">

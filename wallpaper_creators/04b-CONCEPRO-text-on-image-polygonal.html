@@ -28,7 +28,7 @@ function randRGBA(min,max)
     webAddress = document.getElementById("webAddress").value ;
 
     quoteText = document.getElementById("quoteText").value ;
-        quoteText = "&#10077;" + quoteText + "&#10078;";
+        quoteText = "&#10077; " + quoteText + " &#10078;";
 
 
     logoSize = document.getElementById("logoSize").value ;
@@ -36,18 +36,25 @@ function randRGBA(min,max)
     logoImageUrl = document.getElementById("logoImageUrl").value ;
         endlogo = "<span class='bottom'><img class='footer' src='" + logoImageUrl + "' style='width:" + logoSize + ";'>" + webAddress + "<span>";
 
+    backgroundOpacity = document.getElementById("backgroundOpacity").value ;
 
-    imageNumber = Math.floor((Math.random() * 74) + 1);
+    imageNumber = Math.floor((Math.random() * 80) + 1);
 
-    divgradient = "background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.4)),url(\"http://downloads.concepro.com/30-Free-Polygonal-Low-Poly-Textures/low-poly-texture-" + imageNumber + ".jpg\")" ;
+    divgradient = "background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.4)),url(\"http://downloads.concepro.com/30-Free-Polygonal-Low-Poly-Textures/low-poly-texture-" + imageNumber + ".jpg\"); background-size: cover" ;
 
 /* ******** Printing the formmated text to an ID in the HTML page ***** */
 
-document.getElementById("randcolorRGBA").innerHTML = "<div class='module2 mid' style='width:500px; height: 750px; " + divgradient + ";'><h2 style=\"background-color: rgba(0,0,0,0.4); color: white; border: 2px solid white; outline: 15px solid rgba(0,0,0,0.4); font-size: " + textSize + "rem;\">" + quoteText + headingName + "</h2>" + endlogo + "</div>" ;
+colorLight = "rgba(255,255,255," + backgroundOpacity + ")";
+colorDark = "rgba(0,0,0," + backgroundOpacity + ")";
 
-document.getElementById("randcolorRGBAtext").innerHTML = "<div class='module2 mid' style='width:500px; height: 750px; " + divgradient + ";'><h2 style=\"background-color: rgba(255,255,255,0.6); color: black; border: 2px solid black; outline: 15px solid rgba(255,255,255,0.6); font-size: " + textSize + "rem;\">" + quoteText + headingName + "</h2>" + endlogo + "</div>" ;
 
-document.getElementById("randcolorRGBAtext2").innerHTML = "<div class='module2 mid' style='width:750px; height: 750px; " + divgradient + ";'><h2 style=\"background-color: rgba(255,255,255,0.6); color: black; border: 15px solid rgba(255,255,255,0.6); outline: 5px solid black; font-size: " + textSize + "rem;\">" + quoteText + headingName + "</h2>" + endlogo + "</div>" ;
+document.getElementById("randcolorRGBA").innerHTML = "<div class='module2 mid' style='width:500px; height: 750px; " + divgradient + ";'><h2 style=\"background-color: " + colorDark + "; color: white; border: 2px solid white; outline: 15px solid " + colorDark + "; font-size: " + textSize + "rem;\">" + quoteText + headingName + "</h2>" + endlogo + "</div>" ;
+
+document.getElementById("randcolorRGBAtext").innerHTML = "<div class='module2 mid' style='width:500px; height: 750px; " + divgradient + ";'><h2 style=\"background-color: " + colorLight + "; color: black; border: 2px solid black; outline: 15px solid " + colorLight + "; font-size: " + textSize + "rem;\">" + quoteText + headingName + "</h2>" + endlogo + "</div>" ;
+
+document.getElementById("randcolorRGBAtext2").innerHTML = "<div class='module2 mid' style='width:750px; height: 750px; " + divgradient + ";'><h2 style=\"background-color: " + colorLight + "; color: black; border: 15px solid " + colorLight + "; outline: 5px solid black; font-size: " + textSize + "rem;\">" + quoteText + headingName + "</h2>" + endlogo + "</div>" ;
+
+document.getElementById("randImageNumberPrinting").innerHTML = "<h1>Randomly Generated Image # is <span style='color:red;'>" + imageNumber + "</span></h1>" ;
 
 
 }
@@ -56,11 +63,14 @@ document.getElementById("randcolorRGBAtext2").innerHTML = "<div class='module2 m
 
 
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
 <style type="text/css">
 
 body {
     display: block;
     margin: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 /*In .module, the gradient is from top to bottom*/
 /* Change the rgba values to change the gradient colors.*/
@@ -93,7 +103,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
   line-height: 1.1;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   margin: 0;
   position: absolute;
   top: 50%;
@@ -129,10 +139,6 @@ img.footer {
     padding: 5px;
 }
 
-#myform, #headingName, #textSize, #fromName, #toName, #logoImageUrl, #quoteText, #webAddress, #logoSize {
-  font-size: 20px;
-  color: blue;
-}
 
 button {
   background-color: rgb(0,0,255);
@@ -149,6 +155,11 @@ button {
    border: 1px solid black;
 }
 
+input, textarea {
+  font-size: 1em;
+  color: blue;
+}
+
 </style>
 
 </head>
@@ -158,29 +169,60 @@ button {
 <img src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png">
 <hr>
 
+<h1 style="color:blue;">Create Text on Image - Polygonal Wallpapers</h1>
+
 <div class="city">
 
-<h1>Create Text on Image - Polygonal Wallpaper</h1>
+      <form id="myform">
+      HEADING
+      <br><input type="text" name="message" id="headingName" size="50" value="A Quote By Abhishek Paliwal">
 
-  <form id="myform">
-* HEADING *<br><input type="text" name="message" id="headingName" size="50" value="A quote by abhishek Paliwal">
-  <br><br>* TEXT SIZE (in 'rem' units)*<br><input type="text" name="message" id="textSize" value="1.7">
+      <br><br>
 
-  <br><br>* LOGO URL *<br><input type="text" name="message" size="50" id="logoImageUrl" value="http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/Concepro-Shadow.png">
-  <br><br>* LOGO SIZE (in 'VW' units)*<br><input type="text" name="message" id="logoSize" value="20vw">
+      <table>
 
-  <br><br>* Website Address *<br><input type="text" name="message" size="50" id="webAddress" value="www.concepro.com">
+      <tr>
+      <td>
+      TEXT SIZE (in 'rem' units)<br><input type="text" name="message" id="textSize" value="1.7">
+      </td>
 
-  </form>
+      <td>
+      BACKGROUND OPACITY
+      <br><input type="text" name="message" size="50" id="backgroundOpacity" value="0.75">
+      </td>
+      </tr>
 
-  <br>* QUOTE TEXT *<br>
-  <textarea name="comment" rows="10" cols="40" id="quoteText" form="myform">If you wish to achieve worthwhile things in your personal and career life, you must become a worthwhile person in your own self development.</textarea>
+      <tr>
+      <td>
+      LOGO SIZE (IN 'VW' UNITS)
+      <br><input type="text" name="message" id="logoSize" value="20vw">
+      </td>
 
-  <br>
-  <!-- <input type="submit" onclick="randRGBA(0,255);"><br/> -->
-  <button type="submit" value="Submit" onclick="randRGBA(0,255);">Submit</button>
+      <td>
+      WEBSITE ADDRESS URL
+      <br><input type="text" name="message" size="50" id="webAddress" value="www.concepro.com">
+      </td>
+      </tr>
 
-</div>
+      </table>
+
+      <br>
+      LOGO URL <a href="http://downloads.concepro.com/dropbox-public-files/logos/all-logos-index.html" target="_blank">(ALL LOGO URLS)</a>
+      <br><input type="text" name="message" size="50" id="logoImageUrl" value="http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/Concepro-Shadow.png">
+
+      </form>
+
+      <br>QUOTE TEXT<br>
+      <textarea name="comment" rows="5" cols="40" id="quoteText" form="myform">The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.</textarea>
+
+      <br>
+      <!-- <input type="submit" onclick="randRGBA(0,255);"><br/> -->
+      <button type="submit" value="Submit" onclick="randRGBA(0,255);">Submit</button>
+
+      <span id="randImageNumberPrinting"></span>
+
+</div> <!-- Firs CITY Div Ends Here -->
+
 
 <div class="city">
 <span id="randcolorRGBA"></span>

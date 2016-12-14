@@ -68,12 +68,15 @@ function randRGBA(min,max)
 
     imageCategory = document.getElementById("imageCategory").value ;
 
-    finalImage = "<img src='https://source.unsplash.com/category/" + imageCategory + "/900x400/' style='width:100%'>";
+    finalImage = "<img src='https://source.unsplash.com/category/" + imageCategory + "/900x600/' style='width:100%'>";
 
     MyImageUrl = document.getElementById("MyImageUrl").value ;
 
           if (imageCategory == 'Use-My-Image') {
-            finalImage = "<img src='" + MyImageUrl + "' style='width:100%'>";
+          /* finalImage = "<div style='display: block; width: 100%; height: 66%; background: url(" + MyImageUrl + "); background-size:color;'><img src='" + MyImageUrl1 + "' style='width:100%'></span>"; */
+
+            finalImage = "<div style='display: block; width: 100%; height: 45%; background: url(" + MyImageUrl + "); background-size: cover;'></div>";
+
           }
           else {
             finalImage = finalImage ;
@@ -296,7 +299,7 @@ font-weight: 400;
 </table>
 
 <label for="MyImageUrl">My Cutom Image URL</label>
-<input type="text" name="MyImageUrl" id="MyImageUrl" value="">
+<input type="text" name="MyImageUrl" id="MyImageUrl" value="https://static.pexels.com/photos/35188/child-childrens-baby-children-s.jpg">
 
 
 <label for="colorCode">Your Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
@@ -308,7 +311,7 @@ font-weight: 400;
 
 
 <label for="quoteText">Quote Text</label>
-   <textarea name="quoteText" rows="5" id="quoteText" form="myform"><span style='color: rgba(205, 28, 98,1)'>10 Awesome</span> Indian Cooking Hacks</textarea>
+   <textarea name="quoteText" rows="3" id="quoteText" form="myform"><span style='color: rgba(205, 28, 98,1)'>10 Awesome</span> Indian Cooking Hacks</textarea>
 
 <!-- Somehow the input button below does not work. Seems like a known JS problem. So the BUTTON code outside the form is used. -->
 

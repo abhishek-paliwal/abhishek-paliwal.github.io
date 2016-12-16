@@ -377,24 +377,26 @@ img.footer {
         <option value=' "Montserrat", sans-serif'>Montserrat</option>
       </select>
   </td>
-  <tr>
+</tr>
+
+<tr>
+<td width='50%'>
+
+<label for="logoImageUrl">Logo URL <a href="http://downloads.concepro.com/dropbox-public-files/logos/all-logos-index.html" target="_blank">(Link to all Logos)</a></label>
+<input type="text" name="logoImageUrl" id="logoImageUrl" value="fin2">
+
+</td>
+<td>
+
+  <label for="borderRadius">Border Radius in Percentage (Use 50% for circular boxes)</label>
+  <input type="text" name="borderRadius" id="borderRadius" value="0%">
+
+</td>
+</tr>
+
   </table>
 
 
-  <label for="colorCode">Generate Random colors OR Use Custom Colors</label>
-    <select id="colorCode" name="colorCode">
-       <option value='Generate 4 Totally Random Colors'>Generate 4 Totally Random Colors</option>
-       <option value='Generate Random RGB Triad Colors'>Generate Random RGB Triad Colors</option>
-       <option value='Use Following 4 Colors from Color Array List' selected>Use Following 4 Colors from Color Array List</option>
-    </select>
-
-
-
-<label for="quoteText">4 Color Array List as RGB // Only 4 colors allowed. <a href="http://www.zonums.com/online/color_converter/" target='_blank'>(Bulk HEX to RGB converter)</a></label>
-   <textarea name="quoteText" rows="4" id="quoteText" form="myform">255,255,100
-255,0,0
-0,0,255
-100,255,255</textarea>
 
 <table border="0">
 
@@ -410,7 +412,27 @@ img.footer {
         </td>
 
         <td>
-          <label for="headingDIVcolor">Heading DIV Color (RGBA/HEX/Name)</label>
+
+          <label for="fontWeight">Font Weight</label>
+             <select id="fontWeight" name="fontWeight">
+               <option value="100">100</option>
+               <option value="200">200</option>
+               <option value="300">300</option>
+               <option value="400" selected>400</option>
+               <option value="500">500</option>
+               <option value="600">600</option>
+               <option value="700">700</option>
+               <option value="800">800</option>
+               <option value="900">900</option>
+            </select>
+
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+          <label for="headingDIVcolor">Heading DIV Color</label>
           <select id="headingDIVcolor" name="headingDIVcolor">
             <option value="white" selected>White</option>
             <option value="black">Black</option>
@@ -426,24 +448,7 @@ img.footer {
             <option value="#CD1C62">MGGK PINK</option>
 
           </select>
-        </td>
 
-    </tr>
-
-    <tr>
-        <td>
-          <label for="fontWeight">Font Weight</label>
-             <select id="fontWeight" name="fontWeight">
-               <option value="100">100</option>
-               <option value="200">200</option>
-               <option value="300">300</option>
-               <option value="400" selected>400</option>
-               <option value="500">500</option>
-               <option value="600">600</option>
-               <option value="700">700</option>
-               <option value="800">800</option>
-               <option value="900">900</option>
-            </select>
         </td>
 
         <td>
@@ -490,22 +495,20 @@ img.footer {
 
 
 
-<table border="0">
-<tr>
-<td>
+<label for="colorCode">Generate Random colors OR Use Custom Colors</label>
+  <select id="colorCode" name="colorCode">
+     <option value='Generate 4 Totally Random Colors'>Generate 4 Totally Random Colors</option>
+     <option value='Generate Random RGB Triad Colors'>Generate Random RGB Triad Colors</option>
+     <option value='Use Following 4 Colors from Color Array List' selected>Use Following 4 Colors from Color Array List</option>
+  </select>
 
-<label for="logoImageUrl">Logo URL</label>
-<input type="text" name="logoImageUrl" id="logoImageUrl" value="fin2">
 
-</td>
-<td>
 
-  <label for="borderRadius">Border Radius in Percentage (Use 50% for circular boxes)</label>
-  <input type="text" name="borderRadius" id="borderRadius" value="0%">
-
-</td>
-</tr>
-</table>
+<label for="quoteText">4 Color Array List as RGB // Only 4 colors allowed. <a href="http://www.zonums.com/online/color_converter/" target='_blank'>(Bulk HEX to RGB converter)</a></label>
+ <textarea name="quoteText" rows="4" id="quoteText" form="myform">255,255,100
+255,0,0
+0,0,255
+100,255,255</textarea>
 
 
 

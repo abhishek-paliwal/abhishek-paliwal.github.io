@@ -83,13 +83,90 @@ function randRGBA(min,max)
 
     /* Obtating the values of the two gradient colors. Keep this block before quoteText calculations. */
 
-    red1 = document.getElementById("red1").value ;
-    green1 = document.getElementById("green1").value ;
-    blue1 = document.getElementById("blue1").value ;
+    if (colorCode =="Generate 3 Random RGB Triad Colors") {
+        red1 = green2 = blue3 = randnumberRed ;
+        green1 = blue2 = red3 = randnumberGreen ;
+        blue1 = red2 = green3 = randnumberBlue ;
 
-    red2 = document.getElementById("red2").value ;
-    green2 = document.getElementById("green2").value ;
-    blue2 = document.getElementById("blue2").value ;
+
+        color1 = "rgba(" + red1 + "," + green1 + "," + blue1 + ",1)";
+        color2 = "rgba(" + red2 + "," + green2 + "," + blue2 + ",1)";
+        color3 = "rgba(" + red3 + "," + green3 + "," + blue3 + ",1)";
+
+        warrayColor = [ color1, color2, color3] ;
+
+      }
+
+      if (colorCode =="Generate 5 Random Colors") {
+          red1 = Math.floor(Math.random()*(max-min+1)+min);
+          green1 = Math.floor(Math.random()*(max-min+1)+min);
+          blue1 = Math.floor(Math.random()*(max-min+1)+min);
+
+          red2 = Math.floor(Math.random()*(max-min+1)+min);
+          green2 = Math.floor(Math.random()*(max-min+1)+min);
+          blue2 = Math.floor(Math.random()*(max-min+1)+min);
+
+          red3 = Math.floor(Math.random()*(max-min+1)+min);
+          green3 = Math.floor(Math.random()*(max-min+1)+min);
+          blue3 = Math.floor(Math.random()*(max-min+1)+min);
+
+          red4 = Math.floor(Math.random()*(max-min+1)+min);
+          green4 = Math.floor(Math.random()*(max-min+1)+min);
+          blue4 = Math.floor(Math.random()*(max-min+1)+min);
+
+          red5 = Math.floor(Math.random()*(max-min+1)+min);
+          green5 = Math.floor(Math.random()*(max-min+1)+min);
+          blue5 = Math.floor(Math.random()*(max-min+1)+min);
+
+          color1 = "rgba(" + red1 + "," + green1 + "," + blue1 + ",1)";
+          color2 = "rgba(" + red2 + "," + green2 + "," + blue2 + ",1)";
+          color3 = "rgba(" + red3 + "," + green3 + "," + blue3 + ",1)";
+          color4 = "rgba(" + red4 + "," + green4 + "," + blue4 + ",1)";
+          color5 = "rgba(" + red5 + "," + green5 + "," + blue5 + ",1)";
+
+
+          warrayColor = [ color1, color2, color3, color4, color5] ;
+
+        }
+
+
+
+        if (colorCode =="Use Following Colors from Color Array List") {
+
+                colorArrayInput = document.getElementById("colorArrayInput").value ;
+
+            /*** Taking the whole COLOR array and separating elements by newlines. ***/
+
+                warrayColor = colorArrayInput.split('\n');
+
+            /*** TAKING TOP 2 COLORS FOR GRADIENT, and separating them further by commas ***/
+
+                  warrayColorElement = ["",""]; /** Define empty array with 2 vars **/
+
+                  warrayColorElement[0] = warrayColor[0].replace(/rgba\(/g,''); /** Replace 'rgba(' with blank **/
+                  warrayColorElement[0] = warrayColorElement[0].replace(/\)/g,''); /** Replace ')' with blank **/
+
+                  warrayColorElement[1] = warrayColor[1].replace(/rgba\(/g,''); /** Replace 'rgba(' with blank **/
+                  warrayColorElement[1] = warrayColorElement[1].replace(/\)/g,''); /** Replace ')' with blank **/
+
+            /**** Now with the above replacements, you should be left with warrayColor[i] = "R,G,B,A" ***/
+
+            ArrColor1 = warrayColorElement[0].split(','); /** R1,G1,B1 etc. **/
+            ArrColor2 = warrayColorElement[1].split(',');
+
+                red1 = ArrColor1[0];
+                green1 = ArrColor1[1];
+                blue1 = ArrColor1[2];
+
+                red2 = ArrColor2[0];
+                green2 = ArrColor2[1];
+                blue2 = ArrColor2[2];
+
+              }
+
+/***********************************************/
+/******** ALL INPUT COLOR CALCULATIONS END *****/
+/***********************************************/
 
 
     quoteText = document.getElementById("quoteText").value ;
@@ -128,22 +205,20 @@ function randRGBA(min,max)
 
 
 
-colorArrayInput = document.getElementById("colorArrayInput").value ;
-
-      /* Calculations begin */
-      colorArray = colorArrayInput.split('\n');
+      /* COLOR ARRAY Calculations begin */
 
       j=0;
       finalColorCodesArray = "";
       finalTextWithDivArray ="";
       finalTextWithDivArrayVarWidth ="";
       finalTextWithSpanArray ="";
-      finalColorCodesArrayPrinting= "";
+      finalColorCodesArrayPrintingPar1= "";
+      finalColorCodesArrayPrintingPar2= "";
 
 
       for (j = 0; j < warray.length; j++) {
 
-          textVarColor = colorArray[j%colorArray.length] ;
+          textVarColor = warrayColor[j%warrayColor.length] ;
           /* textVarColor = colorArray[3]; */
 
 
@@ -160,7 +235,8 @@ colorArrayInput = document.getElementById("colorArrayInput").value ;
           finalColorCodesArray += "<div class='colorCodePrint' style='height: " + boxHeight + ";width: " + boxWidth + ";color: " + textColor + ";font-weight: "+ fontWeight + "; text-align: " + textAlignment + ";line-height: " + lineHeight + "; border-radius: " + borderRadius + "; font-size:" + textSize + "px; background-color: " + textVarColor + ";'>" + warray[j] + "</div>" ;
 
 
-          finalColorCodesArrayPrinting += "<strong><span style='color: "+ textVarColor + ";'>" + textVarColor + " // " + warray[j] + "</span></strong><br>" ;
+          finalColorCodesArrayPrintingPar1 += "<strong><span style='color: "+ textVarColor + ";'>" + warray[j] + "</strong></span><br>" ;
+          finalColorCodesArrayPrintingPar2 += "<strong><span style='color: "+ textVarColor + ";'>" + textVarColor  + "</strong></span><br>" ;
 
       }
 
@@ -193,7 +269,7 @@ document.getElementById("randcolorRGBASpanArray").innerHTML = "<div class='main'
 
 document.getElementById("ShowfinalColorcodesArray").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalColorCodesArray + "<div style='clear:left;'></div>" + footerlogo + "</div>" ;
 
-document.getElementById("ShowfinalColorcodesArrayPrinting").innerHTML = "<h2 style='color:red;'>Total: " + warray.length + " Lines of text.</h2>Below are the RGB codes for all the input color values, from the color array.<br><br>" + finalColorCodesArrayPrinting ;
+document.getElementById("ShowfinalColorcodesArrayPrinting").innerHTML = "<h2 style='color:red;'>Total: " + warray.length + " Lines of text.</h2>Below are the RGB codes for all the input color values, from the color array.<br>" + "<table><tr><td width='45%'>" + finalColorCodesArrayPrintingPar1 + "</td><td>" + finalColorCodesArrayPrintingPar2 + "</td></tr></table>" ;
 
 
 }
@@ -320,105 +396,73 @@ img.footer {
 <div class="myform"> <!-- floating div start -->
 <form id="myform">
 
+
+
+
 <label for="headingName">Heading Text</label>
 <input type="text" name="headingName" id="headingName" value="• Words of Wisdom •<hr style='border: 0; background-color: #cd1c62; height: 5px; width: 300px;'>">
 
 
+
+      <table border="0">
+        <tr>
+          <td>
+      <label for="textAlignment">Text Alignment</label>
+         <select id="textAlignment" name="textAlignment">
+           <option value="left" selected>Left</option>
+           <option value="center">Center</option>
+           <option value="right">Right</option>
+         </select>
+
+       </td>
+       <td>
+
+         <label for="fontFamily">Font Family</label>
+            <select id="fontFamily" name="fontFamily">
+              <option value=' "Roboto", sans-serif'>Roboto</option>
+              <option value=' "Roboto Condensed", sans-serif'>Roboto Condensed</option>
+              <option value=' "Roboto Slab", serif'>Roboto Slab</option>
+              <option value=' "Roboto Mono", monospace'>Roboto Mono - Monospace</option>
+              <option value=' "Playfair Display SC", serif'>Playfair Display SC</option>
+              <option value=' "Playfair Display", serif'>Playfair Display</option>
+              <option value=' "Raleway", sans-serif'>Raleway</option>
+              <option value=' "Montserrat", sans-serif' selected>Montserrat</option>
+            </select>
+
+          </td>
+          <td>
+
+          <label for="logoImageUrl">Logo URL (<a href="http://downloads.concepro.com/dropbox-public-files/logos/all-logos-index.html" target="_blank">Link to all Logos</a>)</label>
+          <input type="text" name="logoImageUrl" id="logoImageUrl" value="fin1">
+
+        </td>
+        <tr>
+        </table>
+
+
+
 <table border="0">
   <tr>
     <td>
 
-<label for="boxWidth">Color-Coded Box - Width</label>
-<input type="text" name="boxWidth" id="boxWidth" value="150px">
+    <label for="boxWidth">Color-Coded Box - Width</label>
+    <input type="text" name="boxWidth" id="boxWidth" value="150px">
 
-</td>
-<td>
-
-<label for="boxHeight">Color-Coded Box - Height</label>
-<input type="text" name="boxHeight" id="boxHeight" value="150px">
-
-</td>
-<td>
-
-<label for="borderRadius">Border Radius for Printing Color-Coded Boxes (in percentage)</label>
-<input type="text" name="borderRadius" id="borderRadius" value="10%">
-
-</td>
-</tr>
-</table>
-
-
-
-<table border="0">
-  <tr>
+    </td>
     <td>
-<label for="textAlignment">Text Alignment</label>
-   <select id="textAlignment" name="textAlignment">
-     <option value="left">Left</option>
-     <option value="center" selected>Center</option>
-     <option value="right">Right</option>
-   </select>
 
- </td>
- <td>
+    <label for="boxHeight">Color-Coded Box - Height</label>
+    <input type="text" name="boxHeight" id="boxHeight" value="150px">
 
-   <label for="fontFamily">Font Family</label>
-      <select id="fontFamily" name="fontFamily">
-        <option value=' "Roboto", sans-serif'>Roboto</option>
-        <option value=' "Roboto Condensed", sans-serif'>Roboto Condensed</option>
-        <option value=' "Roboto Slab", serif'>Roboto Slab</option>
-        <option value=' "Roboto Mono", monospace'>Roboto Mono - Monospace</option>
-        <option value=' "Playfair Display SC", serif' selected>Playfair Display SC</option>
-        <option value=' "Playfair Display", serif'>Playfair Display</option>
-        <option value=' "Raleway", sans-serif'>Raleway</option>
-        <option value=' "Montserrat", sans-serif'>Montserrat</option>
-      </select>
-  </td>
-  <tr>
-  </table>
+    </td>
+    <td>
 
-<table border="0">
-<strong>Gradient color codes for two colors, as RGB values:</strong>
-    <tr>
-    		<td>
-          <label for="red1">RED - color 1</label>
-          <input type="text" name="red1" id="red1" value="255">
-        </td>
+    <label for="borderRadius">Border Radius for Printing Color-Coded Boxes (in percentage)</label>
+    <input type="text" name="borderRadius" id="borderRadius" value="5%">
 
-        <td>
-          <label for="green1">GREEN - color 1</label>
-          <input type="text" name="green1" id="green1" value="0">
-        </td>
-
-        <td>
-          <label for="blue1">BLUE - color 1</label>
-          <input type="text" name="blue1" id="blue1" value="125">
-        </td>
-
+    </td>
     </tr>
 
-    <tr>
-        <td>
-          <label for="red2">RED - color 2</label>
-          <input type="text" name="red2" id="red2" value="125">
-        </td>
-
-        <td>
-          <label for="green2">GREEN - color 2</label>
-          <input type="text" name="green2" id="green2" value="0">
-        </td>
-
-        <td>
-          <label for="blue2">BLUE - color 2</label>
-          <input type="text" name="blue2" id="blue2" value="255">
-        </td>
-
-    </tr>
-
-</table>
-
-
-<table border="0">
 
     <tr>
     		<td>
@@ -514,15 +558,23 @@ img.footer {
 </table>
 
 
-<label for="colorCode">Your Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
-<input type="text" name="colorCode" id="colorCode" value="Surprise Me">
+
+<label for="colorCode"><strong>Which colors to use?</strong> (Top 2 Colors Will Be Used For Gradient)</label>
+    <select id="colorCode" name="colorCode">
+       <option value='Generate 5 Random Colors' selected>Generate 5 Totally Random Colors</option>
+       <option value='Generate 3 Random RGB Triad Colors'>Generate 3 Random RGB Triad Colors</option>
+       <option value='Use Following Colors from Color Array List'>Use Following Colors from Color Array List</option>
+    </select>
 
 
-<label for="logoImageUrl">Logo URL (<a href="http://downloads.concepro.com/dropbox-public-files/logos/all-logos-index.html">Link to all Logos</a>)</label>
-<input type="text" name="logoImageUrl" id="logoImageUrl" value="fin1">
+    <table border="0">
+      <tr>
+        <td width='50%'>
 
-<label for="colorArray">Color Array (Insert colors as HEX /RGBA / RGB, one per line )</label>
-   <textarea name="colorArrayInput" rows="5" id="colorArrayInput" form="myform">rgba(77, 77, 77, 1)
+<label for="colorArray"><strong>Color Array as RGBA</strong> <a href="http://www.zonums.com/online/color_converter/" target="_blank">(Bulk HEX to RGB converter)</a></label>
+   <textarea name="colorArrayInput" rows="6" id="colorArrayInput" form="myform">rgba(255,0,125,1)
+rgba(125,0,255,1)
+rgba(77, 77, 77, 1)
 rgba(93, 165, 218, 1)
 rgba(250, 164, 58, 1)
 rgba(96, 189, 104, 1)
@@ -532,10 +584,15 @@ rgba(178, 118, 178, 1)
 rgba(222, 207, 63, 1)
 rgba(241, 88, 84, 1)</textarea>
 
-<label for="quoteText">Quote Text</label>
-   <textarea name="quoteText" rows="7" id="quoteText" form="myform">&mdash;
-My mission in life is
-not merely to survive,
+</td>
+<td>
+
+<label for="quoteText"><strong>Quote Text</strong> <a href='https://convertcase.net' target='_blank'>(Goto Text Case Converter)</a></label>
+   <textarea name="quoteText" rows="6" id="quoteText" form="myform">&mdash;
+My mission in
+life is
+not merely
+to survive,
 but to thrive; and
 to do so with
 some passion,
@@ -543,6 +600,12 @@ some compassion,
 some humor,
 and some style.
 &mdash;</textarea>
+
+</td>
+
+</tr>
+
+</table>
 
 <!-- Somehow the input button below does not work. Seems like a known JS problem. So the BUTTON code outside the form is used. -->
 
@@ -559,16 +622,15 @@ and some style.
 <hr>
 <h2>Press the button above, and your image should appear below.</h2>
 
-
-<span id="ShowfinalColorcodesArrayPrinting"></span>
+<span id="randcolorRGBADivArrayVarWidth"></span>
 <br><br>
-<span id="ShowfinalColorcodesArray"></span>
+<span id="ShowfinalColorcodesArrayPrinting"></span>
 <br><br>
 <span id="randcolorRGBASpanArray"></span>
 <br><br>
 <span id="randcolorRGBADivArray"></span>
 <br><br>
-<span id="randcolorRGBADivArrayVarWidth"></span>
+<span id="ShowfinalColorcodesArray"></span>
 
 
 <br>
@@ -577,9 +639,9 @@ and some style.
 
 <span id="ShowfinalColorcodes"></span>
 <br><br>
-<span id="randcolorRGBASpan"></span>
-<br><br>
 <span id="randcolorRGBADiv"></span>
+<br><br>
+<span id="randcolorRGBASpan"></span>
 <br><br>
 <span id="randcolorRGBADivVarWidth"></span>
 

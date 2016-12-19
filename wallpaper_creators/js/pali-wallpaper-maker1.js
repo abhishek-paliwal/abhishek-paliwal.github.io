@@ -73,5 +73,7 @@ document.getElementById("randcolorRGBAtext").innerHTML = "<div class='pali' styl
 
 document.getElementById("randcolorRGBAtextBorder").innerHTML = "<div class='pali' style='font-family: " + fontFamily + ";border: 10px double " + colorRGBA + ";font-size:" + textSize + "px ;color:" + colorRGBA + ";'>" + greetingType + "<p class='dark'>" + headingName + "</p>" + rulerTop + quoteText + rulerBottom + "<p class='dark'>" + footerText + "</p>" + logoImageUrl + "</div>";
 
+/************ Printing out the codes for the random colors generated ********/
+document.getElementById("colorPrinting").innerHTML = "<span style='color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</span>";
 
 }

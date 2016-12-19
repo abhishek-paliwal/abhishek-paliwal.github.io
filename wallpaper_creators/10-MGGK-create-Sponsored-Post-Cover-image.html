@@ -96,6 +96,10 @@ part4end = "</div>";
 
 document.getElementById("randcolorRGBA").innerHTML = part1 + finalImage + part2 + part3logo + part4end ;
 
+/************ Printing out the codes for the random colors generated ********/
+document.getElementById("colorPrinting").innerHTML = "<h3 style='color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</h3>";
+
+
 }
 
 </script>
@@ -327,8 +331,14 @@ font-weight: 400;
 
 <hr>
 <h2>Press the button above, and your image card should appear below in a resolution of 420 X 280 px.</h2>
-<br><br>
 
+
+
+<div style='padding-left: 10px; border: 10px solid rgba(90,90,90,1);'>
+<h3> <span id="colorPrinting"></span> </h3>
+</div>
+
+<br><br>
 
 <span id="randcolorRGBA"></span>
 

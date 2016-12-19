@@ -89,6 +89,9 @@ part3logoB = "<div class='footer' style='color: " + "white" + ";font-size: " + 0
 
 document.getElementById("randcolorRGBAtextDark").innerHTML = part1B + part2A + part3logoB + part4endA ;
 
+/************ Printing out the codes for the random colors generated ********/
+document.getElementById("colorPrinting").innerHTML = "<h3 style='color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</h3>";
+
 
 }
 
@@ -307,9 +310,12 @@ font-weight: 900;
 
 <hr>
 <h2>Press the button above, and your image card should appear below.</h2>
+
+<div style='padding-left: 10px;border: 10px solid rgba(90,90,90,1);'>
+<span id="colorPrinting"></span>
+</div>
+
 <br><br>
-
-
 <span id="randcolorRGBA"></span>
 <br><br><br>
 <span id="randcolorRGBAtext"></span>

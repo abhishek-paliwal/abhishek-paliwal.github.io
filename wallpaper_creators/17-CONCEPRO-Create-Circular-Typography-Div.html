@@ -150,6 +150,8 @@ partEndB = "</div>";
 document.getElementById("randcolorRGBAdark").innerHTML = part1B + partIconsB + "<br>" + partHeadingB + "<br>" + partDescriptionB + partlogoB + partEndB ;
 
 
+/************ Printing out the codes for the random colors generated ********/
+document.getElementById("colorPrinting").innerHTML = "<h3 style='color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</h3>";
 
 }
 
@@ -400,8 +402,13 @@ span#middleAlign {
 
 <hr>
 <h2>Press the button above, and 3 different image card versions should appear below.</h2>
-<br><br>
 
+<div style='padding-left: 10px;border: 10px solid rgba(90,90,90,1);'>
+<span id="colorPrinting"></span>
+</div>
+
+
+<br>
 <span id="randcolorRGBA"></span>
 
 <br><br><br>

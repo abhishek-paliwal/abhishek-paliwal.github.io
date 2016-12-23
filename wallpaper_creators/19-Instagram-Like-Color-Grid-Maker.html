@@ -158,7 +158,7 @@ if (colorCode =="Generate Random RGB Triad Colors") {
 
       /* Gives out a value between opacityMin and opacityMax */
                 opacityValueRandom = Math.floor(Math.random()* ( opacityMax - opacityMin + 1 ) + opacityMin);
-                opacityValue = opacityValueRandom/10; /* Gives out a value between 0 and 1 */
+                opacityValue = opacityValueRandom/10; /* Gives out a decimal value between 0 and 1 */
 
       /**** Finding the gradient color difference value - Color1 and color2 ***/
                 redDiff12 = Math.abs( red1- Math.floor( i*(red1-red2)/(totalBoxes-1) ) );
@@ -227,10 +227,10 @@ headerPartDiv = "<div class ='mybox' style='text-align: " + textAlignment + ";li
 document.getElementById("randcolorRGBADiv").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithDiv12 + finalTextWithDiv23 + finalTextWithDiv34 + footerlogo + "</div>";
 
 document.getElementById("ShowfinalColorcodes").innerHTML = "<strong>Below are the RGB codes for all the Final RGB Colors:<br><br>" +
-"<span style='background-color: rgb(" + red1 + ", " + green1 + ", " + blue1 + ");'>RGB1: " + red1 + ", " + green1 + ", " + blue1 + "</span><br>" +
-"<span style='background-color: rgb(" + red2 + ", " + green2 + ", " + blue2 + ");'>RGB2: " + red2 + ", " + green2 + ", " + blue2 + "<br>" +
-"<span style='background-color: rgb(" + red3 + ", " + green3 + ", " + blue3 + ");'>RGB3: " + red3 + ", " + green3 + ", " + blue3 + "<br>" +
-"<span style='background-color: rgb(" + red4 + ", " + green4 + ", " + blue4 + ");'>RGB4: " + red4 + ", " + green4 + ", " + blue4 + "<br>" +
+"<span style='color: white; background-color: rgb(" + red1 + ", " + green1 + ", " + blue1 + ");'> RGB1: " + red1 + ", " + green1 + ", " + blue1 + " </span><br>" +
+"<span style='color: white; background-color: rgb(" + red2 + ", " + green2 + ", " + blue2 + ");'> RGB2: " + red2 + ", " + green2 + ", " + blue2 + " </span><br>" +
+"<span style='color: white; background-color: rgb(" + red3 + ", " + green3 + ", " + blue3 + ");'> RGB3: " + red3 + ", " + green3 + ", " + blue3 + " </span><br>" +
+"<span style='color: white; background-color: rgb(" + red4 + ", " + green4 + ", " + blue4 + ");'> RGB4: " + red4 + ", " + green4 + ", " + blue4 + " </span><br>" +
 "</strong>";
 
 

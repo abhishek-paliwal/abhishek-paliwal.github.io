@@ -214,6 +214,36 @@ if (colorCode =="Generate Random RGB Triad Colors") {
 
           }
 
+/********************************************************************************/
+/********** Now making the blocks which chooses a random color for every box ****/
+/********************************************************************************/
+
+        finalTextWithRandomColor ="";
+        alltotalBoxes = totalBoxes*3 ; /**total number of boxes **/
+        finalColorArray = [""];
+
+        for (i = 0; i < alltotalBoxes; i++) {
+
+        /* Gives out a value between opacityMin and opacityMax */
+                  opacityValueRandom = Math.floor(Math.random()* ( opacityMax - opacityMin + 1 ) + opacityMin);
+                  opacityValue = opacityValueRandom/10; /* Gives out a value between 0 and 1 */
+
+        /**** Combining colors and creating an all color array ****/
+
+                  finalColorArray[0] = "rgba(" + red1 + "," + green1 + "," + blue1 + "," + opacityValue + ")" ;
+                  finalColorArray[1] = "rgba(" + red2 + "," + green2 + "," + blue2 + "," + opacityValue + ")" ;
+                  finalColorArray[2] = "rgba(" + red3 + "," + green3 + "," + blue3 + "," + opacityValue + ")" ;
+                  finalColorArray[3] = "rgba(" + red4 + "," + green4 + "," + blue4 + "," + opacityValue + ")" ;
+
+                  fontColorRandom = finalColorArray[Math.floor(Math.random() * 4)]; /*** Finding a random color between 0 and 3 ***/
+
+        /***** Generating the block with prespecified DIV's *****/
+                  finalTextWithRandomColor += "<div class ='mybox' style='border-radius: " + borderRadius + ";width: 50px; height: 50px; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColorRandom + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
+
+          }
+
+
+
 
 /* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
 
@@ -226,12 +256,15 @@ headerPartDiv = "<div class ='mybox' style='text-align: " + textAlignment + ";li
 /****************************************************/
 document.getElementById("randcolorRGBADiv").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithDiv12 + finalTextWithDiv23 + finalTextWithDiv34 + footerlogo + "</div>";
 
-document.getElementById("ShowfinalColorcodes").innerHTML = "<strong>Below are the RGB codes for all the Final RGB Colors:<br><br>" +
-"<span style='color: white; background-color: rgb(" + red1 + ", " + green1 + ", " + blue1 + ");'> RGB1: " + red1 + ", " + green1 + ", " + blue1 + " </span><br>" +
-"<span style='color: white; background-color: rgb(" + red2 + ", " + green2 + ", " + blue2 + ");'> RGB2: " + red2 + ", " + green2 + ", " + blue2 + " </span><br>" +
-"<span style='color: white; background-color: rgb(" + red3 + ", " + green3 + ", " + blue3 + ");'> RGB3: " + red3 + ", " + green3 + ", " + blue3 + " </span><br>" +
-"<span style='color: white; background-color: rgb(" + red4 + ", " + green4 + ", " + blue4 + ");'> RGB4: " + red4 + ", " + green4 + ", " + blue4 + " </span><br>" +
-"</strong>";
+document.getElementById("randcolorRGBADivRandomColor").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithRandomColor + footerlogo + "</div>";
+
+document.getElementById("ShowfinalColorcodes").innerHTML = "<h3>Below are the RGB codes for all the Final RGB Colors in this order: color1, color2, color3 and color4.</h3>" +
+"<strong>" +
+"<span style='color: white; background-color: rgb(" + red1 + ", " + green1 + ", " + blue1 + ");'> " + red1 + ", " + green1 + ", " + blue1 + " </span><br>" +
+"<span style='color: white; background-color: rgb(" + red2 + ", " + green2 + ", " + blue2 + ");'> " + red2 + ", " + green2 + ", " + blue2 + " </span><br>" +
+"<span style='color: white; background-color: rgb(" + red3 + ", " + green3 + ", " + blue3 + ");'> " + red3 + ", " + green3 + ", " + blue3 + " </span><br>" +
+"<span style='color: white; background-color: rgb(" + red4 + ", " + green4 + ", " + blue4 + ");'> " + red4 + ", " + green4 + ", " + blue4 + " </span><br>" +
+"</strong>" ;
 
 
 }
@@ -567,11 +600,17 @@ img.footer {
 <hr>
 <h2>Press the button above, and your image should appear below.</h2>
 <strong><span style='color: red;'>(TIP: To remove the numbers from the boxes, enter the text size as 0, zero pixels in the form.)</span></strong>
-<br><br>
 
-<span id="ShowfinalColorcodes"></span>
 <br><br>
+<span id="ShowfinalColorcodes"></span>
+
+<br><br>
+<h3>Following is the render of the 4-color gradient in this order, from color1 -> color2 -> color3 -> color4. </h3>
 <span id="randcolorRGBADiv"></span>
+
+<br><br>
+<h3>Following is the render of the 4-colors chosen randomly for each box.</h3>
+<span id="randcolorRGBADivRandomColor"></span>
 
 
 <br>

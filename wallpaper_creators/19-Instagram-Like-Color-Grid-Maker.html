@@ -243,6 +243,35 @@ if (colorCode =="Generate Random RGB Triad Colors") {
           }
 
 
+/******************* CALCULATIONS FOR NUMBER OF BOXES REQUIRED FOR PARTICULAR SIZES ******/
+
+totalBoxesPerRow = "<h2 style='color:orange;'>CALCULATIONS FOR COLUMNS: For total number of first row boxes = " + totalRows + ", you will need:</h2>";
+
+/**** Finding the ratio for WxH by this formula: Ratio = W/(H/3) ****/
+/**** Eg: for 2880x1800: 2880/(1800/3) = 4.8 ******/
+tableHeader = "<tr> <th>Name</th> <th>Resolution</th>  <th>Ratio</th> <th># Rows</th> <th># Columns needed</th> </tr>" ;
+
+cols5kLand = "<tr><td> Retina 5K </td><td> 2880x1800 </td><td> 16:10 </td><td>" + totalRows + "</td><td>" + Math.round(totalRows/4.8) + "</td></tr>";
+colsFullHD = "<tr><td> Full HD </td><td> 1920x1080 </td><td> 16:9 </td><td> " + totalRows + "</td><td>" + + Math.round(totalRows/5.34) + "</td></tr>";
+colsSquare = "<tr><td> SQUARE </td><td> 1600x1600 </td><td> 1:1 </td><td> " + totalRows + "</td><td>" + + Math.round(totalRows/3.0) + "</td></tr>";
+cols43ratio = "<tr><td> Photo as 4:3 </td><td> 1600x1200 </td><td> 4:3 </td><td> " + totalRows + "</td><td>" + + Math.round(totalRows/4.0) + "</td></tr>";
+cols32ratio = "<tr><td> MGGK Blog Ratio </td><td> 1200x800 </td><td> 3:2 </td><td> " + totalRows + "</td><td>" + + Math.round(totalRows/2.0) + "</td></tr>";
+colsFullHDMobile = "<tr><td> Full HD Mobile Portrait  </td><td> 1080x1920 or 720x1280 </td><td> 9:16 </td><td> " + totalRows + "</td><td>" + + Math.round(totalRows/1.69) + "</td></tr>";
+colsA4Land = "<tr><td> A4 Landscape </td><td> 210x297 </td><td> 1:1.414 </td><td> " + totalRows + "</td><td>" + + Math.round(totalRows/4.243) + "</td></tr>";
+colsA4Portrait = "<tr><td> A4 Portrait </td><td> 297x210 </td><td> 1.414:1 </td><td> " + totalRows + "</td><td>" + + Math.round(totalRows/2.121) + "</td></tr>";
+
+FinalNumColsRatioText = "<table id='t01'>" + tableHeader +
+totalBoxesPerRow +
+cols5kLand +
+colsFullHD +
+colsSquare +
+cols43ratio +
+colsFullHDMobile +
+colsA4Land +
+colsA4Portrait +
+"</table>";
+
+/************** CALCULATION BOX ENDS ****************/
 
 
 /* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
@@ -254,6 +283,8 @@ headerPartDiv = "<div class ='mybox' style='text-align: " + textAlignment + ";li
 /****************************************************/
 /**** Rendering all the blocks for final outputs ****/
 /****************************************************/
+document.getElementById("FinalNumColsRatioText").innerHTML = FinalNumColsRatioText ;
+
 document.getElementById("randcolorRGBADiv").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithDiv12 + finalTextWithDiv23 + finalTextWithDiv34 + footerlogo + "</div>";
 
 document.getElementById("randcolorRGBADivRandomColor").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithRandomColor + footerlogo + "</div>";
@@ -366,6 +397,17 @@ div.mybox {
 
 img.footer {
   height: 120px;
+}
+
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
 }
 
 </style>
@@ -546,22 +588,6 @@ img.footer {
 
 
 <table border="0">
-<tr>
-<td>
-
-<label for="totalColumns">Total Columns Per Gradient (4 colors = 3 gradients)</label>
-<input type="text" name="totalColumns" id="totalColumns" value="6">
-
-</td>
-
-<td>
-
-<label for="totalRows">Total Rows (Eg., for Square Grid: ROWS = 3 x COLUMNS)</label>
-<input type="text" name="totalRows" id="totalRows" value="18">
-
-</td>
-
-</tr>
 
 <tr>
 <td>
@@ -577,6 +603,24 @@ img.footer {
 
 </td>
 </tr>
+
+<tr>
+<td>
+
+<label for="totalColumns">Total Columns Per Gradient (4 colors = 3 gradients)</label>
+<input type="text" name="totalColumns" id="totalColumns" value="6">
+
+</td>
+
+<td>
+
+<label for="totalRows">Total Rows <strong>(Press SUBMIT button to see COLUMN calculations)</strong></label>
+<input type="text" name="totalRows" id="totalRows" value="18">
+
+</td>
+
+</tr>
+
 </table>
 
 
@@ -602,6 +646,8 @@ img.footer {
 <h2>Press the button above, and your image should appear below.</h2>
 <strong><span style='color: red;'>(TIP: To remove the numbers from the boxes, enter the text size as 0, zero pixels in the form.)</span></strong>
 
+<hr>
+<span id="FinalNumColsRatioText"></span>
 
 <hr>
 <span id="ShowfinalColorcodes"></span>

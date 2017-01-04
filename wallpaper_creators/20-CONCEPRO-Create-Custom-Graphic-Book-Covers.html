@@ -1,0 +1,563 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CONCEPRO | Create Custom Graphic Book Cover </title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script>
+function randRGBA(min,max)
+{
+
+backgroundOpacity = document.getElementById("backgroundOpacity").value ;
+
+/* Random RGBA color generation */
+    randnumberRed = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberGreen = Math.floor(Math.random()*(max-min+1)+min);
+    randnumberBlue = Math.floor(Math.random()*(max-min+1)+min);
+
+    colorRGBA = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 1)";
+    colorRGBAlight = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", " + backgroundOpacity + ")";
+
+/* Checking if the color code is present or not. If present, then it is chosen instead of random. */
+    colorCode = document.getElementById("colorCode").value ;
+
+    if (colorCode =="Surprise Me") {
+        colorRGBA = colorRGBA ;
+        colorRGBAlight = colorRGBAlight ;
+      } else {
+        colorRGBA = "rgba(" + colorCode + ", 1)";
+        colorRGBAlight = "rgba(" + colorCode + ", " + backgroundOpacity + ")" ;
+      }
+
+/* Getting the text from the form */
+
+bannerWidth = document.getElementById("bannerWidth").value ;
+bannerHeight = document.getElementById("bannerHeight").value ;
+
+h3Margin = document.getElementById("h3Margin").value ;
+h3Padding = document.getElementById("h3Padding").value ;
+
+    h3Width = bannerWidth - (2*h3Margin + 2*h3Padding);
+
+
+/****** all other variables below ****/
+
+    W = whatItIs = document.getElementById("whatItIs").value ;
+
+    T = headingName = document.getElementById("headingName").value ;
+
+    S = subTitle = document.getElementById("subTitle").value ;
+
+    X = dividerText = document.getElementById("dividerText").value ;
+
+    Y = buttonText = document.getElementById("buttonText").value ;
+
+
+    textSize = document.getElementById("textSize").value ;
+
+    lineHeight = document.getElementById("lineHeight").value ;
+
+    fontWeight = document.getElementById("fontWeight").value ;
+
+    fontFamily = document.getElementById("fontFamily").value ;
+
+    logoImageUrl = document.getElementById("logoImageUrl").value ;
+            if (logoImageUrl == "ap1") {
+                logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png";
+            } else if (logoImageUrl == "ap2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Circle-fullname.png";
+            } else if (logoImageUrl == "ap3") {
+              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/6-logos-album-covers/Album-Cover-Abhishek-Paliwal-Lorez.jpg";
+            } else if (logoImageUrl == "ap4") {
+              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png";
+            } else if (logoImageUrl == "anu1") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Black-White-Fullname.png";
+            } else if (logoImageUrl == "anu2") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Colored-Fullname.png";
+            } else if (logoImageUrl == "mggk1") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/5-logos-mggk/Mggk-New-Logo-Transparent-4000Px.png";
+            } else if (logoImageUrl == "ap0") {
+              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Name-Stamp-black.png";
+            } else if (logoImageUrl == "") {
+              logoImageUrl = "";
+
+            } else {
+              logoImageUrl = logoImageUrl;
+            }
+
+
+    ImageUrl1 = document.getElementById("ImageUrl1").value ;
+        A = "<img class='cover' src='" + ImageUrl1 + "'>" ;
+
+    ImageUrl2 = document.getElementById("ImageUrl2").value ;
+        B = "<img class='cover' src='" + ImageUrl2 + "'>" ;
+
+    ImageUrl3 = document.getElementById("ImageUrl3").value ;
+        C = "<img class='cover' src='" + ImageUrl3 + "'>" ;
+
+    ImageUrl4 = document.getElementById("ImageUrl4").value ;
+        D = "<img class='cover' src='" + ImageUrl4 + "'>" ;
+
+    letterSpacing = document.getElementById("letterSpacing").value ;
+
+    fontColor = document.getElementById("fontColor").value ;
+
+/******************************************************************/
+/****** COVER CALCULATIONS FROM THE ARRANGEMENT ARRAY ******/
+
+quoteText = document.getElementById("quoteText").value ;
+arragementArray = quoteText.split('\n'); /****** Single row of the form: 30,A60,B40 ***/
+
+i=0;
+j=0;
+finalAllText = "";
+
+for (i = 0; i < arragementArray.length; i++) {
+
+    rowNum = "row" + i;
+    rowNum = arragementArray[i].split(',');
+    rowPerc = Number(rowNum[0]) ;
+
+    for (j = 1; j < rowNum.length; j++) {
+
+            stringName= rowNum[j];
+
+            elementName = stringName.substring(0, 1); /*** A60 = Only the 1st alphabet = A ****/
+
+            elementWidthPerc = stringName.substring(1); /*** Percentage; A60 = Everything after 1st alphabet = 60 ****/
+            elementHeightPerc = rowPerc ;
+
+            elementWidth =  (bannerWidth*elementWidthPerc/100) - (2*h3Margin + 2*h3Padding);
+            elementHeight = (bannerHeight*elementHeightPerc/100) - (2*h3Margin + 2*h3Padding);
+
+
+            /********* Compiling the variables and Printing the formmated text to an ID in the HTML page ******/
+
+            ElementWithStyling = "<span style='color: " + fontColor + ";font-size: " + textSize + "px; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";letter-spacing: " + letterSpacing + "px; font-family: " + fontFamily + ";'>" + window[elementName] + "</span>" ;
+
+            finalAllText += "<div style='float: left; padding: " +h3Padding+ "px; margin: " +h3Margin+ "px; height: " +elementHeight+ "px; width: " +elementWidth+ "px;'>" + ElementWithStyling + "</div>" ;
+
+            }
+
+}
+
+/******************************************************************/
+/******************************************************************/
+
+
+/******************** Logo Image Variables ************************/
+logoImageWidth = document.getElementById("logoImageWidth").value ;
+
+logoImageUrlFinal = "<IMG SRC='" + logoImageUrl + "' style='width:" + logoImageWidth + "; height:auto;'>";
+L = logoImageUrlFinal ;
+
+    if (logoImageUrl == "") {
+        L = ""
+      } else {
+        L = L;
+      }
+
+
+
+/*********************************************************************/
+/***** Producing the final outputs for display ******/
+
+document.getElementById("bookCover").innerHTML =
+"<div style='text-align: center; width: " + bannerWidth + "px; height: " + bannerHeight + "px; background-color: " + colorRGBA + ";'>" +
+finalAllText +
+"</div>" ;
+
+
+/************ Printing out the codes for the random colors generated ********/
+document.getElementById("colorPrinting").innerHTML = "<h2 style='color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</h2>";
+
+}
+
+</script>
+
+<script src="https://use.fontawesome.com/8cd0876759.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700,900|Fredericka+the+Great|Kranky|League+Script|Lobster|Monoton|Pinyon+Script|Sacramento|UnifrakturMaguntia" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700,900|Playfair+Display:400,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Condensed:300,400,700|Roboto+Mono:100,300,400,500,700|Roboto+Slab:100,300,400|Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+<style type="text/css">
+
+body {
+  display:block;
+  width: 95%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+img.logo {
+    display: block;
+    margin: auto;
+    width: 20vw;
+    padding: 5px;
+}
+
+input, textarea, select, table {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #c0c0c0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+button, input[type=submit] {
+    width: 100%;
+    background-color: rgba(255,0,100,1);
+    color: white;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+   font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    border-radius: 100px;
+}
+
+button:hover, input[type=submit]:hover {
+    background-color: black;
+}
+
+div.myform {
+    display: block;
+    width: 90vw;
+    margin: auto;
+    border-radius: 5px;
+    border: 2px solid rgba(255,0,100,1);
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+h1 {
+  color: rgba(255,0,100,1);
+}
+
+img.logo {
+  height:80px;
+  width: auto;
+}
+
+/* Add your custom style code below this line. Do not touch any CSS above this line. */
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.cover {
+    object-fit: cover;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img class="logo" src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png">
+<hr>
+
+<h1>Design Your Custom Graphic Book Cover</h1>
+
+<div class="myform"> <!-- floating div start -->
+<form id="myform">
+
+  <table border="0">
+    <tr>
+
+        <td>
+        <label for="bannerWidth">Cover Width (in pixels)</label>
+        <input type="text" name="bannerWidth" id="bannerWidth" value="600">
+        </td>
+
+        <td>
+        <label for="bannerHeight">Cover Height (in pixels)</label>
+        <input type="text" name="bannerHeight" id="bannerHeight" value="900">
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <td>
+        <label for="h3Margin">Banner Margin (in pixels)</label>
+        <input type="text" name="h3Margin" id="h3Margin" value="1">
+        </td>
+
+        <td>
+        <label for="h3Padding">Banner Padding (in pixels)</label>
+        <input type="text" name="h3Padding" id="h3Padding" value="1">
+        </td>
+
+    </tr>
+
+  </table>
+
+
+<label for="whatItIs">W: Writer/Author Name or Foreword such as NYTimes Bestseller ;-)</label>
+<input type="text" name="whatItIs" id="whatItIs" value="<br><span style='color: rgba(0,0,0,0.5);'>ABHISHEK PALIWAL</span>">
+
+<label for="headingName">T: Main Heading Title</label>
+<input type="text" name="headingName" id="headingName" value="<span style='font-size: 55px;'>GET THE MOST OUT OF LINKEDIN</span>">
+
+<label for="subTitle">S: SubTitle</label>
+<input type="text" name="subTitle" id="subTitle" value="<br><span style='color: rgba(0,0,0,0.5);'>This is the best book you will read this year.</span>">
+
+<label for="dividerText">X: Divider Text</label>
+<input type="text" name="dividerText" id="dividerText" value="<hr style='border: 0px; background-color: #ff8700; height:5px; width:200px;'>" >
+
+<label for="buttonText">Y: Button Full Text</label>
+<input type="text" name="buttonText" id="buttonText" value="<br><button style='background-color: #ff8700; width:300px; border-radius:100px'>Download now</button>" >
+
+
+<label for="ImageUrl1">A: 1st Image URL (<a href="http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/all-lowpoly-backgrounds-index.html" target="_blank">List of Polygonal Backgrounds URLs</a>)</label>
+<input type="text" name="ImageUrl1" id="ImageUrl1" value="http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/1-Low-Poly-Only-JPGs/low-poly-texture-2.jpg">
+
+<label for="ImageUrl2">B: 2nd Image URL</label>
+<input type="text" name="ImageUrl1" id="ImageUrl2" value="http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/1-Low-Poly-Only-JPGs/low-poly-texture-12.jpg">
+
+<label for="ImageUrl3">C: 3rd Image URL</label>
+<input type="text" name="ImageUrl1" id="ImageUrl3" value="http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/1-Low-Poly-Only-JPGs/low-poly-texture-22.jpg">
+
+<label for="ImageUrl4">D: 4th Image URL</label>
+<input type="text" name="ImageUrl1" id="ImageUrl4" value="http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/1-Low-Poly-Only-JPGs/low-poly-texture-32.jpg">
+
+
+<table border="0">
+
+    <tr>
+    		<td>
+          <label for="textSize">Text Size (in pixels)</label>
+          <input type="text" name="textSize" id="textSize" value="20">
+        </td>
+
+        <td>
+          <label for="lineHeight">Line Height</label>
+          <input type="text" name="lineHeight" id="lineHeight" value="1.3">
+        </td>
+
+        <td>
+          <label for="letterSpacing">Letter Spacing (in pixels)</label>
+          <input type="text" name="letterSpacing" id="letterSpacing" value="2">
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+          <label for="fontWeight">Font Weight</label>
+             <select id="fontWeight" name="fontWeight">
+               <option value="400">400</option>
+               <option value="700" selected>700</option>
+               <option value="900">900</option>
+
+            </select>
+        </td>
+
+
+        <td>
+          <label for="fontColor">Font Color</label>
+             <select id="fontColor" name="fontColor">
+               <option value="white" selected>White</option>
+                <option value="black">Black</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+                <option value="DeepPink">DeepPink</option>
+                <option value="orange">Orange</option>
+                <option value="lime">Lime</option>
+              </select>
+        </td>
+
+
+        <td>
+            <label for="fontFamily">Select The Font</label>
+            <select id="fontFamily" name="fontFamily">
+
+                  <option value=' "Montserrat", sans-serif'>Montserrat</option>
+                  <option value=' "Playfair Display SC", serif'>Playfair Display SC</option>
+                  <option value=' "Playfair Display", serif' selected>Playfair Display</option>
+                  <option value=' "Raleway", sans-serif'>Raleway</option>
+                   <option value=' "Roboto", sans-serif'>Roboto</option>
+                   <option value=' "Roboto Condensed", sans-serif'>Roboto Condensed</option>
+                   <option value=' "Roboto Slab", serif'>Roboto Slab</option>
+                   <option value=' "Roboto Mono", monospace'>Roboto Mono - Monospace</option>
+                   <option value=' "Oswald", sans-serif'>Oswald</option>
+
+                   <option value=''> ------------------------- </option>
+
+                   <option value=' "Cinzel Decorative", cursive'>Cinzel Decorative, cursive</option>
+                   <option value=' "Fredericka the Great", cursive'>Fredericka the Great, cursive</option>
+                   <option value=' "Kranky", cursive'>Kranky, cursive</option>
+                   <option value=' "League Script", cursive'>League Script, cursive</option>
+                   <option value=' "Lobster", cursive'>Lobster, cursive</option>
+                   <option value=' "Monoton", cursive'>Monoton, cursive</option>
+                   <option value=' "Pinyon Script", cursive'>Pinyon Script, cursive</option>
+                   <option value=' "Sacramento", cursive'>Sacramento, cursive</option>
+                   <option value=' "UnifrakturMaguntia", cursive'>UnifrakturMaguntia, cursive</option>
+
+                 </select>
+        </td>
+
+    </tr>
+
+</table>
+
+<table border="0">
+
+    <tr>
+    		<td>
+<label for="colorCode">Your Background Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
+<input type="text" name="colorCode" id="colorCode" value="Surprise Me">
+      </td>
+
+    <td>
+<label for="backgroundOpacity">Background Opacity</label>
+<input type="text" name="backgroundOpacity" id="backgroundOpacity" value="0.9">
+  </td>
+
+    </tr>
+
+    <tr>
+    		<td>
+<label for="logoImageUrl">L: Logo URL</label>
+<input type="text" name="logoImageUrl" id="logoImageUrl" value="ap1">
+      </td>
+
+    <td>
+<label for="logoImageWidth">L: Logo Image Width (in pixels)</label>
+<input type="text" name="logoImageWidth" id="logoImageWidth" value="80px">
+  </td>
+
+    </tr>
+
+</table>
+
+
+
+<label for="quoteText"><strong>
+  Arrangement Of Elements On The Book Cover, as:</strong>
+  <br><em>( ThisRowHeight%,ElementColumnWidth%, AnotherElementColumnWidth%, so on... )</em>
+  <br>without the '%' signs, and no whitespaces at all.
+</label>
+<textarea name="quoteText" rows="6" id="quoteText" form="myform">30,A50,B50
+10,S100
+20,T100
+30,C50,D50
+10,W100</textarea>
+
+
+<!-- Somehow the input button below does not work. Seems like a known JS problem. So the BUTTON code outside the form is used. -->
+
+<!--
+<input type="submit" value="Submit" onclick="randRGBA(0,255);" />
+-->
+
+</form>
+
+<button type="submit" value="Submit" onclick="randRGBA(0,255);">Submit</button>
+
+</div>
+
+<hr>
+<h2>Press the button above, and your Book Cover should appear below.</h2>
+<span id="colorPrinting"></span>
+<br>
+
+
+<span id="bookCover"></span>
+<div style='clear:left;'></div>
+
+
+<br><br><hr>
+<h2>Following are some examples of custom Graphic Book Covers, and their 'Arrangement Codes' below:</h2>
+<br>
+
+<img src="https://abhishek-paliwal.github.io/sample-screenshots-of-wallpapers/20-sample-wallpaper-300px-long.jpg">
+<br>
+
+
+<div style='float:left; background-color: #dddddd; margin: 10px; padding: 10px; width:250px; height:250px;'>
+<h3 id="toc_0">Style 1</h3>
+<p>10,S100<br>
+20,T100<br>
+60,A100<br>
+5,X100<br>
+5,W100  </p>
+</div>
+
+<div style='float:left; background-color: #dddddd; margin: 10px; padding: 10px; width:250px; height:250px;'>
+<h3 id="toc_1">Style 2</h3>
+<p>30,A50,B50<br>
+10,S100<br>
+15,T100<br>
+30,C50,D50<br>
+5,W100<br>
+10,L100  </p>
+</div>
+
+<div style='float:left; background-color: #dddddd; margin: 10px; padding: 10px; width:250px; height:250px;'>
+<h3 id="toc_2">Style 3</h3>
+<p>5,X100<br>
+5,W100<br>
+25,A100<br>
+25,B100<br>
+25,C100<br>
+15,T100  </p>
+</div>
+
+<div style='float:left; background-color: #dddddd; margin: 10px; padding: 10px; width:250px; height:250px;'>
+<h3 id="toc_3">Style 4</h3>
+<p>10,S100<br>
+70,A33,B34,C33<br>
+10,T100<br>
+10,W100  </p>
+</div>
+
+
+<div style='float:left; background-color: #dddddd; margin: 10px; padding: 10px; width:250px; height:250px;'>
+<h3 id="toc_4">Style 5</h3>
+<p>33,A50,B50<br>
+10,S100<br>
+14,T100<br>
+10,W100<br>
+33,C50,D50  </p>
+</div>
+
+<div style='float:left; background-color: #dddddd; margin: 10px; padding: 10px; width:250px; height:250px;'>
+<h3 id="toc_5">Style 6</h3>
+<p>20,T100<br>
+5,X100<br>
+25,A60,B40<br>
+25,C40,D60<br>
+5,X100<br>
+10,S100<br>
+10,W100  </p>
+</div>
+
+<div style='clear:left;'></div>
+
+<br><br><hr>
+This Webapp Is Made By <a href="http://www.AbhishekPaliwal.com">Abhishek Paliwal</a>
+
+</body>
+</html>

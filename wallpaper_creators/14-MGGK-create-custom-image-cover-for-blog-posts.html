@@ -54,11 +54,15 @@ backgroundOpacity = document.getElementById("backgroundOpacity").value ;
               logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/5-logos-mggk/Mggk-New-Logo-Transparent-4000Px.png";
             } else if (logoImageUrl == "ap0") {
               logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Name-Stamp-black.png";
-
             } else {
               logoImageUrl = logoImageUrl;
             }
 
+            if (logoImageUrl == "") {
+                logoImageUrlFinal = "";
+            } else {
+                logoImageUrlFinal = "<br>&mdash;<br><IMG SRC='" + logoImageUrl + "' style='height:120px'>";
+            }
 
     imageBorder = document.getElementById("imageBorder").value ;
 
@@ -81,7 +85,6 @@ part2Nocolor = "<h3 style='font-size: " + textSize + "px; line-height: " + lineH
 icontop = document.getElementById("icontop").value ;
       icontop = "<i class='material-icons md-size'>" + icontop + "</i><br><br>";
 
-logoImageUrlFinal = "<br>&mdash;<br><IMG SRC='" + logoImageUrl + "' style='height:120px'>";
 
 partEnd = "</h3></div>";
 

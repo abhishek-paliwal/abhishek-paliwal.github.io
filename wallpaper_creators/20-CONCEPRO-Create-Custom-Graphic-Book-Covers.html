@@ -1,8 +1,18 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>CONCEPRO | Create Custom Graphic Book Cover </title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 
+<title>CONCEPRO | Create Custom Graphic Book Cover </title>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="https://use.fontawesome.com/8cd0876759.js"></script>
+
+  
 <script>
 function randRGBA(min,max)
 {
@@ -102,6 +112,9 @@ h3Padding = document.getElementById("h3Padding").value ;
 
     ImageUrl6 = document.getElementById("ImageUrl6").value ;
         F = "<img class='cover' src='" + ImageUrl6 + "'>" ;
+    
+    ImageUrl7 = document.getElementById("ImageUrl7").value ;
+        G = "<img class='cover' src='" + ImageUrl7 + "'>" ;
 
     letterSpacing = document.getElementById("letterSpacing").value ;
 
@@ -168,18 +181,25 @@ L = logoImageUrlFinal ;
 /***** Producing the final outputs for display ******/
 
 document.getElementById("bookCover").innerHTML =
-"<div style='text-align: center; width: " + bannerWidth + "px; height: " + bannerHeight + "px; background-color: " + colorRGBA + ";'>" +
+"<div style='text-align: center; width: " + bannerWidth + "px; height: " + bannerHeight + "px; background-color: " + colorRGBAlight + ";'>" +
 finalAllText +
 "</div>" ;
 
 
 /************ Printing out the codes for the random colors generated ********/
-document.getElementById("colorPrinting").innerHTML = "<h2 style='color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</h2>";
+document.getElementById("colorPrinting").innerHTML = "<h4 style='color: " + colorRGBAlight + ";'>Chosen Random Color: " + colorRGBAlight + "</h4>";
 
 }
 
 </script>
 
+
+<!-- CSS  -->
+    
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
 <script src="https://use.fontawesome.com/8cd0876759.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -191,74 +211,8 @@ document.getElementById("colorPrinting").innerHTML = "<h2 style='color: " + colo
 
 <style type="text/css">
 
-body {
-  display:block;
-  width: 95%;
-  font-family: 'Montserrat', sans-serif;
-}
-
-img.logo {
-    display: block;
-    margin: auto;
-    width: 20vw;
-    padding: 5px;
-}
-
-input, textarea, select, table {
-    display: inline-block;
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #c0c0c0;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-}
-
-button, input[type=submit] {
-    width: 100%;
-    background-color: rgba(255,0,100,1);
-    color: white;
-    margin: 10px 0;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 20px;
-   font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    border-radius: 100px;
-}
-
-button:hover, input[type=submit]:hover {
-    background-color: black;
-}
-
-div.myform {
-    display: block;
-    width: 90vw;
-    margin: auto;
-    border-radius: 5px;
-    border: 2px solid rgba(255,0,100,1);
-    background-color: #f2f2f2;
-    padding: 20px;
-    font-size: 20px;
-    text-transform: capitalize;
-    font-weight: bold;
-    color: black;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-}
-
 h1 {
   color: rgba(255,0,100,1);
-}
-
-img.logo {
-  height:80px;
-  width: auto;
 }
 
 /* Add your custom style code below this line. Do not touch any CSS above this line. */
@@ -276,133 +230,98 @@ img {
 
 </head>
 
+ 
 <body>
+  
+<nav class="grey darken-3" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><i class="material-icons">favorite</i>Abhishek's Design</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Home</a></li>
+      </ul>
 
-<img class="logo" src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png">
-<hr>
-
-<h1>Design Your Custom Graphic Book Cover</h1>
-
-<div class="myform"> <!-- floating div start -->
-<form id="myform">
-
-  <table border="0">
-    <tr>
-
-        <td>
-        <label for="bannerWidth">Cover Width (in pixels)</label>
-        <input type="text" name="bannerWidth" id="bannerWidth" value="667">
-        </td>
-
-        <td>
-        <label for="bannerHeight">Cover Height (in pixels)</label>
-        <input type="text" name="bannerHeight" id="bannerHeight" value="1000">
-        </td>
-
-    </tr>
-
-    <tr>
-
-        <td>
-        <label for="h3Margin">Banner Margin (in pixels)</label>
-        <input type="text" name="h3Margin" id="h3Margin" value="1">
-        </td>
-
-        <td>
-        <label for="h3Padding">Banner Padding (in pixels)</label>
-        <input type="text" name="h3Padding" id="h3Padding" value="1">
-        </td>
-
-    </tr>
-
-  </table>
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="http://www.AbhishekPaliwal.com">AbhishekPaliwal.com</a></li>
+        <li><a href="http://www.Concepro.com">Concepro.com</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 
 
-<label for="whatItIs">W: Writer/Author Name or Foreword such as NYTimes Bestseller ;-)</label>
-<input type="text" name="whatItIs" id="whatItIs" value="<br><span style='color: rgba(0,0,0,0.5);'>ABHISHEK PALIWAL</span>">
+      <div class="container">
 
-<label for="headingName">T: Main Heading Title</label>
-<input type="text" name="headingName" id="headingName" value="<span style='font-size: 55px;'>GET THE MOST OUT OF LINKEDIN</span>">
+            <div class="row center">
+            <div class="col s12 m12 l12">
+            <div class="card">
+                
+            <div class="card-content">
+            <span class="card-title"><h3 class="header center materialize-red-text"><i class="medium material-icons">brush</i><br>Design Your Custom Graphic Book Cover</h3></span>
+            <h6 class="header center light-blue-text">Design your own by entering the required details below. Press the button. Done.</h6>
+            </div>            
+            </div>
+            </div>
+            </div>
 
-<label for="subTitle">S: SubTitle</label>
-<input type="text" name="subTitle" id="subTitle" value="<br><span style='color: rgba(0,0,0,0.5);'>This is the best book you will read this year.</span>">
+      </div>
 
-<label for="dividerText">X: Divider Text</label>
-<input type="text" name="dividerText" id="dividerText" value="<hr style='border: 0px; background-color: #ff8700; height:5px; width:200px;'>" >
-
-<label for="buttonText">Y: Button Full Text</label>
-<input type="text" name="buttonText" id="buttonText" value="<br><button style='background-color: #ff8700; width:300px; border-radius:100px'>Download now</button>" >
-
-
-<label for="ImageUrl1">A: 1st Image URL (<a href="http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/all-lowpoly-backgrounds-index.html" target="_blank">List of Polygonal Backgrounds URLs</a>)</label>
-<input type="text" name="ImageUrl1" id="ImageUrl1" value="http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/1-Low-Poly-Only-JPGs/low-poly-texture-2.jpg">
-
-<label for="ImageUrl2">B: 2nd Image URL (<a href="https://source.unsplash.com/" target="_blank">Unsplash Images Listing</a>)</label>
-<input type="text" name="ImageUrl2" id="ImageUrl2" value="https://source.unsplash.com/random">
-
-<label for="ImageUrl3">C: 3rd Image URL</label>
-<input type="text" name="ImageUrl3" id="ImageUrl3" value="https://source.unsplash.com/category/nature">
-
-<label for="ImageUrl4">D: 4th Image URL</label>
-<input type="text" name="ImageUrl4" id="ImageUrl4" value="https://source.unsplash.com/category/buildings">
-
-<label for="ImageUrl5">E: 5th Image URL</label>
-<input type="text" name="ImageUrl5" id="ImageUrl5" value="https://source.unsplash.com/category/people">
-
-<label for="ImageUrl6">F: 6th Image URL</label>
-<input type="text" name="ImageUrl6" id="ImageUrl6" value="https://source.unsplash.com/category/food">
+     
+    <div class="row">
+            <div class="divider materialize-red"></div>
+    </div>
+     
+    
+<!-- ############# FORM BEGINS ############# -->
 
 
-<table border="0">
+     <div class="row">
+         
+      <form class="col s12">
+          
+          <div class="input-field col l3 s6">
+            <label for="bannerWidth">Cover Width (in pixels)</label>
+            <input type="text" name="bannerWidth" id="bannerWidth" value="667">
+          </div>
+            
+        <div class="input-field col l3 s6">
+             <label for="bannerHeight">Cover Height (in pixels)</label>
+             <input type="text" name="bannerHeight" id="bannerHeight" value="1000">
+        </div>  
+            
+        <div class="input-field col l3 s6">
+             <label for="h3Margin">Banner Margin (in pixels)</label>
+             <input type="text" name="h3Margin" id="h3Margin" value="1">
+        </div>      
 
-    <tr>
-    		<td>
-          <label for="textSize">Text Size (in pixels)</label>
+            
+         <div class="input-field col l3 s6">
+             <label for="h3Padding">Banner Padding (in pixels)</label>
+             <input type="text" name="h3Padding" id="h3Padding" value="1">
+        </div>      
+    
+                 
+            <div class="input-field col l3 s6">
+            <label for="textSize">Text Size (in pixels)</label>
           <input type="text" name="textSize" id="textSize" value="20">
-        </td>
-
-        <td>
-          <label for="lineHeight">Line Height</label>
+            </div>
+            
+            <div class="input-field col l3 s6">
+            <label for="lineHeight">Line Height</label>
           <input type="text" name="lineHeight" id="lineHeight" value="1.3">
-        </td>
-
-        <td>
-          <label for="letterSpacing">Letter Spacing (in pixels)</label>
+            </div>
+            
+            <div class="input-field col l3 s6">
+            <label for="letterSpacing">Letter Spacing (in pixels)</label>
           <input type="text" name="letterSpacing" id="letterSpacing" value="2">
-        </td>
+            </div>
+          
+                      <div class="input-field col l3 s6">
+       <label for="backgroundOpacity">Background Opacity = 0.0 — 1.0</label>
+<input type="text" name="backgroundOpacity" id="backgroundOpacity" value="0.9"> 
+</div>
 
-    </tr>
-
-    <tr>
-        <td>
-          <label for="fontWeight">Font Weight</label>
-             <select id="fontWeight" name="fontWeight">
-               <option value="400">400</option>
-               <option value="700" selected>700</option>
-               <option value="900">900</option>
-
-            </select>
-        </td>
-
-
-        <td>
-          <label for="fontColor">Font Color</label>
-             <select id="fontColor" name="fontColor">
-               <option value="white" selected>White</option>
-                <option value="black">Black</option>
-                <option value="red">Red</option>
-                <option value="green">Green</option>
-                <option value="blue">Blue</option>
-                <option value="yellow">Yellow</option>
-                <option value="DeepPink">DeepPink</option>
-                <option value="orange">Orange</option>
-                <option value="lime">Lime</option>
-              </select>
-        </td>
-
-
-        <td>
-            <label for="fontFamily">Select The Font</label>
+            <div class="input-field col l4 s6">
+       
             <select id="fontFamily" name="fontFamily">
 
                   <option value=' "Montserrat", sans-serif'>Montserrat</option>
@@ -428,148 +347,338 @@ img {
                    <option value=' "UnifrakturMaguntia", cursive'>UnifrakturMaguntia, cursive</option>
 
                  </select>
-        </td>
-
-    </tr>
-
-</table>
-
-<table border="0">
-
-    <tr>
-    		<td>
-<label for="colorCode">Your Background Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
+                <label for="fontFamily">Select The Font</label>
+            </div>
+          
+            
+            <div class="input-field col l4 s6">
+            <select id="fontWeight" name="fontWeight">
+               <option value="400">400</option>
+               <option value="700" selected>700</option>
+               <option value="900">900</option>
+            </select>
+                <label for="fontWeight">Font Weight</label>          
+            </div>
+            
+            <div class="input-field col l4 s6">
+             <select id="fontColor" name="fontColor">
+               <option value="white" selected>White</option>
+                <option value="black">Black</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+                <option value="DeepPink">DeepPink</option>
+                <option value="orange">Orange</option>
+                <option value="lime">Lime</option>
+              </select>
+                 <label for="fontColor">Font Color</label>      
+</div>
+            
+            
+            
+            <div class="input-field col l4 s6">
+       <label for="colorCode">Your Background Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
 <input type="text" name="colorCode" id="colorCode" value="Surprise Me">
-      </td>
-
-    <td>
-<label for="backgroundOpacity">Background Opacity</label>
-<input type="text" name="backgroundOpacity" id="backgroundOpacity" value="0.9">
-  </td>
-
-    </tr>
-
-    <tr>
-    		<td>
-<label for="logoImageUrl">L: Logo URL</label>
+</div>
+            
+            
+            <div class="input-field col l4 s6">
+       <label for="logoImageUrl">L: Logo URL</label>
 <input type="text" name="logoImageUrl" id="logoImageUrl" value="ap1">
-      </td>
+</div>
 
-    <td>
-<label for="logoImageWidth">L: Logo Image Width (in pixels)</label>
+<div class="input-field col l4 s6">
+       <label for="logoImageWidth">L: Logo Image Width (in pixels)</label>
 <input type="text" name="logoImageWidth" id="logoImageWidth" value="80px">
-  </td>
+</div>
 
-    </tr>
+          
+          
+        
+        <div class="input-field col l6 s12">
+           <label for="headingName">T: Main Heading Title</label>
+           <input type="text" name="headingName" id="headingName" value="<span style='font-size: 55px;'>GET THE MOST OUT OF LINKEDIN</span>">    
+        </div>  
+            
+        <div class="input-field col l6 s12">
+           <label for="subTitle">S: SubTitle</label>
+           <input type="text" name="subTitle" id="subTitle" value="<br><span style='color: rgba(0,0,0,0.5);'>This is the best book you will read this year.</span>">
+        </div>      
+            
+         <div class="input-field col l6 s12">
+           <label for="dividerText">X: Divider Text</label>
+             <input type="text" name="dividerText" id="dividerText" value="<hr style='border: 0px; background-color: #ff8700; height:5px; width:200px;'>" >
+        </div>   
+            
+        <div class="input-field col l6 s12">
+           <label for="buttonText">Y: Button Full Text</label>
+            <input type="text" name="buttonText" id="buttonText" value="<br><button style='background-color: #ff8700; width:300px; border-radius:100px'>Download now</button>" >
+        </div>    
+            
+          <div class="input-field col l6 s12">
+           <label for="whatItIs">W: Writer/Author Name or Foreword such as NYTimes Bestseller ;-)</label>
+           <input type="text" name="whatItIs" id="whatItIs" value="<br><span style='color: rgba(0,0,0,0.5);'>ABHISHEK PALIWAL</span>">
+        </div>         
+        
+          
+        <div class="input-field col l6 s12">
+           <label for="ImageUrl1">A: 1st Image URL (<a href="http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/all-lowpoly-backgrounds-index.html" target="_blank">List of Polygonal Backgrounds URLs</a>)</label>
+            <input type="text" name="ImageUrl1" id="ImageUrl1" value="http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/1-Low-Poly-Only-JPGs/low-poly-texture-2.jpg">
+        </div>        
+                
+        <div class="input-field col l6 s12">
+            <label for="ImageUrl2">B: 2nd Image URL (<a href="https://source.unsplash.com/" target="_blank">Unsplash Images Listing</a>)</label>
+            <input type="text" name="ImageUrl2" id="ImageUrl2" value="https://source.unsplash.com/random">
+        </div>
+        
+            <div class="input-field col l6 s12">
+       <label for="ImageUrl3">C: 3rd Image URL</label>
+<input type="text" name="ImageUrl3" id="ImageUrl3" value="https://source.unsplash.com/category/nature">
 
-</table>
+</div>
+            
+            <div class="input-field col l6 s12">
+       <label for="ImageUrl4">D: 4th Image URL</label>
+<input type="text" name="ImageUrl4" id="ImageUrl4" value="https://source.unsplash.com/category/buildings">
+</div>
+            
+            <div class="input-field col l6 s12">
+       <label for="ImageUrl5">E: 5th Image URL</label>
+<input type="text" name="ImageUrl5" id="ImageUrl5" value="https://source.unsplash.com/category/people">
+
+</div>
+            
+            <div class="input-field col l6 s12">
+       <label for="ImageUrl6">F: 6th Image URL</label>
+                <input type="text" name="ImageUrl6" id="ImageUrl6" value="https://source.unsplash.com/category/food">
+            </div>
+
+                <div class="input-field col l6 s12">
+       <label for="ImageUrl7">G: 7th Image URL</label>
+                <input type="text" name="ImageUrl7" id="ImageUrl7" value="https://source.unsplash.com/category/technology">
+            </div>
 
 
-
-<label for="quoteText"><strong>
-  Arrangement Of Elements On The Book Cover, as:</strong>
-  <br><em>( ThisRowHeight%,ElementColumnWidth%, AnotherElementColumnWidth%, so on... )</em>
-  <br>without the '%' signs, and no whitespaces at all.
-</label>
-<textarea name="quoteText" rows="6" id="quoteText" form="myform">30,A50,B50
+<div class="input-field col l12 s12">
+    <textarea name="quoteText" rows="6" id="quoteText" class="materialize-textarea"   length="200">30,A50,B50
 10,S100
 20,T100
 30,C50,D50
 10,W100</textarea>
+<label for="quoteText"><strong>
+  Arrangement Of Elements On The Book Cover, as:</strong> <em>( ThisRowHeight%, ElementColumnWidth%, AnotherElementColumnWidth%, so on... )</em> without the '%' signs, and no whitespaces at all.
+</label>
+</div>
+            
+  
+            </form>
+        </div>
+    </div> <!-- form column ends -->
+</div> <!-- first row ends -->
 
-
-<!-- Somehow the input button below does not work. Seems like a known JS problem. So the BUTTON code outside the form is used. -->
-
-<!--
-<input type="submit" value="Submit" onclick="randRGBA(0,255);" />
--->
-
-</form>
-
-<button type="submit" value="Submit" onclick="randRGBA(0,255);">Submit</button>
-
+              
+<div class="row center">
+      <a class="waves-effect waves-light btn-large materialize-red"  onclick="randRGBA(0,255);"><i class="material-icons right">brush</i>Design My Book Cover</a>
+</div>
+    
+<!-- ############# FORM ENDS ############# -->
+ 
+    
+<div class="row center"> 
+      <h6 class="materialize-red-text"><strong>DESIGN TIP: </strong>To change the color, press the button again, and again, and again...till you are happy.</h6>
 </div>
 
-<hr>
-<h2>Press the button above, and your Book Cover should appear below.</h2>
-<span id="colorPrinting"></span>
-<br>
+    <div class="row">
+            <div class="divider materialize-red"></div>
+    </div>
 
 
-<span id="bookCover"></span>
-<div style='clear:left;'></div>
+    <div class="row center">
+
+        <h4 class="header center light-blue-text">Press the button above, and your Book Cover should appear below.</h4>
+        
+        <div style='border: 10px solid rgba(90,90,90,1);'>
+            <span id="colorPrinting"></span>
+        </div>
+
+        <br>
+        
+        <span id="bookCover"></span>
+
+      </div>
+      
+ 
+<div class="row">
+            <div class="divider materialize-red"></div>
+</div>
 
 
-<br><br><hr>
-<h2>Following are some examples of custom Graphic Book Covers, and their 'Arrangement Codes' below:</h2>
-<br>
+<div class="row center">
 
-<img src="https://abhishek-paliwal.github.io/sample-screenshots-of-wallpapers/20-sample-wallpaper-300px-long.jpg" style='width:700px; height: auto;'>
-<br>
+        <h5 class="header center">Following are some examples of custom Graphic Book Covers, and their 'Arrangement Codes' below:</h5>
+
+        <img src="https://abhishek-paliwal.github.io/sample-screenshots-of-wallpapers/20-sample-wallpaper-300px-long.jpg" style='width:700px; height: auto;'>
+    </div>        
 
 
-<div style='float:left; background-color: #dddddd; margin: 10px; padding: 10px; width:250px; height:250px;'>
-<h3 id="toc_0">Style 1</h3>
+
+<div class="row center">  <!-- CARDS ROW -->      
+
+<div class="col s6 m6 l4" style='text-align:left;'>
+<div class="card blue-grey darken-1">
+<div class="card-content white-text">
+<span class="card-title">Style 1</span>
 <p>10,S100<br>
 20,T100<br>
 60,A100<br>
 5,X100<br>
-5,W100  </p>
+5,W100</p>
+
+</div>            
+</div>
 </div>
 
-<div style='float:left; background-color: #dddddd; margin: 10px; padding: 10px; width:250px; height:250px;'>
-<h3 id="toc_1">Style 2</h3>
+
+
+<div class="col s6 m6 l4" style='text-align:left;'>
+<div class="card blue-grey darken-1">
+<div class="card-content white-text">
+<span class="card-title">Style 2</span>
 <p>30,A50,B50<br>
 10,S100<br>
 15,T100<br>
 30,C50,D50<br>
 5,W100<br>
-10,L100  </p>
+10,L100
+</p>
+
+</div>            
+</div>
 </div>
 
-<div style='float:left; background-color: #dddddd; margin: 10px; padding: 10px; width:250px; height:250px;'>
-<h3 id="toc_2">Style 3</h3>
+
+
+
+
+<div class="col s6 m6 l4" style='text-align:left;'>
+<div class="card blue-grey darken-1">
+<div class="card-content white-text">
+<span class="card-title">Style 3</span>
 <p>5,X100<br>
 5,W100<br>
 25,A100<br>
 25,B100<br>
 25,C100<br>
-15,T100  </p>
+15,T100
+</p>
+
+</div>            
+</div>
 </div>
 
-<div style='float:left; background-color: #dddddd; margin: 10px; padding: 10px; width:250px; height:250px;'>
-<h3 id="toc_3">Style 4</h3>
-<p>10,S100<br>
+
+
+<div class="col s6 m6 l4" style='text-align:left;'>
+<div class="card blue-grey darken-1">
+<div class="card-content white-text">
+<span class="card-title">Style 4</span>
+<p>
+10,S100<br>
 70,A33,B34,C33<br>
 10,T100<br>
-10,W100  </p>
+10,W100
+</p>
+
+</div>            
+</div>
 </div>
 
 
-<div style='float:left; background-color: #dddddd; margin: 10px; padding: 10px; width:250px; height:250px;'>
-<h3 id="toc_4">Style 5</h3>
-<p>33,A50,B50<br>
+
+<div class="col s6 m6 l4" style='text-align:left;'>
+<div class="card blue-grey darken-1">
+<div class="card-content white-text">
+<span class="card-title">Style 5</span>
+<p>
+33,A50,B50<br>
 10,S100<br>
 14,T100<br>
 10,W100<br>
-33,C50,D50  </p>
-</div>
+33,C50,D50
+</p>
 
-<div style='float:left; background-color: #dddddd; margin: 10px; padding: 10px; width:250px; height:250px;'>
-<h3 id="toc_5">Style 6</h3>
-<p>20,T100<br>
+</div>            
+</div>
+</div>
+        
+        
+<div class="col s6 m6 l4" style='text-align:left;'>
+<div class="card blue-grey darken-1">
+<div class="card-content white-text">
+<span class="card-title">Style 6</span>
+<p>
+20,T100<br>
 5,X100<br>
 25,A60,B40<br>
 25,C40,D60<br>
 5,X100<br>
 10,S100<br>
-10,W100  </p>
+10,W100
+</p>
+</div>            
+</div>
 </div>
 
-<div style='clear:left;'></div>
 
-<br><br><hr>
-This Webapp Is Made By <a href="http://www.AbhishekPaliwal.com">Abhishek Paliwal</a>
+      </div>
+  </div>  
 
-</body>
+</div>
+
+    
+
+
+  <!-- FOOTER SECTION BEGINS -->
+
+  <footer class="page-footer materialize-red">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Bio</h5>
+          <p class="grey-text text-lighten-4">
+            Abhishek Paliwal is a designer, an author and an entrepreneur. Abhishek helps high achievers acquire the sales and marketing leadership skills necessary to win at Business. He also provides mentorship to individuals to succeed in life, and reach their true potential. He's also the the Co-founder and Director of <a class="light-blue-text text-lighten-3" href="http://www.concepro.com">CONCEPRO- A Digital Marketing & Sales Agency</a> based in Helsinki, Finland. He writes, speaks, coaches and consults businesses and individuals full-time.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="white-text" href="http://www.AbhishekPaliwal.com">www.AbhishekPaliwal.com</a></li>
+            <li><a class="white-text" href="http://www.concepro.com">www.Concepro.com</a></li>
+          </ul>
+        </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="https://abhishek-paliwal.github.io">Abhishek's GitHub Profile</a></li>
+            <li><a class="white-text" href="http://abhishekpaliwal.com/my-books/">Abhishek's Books</a></li>
+            <li><a href="http://www.abhishekpaliwal.com"><img src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Paliwal-125-Circle-fullname.png" height="100px"></a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made with <i class="material-icons">favorite_border</i> by <a class="light-blue-text text-lighten-3" href="http://www.AbhishekPaliwal.com">Abhishek Paliwal</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  </body>
 </html>

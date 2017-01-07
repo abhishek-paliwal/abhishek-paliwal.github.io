@@ -12,7 +12,7 @@
   <script src="js/init.js"></script>
   <script src="https://use.fontawesome.com/8cd0876759.js"></script>
 
-  
+
 <script>
 function randRGBA(min,max)
 {
@@ -112,7 +112,7 @@ h3Padding = document.getElementById("h3Padding").value ;
 
     ImageUrl6 = document.getElementById("ImageUrl6").value ;
         F = "<img class='cover' src='" + ImageUrl6 + "'>" ;
-    
+
     ImageUrl7 = document.getElementById("ImageUrl7").value ;
         G = "<img class='cover' src='" + ImageUrl7 + "'>" ;
 
@@ -181,9 +181,15 @@ L = logoImageUrlFinal ;
 /***** Producing the final outputs for display ******/
 
 document.getElementById("bookCover").innerHTML =
-"<div style='text-align: center; width: " + bannerWidth + "px; height: " + bannerHeight + "px; background-color: " + colorRGBAlight + ";'>" +
+"<div class='row center' style='text-align: center; width: " + bannerWidth + "px; height: " + bannerHeight + "px; background-color: " + colorRGBAlight + ";'>" +
 finalAllText +
 "</div>" ;
+
+document.getElementById("bookCoverWithBackgroundImage").innerHTML =
+"<div class='row center' style='text-align: center; width: " + bannerWidth + "px; height: " + bannerHeight + "px; background: url(" + ImageUrl1 + "); background-size: cover;'>" +
+finalAllText +
+"</div>" ;
+
 
 
 /************ Printing out the codes for the random colors generated ********/
@@ -195,11 +201,11 @@ document.getElementById("colorPrinting").innerHTML = "<h4 style='color: " + colo
 
 
 <!-- CSS  -->
-    
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  
+
 <script src="https://use.fontawesome.com/8cd0876759.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -230,9 +236,9 @@ img {
 
 </head>
 
- 
+
 <body>
-  
+
 <nav class="grey darken-3" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><i class="material-icons">favorite</i>Abhishek's Design</a>
       <ul class="right hide-on-med-and-down">
@@ -254,74 +260,74 @@ img {
             <div class="row center">
             <div class="col s12 m12 l12">
             <div class="card">
-                
+
             <div class="card-content">
             <span class="card-title"><h3 class="header center materialize-red-text"><i class="medium material-icons">brush</i><br>Design Your Custom Graphic Book Cover</h3></span>
             <h6 class="header center light-blue-text">Design your own by entering the required details below. Press the button. Done.</h6>
-            </div>            
+            </div>
             </div>
             </div>
             </div>
 
       </div>
 
-     
+
     <div class="row">
             <div class="divider materialize-red"></div>
     </div>
-     
-    
+
+
 <!-- ############# FORM BEGINS ############# -->
 
 
      <div class="row">
-         
+
       <form class="col s12">
-          
+
           <div class="input-field col l3 s6">
             <label for="bannerWidth">Cover Width (in pixels)</label>
             <input type="text" name="bannerWidth" id="bannerWidth" value="667">
           </div>
-            
+
         <div class="input-field col l3 s6">
              <label for="bannerHeight">Cover Height (in pixels)</label>
              <input type="text" name="bannerHeight" id="bannerHeight" value="1000">
-        </div>  
-            
+        </div>
+
         <div class="input-field col l3 s6">
              <label for="h3Margin">Banner Margin (in pixels)</label>
-             <input type="text" name="h3Margin" id="h3Margin" value="1">
-        </div>      
+             <input type="text" name="h3Margin" id="h3Margin" value="2">
+        </div>
 
-            
+
          <div class="input-field col l3 s6">
              <label for="h3Padding">Banner Padding (in pixels)</label>
-             <input type="text" name="h3Padding" id="h3Padding" value="1">
-        </div>      
-    
-                 
+             <input type="text" name="h3Padding" id="h3Padding" value="0">
+        </div>
+
+
             <div class="input-field col l3 s6">
             <label for="textSize">Text Size (in pixels)</label>
           <input type="text" name="textSize" id="textSize" value="20">
             </div>
-            
+
             <div class="input-field col l3 s6">
             <label for="lineHeight">Line Height</label>
-          <input type="text" name="lineHeight" id="lineHeight" value="1.3">
+          <input type="text" name="lineHeight" id="lineHeight" value="1.0">
             </div>
-            
+
             <div class="input-field col l3 s6">
             <label for="letterSpacing">Letter Spacing (in pixels)</label>
           <input type="text" name="letterSpacing" id="letterSpacing" value="2">
             </div>
-          
+
                       <div class="input-field col l3 s6">
        <label for="backgroundOpacity">Background Opacity = 0.0 — 1.0</label>
-<input type="text" name="backgroundOpacity" id="backgroundOpacity" value="0.9"> 
+<input type="text" name="backgroundOpacity" id="backgroundOpacity" value="0.9">
 </div>
 
             <div class="input-field col l4 s6">
-       
+
             <select id="fontFamily" name="fontFamily">
 
                   <option value=' "Montserrat", sans-serif'>Montserrat</option>
@@ -349,17 +355,17 @@ img {
                  </select>
                 <label for="fontFamily">Select The Font</label>
             </div>
-          
-            
+
+
             <div class="input-field col l4 s6">
             <select id="fontWeight" name="fontWeight">
                <option value="400">400</option>
                <option value="700" selected>700</option>
                <option value="900">900</option>
             </select>
-                <label for="fontWeight">Font Weight</label>          
+                <label for="fontWeight">Font Weight</label>
             </div>
-            
+
             <div class="input-field col l4 s6">
              <select id="fontColor" name="fontColor">
                <option value="white" selected>White</option>
@@ -372,17 +378,17 @@ img {
                 <option value="orange">Orange</option>
                 <option value="lime">Lime</option>
               </select>
-                 <label for="fontColor">Font Color</label>      
+                 <label for="fontColor">Font Color</label>
 </div>
-            
-            
-            
+
+
+
             <div class="input-field col l4 s6">
        <label for="colorCode">Your Background Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
 <input type="text" name="colorCode" id="colorCode" value="Surprise Me">
 </div>
-            
-            
+
+
             <div class="input-field col l4 s6">
        <label for="logoImageUrl">L: Logo URL</label>
 <input type="text" name="logoImageUrl" id="logoImageUrl" value="ap1">
@@ -393,69 +399,69 @@ img {
 <input type="text" name="logoImageWidth" id="logoImageWidth" value="80px">
 </div>
 
-          
-          
-        
+
+
+
         <div class="input-field col l6 s12">
-           <label for="headingName">T: Main Heading Title</label>
-           <input type="text" name="headingName" id="headingName" value="<span style='font-size: 55px;'>GET THE MOST OUT OF LINKEDIN</span>">    
-        </div>  
-            
+           <label for="headingName"><font color="blue">T</font>: Main Heading Title</label>
+           <input type="text" name="headingName" id="headingName" value="<div style='background-color: rgba(0,0,0,0.5); padding-top: 1px;  font-size: 55px; width: 100%; height: 100%;'>GET THE MOST OUT OF LINKEDIN</div>">
+        </div>
+
         <div class="input-field col l6 s12">
-           <label for="subTitle">S: SubTitle</label>
-           <input type="text" name="subTitle" id="subTitle" value="<br><span style='color: rgba(0,0,0,0.5);'>This is the best book you will read this year.</span>">
-        </div>      
-            
+           <label for="subTitle"><font color="blue">S</font>: SubTitle</label>
+           <input type="text" name="subTitle" id="subTitle" value="<div style=' background-color: rgba(0,0,0,0.3); padding-top: 1px; width:100%; height:100%;'>This is the best book you will read this year.</div>">
+        </div>
+
          <div class="input-field col l6 s12">
-           <label for="dividerText">X: Divider Text</label>
-             <input type="text" name="dividerText" id="dividerText" value="<hr style='border: 0px; background-color: #ff8700; height:5px; width:200px;'>" >
-        </div>   
-            
+           <label for="dividerText"><font color="blue">X</font>: Divider Text // Padding Section</label>
+             <input type="text" name="dividerText" id="dividerText" value="<div style='background-color: rgba(0,0,0,0.7); padding-top:1px; width: 100%; height: 100%;'>++++</div>" >
+        </div>
+
         <div class="input-field col l6 s12">
-           <label for="buttonText">Y: Button Full Text</label>
-            <input type="text" name="buttonText" id="buttonText" value="<br><button style='background-color: #ff8700; width:300px; border-radius:100px'>Download now</button>" >
-        </div>    
-            
+           <label for="buttonText"><font color="blue">Y</font>: Button Full Text</label>
+            <input type="text" name="buttonText" id="buttonText" value="<button style='background-color: #ff8700; width:400px; border-radius:100px;'>Download now</button>" >
+        </div>
+
           <div class="input-field col l6 s12">
-           <label for="whatItIs">W: Writer/Author Name or Foreword such as NYTimes Bestseller ;-)</label>
-           <input type="text" name="whatItIs" id="whatItIs" value="<br><span style='color: rgba(0,0,0,0.5);'>ABHISHEK PALIWAL</span>">
-        </div>         
-        
-          
+           <label for="whatItIs"><font color="blue">W</font>: Writer/Author Name or Foreword such as NYTimes Bestseller ;-)</label>
+           <input type="text" name="whatItIs" id="whatItIs" value="<div style='background-color: rgba(0,0,0,0.5); padding-top: 1px; width: 100%; height: 100%;'>{ ABHISHEK PALIWAL }</div>">
+        </div>
+
+
         <div class="input-field col l6 s12">
-           <label for="ImageUrl1">A: 1st Image URL (<a href="http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/all-lowpoly-backgrounds-index.html" target="_blank">List of Polygonal Backgrounds URLs</a>)</label>
+           <label for="ImageUrl1"><font color="blue">A</font>: 1st Image URL (<a href="http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/all-lowpoly-backgrounds-index.html" target="_blank">List of Polygonal Backgrounds URLs</a>)</label>
             <input type="text" name="ImageUrl1" id="ImageUrl1" value="http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/1-Low-Poly-Only-JPGs/low-poly-texture-2.jpg">
-        </div>        
-                
+        </div>
+
         <div class="input-field col l6 s12">
-            <label for="ImageUrl2">B: 2nd Image URL (<a href="https://source.unsplash.com/" target="_blank">Unsplash Images Listing</a>)</label>
+            <label for="ImageUrl2"><font color="blue">B</font>: 2nd Image URL (<a href="https://source.unsplash.com/" target="_blank">Unsplash Images Listing</a>)</label>
             <input type="text" name="ImageUrl2" id="ImageUrl2" value="https://source.unsplash.com/random">
         </div>
-        
+
             <div class="input-field col l6 s12">
-       <label for="ImageUrl3">C: 3rd Image URL</label>
+       <label for="ImageUrl3"><font color="blue">C</font>: 3rd Image URL</label>
 <input type="text" name="ImageUrl3" id="ImageUrl3" value="https://source.unsplash.com/category/nature">
 
 </div>
-            
+
             <div class="input-field col l6 s12">
-       <label for="ImageUrl4">D: 4th Image URL</label>
+       <label for="ImageUrl4"><font color="blue">D</font>: 4th Image URL</label>
 <input type="text" name="ImageUrl4" id="ImageUrl4" value="https://source.unsplash.com/category/buildings">
 </div>
-            
+
             <div class="input-field col l6 s12">
-       <label for="ImageUrl5">E: 5th Image URL</label>
+       <label for="ImageUrl5"><font color="blue">E</font>: 5th Image URL</label>
 <input type="text" name="ImageUrl5" id="ImageUrl5" value="https://source.unsplash.com/category/people">
 
 </div>
-            
+
             <div class="input-field col l6 s12">
-       <label for="ImageUrl6">F: 6th Image URL</label>
+       <label for="ImageUrl6"><font color="blue">F</font>: 6th Image URL</label>
                 <input type="text" name="ImageUrl6" id="ImageUrl6" value="https://source.unsplash.com/category/food">
             </div>
 
                 <div class="input-field col l6 s12">
-       <label for="ImageUrl7">G: 7th Image URL</label>
+       <label for="ImageUrl7"><font color="blue">G</font>: 7th Image URL</label>
                 <input type="text" name="ImageUrl7" id="ImageUrl7" value="https://source.unsplash.com/category/technology">
             </div>
 
@@ -470,22 +476,22 @@ img {
   Arrangement Of Elements On The Book Cover, as:</strong> <em>( ThisRowHeight%, ElementColumnWidth%, AnotherElementColumnWidth%, so on... )</em> without the '%' signs, and no whitespaces at all.
 </label>
 </div>
-            
-  
+
+
             </form>
         </div>
     </div> <!-- form column ends -->
 </div> <!-- first row ends -->
 
-              
+
 <div class="row center">
       <a class="waves-effect waves-light btn-large materialize-red"  onclick="randRGBA(0,255);"><i class="material-icons right">brush</i>Design My Book Cover</a>
 </div>
-    
+
 <!-- ############# FORM ENDS ############# -->
- 
-    
-<div class="row center"> 
+
+
+<div class="row center">
       <h6 class="materialize-red-text"><strong>DESIGN TIP: </strong>To change the color, press the button again, and again, and again...till you are happy.</h6>
 </div>
 
@@ -497,18 +503,20 @@ img {
     <div class="row center">
 
         <h4 class="header center light-blue-text">Press the button above, and your Book Cover should appear below.</h4>
-        
+
         <div style='border: 10px solid rgba(90,90,90,1);'>
             <span id="colorPrinting"></span>
         </div>
 
         <br>
-        
         <span id="bookCover"></span>
 
+        <br>
+        <span id="bookCoverWithBackgroundImage"></span>
+
       </div>
-      
- 
+
+
 <div class="row">
             <div class="divider materialize-red"></div>
 </div>
@@ -519,11 +527,11 @@ img {
         <h5 class="header center">Following are some examples of custom Graphic Book Covers, and their 'Arrangement Codes' below:</h5>
 
         <img src="https://abhishek-paliwal.github.io/sample-screenshots-of-wallpapers/20-sample-wallpaper-300px-long.jpg" style='width:700px; height: auto;'>
-    </div>        
+    </div>
 
 
 
-<div class="row center">  <!-- CARDS ROW -->      
+<div class="row center">  <!-- CARDS ROW -->
 
 <div class="col s6 m6 l4" style='text-align:left;'>
 <div class="card blue-grey darken-1">
@@ -535,7 +543,7 @@ img {
 5,X100<br>
 5,W100</p>
 
-</div>            
+</div>
 </div>
 </div>
 
@@ -553,7 +561,7 @@ img {
 10,L100
 </p>
 
-</div>            
+</div>
 </div>
 </div>
 
@@ -573,7 +581,7 @@ img {
 15,T100
 </p>
 
-</div>            
+</div>
 </div>
 </div>
 
@@ -590,7 +598,7 @@ img {
 10,W100
 </p>
 
-</div>            
+</div>
 </div>
 </div>
 
@@ -608,11 +616,11 @@ img {
 33,C50,D50
 </p>
 
-</div>            
 </div>
 </div>
-        
-        
+</div>
+
+
 <div class="col s6 m6 l4" style='text-align:left;'>
 <div class="card blue-grey darken-1">
 <div class="card-content white-text">
@@ -626,17 +634,83 @@ img {
 10,S100<br>
 10,W100
 </p>
-</div>            
 </div>
 </div>
+</div>
+
+
+<div class="col s6 m6 l4" style='text-align:left;'>
+<div class="card blue-grey darken-1">
+<div class="card-content white-text">
+<span class="card-title">Style 7</span>
+<p>
+30,A33,B34,C33<br>
+15,T100<br>
+10,S100<br>
+30,D33,E34,F33<br>
+1,X100<br>
+9,L100<br>
+5,W100
+</p>
+</div>
+</div>
+</div>
+
+
+<div class="col s6 m6 l4" style='text-align:left;'>
+<div class="card blue-grey darken-1">
+<div class="card-content white-text">
+<span class="card-title">Style 8</span>
+<p>
+20,F20,X20,F20,X20,F20<br>
+20,X20,F20,X20,F20,X20<br>
+20,X20,F20,F20,F20,X20<br>
+20,F20,X20,F20,X20,F20<br>
+20,F20,F20,X20,F20,F20
+</p>
+</div>
+</div>
+</div>
+
+<div class="col s6 m6 l4" style='text-align:left;'>
+<div class="card blue-grey darken-1">
+<div class="card-content white-text">
+<span class="card-title">Style 9</span>
+<p>
+10,S100<br>
+20,X10,T80,X10<br>
+10,W100<br>
+30,X100<br>
+30,X100
+</p>
+</div>
+</div>
+</div>
+
+
+<div class="col s6 m6 l4" style='text-align:left;'>
+<div class="card blue-grey darken-1">
+<div class="card-content white-text">
+<span class="card-title">Style 10</span>
+<p>
+30,X100<br>
+40,T50,X50<br>
+25,X100<br>
+5,X50,W50
+</p>
+</div>
+</div>
+</div>
+
+
 
 
       </div>
-  </div>  
+  </div>
 
 </div>
 
-    
+
 
 
   <!-- FOOTER SECTION BEGINS -->

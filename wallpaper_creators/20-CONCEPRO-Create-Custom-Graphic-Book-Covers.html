@@ -44,9 +44,8 @@ bannerWidth = document.getElementById("bannerWidth").value ;
 bannerHeight = document.getElementById("bannerHeight").value ;
 
 h3Margin = document.getElementById("h3Margin").value ;
-h3Padding = document.getElementById("h3Padding").value ;
 
-    h3Width = bannerWidth - (2*h3Margin + 2*h3Padding);
+h3Width = bannerWidth - (2*h3Margin);
 
 
 /****** all other variables below ****/
@@ -116,6 +115,10 @@ h3Padding = document.getElementById("h3Padding").value ;
     ImageUrl7 = document.getElementById("ImageUrl7").value ;
         G = "<img class='cover' src='" + ImageUrl7 + "'>" ;
 
+    ImageUrl8 = document.getElementById("ImageUrl8").value ;
+        H = "<img class='cover' src='" + ImageUrl8 + "'>" ;
+
+    
     letterSpacing = document.getElementById("letterSpacing").value ;
 
     fontColor = document.getElementById("fontColor").value ;
@@ -129,6 +132,7 @@ arragementArray = quoteText.split('\n'); /****** Single row of the form: 30,A60,
 i=0;
 j=0;
 finalAllText = "";
+finalAllText4Layout = "";
 
 for (i = 0; i < arragementArray.length; i++) {
 
@@ -145,16 +149,24 @@ for (i = 0; i < arragementArray.length; i++) {
             elementWidthPerc = stringName.substring(1); /*** Percentage; A60 = Everything after 1st alphabet = 60 ****/
             elementHeightPerc = rowPerc ;
 
-            elementWidth =  (bannerWidth*elementWidthPerc/100) - (2*h3Margin + 2*h3Padding);
-            elementHeight = (bannerHeight*elementHeightPerc/100) - (2*h3Margin + 2*h3Padding);
+            elementWidth =  (bannerWidth*elementWidthPerc/100) - (2*h3Margin);
+            elementHeight = (bannerHeight*elementHeightPerc/100) - (2*h3Margin);
 
 
             /********* Compiling the variables and Printing the formmated text to an ID in the HTML page ******/
 
             ElementWithStyling = "<span style='color: " + fontColor + ";font-size: " + textSize + "px; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";letter-spacing: " + letterSpacing + "px; font-family: " + fontFamily + ";'>" + window[elementName] + "</span>" ;
 
-            finalAllText += "<div style='float: left; padding: " +h3Padding+ "px; margin: " +h3Margin+ "px; height: " +elementHeight+ "px; width: " +elementWidth+ "px;'>" + ElementWithStyling + "</div>" ;
+            finalAllText += "<div style='float: left; margin: " +h3Margin+ "px; height: " +elementHeight+ "px; width: " +elementWidth+ "px;'>" + ElementWithStyling + "</div>" ;
+        
+            /******* Displaying the layout of the elements for easy Top Padding calculations for centering elements ********/
+        
+            idealTopPadding = Math.floor( ( elementHeight - textSize )/2 ) ;
+        
+            features2Print = elementName + " // margin= " +h3Margin+ "px // WxH= " +elementWidth+ " x " +elementHeight+ " px // Ideal-Top-Padding = " + idealTopPadding + "px" ;
 
+            finalAllText4Layout += "<div style='border: 1px solid black; float: left; margin: " +h3Margin+ "px; height: " +elementHeight+ "px; width: " +elementWidth+ "px;'>" + features2Print + "</div>" ;
+        
             }
 
 }
@@ -180,13 +192,25 @@ L = logoImageUrlFinal ;
 /*********************************************************************/
 /***** Producing the final outputs for display ******/
 
+NewBannerWidth = Number(bannerWidth) + 2*Number(h3Margin ) ;
+NewBannerHeight = Number(bannerHeight) + 2*Number(h3Margin) ;    
+
+/****** Real output magic *****/
+    
+document.getElementById("bookCoverWithLayout").innerHTML =
+"<div class='row center' style='padding: " +h3Margin+ "px; text-align: center; width: " + NewBannerWidth + "px; height: " + NewBannerHeight + "px; background-color: rgba(0,0,0,0.1);'>" +
+finalAllText4Layout +
+"</div>" ;
+
+    
 document.getElementById("bookCover").innerHTML =
-"<div class='row center' style='text-align: center; width: " + bannerWidth + "px; height: " + bannerHeight + "px; background-color: " + colorRGBAlight + ";'>" +
+"<div class='row center' style='padding: " +h3Margin+ "px; text-align: center; width: " + NewBannerWidth + "px; height: " + NewBannerHeight + "px; background-color: " + colorRGBAlight + ";'>" +
 finalAllText +
 "</div>" ;
 
+
 document.getElementById("bookCoverWithBackgroundImage").innerHTML =
-"<div class='row center' style='text-align: center; width: " + bannerWidth + "px; height: " + bannerHeight + "px; background: url(" + ImageUrl1 + "); background-size: cover;'>" +
+"<div class='row center' style='padding: " +h3Margin+ "px; text-align: center; width: " + NewBannerWidth + "px; height: " + NewBannerHeight + "px; background: url(" + ImageUrl1 + "); background-size: cover;'>" +
 finalAllText +
 "</div>" ;
 
@@ -296,13 +320,7 @@ img {
 
         <div class="input-field col l3 s6">
              <label for="h3Margin">Banner Margin (in pixels)</label>
-             <input type="text" name="h3Margin" id="h3Margin" value="2">
-        </div>
-
-
-         <div class="input-field col l3 s6">
-             <label for="h3Padding">Banner Padding (in pixels)</label>
-             <input type="text" name="h3Padding" id="h3Padding" value="0">
+             <input type="text" name="h3Margin" id="h3Margin" value="5">
         </div>
 
 
@@ -430,17 +448,17 @@ img {
 
         <div class="input-field col l6 s12">
            <label for="ImageUrl1"><font color="blue">A</font>: 1st Image URL (<a href="http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/all-lowpoly-backgrounds-index.html" target="_blank">List of Polygonal Backgrounds URLs</a>)</label>
-            <input type="text" name="ImageUrl1" id="ImageUrl1" value="http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/1-Low-Poly-Only-JPGs/low-poly-texture-2.jpg">
+            <input type="text" name="ImageUrl1" id="ImageUrl1" value="https://source.unsplash.com/random">
         </div>
 
         <div class="input-field col l6 s12">
             <label for="ImageUrl2"><font color="blue">B</font>: 2nd Image URL (<a href="https://source.unsplash.com/" target="_blank">Unsplash Images Listing</a>)</label>
-            <input type="text" name="ImageUrl2" id="ImageUrl2" value="https://source.unsplash.com/random">
+            <input type="text" name="ImageUrl2" id="ImageUrl2" value="https://source.unsplash.com/category/nature">
         </div>
 
             <div class="input-field col l6 s12">
        <label for="ImageUrl3"><font color="blue">C</font>: 3rd Image URL</label>
-<input type="text" name="ImageUrl3" id="ImageUrl3" value="https://source.unsplash.com/category/nature">
+<input type="text" name="ImageUrl3" id="ImageUrl3" value="https://source.unsplash.com/featured">
 
 </div>
 
@@ -463,6 +481,11 @@ img {
                 <div class="input-field col l6 s12">
        <label for="ImageUrl7"><font color="blue">G</font>: 7th Image URL</label>
                 <input type="text" name="ImageUrl7" id="ImageUrl7" value="https://source.unsplash.com/category/technology">
+            </div>
+
+                      <div class="input-field col l6 s12">
+       <label for="ImageUrl8"><font color="blue">H</font>: 8th Image URL</label>
+                <input type="text" name="ImageUrl8" id="ImageUrl8" value="http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/1-Low-Poly-Only-JPGs/low-poly-texture-2.jpg">
             </div>
 
 
@@ -508,6 +531,9 @@ img {
             <span id="colorPrinting"></span>
         </div>
 
+        <br>
+        <span id="bookCoverWithLayout"></span>
+        
         <br>
         <span id="bookCover"></span>
 

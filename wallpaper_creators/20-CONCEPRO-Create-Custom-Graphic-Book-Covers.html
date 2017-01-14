@@ -118,8 +118,10 @@ h3Width = bannerWidth - (2*h3Margin);
     ImageUrl8 = document.getElementById("ImageUrl8").value ;
         H = "<img class='cover' src='" + ImageUrl8 + "'>" ;
 
-    
+
     letterSpacing = document.getElementById("letterSpacing").value ;
+
+    textAlignment = document.getElementById("textAlignment").value ;
 
     fontColor = document.getElementById("fontColor").value ;
 
@@ -158,15 +160,15 @@ for (i = 0; i < arragementArray.length; i++) {
             ElementWithStyling = "<span style='color: " + fontColor + ";font-size: " + textSize + "px; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";letter-spacing: " + letterSpacing + "px; font-family: " + fontFamily + ";'>" + window[elementName] + "</span>" ;
 
             finalAllText += "<div style='float: left; margin: " +h3Margin+ "px; height: " +elementHeight+ "px; width: " +elementWidth+ "px;'>" + ElementWithStyling + "</div>" ;
-        
+
             /******* Displaying the layout of the elements for easy Top Padding calculations for centering elements ********/
-        
+
             idealTopPadding = Math.floor( ( elementHeight - textSize )/2 ) ;
-        
+
             features2Print = elementName + " // margin= " +h3Margin+ "px // WxH= " +elementWidth+ " x " +elementHeight+ " px // Ideal-Top-Padding = " + idealTopPadding + "px" ;
 
             finalAllText4Layout += "<div style='border: 1px solid black; float: left; margin: " +h3Margin+ "px; height: " +elementHeight+ "px; width: " +elementWidth+ "px;'>" + features2Print + "</div>" ;
-        
+
             }
 
 }
@@ -193,24 +195,24 @@ L = logoImageUrlFinal ;
 /***** Producing the final outputs for display ******/
 
 NewBannerWidth = Number(bannerWidth) + 2*Number(h3Margin ) ;
-NewBannerHeight = Number(bannerHeight) + 2*Number(h3Margin) ;    
+NewBannerHeight = Number(bannerHeight) + 2*Number(h3Margin) ;
 
 /****** Real output magic *****/
-    
+
 document.getElementById("bookCoverWithLayout").innerHTML =
-"<div class='row center' style='padding: " +h3Margin+ "px; text-align: center; width: " + NewBannerWidth + "px; height: " + NewBannerHeight + "px; background-color: rgba(0,0,0,0.1);'>" +
+"<div class='row center' style='padding: " +h3Margin+ "px; text-align: " + textAlignment + "; width: " + NewBannerWidth + "px; height: " + NewBannerHeight + "px; background-color: rgba(0,0,0,0.1);'>" +
 finalAllText4Layout +
 "</div>" ;
 
-    
+
 document.getElementById("bookCover").innerHTML =
-"<div class='row center' style='padding: " +h3Margin+ "px; text-align: center; width: " + NewBannerWidth + "px; height: " + NewBannerHeight + "px; background-color: " + colorRGBAlight + ";'>" +
+"<div class='row center' style='padding: " +h3Margin+ "px; text-align: " + textAlignment + "; width: " + NewBannerWidth + "px; height: " + NewBannerHeight + "px; background-color: " + colorRGBAlight + ";'>" +
 finalAllText +
 "</div>" ;
 
 
 document.getElementById("bookCoverWithBackgroundImage").innerHTML =
-"<div class='row center' style='padding: " +h3Margin+ "px; text-align: center; width: " + NewBannerWidth + "px; height: " + NewBannerHeight + "px; background: url(" + ImageUrl1 + "); background-size: cover;'>" +
+"<div class='row center' style='padding: " +h3Margin+ "px; text-align: " + textAlignment + "; width: " + NewBannerWidth + "px; height: " + NewBannerHeight + "px; background: url(" + ImageUrl1 + "); background-size: cover;'>" +
 finalAllText +
 "</div>" ;
 
@@ -319,7 +321,7 @@ img {
         </div>
 
         <div class="input-field col l3 s6">
-             <label for="h3Margin">Banner Margin (in pixels)</label>
+             <label for="h3Margin">Cover Margin (in pixels)</label>
              <input type="text" name="h3Margin" id="h3Margin" value="5">
         </div>
 
@@ -327,6 +329,15 @@ img {
             <div class="input-field col l3 s6">
             <label for="textSize">Text Size (in pixels)</label>
           <input type="text" name="textSize" id="textSize" value="20">
+            </div>
+
+            <div class="input-field col l3 s6">
+             <select id="textAlignment" name="textAlignment">
+               <option value="center" selected>center</option>
+                <option value="left">left</option>
+                <option value="right">right</option>
+              </select>
+                 <label for="textAlignment">Text Alignment</label>
             </div>
 
             <div class="input-field col l3 s6">
@@ -397,7 +408,7 @@ img {
                 <option value="lime">Lime</option>
               </select>
                  <label for="fontColor">Font Color</label>
-</div>
+            </div>
 
 
 
@@ -420,7 +431,7 @@ img {
 
 
 
-        <div class="input-field col l6 s12">
+        <div class="input-field col l12 s12">
            <label for="headingName"><font color="blue">T</font>: Main Heading Title</label>
            <input type="text" name="headingName" id="headingName" value="<div style='background-color: rgba(0,0,0,0.5); padding-top: 1px;  font-size: 55px; width: 100%; height: 100%;'>GET THE MOST OUT OF LINKEDIN</div>">
         </div>
@@ -533,7 +544,7 @@ img {
 
         <br>
         <span id="bookCoverWithLayout"></span>
-        
+
         <br>
         <span id="bookCover"></span>
 

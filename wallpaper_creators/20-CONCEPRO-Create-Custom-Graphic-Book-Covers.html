@@ -246,11 +246,6 @@ document.getElementById("colorPrinting").innerHTML = "<h4 style='color: " + colo
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto+Condensed:300,400,700|Roboto+Mono:100,300,400,500,700|Roboto+Slab:100,300,400|Roboto:100,300,400,500,700,900" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Six+Caps" rel="stylesheet">
 
-<!-- CUSTOM LOCAL FONTS -->
-@font-face {
-  font-family: 'voga';
-  src: url('fonts/voga/Voga-Medium.otf') ;
-}
 
 <style type="text/css">
 
@@ -267,6 +262,11 @@ img {
 
 .cover {
     object-fit: cover;
+}
+
+@font-face {
+  font-family: 'voga';
+  src: url('fonts/voga/Voga-Medium.otf') ;
 }
 
 </style>
@@ -404,8 +404,11 @@ img {
 
             <div class="input-field col l4 s6">
             <select id="fontWeight" name="fontWeight">
-               <option value="400">400</option>
-               <option value="700" selected>700</option>
+               <option value="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+               <option value="400" selected>400</option>
+               <option value="700">700</option>
                <option value="900">900</option>
             </select>
                 <label for="fontWeight">Font Weight</label>

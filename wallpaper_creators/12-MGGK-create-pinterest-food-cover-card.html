@@ -83,6 +83,15 @@ function randRGBA(min,max)
     backgroundColor = document.getElementById("backgroundColor").value ;
 
 
+    /********* All Font Names as List for choosing *********/
+        fontNamesArray = ["Aladin", "Amatic SC", "Butterfly Kids", "Dancing Script", "Gloria Hallelujah", "Homemade Apple", "League Script", "Oswald", "Pacifico", "Permanent Marker", "Pinyon Script", "Playfair Display", "Playfair Display SC", "Raleway", "Sacramento", "Sue Ellen Francisco", "Sunshiney"] ;
+
+        fontNamesInText = "<h3 style='text-align: center;'>See Dish Name In Different Fonts (800 px wide). Choose one.</h3>";
+        for (i = 0; i < fontNamesArray.length; i++) {
+            fontNamesInText += "<h4>" + fontNamesArray[i] + "</h4><div style='width: 800px; height: auto; font-family: " + fontNamesArray[i] + ";font-size: " + textSize + ";font-weight: " + fontWeight + ";text-align: center; color: " + colorRGBA + ";line-height: " + lineHeight + ";' >" + headingName + "</div>";
+        }
+    /***************************************/
+
 /* ******** Compiling the variables and Printing the formmated text to an ID in the HTML page ***** */
 
 part1 = "<div class='polaroid' style='background-color: " + backgroundColor + ";font-size: " + textSize + "px; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";border: " + imageBorder + "px solid " + colorRGBA + ";'>";
@@ -104,7 +113,11 @@ document.getElementById("randcolorRGBA").innerHTML = part1 + varImageUrl1 + part
 
 /************ Printing out the codes for the random colors generated ********/
 document.getElementById("colorPrinting").innerHTML = "<h3 style='text-align: center; color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</h3>";
-document.getElementById("FontDisplayPrinting").innerHTML = "<div style='font-weight: " + fontWeight + ";text-align: center; font-family: " + fontFamily + ";font-size: " + textSize + "px;color: " + colorRGBA + ";'>" + headingName + "</div>";
+
+document.getElementById("FontDisplayPrinting").innerHTML = "<h3 style='text-align: center;'>Dish Name in Chosen Font</h3><div style='width: 800px; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";text-align: center; font-family: " + fontFamily + ";font-size: " + textSize + "px;color: " + colorRGBA + ";'>" + headingName + "</div>";
+
+document.getElementById("AllFontDisplayPrinting").innerHTML = fontNamesInText ;
+
 
 }
 
@@ -399,9 +412,14 @@ font-weight: 900;
 <hr>
 <h2>Press the button above, and your image card should appear below.</h2>
 <span id="colorPrinting"></span>
-<span id="FontDisplayPrinting"></span>
-<br>
 
+<hr style='background-color:red; height:10px;'>
+<span id="FontDisplayPrinting"></span>
+
+<hr style='background-color:red; height:10px;'>
+<span id="AllFontDisplayPrinting"></span>
+
+<hr style='background-color:red; height:10px;'>
 <span id="randcolorRGBA"></span>
 
 

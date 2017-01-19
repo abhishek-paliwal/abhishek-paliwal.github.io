@@ -114,7 +114,7 @@ document.getElementById("randcolorRGBA").innerHTML = part1 + varImageUrl1 + part
 /************ Printing out the codes for the random colors generated ********/
 document.getElementById("colorPrinting").innerHTML = "<h3 style='text-align: center; color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</h3>";
 
-document.getElementById("FontDisplayPrinting").innerHTML = "<h3 style='text-align: center;'>Dish Name in Chosen Font</h3><div style='width: 800px; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";text-align: center; font-family: " + fontFamily + ";font-size: " + textSize + "px;color: " + colorRGBA + ";'>" + headingName + "</div>";
+document.getElementById("FontDisplayPrinting").innerHTML = "<h3 style='text-align: center;'>Dish Name in Chosen Font (800 px wide)</h3><div style='width: 800px; line-height: " + lineHeight + ";font-weight: " + fontWeight + ";text-align: center; font-family: " + fontFamily + ";font-size: " + textSize + "px;color: " + colorRGBA + ";'>" + headingName + "</div>";
 
 document.getElementById("AllFontDisplayPrinting").innerHTML = fontNamesInText ;
 
@@ -414,12 +414,14 @@ font-weight: 900;
 <span id="colorPrinting"></span>
 
 <hr style='background-color:red; height:10px;'>
+<h2 style="text-align:center;"><a href="#randcolorRGBA">===> Check how it looks like in the final design <===</a></h2>
 <span id="FontDisplayPrinting"></span>
 
 <hr style='background-color:red; height:10px;'>
 <span id="AllFontDisplayPrinting"></span>
 
 <hr style='background-color:red; height:10px;'>
+<h2 style="text-align:center;"><a href="#fontWeight">===> Go Back To Top <===</a></h2>
 <span id="randcolorRGBA"></span>
 
 

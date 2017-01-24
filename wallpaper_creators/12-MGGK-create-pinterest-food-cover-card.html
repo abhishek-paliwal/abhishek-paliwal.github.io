@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,900" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700,900|Playfair+Display:400,700,900" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Kranky|Lobster" rel="stylesheet">
 
 
 <script>
@@ -84,11 +85,13 @@ function randRGBA(min,max)
 
 
     /********* All Font Names as List for choosing *********/
-        fontNamesArray = ["Aladin", "Amatic SC", "Butterfly Kids", "Dancing Script", "Gloria Hallelujah", "Homemade Apple", "League Script", "Oswald", "Pacifico", "Permanent Marker", "Pinyon Script", "Playfair Display", "Playfair Display SC", "Raleway", "Sacramento", "Sue Ellen Francisco", "Sunshiney"] ;
+        fontNamesArray = ["Aladin", "Amatic SC", "brusher", "Butterfly Kids", "Dancing Script", "Gloria Hallelujah", "great-vibes", "Homemade Apple", "Kranky", "League Script", "Lobster", "Oswald", "Pacifico", "Permanent Marker", "Pinyon Script", "Playfair Display", "Playfair Display SC", "playlist-script", "Raleway", "Sacramento", "selima", "Sue Ellen Francisco", "Sunshiney"] ;
+
+       optionalFooter = "<button style='margin-left: 40%; width: 20%; border: 1px solid blue; background-color:white;'><a href='#fontWeight'>Go Back To Top</a></button>";
 
         fontNamesInText = "<h3 style='text-align: center;'>See Dish Name In Different Fonts (800 px wide). Choose one.</h3>";
         for (i = 0; i < fontNamesArray.length; i++) {
-            fontNamesInText += "<h4>" + fontNamesArray[i] + "</h4><div style='width: 800px; height: auto; font-family: " + fontNamesArray[i] + ";font-size: " + textSize + ";font-weight: " + fontWeight + ";text-align: center; color: " + colorRGBA + ";line-height: " + lineHeight + ";' >" + headingName + "</div>";
+            fontNamesInText += "<h3>" + fontNamesArray[i] + "</h3><div style='width: 800px; height: auto; font-family: " + fontNamesArray[i] + ";font-size: " + textSize + ";font-weight: " + fontWeight + ";text-align: center; color: " + colorRGBA + ";line-height: " + lineHeight + ";' >" + headingName + "</div>" + optionalFooter ;
         }
     /***************************************/
 
@@ -235,6 +238,26 @@ font-family: 'Oswald', sans-serif;
 font-weight: 900;
 }
 
+@font-face {
+  font-family: 'brusher';
+  src: url('fonts/_misc_fonts/Brusher-Font.otf') ;
+}
+
+@font-face {
+  font-family: 'great-vibes';
+  src: url('fonts/_misc_fonts/GreatVibes-Regular.otf') ;
+}
+
+@font-face {
+  font-family: 'playlist-script';
+  src: url('fonts/_misc_fonts/Playlist-Script.otf') ;
+}
+
+@font-face {
+  font-family: 'selima';
+  src: url('fonts/_misc_fonts/Selima.otf') ;
+}
+
 </style>
 
 </head>
@@ -340,7 +363,7 @@ font-weight: 900;
     <tr>
     		<td>
           <label for="textSize">Dish Name Text Size (in pixels)</label>
-          <input type="text" name="textSize" id="textSize" value="140">
+          <input type="text" name="textSize" id="textSize" value="100">
         </td>
 
         <td>
@@ -372,23 +395,29 @@ font-weight: 900;
  <label for="fontFamily">Font Family</label>
     <select id="fontFamily" name="fontFamily">
 
-      <option value=' "Aladin", cursive'>Aladin, cursive</option>
+      <option value=' "Aladin", cursive' selected="">Aladin, cursive</option>
       <option value=' "Amatic SC", cursive'>Amatic SC, cursive</option>
+      <option value=' "brusher", serif'>Brusher, Handwritten</option>
       <option value=' "Butterfly Kids", cursive'>Butterfly Kids, cursive</option>
       <option value=' "Dancing Script", cursive'>Dancing Script, cursive</option>
       <option value=' "Gloria Hallelujah", cursive'>Gloria Hallelujah, cursive</option>
+      <option value=' "great-vibes", serif'>Great-Vibes</option>
       <option value=' "Homemade Apple", cursive'>Homemade Apple, cursive</option>
+      <option value=' "Kranky", cursive'>Kranky, cursive</option>
       <option value=' "League Script", cursive'>League Script, cursive</option>
+      <option value=' "Lobster", cursive'>Lobster, cursive</option>
       <option value=' "Pacifico", cursive'>Pacifico, cursive</option>
       <option value=' "Permanent Marker", cursive'>Permanent Marker, cursive</option>
       <option value=' "Pinyon Script", cursive'>Pinyon Script, cursive</option>
+      <option value=' "playlist-script", serif'>Playlist-Script, Handwritten</option>
+      <option value=' "selima", serif'>Selima, Handwritten</option>
       <option value=' "Sue Ellen Francisco", cursive'>Sue Ellen Francisco, cursive</option>
       <option value=' "Sunshiney", cursive'>Sunshiney, cursive</option>
+      <option value=' "Sacramento", cursive'>Sacramento, cursive</option>
 
       <option value=''> -------------------------- </option>
 
       <option value=' "Oswald", sans-serif'> => Oswald, MGGK-THEME-FONT</option>
-      <option value=' "Sacramento", cursive' selected> => Sacramento, cursive</option>
       <option value=' "Playfair Display SC", serif'> => Playfair Display SC</option>
       <option value=' "Playfair Display", serif'> => Playfair Display</option>
       <option value=' "Raleway", sans-serif'> => Raleway</option>
@@ -409,19 +438,19 @@ font-weight: 900;
 
 </div>
 
+
+<button style="margin-left: 25%; width: 50%; border: 10px solid blue; background-color:white;"><a href="#randcolorRGBA">Check how it looks like in the final design</a></button>
+
 <hr>
 <h2>Press the button above, and your image card should appear below.</h2>
 <span id="colorPrinting"></span>
 
-<hr style='background-color:red; height:10px;'>
-<h2 style="text-align:center;"><a href="#randcolorRGBA">===> Check how it looks like in the final design <===</a></h2>
 <span id="FontDisplayPrinting"></span>
 
-<hr style='background-color:red; height:10px;'>
+<hr>
 <span id="AllFontDisplayPrinting"></span>
 
-<hr style='background-color:red; height:10px;'>
-<h2 style="text-align:center;"><a href="#fontWeight">===> Go Back To Top <===</a></h2>
+<hr>
 <span id="randcolorRGBA"></span>
 
 

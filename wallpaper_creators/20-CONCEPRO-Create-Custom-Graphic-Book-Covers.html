@@ -171,7 +171,7 @@ for (i = 0; i < arragementArray.length; i++) {
 
             features2Print = elementName + " // margin= " +h3Margin+ "px // WxH= " +elementWidth+ " x " +elementHeight+ " px // Ideal-Top-Padding = " + idealTopPadding + "px" ;
 
-            finalAllText4Layout += "<div style='border: 1px solid black; float: left; margin: " +h3Margin+ "px; height: " +elementHeight+ "px; width: " +elementWidth+ "px;'>" + features2Print + "</div>" ;
+            finalAllText4Layout += "<div style='border: 1px solid #B6806B; float: left; margin: " +h3Margin+ "px; height: " +elementHeight+ "px; width: " +elementWidth+ "px;'>" + features2Print + "</div>" ;
 
             }
 
@@ -204,7 +204,7 @@ NewBannerHeight = Number(bannerHeight) + 2*Number(h3Margin) ;
 /****** Real output magic *****/
 
 document.getElementById("bookCoverWithLayout").innerHTML =
-"<div class='row center' style='padding: " +h3Margin+ "px; text-align: " + textAlignment + "; width: " + NewBannerWidth + "px; height: " + NewBannerHeight + "px; background-color: rgba(0,0,0,0.1);'>" +
+"<div class='row center' style='padding: " +h3Margin+ "px; text-align: " + textAlignment + "; width: " + NewBannerWidth + "px; height: " + NewBannerHeight + "px; color: #B6806B; background-color: rgba(11,44,53,1);'>" +
 finalAllText4Layout +
 "</div>" ;
 
@@ -298,6 +298,17 @@ img {
   src: url('fonts/_misc_fonts/Selima.otf') ;
 }
 
+summary {
+font-size: 30px;
+text-transform: uppercase;
+font-weight:bold;
+color:blue;
+}
+
+details {
+border: 5px solid blue;
+padding: 10px;
+}
 
 </style>
 
@@ -604,205 +615,203 @@ img {
         <h4>1. Book Cover Layout Grid Planning</h4>
         <span id="bookCoverWithLayout"></span>
 
-        <br><h4>2. Main Book Cover with Background Color</h4>
+        <br>
+        <h4>2. Main Book Cover with Background Color</h4>
         <span id="bookCover"></span>
 
-        <br><h4>3. Book Cover with Background Image</h4>
+        <br>
+        <h4>3. Book Cover with Background Image</h4>
         <span id="bookCoverWithBackgroundImage"></span>
 
       </div>
 
 
-<div class="row">
+
+<details>
+  <summary>CLICK HERE TO CHOOSE SOME READYMADE EXAMPLE LAYOUTS:</summary>
+
+    <div class="row center">
+            <h5 class="header center">Following are some examples of custom Graphic Book Covers, and their 'Arrangement Codes' below:</h5>
+            <img src="https://abhishek-paliwal.github.io/sample-screenshots-of-wallpapers/20-sample-wallpaper-300px-long.jpg" style='width:700px; height: auto;'>
+
             <div class="divider materialize-red"></div>
-</div>
+
+    <!-- CARDS BELOW -->
+
+            <div class="col s6 m6 l4" style='text-align:left;'>
+            <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+            <span class="card-title">Style 1</span>
+            <p>10,S100<br>
+            20,T100<br>
+            60,A100<br>
+            5,X100<br>
+            5,W100</p>
+
+            </div>
+            </div>
+            </div>
 
 
-<div class="row center">
 
-        <h5 class="header center">Following are some examples of custom Graphic Book Covers, and their 'Arrangement Codes' below:</h5>
+            <div class="col s6 m6 l4" style='text-align:left;'>
+            <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+            <span class="card-title">Style 2</span>
+            <p>30,A50,B50<br>
+            10,S100<br>
+            15,T100<br>
+            30,C50,D50<br>
+            5,W100<br>
+            10,L100
+            </p>
 
-        <img src="https://abhishek-paliwal.github.io/sample-screenshots-of-wallpapers/20-sample-wallpaper-300px-long.jpg" style='width:700px; height: auto;'>
+            </div>
+            </div>
+            </div>
+
+
+
+
+
+            <div class="col s6 m6 l4" style='text-align:left;'>
+            <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+            <span class="card-title">Style 3</span>
+            <p>5,X100<br>
+            5,W100<br>
+            25,A100<br>
+            25,B100<br>
+            25,C100<br>
+            15,T100
+            </p>
+
+            </div>
+            </div>
+            </div>
+
+
+
+            <div class="col s6 m6 l4" style='text-align:left;'>
+            <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+            <span class="card-title">Style 4</span>
+            <p>
+            10,S100<br>
+            70,A33,B34,C33<br>
+            10,T100<br>
+            10,W100
+            </p>
+
+            </div>
+            </div>
+            </div>
+
+
+
+            <div class="col s6 m6 l4" style='text-align:left;'>
+            <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+            <span class="card-title">Style 5</span>
+            <p>
+            33,A50,B50<br>
+            10,S100<br>
+            14,T100<br>
+            10,W100<br>
+            33,C50,D50
+            </p>
+
+            </div>
+            </div>
+            </div>
+
+
+            <div class="col s6 m6 l4" style='text-align:left;'>
+            <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+            <span class="card-title">Style 6</span>
+            <p>
+            20,T100<br>
+            5,X100<br>
+            25,A60,B40<br>
+            25,C40,D60<br>
+            5,X100<br>
+            10,S100<br>
+            10,W100
+            </p>
+            </div>
+            </div>
+            </div>
+
+
+            <div class="col s6 m6 l4" style='text-align:left;'>
+            <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+            <span class="card-title">Style 7</span>
+            <p>
+            30,A33,B34,C33<br>
+            15,T100<br>
+            10,S100<br>
+            30,D33,E34,F33<br>
+            1,X100<br>
+            9,L100<br>
+            5,W100
+            </p>
+            </div>
+            </div>
+            </div>
+
+
+            <div class="col s6 m6 l4" style='text-align:left;'>
+            <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+            <span class="card-title">Style 8</span>
+            <p>
+              30,X100<br>
+              40,T50,X50<br>
+              25,X100<br>
+              5,X50,W50
+            </p>
+            </div>
+            </div>
+            </div>
+
+            <div class="col s6 m6 l4" style='text-align:left;'>
+            <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+            <span class="card-title">Style 9</span>
+            <p>
+            10,S100<br>
+            20,X10,T80,X10<br>
+            10,W100<br>
+            30,X100<br>
+            30,X100
+            </p>
+            </div>
+            </div>
+            </div>
+
+
+            <div class="col s6 m6 l4" style='text-align:left;'>
+            <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+            <span class="card-title">Style 10</span>
+            <p>
+              20,F20,X20,F20,X20,F20<br>
+              20,X20,F20,X20,F20,X20<br>
+              20,X20,F20,F20,F20,X20<br>
+              20,F20,X20,F20,X20,F20<br>
+              20,F20,F20,X20,F20,F20
+            </p>
+            </div>
+            </div>
+            </div>
+
     </div>
 
-
-
-<div class="row center">  <!-- CARDS ROW -->
-
-<div class="col s6 m6 l4" style='text-align:left;'>
-<div class="card blue-grey darken-1">
-<div class="card-content white-text">
-<span class="card-title">Style 1</span>
-<p>10,S100<br>
-20,T100<br>
-60,A100<br>
-5,X100<br>
-5,W100</p>
+</details>
 
 </div>
-</div>
-</div>
-
-
-
-<div class="col s6 m6 l4" style='text-align:left;'>
-<div class="card blue-grey darken-1">
-<div class="card-content white-text">
-<span class="card-title">Style 2</span>
-<p>30,A50,B50<br>
-10,S100<br>
-15,T100<br>
-30,C50,D50<br>
-5,W100<br>
-10,L100
-</p>
-
-</div>
-</div>
-</div>
-
-
-
-
-
-<div class="col s6 m6 l4" style='text-align:left;'>
-<div class="card blue-grey darken-1">
-<div class="card-content white-text">
-<span class="card-title">Style 3</span>
-<p>5,X100<br>
-5,W100<br>
-25,A100<br>
-25,B100<br>
-25,C100<br>
-15,T100
-</p>
-
-</div>
-</div>
-</div>
-
-
-
-<div class="col s6 m6 l4" style='text-align:left;'>
-<div class="card blue-grey darken-1">
-<div class="card-content white-text">
-<span class="card-title">Style 4</span>
-<p>
-10,S100<br>
-70,A33,B34,C33<br>
-10,T100<br>
-10,W100
-</p>
-
-</div>
-</div>
-</div>
-
-
-
-<div class="col s6 m6 l4" style='text-align:left;'>
-<div class="card blue-grey darken-1">
-<div class="card-content white-text">
-<span class="card-title">Style 5</span>
-<p>
-33,A50,B50<br>
-10,S100<br>
-14,T100<br>
-10,W100<br>
-33,C50,D50
-</p>
-
-</div>
-</div>
-</div>
-
-
-<div class="col s6 m6 l4" style='text-align:left;'>
-<div class="card blue-grey darken-1">
-<div class="card-content white-text">
-<span class="card-title">Style 6</span>
-<p>
-20,T100<br>
-5,X100<br>
-25,A60,B40<br>
-25,C40,D60<br>
-5,X100<br>
-10,S100<br>
-10,W100
-</p>
-</div>
-</div>
-</div>
-
-
-<div class="col s6 m6 l4" style='text-align:left;'>
-<div class="card blue-grey darken-1">
-<div class="card-content white-text">
-<span class="card-title">Style 7</span>
-<p>
-30,A33,B34,C33<br>
-15,T100<br>
-10,S100<br>
-30,D33,E34,F33<br>
-1,X100<br>
-9,L100<br>
-5,W100
-</p>
-</div>
-</div>
-</div>
-
-
-<div class="col s6 m6 l4" style='text-align:left;'>
-<div class="card blue-grey darken-1">
-<div class="card-content white-text">
-<span class="card-title">Style 8</span>
-<p>
-  30,X100<br>
-  40,T50,X50<br>
-  25,X100<br>
-  5,X50,W50
-</p>
-</div>
-</div>
-</div>
-
-<div class="col s6 m6 l4" style='text-align:left;'>
-<div class="card blue-grey darken-1">
-<div class="card-content white-text">
-<span class="card-title">Style 9</span>
-<p>
-10,S100<br>
-20,X10,T80,X10<br>
-10,W100<br>
-30,X100<br>
-30,X100
-</p>
-</div>
-</div>
-</div>
-
-
-<div class="col s6 m6 l4" style='text-align:left;'>
-<div class="card blue-grey darken-1">
-<div class="card-content white-text">
-<span class="card-title">Style 10</span>
-<p>
-  20,F20,X20,F20,X20,F20<br>
-  20,X20,F20,X20,F20,X20<br>
-  20,X20,F20,F20,F20,X20<br>
-  20,F20,X20,F20,X20,F20<br>
-  20,F20,F20,X20,F20,F20
-</p>
-</div>
-</div>
-</div>
-
-
-
-
-      </div>
-  </div>
 
 </div>
 

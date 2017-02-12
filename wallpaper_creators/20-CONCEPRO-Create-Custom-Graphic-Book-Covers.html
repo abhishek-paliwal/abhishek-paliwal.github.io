@@ -64,6 +64,13 @@ h3Width = bannerWidth - (2*h3Margin);
 
     Y = buttonText = document.getElementById("buttonText").value ;
 
+    I = document.getElementById("iconText").value ;
+
+    J = document.getElementById("JText").value ;
+    K = document.getElementById("KText").value ;
+    M = document.getElementById("MText").value ;
+    N = document.getElementById("NText").value ;
+
 
     textSize = document.getElementById("textSize").value ;
 
@@ -232,6 +239,7 @@ document.getElementById("colorPrinting").innerHTML = "<h4 style='color: " + colo
 
 <!-- CSS  -->
 
+  <link href="css/pali_google_material_icons_resizer.css" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -369,7 +377,7 @@ padding: 10px;
 
         <div class="input-field col l3 s6">
              <label for="bannerHeight">Cover Height (in pixels)</label>
-             <input type="text" name="bannerHeight" id="bannerHeight" value="1000">
+             <input type="text" name="bannerHeight" id="bannerHeight" value="667">
         </div>
 
         <div class="input-field col l3 s6">
@@ -510,6 +518,12 @@ padding: 10px;
            <input type="text" name="subTitle" id="subTitle" value="<div style=' background-color: rgba(0,0,0,0.3); width:100%; height:100%;'><div class='perfectMiddleText'>This is the best book you will read this year.</div></div>">
         </div>
 
+
+        <div class="input-field col l6 s12">
+         <label for="whatItIs"><font color="blue">W</font>: Writer/Author Name or Foreword such as NYTimes Bestseller ;-)</label>
+         <input type="text" name="whatItIs" id="whatItIs" value="<div style='background-color: rgba(0,0,0,0.5); width: 100%; height: 100%;'><div class='perfectMiddleText'>{ ABHISHEK PALIWAL }</div></div>">
+      </div>
+
          <div class="input-field col l6 s12">
            <label for="dividerText"><font color="blue">X</font>: Divider Text // Padding Section</label>
              <input type="text" name="dividerText" id="dividerText" value="<div style='background-color: rgba(0,0,0,0.0); width: 100%; height: 100%;'><div class='perfectMiddleText'> &nbsp; </div></div>" >
@@ -520,11 +534,33 @@ padding: 10px;
             <input type="text" name="buttonText" id="buttonText" value="<div style='text-align:center;'><button style='background-color: #ff8700; height: 50px; width:400px; border-radius:100px;'>Download now</button></div>" >
         </div>
 
-          <div class="input-field col l6 s12">
-           <label for="whatItIs"><font color="blue">W</font>: Writer/Author Name or Foreword such as NYTimes Bestseller ;-)</label>
-           <input type="text" name="whatItIs" id="whatItIs" value="<div style='background-color: rgba(0,0,0,0.5); width: 100%; height: 100%;'><div class='perfectMiddleText'>{ ABHISHEK PALIWAL }</div></div>">
+
+
+        <div class="input-field col l12 s12">
+           <label for="iconText"><font color="blue">I</font>: Code for <a href="http://fontawesome.io/cheatsheet/">FontAwesome Cheatsheet</a> // <a href="https://material.io/icons/">Google Icons</a> </label>
+            <input type="text" name="iconText" id="iconText" value="<i class='fa fa-camera-retro fa-3x'></i> <i class='material-icons md-50'>favorite</i>" >
         </div>
 
+
+        <div class="input-field col l6 s12">
+           <label for="JText"><font color="blue">J</font>: Insert Text</label>
+            <input type="text" name="JText" id="JText" value="" >
+        </div>
+
+        <div class="input-field col l6 s12">
+           <label for="KText"><font color="blue">K</font>: Insert Text</label>
+            <input type="text" name="KText" id="KText" value="" >
+        </div>
+
+        <div class="input-field col l6 s12">
+           <label for="MText"><font color="blue">M</font>: Insert Text</label>
+            <input type="text" name="MText" id="MText" value="" >
+        </div>
+
+        <div class="input-field col l6 s12">
+           <label for="NText"><font color="blue">N</font>: Insert Text</label>
+            <input type="text" name="NText" id="NText" value="" >
+        </div>
 
         <div class="input-field col l6 s12">
            <label for="ImageUrl1"><font color="blue">A</font>: 1st Image URL (This will be used as the Main Background Image)</label>

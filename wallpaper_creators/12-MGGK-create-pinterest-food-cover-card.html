@@ -83,6 +83,12 @@ function randRGBA(min,max)
 
     backgroundColor = document.getElementById("backgroundColor").value ;
 
+    borderRadius = document.getElementById("borderRadius").value ;
+
+    gradientCode = document.getElementById("gradientCode").value ;
+
+    colorForCategory = document.getElementById("colorForCategory").value ;
+
 
     /********* All Font Names as List for choosing *********/
         fontNamesArray = ["Aladin", "Amatic SC", "brusher", "Butterfly Kids", "Dancing Script", "Gloria Hallelujah", "great-vibes", "Homemade Apple", "Kranky", "League Script", "Lobster", "Mocking Script", "Oswald", "Pacifico", "Permanent Marker", "Pinyon Script", "Playfair Display", "Playfair Display SC", "playlist-script", "Raleway", "Sacramento", "selima", "Sue Ellen Francisco", "Sunshiney"] ;
@@ -105,13 +111,13 @@ varQuoteText = quoteText + "<br>";
 
 partRecipeName = "<div class='containerDish' style='font-family: " + fontFamily + ";line-height: " + lineHeight + ";font-weight: " + fontWeight + ";letter-spacing: " + DishNameletterSpacing + "px;font-size: " + textSize + "px; color: " + colorRGBA + "'>" + headingName + "</div>" ;
 
-partDescription = "<div class='container' style='line-height: " + 1.3 + ";letter-spacing: " + alphabetTextSize + "px;font-size: " + alphabetTextSize + "vw; color: rgba(90,90,90,1);'>" + varQuoteText + "&bull;&bull;&bull;<br><span style='color: " + colorRGBA + ";'>" + alphabetText + "</span><br>&bull;&bull;&bull;</div>" ;
+partDescription = "<div class='container' style='line-height: " + 1.3 + ";letter-spacing: " + alphabetTextSize + "px;font-size: " + alphabetTextSize + "vw; color: " + colorForCategory + ";'>" + varQuoteText + "&bull;&bull;&bull;<br><span style='color: " + colorRGBA + ";'>" + alphabetText + "</span><br>&bull;&bull;&bull;</div>" ;
 
 partEnd = "</div>";
 
 partOptionalFooter = "<div class='footer'>Find more such recipes at<br><IMG SRC='http://downloads.concepro.com/dropbox-public-files/logos/5-logos-mggk/Mggk-New-Logo-Transparent-4000Px.png' style='height:15vw'></div>";
 
-document.getElementById("randcolorRGBA").innerHTML = part1 + varImageUrl1 + partRecipeName + partDescription + varImageUrl2 + partEnd + partOptionalFooter;
+document.getElementById("randcolorRGBA").innerHTML = part1 + varImageUrl1 + "<div style='border-radius: " + borderRadius + "; background: " + gradientCode + "; '>" + partRecipeName + partDescription + "</div>" + varImageUrl2 + partEnd + partOptionalFooter;
 
 
 /************ Printing out the codes for the random colors generated ********/
@@ -279,7 +285,7 @@ font-weight: 900;
 
 
   <label for="headingName">Name of the dish</label>
-  <input type="text" name="headingName" id="headingName" value="Cake & Caviar">
+  <input type="text" name="headingName" id="headingName" value="Cake<br>& Caviar">
 
 
 
@@ -295,22 +301,56 @@ font-weight: 900;
 <table border="0">
 
     <tr>
-    		<td>
+    		<td width='50%'>
           <label for="alphabetTextSize">Website (and Description) Text Size (in 'vw' units)</label>
-          <input type="text" name="alphabetTextSize" id="alphabetTextSize" value="2.5">
+          <input type="text" name="alphabetTextSize" id="alphabetTextSize" value="2.0">
         </td>
 
-        <td>
+        <td width='50%'>
           <label for="alphabetText">Website URL Address</label>
-          <input type="text" name="alphabetText" id="alphabetText" value="www.MyGingerGarlicKitchen.com">
+          <input type="text" name="alphabetText" id="alphabetText" value="MyGingerGarlicKitchen.com">
         </td>
 
     </tr>
+
+    <tr>
+        <td width='50%'>
+          <label for="borderRadius">Border Radius in pixels or % (HINT: use 50% for circle; 0% for rectangle)</label>
+          <input type="text" name="borderRadius" id="borderRadius" value="500px">
+        </td>
+
+        <td width='50%'>
+          <label for="gradientCode">Gradient Color HTML code</label>
+          <input type="text" name="gradientCode" id="gradientCode" value="linear-gradient( -45deg, rgba(255,0,120,1),  rgba(255,0,120,0.2) )">
+        </td>
+
+
+    </tr>
+
 </table>
 
 
 <label for="colorCode">Your Color Code as RGB without brackets; e.g. 255, 255, 0  (If unsure, keep the default value).</label>
 <input type="text" name="colorCode" id="colorCode" value="Surprise Me">
+
+
+  <label for="colorForCategory">Choose Color for Dish Catetgory</label>
+     <select id="colorForCategory" name="colorForCategory">
+       <option value="white">White</option>
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+        <option value="DeepPink">DeepPink</option>
+        <option value="orange">Orange</option>
+        <option value="lime">Lime</option>
+        <option value="#cd1c62" selected>MGGK - Pink</option>
+        <option value="#3498db">CONCEPRO - Blue</option>
+        <option value="rgb(220,220,220)">Light Gray, RGB(220,220,220)</option>
+        <option value="rgb(50,50,50)">Dark Gray, RGB(50,50,50)</option>
+      </select>
+
 
 
 <label for="quoteText">Description (or NOTES) Text</label>

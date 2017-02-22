@@ -33,6 +33,10 @@ function randRGBA(min,max)
       }
 
 /* Getting the text from the form */
+
+    DivBoxWidth = document.getElementById("DivBoxWidth").value ;
+    DivBoxHeight = document.getElementById("DivBoxHeight").value ;
+
     headingName = document.getElementById("headingName").value ;
     textAlignment = document.getElementById("textAlignment").value ;
     fontFamily = document.getElementById("fontFamily").value ;
@@ -168,7 +172,7 @@ if (colorCode =="Generate Random RGB Triad Colors") {
                 fontColor12 = "rgba(" + redDiff12 + "," + greenDiff12 + "," + blueDiff12 + "," + opacityValue + ")" ;
 
       /***** Generating the block with prespecified DIV's *****/
-                finalTextWithDiv12 += "<div class ='mybox' style='border-radius: " + borderRadius + ";width: 50px; height: 50px; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor12 + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
+                finalTextWithDiv12 += "<div class ='mybox' style='border-radius: " + borderRadius + " ; width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor12 + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
 
         }
 
@@ -189,7 +193,7 @@ if (colorCode =="Generate Random RGB Triad Colors") {
                   fontColor23 = "rgba(" + redDiff23 + "," + greenDiff23 + "," + blueDiff23 + "," + opacityValue + ")" ;
 
         /***** Generating the block with prespecified DIV's *****/
-                  finalTextWithDiv23 += "<div class ='mybox' style='border-radius: " + borderRadius + ";width: 50px; height: 50px; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor23 + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
+                  finalTextWithDiv23 += "<div class ='mybox' style='border-radius: " + borderRadius + " ; width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor23 + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
 
           }
 
@@ -210,7 +214,7 @@ if (colorCode =="Generate Random RGB Triad Colors") {
                   fontColor34 = "rgba(" + redDiff34 + "," + greenDiff34 + "," + blueDiff34 + "," + opacityValue + ")" ;
 
         /***** Generating the block with prespecified DIV's *****/
-                  finalTextWithDiv34 += "<div class ='mybox' style='border-radius: " + borderRadius + ";width: 50px; height: 50px; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor34 + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
+                  finalTextWithDiv34 += "<div class ='mybox' style='border-radius: " + borderRadius + " ; width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor34 + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
 
           }
 
@@ -219,6 +223,10 @@ if (colorCode =="Generate Random RGB Triad Colors") {
 /********************************************************************************/
 
         finalTextWithRandomColor ="";
+        finalTextWithRandomColorWithGradient ="";
+        finalTextWithRandomColorWithGradientNoShadow ="";
+        totalGradBoxes = 0;
+        RandomGradientAngle = "";
         alltotalBoxes = totalBoxes*3 ; /**total number of boxes **/
         finalColorArray = [""];
 
@@ -237,11 +245,46 @@ if (colorCode =="Generate Random RGB Triad Colors") {
 
                   fontColorRandom = finalColorArray[Math.floor(Math.random() * 4)]; /*** Finding a random color between 0 and 3 ***/
 
+                  fontColorRandomGradient = finalColorArray[Math.floor(Math.random() * 4)]; /*** Finding another random color between 0 and 3 ***/
+
         /***** Generating the block with prespecified DIV's *****/
-                  finalTextWithRandomColor += "<div class ='mybox' style='border-radius: " + borderRadius + ";width: 50px; height: 50px; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColorRandom + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
+                  finalTextWithRandomColor += "<div class ='mybox' style='border-radius: " + borderRadius + ";width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColorRandom + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
+
+
+                  RandomGradientAngleNum = Math.floor(Math.random() * 360) ; /** random gradient angle between 0 to 360 **/
+                  RandomGradientAngle = RandomGradientAngleNum + "deg";
+
+
+                  /*** Generating a variable shadow for the div from 3 choices, depending upon the random angle ***/
+                  /*** Random angle limits are chosen such that about 25% of the boxes will have drop shadows ***/
+
+                  if ( RandomGradientAngleNum < 30) {
+                    BoxShadowVar = "-5px -5px 25px #111" ;
+                    totalGradBoxes += 1;
+                  } else if ( RandomGradientAngleNum > 60 && RandomGradientAngleNum < 90 ) {
+                    BoxShadowVar = "-10px -10px 32px #111" ;
+                    totalGradBoxes += 1;
+                  } else if ( RandomGradientAngleNum > 120 && RandomGradientAngleNum < 150 ) {
+                    BoxShadowVar = "-15px -15px 40px #111" ;
+                    totalGradBoxes += 1;
+                  } else {
+                    BoxShadowVar = "0px 0px 0px #111" ;
+                  }
+
+                  /*** Generating the final block with gradient using above variables ***/
+                  finalTextWithRandomColorWithGradient += "<div class ='mybox' style='border-radius: " + borderRadius + ";width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background: linear-gradient( " + RandomGradientAngle + ", " + fontColorRandom + ", " + fontColorRandomGradient + " ) ; font-size:" + textSize + "px; box-shadow: " + BoxShadowVar + " ; '>" + (i+1) + "</div>" ;
+
+                  /*** Generating the final block with gradient using above variables ***/
+                  finalTextWithRandomColorWithGradientNoShadow += "<div class ='mybox' style='border-radius: " + borderRadius + ";width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background: linear-gradient( " + RandomGradientAngle + ", " + fontColorRandom + ", " + fontColorRandomGradient + " ) ; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
 
           }
 
+
+totalBoxesNumPrinting = "<h2 style='width: 95%; padding: 10px; border: 5px solid black ; color: rgb(70,70,70);'>"
++ totalGradBoxes + " = Total Boxes with Drop Shadows<br>"
++ alltotalBoxes + " = Total Number of Boxes<br>"
++ (100*(totalGradBoxes/alltotalBoxes)).toFixed(2) + "%" + " = Percentage of Drop Shadowed Boxes"
++ "</h2>" ;
 
 /******************* CALCULATIONS FOR NUMBER OF BOXES REQUIRED FOR PARTICULAR SIZES ******/
 
@@ -283,11 +326,18 @@ headerPartDiv = "<div class ='mybox' style='text-align: " + textAlignment + ";li
 /****************************************************/
 /**** Rendering all the blocks for final outputs ****/
 /****************************************************/
+document.getElementById("PrintTotalNumberOfBoxes").innerHTML = totalBoxesNumPrinting ;
+
 document.getElementById("FinalNumColsRatioText").innerHTML = FinalNumColsRatioText ;
 
 document.getElementById("randcolorRGBADiv").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithDiv12 + finalTextWithDiv23 + finalTextWithDiv34 + footerlogo + "</div>";
 
 document.getElementById("randcolorRGBADivRandomColor").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithRandomColor + footerlogo + "</div>";
+
+document.getElementById("randcolorRGBADivRandomColorWithGradient").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithRandomColorWithGradient + footerlogo + "</div>";
+
+document.getElementById("randcolorRGBADivRandomColorWithGradientNoShadow").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithRandomColorWithGradientNoShadow + footerlogo + "</div>";
+
 
 document.getElementById("ShowfinalColorcodes").innerHTML = "<h3>Below are the RGB codes for all the Final RGB Colors in this order: color1, color2, color3 and color4.</h3>" +
 "<strong>" +
@@ -410,6 +460,10 @@ table#t01 th {
     color: white;
 }
 
+table#t01 td {
+    width: 15% ;
+}
+
 </style>
 
 </head>
@@ -423,6 +477,20 @@ table#t01 th {
 
 <div class="myform"> <!-- floating div start -->
 <form id="myform" method="get">
+
+  <table border="0">
+    <tr>
+      <td>
+        <label for="DivBoxWidth">Div Box WIDTH in pixels (Use 'px' at the end)</label>
+        <input type="text" name="DivBoxWidth" id="DivBoxWidth" value="50px">
+      </td>
+
+      <td>
+        <label for="DivBoxHeight">Div Box HEIGHT in pixels (Use 'px' at the end)</label>
+        <input type="text" name="DivBoxHeight" id="DivBoxHeight" value="50px">
+      </td>
+  </tr>
+</table>
 
 <label for="headingName">Heading Text</label>
 <input type="text" name="headingName" id="headingName" value="&bull; Words of Wisdom &bull;<br><br>">
@@ -607,15 +675,15 @@ table#t01 th {
 <tr>
 <td>
 
-<label for="totalColumns">Total Columns Per Gradient (4 colors = 3 gradients)</label>
-<input type="text" name="totalColumns" id="totalColumns" value="6">
+  <label for="totalRows">Total Rows <strong>(Press SUBMIT button to see COLUMN calculations)</strong></label>
+  <input type="text" name="totalRows" id="totalRows" value="18">
 
 </td>
 
 <td>
 
-<label for="totalRows">Total Rows <strong>(Press SUBMIT button to see COLUMN calculations)</strong></label>
-<input type="text" name="totalRows" id="totalRows" value="18">
+  <label for="totalColumns">Total Columns Per Gradient (4 colors = 3 gradients)</label>
+  <input type="text" name="totalColumns" id="totalColumns" value="6">
 
 </td>
 
@@ -646,6 +714,10 @@ table#t01 th {
 <h2>Press the button above, and your image should appear below.</h2>
 <strong><span style='color: red;'>(TIP: To remove the numbers from the boxes, enter the text size as 0, zero pixels in the form.)</span></strong>
 
+
+<hr>
+<span id="PrintTotalNumberOfBoxes"></span>
+
 <hr>
 <span id="FinalNumColsRatioText"></span>
 
@@ -657,7 +729,14 @@ table#t01 th {
 <span id="randcolorRGBADiv"></span>
 
 <hr style="border: 0; background-color:red; height: 5px;">
+<h3>Following is the render of the GRADIENTS from the 4-colors chosen randomly for each box, with randomly generated gradient angles, WITH drop shadows.</h3>
+<span id="randcolorRGBADivRandomColorWithGradient"></span>
 
+<hr style="border: 0; background-color:red; height: 5px;">
+<h3>Following is the render of the GRADIENTS from the 4-colors chosen randomly for each box, with randomly generated gradient angles, and WITHOUT any drop shadows.</h3>
+<span id="randcolorRGBADivRandomColorWithGradientNoShadow"></span>
+
+<hr style="border: 0; background-color:red; height: 5px;">
 <h3>Following is the render of the 4-colors chosen randomly for each box.</h3>
 <span id="randcolorRGBADivRandomColor"></span>
 

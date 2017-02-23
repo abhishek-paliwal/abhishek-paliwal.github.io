@@ -37,6 +37,10 @@ function randRGBA(min,max)
     DivBoxWidth = document.getElementById("DivBoxWidth").value ;
     DivBoxHeight = document.getElementById("DivBoxHeight").value ;
 
+    BoxMargin = document.getElementById("BoxMargin").value ;
+
+    hslAngleForGradientColorDifference = document.getElementById("hslAngleForGradientColorDifference").value ;
+
     headingName = document.getElementById("headingName").value ;
     textAlignment = document.getElementById("textAlignment").value ;
     fontFamily = document.getElementById("fontFamily").value ;
@@ -172,7 +176,7 @@ if (colorCode =="Generate Random RGB Triad Colors") {
                 fontColor12 = "rgba(" + redDiff12 + "," + greenDiff12 + "," + blueDiff12 + "," + opacityValue + ")" ;
 
       /***** Generating the block with prespecified DIV's *****/
-                finalTextWithDiv12 += "<div class ='mybox' style='border-radius: " + borderRadius + " ; width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor12 + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
+                finalTextWithDiv12 += "<div class ='mybox' style='margin: " + BoxMargin + " ; border-radius: " + borderRadius + " ; width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor12 + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
 
         }
 
@@ -193,7 +197,7 @@ if (colorCode =="Generate Random RGB Triad Colors") {
                   fontColor23 = "rgba(" + redDiff23 + "," + greenDiff23 + "," + blueDiff23 + "," + opacityValue + ")" ;
 
         /***** Generating the block with prespecified DIV's *****/
-                  finalTextWithDiv23 += "<div class ='mybox' style='border-radius: " + borderRadius + " ; width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor23 + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
+                  finalTextWithDiv23 += "<div class ='mybox' style='margin: " + BoxMargin + " ; border-radius: " + borderRadius + " ; width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor23 + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
 
           }
 
@@ -214,7 +218,7 @@ if (colorCode =="Generate Random RGB Triad Colors") {
                   fontColor34 = "rgba(" + redDiff34 + "," + greenDiff34 + "," + blueDiff34 + "," + opacityValue + ")" ;
 
         /***** Generating the block with prespecified DIV's *****/
-                  finalTextWithDiv34 += "<div class ='mybox' style='border-radius: " + borderRadius + " ; width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor34 + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
+                  finalTextWithDiv34 += "<div class ='mybox' style='margin: " + BoxMargin + " ; border-radius: " + borderRadius + " ; width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColor34 + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
 
           }
 
@@ -225,12 +229,17 @@ if (colorCode =="Generate Random RGB Triad Colors") {
         finalTextWithRandomColor ="";
         finalTextWithRandomColorWithGradient ="";
         finalTextWithRandomColorWithGradientNoShadow ="";
+        HSLfinalTextWithRandomColorWithGradient= "";
+        HSLfinalTextWithRandomColorWithGradientNoShadow = "";
+
+        hslColorSeed = Math.floor(Math.random() *( 360 - red1 + 1 ) + red1) ; /** a random number between red1 and 360. This should be outside the FOR loop **/
+
         totalGradBoxes = 0;
         RandomGradientAngle = "";
         alltotalBoxes = totalBoxes*3 ; /**total number of boxes **/
         finalColorArray = [""];
 
-        for (i = 0; i < alltotalBoxes; i++) {
+for (i = 0; i < alltotalBoxes; i++) {
 
         /* Gives out a value between opacityMin and opacityMax */
                   opacityValueRandom = Math.floor(Math.random()* ( opacityMax - opacityMin + 1 ) + opacityMin);
@@ -248,15 +257,16 @@ if (colorCode =="Generate Random RGB Triad Colors") {
                   fontColorRandomGradient = finalColorArray[Math.floor(Math.random() * 4)]; /*** Finding another random color between 0 and 3 ***/
 
         /***** Generating the block with prespecified DIV's *****/
-                  finalTextWithRandomColor += "<div class ='mybox' style='border-radius: " + borderRadius + ";width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColorRandom + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
+                  finalTextWithRandomColor += "<div class ='mybox' style='margin: " + BoxMargin + " ; border-radius: " + borderRadius + ";width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background-color: " + fontColorRandom + "; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
 
+        /*** Genrating random grandient angle ***/
 
                   RandomGradientAngleNum = Math.floor(Math.random() * 360) ; /** random gradient angle between 0 to 360 **/
                   RandomGradientAngle = RandomGradientAngleNum + "deg";
 
 
-                  /*** Generating a variable shadow for the div from 3 choices, depending upon the random angle ***/
-                  /*** Random angle limits are chosen such that about 25% of the boxes will have drop shadows ***/
+        /*** Generating a variable shadow for the div from 3 choices, depending upon the random angle ***/
+        /*** Random angle limits are chosen such that about 25% of the boxes will have drop shadows ***/
 
                   if ( RandomGradientAngleNum < 30) {
                     BoxShadowVar = "-5px -5px 25px #111" ;
@@ -272,12 +282,41 @@ if (colorCode =="Generate Random RGB Triad Colors") {
                   }
 
                   /*** Generating the final block with gradient using above variables ***/
-                  finalTextWithRandomColorWithGradient += "<div class ='mybox' style='border-radius: " + borderRadius + ";width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background: linear-gradient( " + RandomGradientAngle + ", " + fontColorRandom + ", " + fontColorRandomGradient + " ) ; font-size:" + textSize + "px; box-shadow: " + BoxShadowVar + " ; '>" + (i+1) + "</div>" ;
+                  finalTextWithRandomColorWithGradient += "<div class ='mybox' style='margin: " + BoxMargin + " ; border-radius: " + borderRadius + ";width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background: linear-gradient( " + RandomGradientAngle + ", " + fontColorRandom + ", " + fontColorRandomGradient + " ) ; font-size:" + textSize + "px; box-shadow: " + BoxShadowVar + " ; '>" + (i+1) + "</div>" ;
 
-                  /*** Generating the final block with gradient using above variables ***/
-                  finalTextWithRandomColorWithGradientNoShadow += "<div class ='mybox' style='border-radius: " + borderRadius + ";width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background: linear-gradient( " + RandomGradientAngle + ", " + fontColorRandom + ", " + fontColorRandomGradient + " ) ; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
+                  /*** Generating the final block with gradient using above variables, no shadow ***/
+                  finalTextWithRandomColorWithGradientNoShadow += "<div class ='mybox' style='margin: " + BoxMargin + " ; border-radius: " + borderRadius + ";width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background: linear-gradient( " + RandomGradientAngle + ", " + fontColorRandom + ", " + fontColorRandomGradient + " ) ; font-size:" + textSize + "px; '>" + (i+1) + "</div>" ;
 
-          }
+        /***** HSLA random color generation for rainbow color block ****/
+
+                  hslHueAngleSpectrum = i * Math.ceil(360/alltotalBoxes) ; /** how much hue angle to move in the next box **/
+
+                  hslHue =  hslHueAngleSpectrum + hslColorSeed ; /** hue value for this box **/
+                  hslSaturationPerc = Math.floor(Math.random()*20 + 80) ; /** saturation % between 80-100 **/
+                  hslLightnessPerc = Math.floor(Math.random()*20 + 40) ;  /** lightness % between 40-60 **/
+
+                  hslRandomColor = "hsla(" + hslHue + "," + hslSaturationPerc + "%, " + hslLightnessPerc + "%, " + opacityValue + ")" ;
+
+                  hslRandomColorForGradient = "hsla(" + ( Number(hslHue) + Number(hslAngleForGradientColorDifference) ) + "," + hslSaturationPerc + "%, " + hslLightnessPerc + "%, " + opacityValue + ")" ;
+
+                  gradientTextToPrint = "<br>&mdash;<br>" + hslRandomColor + ", " + hslRandomColorForGradient ;
+
+      /*** HSL SHADOW BOXES: Generating the final block with gradient using above variables ***/
+                  HSLfinalTextWithRandomColorWithGradient += "<div class ='mybox' style='margin: " + BoxMargin + " ; border-radius: " + borderRadius + ";width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background: linear-gradient( " + RandomGradientAngle + ", " + hslRandomColor + ", " + hslRandomColorForGradient + " ) ; font-size:" + textSize + "px; box-shadow: " + BoxShadowVar + " ; '>" + (i+1) + gradientTextToPrint + "</div>" ;
+
+      /*** HSL NO SHADOW BOXES: Generating the final block with gradient using above variables ***/
+                  hslHueNoShadow =  hslHueAngleSpectrum + red1 ; /*** First box's hue value will be red1 value ***/
+
+                  hslRandomColorNoShadow = "hsla(" + hslHueNoShadow + ", 100%, 50%, " + opacityValue + ")" ;
+
+                  hslRandomColorForGradientNoShadow = "hsla(" + ( Number(hslHueNoShadow) + Number(hslAngleForGradientColorDifference) ) + ", 100%, 50%, " + opacityValue + ")" ;
+
+                  gradientTextToPrintNoShadow = "<br>&mdash;<br>" + hslRandomColorNoShadow + ", " + hslRandomColorForGradientNoShadow ;
+
+                  HSLfinalTextWithRandomColorWithGradientNoShadow += "<div class ='mybox' style='margin: " + BoxMargin + " ;  border-radius: " + borderRadius + ";width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background: linear-gradient( " + RandomGradientAngle + ", " + hslRandomColorNoShadow + ", " + hslRandomColorForGradientNoShadow + " ) ; font-size:" + textSize + "px ; '>" + (i+1) + gradientTextToPrintNoShadow + "</div>" ;
+
+
+} /****** FOR LOOP ENDS ****/
 
 
 totalBoxesNumPrinting = "<h2 style='width: 95%; padding: 10px; border: 5px solid black ; color: rgb(70,70,70);'>"
@@ -337,6 +376,11 @@ document.getElementById("randcolorRGBADivRandomColor").innerHTML = "<div class='
 document.getElementById("randcolorRGBADivRandomColorWithGradient").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithRandomColorWithGradient + footerlogo + "</div>";
 
 document.getElementById("randcolorRGBADivRandomColorWithGradientNoShadow").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + finalTextWithRandomColorWithGradientNoShadow + footerlogo + "</div>";
+
+document.getElementById("HSLfinalTextWithRandomColorWithGradient").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + HSLfinalTextWithRandomColorWithGradient + footerlogo + "</div>";
+
+document.getElementById("HSLfinalTextWithRandomColorWithGradientNoShadow").innerHTML = "<div class='main' style='font-family: " + fontFamily + ";background-color:" + mainDivBGcolor + ";'>" + headerPartDiv + HSLfinalTextWithRandomColorWithGradientNoShadow + footerlogo + "</div>";
+
 
 
 document.getElementById("ShowfinalColorcodes").innerHTML = "<h3>Below are the RGB codes for all the Final RGB Colors in this order: color1, color2, color3 and color4.</h3>" +
@@ -482,12 +526,17 @@ table#t01 td {
     <tr>
       <td>
         <label for="DivBoxWidth">Div Box WIDTH in pixels (Use 'px' at the end)</label>
-        <input type="text" name="DivBoxWidth" id="DivBoxWidth" value="50px">
+        <input type="text" name="DivBoxWidth" id="DivBoxWidth" value="210px">
       </td>
 
       <td>
         <label for="DivBoxHeight">Div Box HEIGHT in pixels (Use 'px' at the end)</label>
-        <input type="text" name="DivBoxHeight" id="DivBoxHeight" value="50px">
+        <input type="text" name="DivBoxHeight" id="DivBoxHeight" value="100px">
+      </td>
+
+      <td>
+        <label for="BoxMargin">Div Box MARGIN in pixels (Use 'px' at the end)</label>
+        <input type="text" name="BoxMargin" id="BoxMargin" value="5px">
       </td>
   </tr>
 </table>
@@ -546,7 +595,7 @@ table#t01 td {
     <tr>
     		<td>
           <label for="textSize">Text Size (in pixels)</label>
-          <input type="text" name="textSize" id="textSize" value="35">
+          <input type="text" name="textSize" id="textSize" value="20">
         </td>
 
         <td>
@@ -597,8 +646,8 @@ table#t01 td {
         <td>
           <label for="textColor">Font Color</label>
              <select id="textColor" name="textColor">
-               <option value="white" selected>White</option>
-               <option value="black">Black</option>
+               <option value="white">White</option>
+               <option value="black" selected>Black</option>
                <option value="red">Red</option>
                <option value="green">Green</option>
                <option value="blue">Blue</option>
@@ -654,6 +703,9 @@ table#t01 td {
 100,255,255</textarea>
 
 
+<label for="hslAngleForGradientColorDifference">HSL angle for Gradient color difference (HINT: 0 = no difference, 180 = complimentary , 60 = triad, 30 = analogous, etc.)</label>
+<input type="text" name="hslAngleForGradientColorDifference" id="hslAngleForGradientColorDifference" value="60">
+
 
 <table border="0">
 
@@ -676,21 +728,20 @@ table#t01 td {
 <td>
 
   <label for="totalRows">Total Rows <strong>(Press SUBMIT button to see COLUMN calculations)</strong></label>
-  <input type="text" name="totalRows" id="totalRows" value="18">
+  <input type="text" name="totalRows" id="totalRows" value="10">
 
 </td>
 
 <td>
 
   <label for="totalColumns">Total Columns Per Gradient (4 colors = 3 gradients)</label>
-  <input type="text" name="totalColumns" id="totalColumns" value="6">
+  <input type="text" name="totalColumns" id="totalColumns" value="1">
 
 </td>
 
 </tr>
 
 </table>
-
 
 
 
@@ -724,9 +775,19 @@ table#t01 td {
 <hr>
 <span id="ShowfinalColorcodes"></span>
 
-<hr>
+
+<hr style="border: 0; background-color:red; height: 5px;">
+<h3>No Shadows: Render of the HSL colors, with gradients. First box's Hue value is red1 value.</h3>
+<span id="HSLfinalTextWithRandomColorWithGradientNoShadow"></span>
+
+<hr style="border: 0; background-color:red; height: 5px;">
+<h3>With Shadows: Render of the randomly chosen starting HSL color, with gradients for each box.</h3>
+<span id="HSLfinalTextWithRandomColorWithGradient"></span>
+
+<hr style="border: 0; background-color:red; height: 5px;">
 <h3>Following is the render of the 4-color gradient in this order, from color1 -> color2 -> color3 -> color4. </h3>
 <span id="randcolorRGBADiv"></span>
+
 
 <hr style="border: 0; background-color:red; height: 5px;">
 <h3>Following is the render of the GRADIENTS from the 4-colors chosen randomly for each box, with randomly generated gradient angles, WITH drop shadows.</h3>
@@ -739,6 +800,8 @@ table#t01 td {
 <hr style="border: 0; background-color:red; height: 5px;">
 <h3>Following is the render of the 4-colors chosen randomly for each box.</h3>
 <span id="randcolorRGBADivRandomColor"></span>
+
+
 
 
 <hr style="border: 0; background-color:red; height: 5px;">

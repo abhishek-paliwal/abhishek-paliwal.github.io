@@ -235,9 +235,39 @@ finalAllText +
 "</div>" ;
 
 
-
 /************ Printing out the codes for the random colors generated ********/
 document.getElementById("colorPrinting").innerHTML = "<h4 style='color: " + colorRGBAlight + ";'>Chosen Random Color: " + colorRGBAlight + "</h4>";
+
+/************************************************************************/
+/*** STARTS: SAVING ALL VARIABLES AS TEXT FOR REUSE: JSON Bourne saving block through JQUERY ;-) ***/
+$('#jsonOutput').html(''); /* KEEP at TOP: Emptying jsonOutput DOM if already exists. Otherwise, it appends everytime submit button is pressed. */
+
+jsonObj = [];
+$(" textarea, select, input[type=text] ").each(function() {
+
+        var elementType = $(this)[0].tagName ; /** Type of element found **/
+        var elementName = $(this).attr("name");
+        var elementID = $(this).attr("id");
+        var elementValue = $(this).val();
+
+        item = {}
+        item ["elementType"] = elementType ;
+        item ["elementName"] = elementName ;
+        item ["elementID"] = elementID ;
+        item ["elementValue"] = elementValue ;
+
+        jsonObj.push(item);
+
+});
+
+/* console.log(jsonObj); */ /* Printing to console */
+
+jsonString = JSON.stringify(jsonObj); /* Saving as text string */
+$('#jsonOutput').html(jsonString); /* Printing to screen */
+
+/*** ENDS: SAVING ALL VARIABLES AS TEXT FOR REUSE: JSON Bourne saving block through JQUERY ;-) ***/
+/************************************************************************/
+
 
 }
 
@@ -500,7 +530,7 @@ padding: 10px;
 
             <div class="input-field col l6 s12">
        <label for="logoImageUrl">L: Logo URL</label>
-<input type="text" name="logoImageUrl" id="logoImageUrl" value="ap1">
+<input type="text" name="L_logoImageUrl" id="logoImageUrl" value="ap1">
 </div>
 
 <div class="input-field col l6 s12">
@@ -522,105 +552,105 @@ padding: 10px;
 
 
 <div class="input-field col l12 s12">
-    <textarea name="headingName" rows="3" id="headingName" class="materialize-textarea" length="400"><div style='mix-blend-mode: multiply ; color: yellow ; background: linear-gradient(-45deg, hsla(270,50%,50%,0.8) , hsla(170,50%,50%,0.8) ) ; box-shadow: -20px 20px 100px #000 ; font-size: 55px ; width: 100%; height: 100%;'><div class='perfectMiddleText'>WHAT IS YOUR THAT ONE THING?</div></div></textarea>
+    <textarea name="T_headingName" rows="3" id="headingName" class="materialize-textarea" length="400"><div style='mix-blend-mode: multiply ; color: yellow ; background: linear-gradient(-45deg, hsla(270,50%,50%,0.8) , hsla(170,50%,50%,0.8) ) ; box-shadow: -20px 20px 100px #000 ; font-size: 55px ; width: 100%; height: 100%;'><div class='perfectMiddleText'>WHAT IS YOUR THAT ONE THING?</div></div></textarea>
 <label for="headingName"><font color="blue">T</font>: Main Heading Title</label>
 </div>
 
 <div class="input-field col l6 s12">
-    <textarea name="subTitle" rows="3" id="subTitle" class="materialize-textarea" length="400"><div style=' background-color: rgba(0,0,0,0.3) ; width:100%; height:100%;'><div class='perfectMiddleText'>This is the best book you will read this year.</div></div></textarea>
+    <textarea name="S_subTitle" rows="3" id="subTitle" class="materialize-textarea" length="400"><div style=' background-color: rgba(0,0,0,0.3) ; width:100%; height:100%;'><div class='perfectMiddleText'>This is the best book you will read this year.</div></div></textarea>
 <label for="subTitle"><font color="blue">S</font>: SubTitle</label>
 </div>
 
 <div class="input-field col l6 s12">
-    <textarea name="whatItIs" rows="3" id="whatItIs" class="materialize-textarea" length="400"><div style='background-color: rgba(0,0,0,0.0) ; width: 100%; height: 100%;'><div class='perfectMiddleText'>{ ABHISHEK PALIWAL }</div></div></textarea>
+    <textarea name="W_whatItIs" rows="3" id="whatItIs" class="materialize-textarea" length="400"><div style='background-color: rgba(0,0,0,0.0) ; width: 100%; height: 100%;'><div class='perfectMiddleText'>{ ABHISHEK PALIWAL }</div></div></textarea>
 <label for="whatItIs"><font color="blue">W</font>: Writer/Author Name or Foreword such as NYTimes Bestseller ;-)</label>
 </div>
 
 
          <div class="input-field col l6 s12">
            <label for="dividerText"><font color="blue">X</font>: Divider Text // Padding Section</label>
-             <input type="text" name="dividerText" id="dividerText" value="<div style='width: 100% ; height: 100% ;'> &nbsp; </div>" >
+             <input type="text" name="X_dividerText" id="dividerText" value="<div style='width: 100% ; height: 100% ;'> &nbsp; </div>" >
         </div>
 
         <div class="input-field col l6 s12">
            <label for="buttonText"><font color="blue">Y</font>: Button Full Text</label>
-            <input type="text" name="buttonText" id="buttonText" value="<div style='text-align:center;'><button style='background-color: #ff8700; height: 50px; width:400px; border-radius:100px;'>Download now</button></div>" >
+            <input type="text" name="Y_buttonText" id="buttonText" value="<div style='text-align:center;'><button style='background-color: #ff8700; height: 50px; width:400px; border-radius:100px;'>Download now</button></div>" >
         </div>
 
 
 
         <div class="input-field col l12 s12">
            <label for="iconText"><font color="blue">I</font>: Code for <a href="http://fontawesome.io/cheatsheet/">FontAwesome Cheatsheet</a> // <a href="https://material.io/icons/">Google Icons</a> </label>
-            <input type="text" name="iconText" id="iconText" value="<i class='fa fa-camera-retro fa-3x'></i> <i class='material-icons md-50'>favorite</i>" >
+            <input type="text" name="I_iconText" id="iconText" value="<i class='fa fa-camera-retro fa-3x'></i> <i class='material-icons md-50'>favorite</i>" >
         </div>
 
 
         <div class="input-field col l6 s12">
-            <textarea name="JText" rows="3" id="JText" class="materialize-textarea" length="400"><div style='background: linear-gradient( -45deg, hsla(70,100%,50%,1), hsla(250,100%,50%,1) ) ; width: 100% ; height: 100% ;'></div></textarea>
+            <textarea name="J_JText" rows="4" id="JText" class="materialize-textarea" length="400"><div style='background: linear-gradient( -45deg, hsla(70,100%,50%,1), hsla(250,100%,50%,1) ) ; width: 100% ; height: 100% ;'></div></textarea>
         <label for="JText"><font color="blue">J</font>: Insert Text</label>
         </div>
 
         <div class="input-field col l6 s12">
-            <textarea name="KText" rows="3" id="KText" class="materialize-textarea" length="400"></textarea>
+            <textarea name="K_KText" rows="4" id="KText" class="materialize-textarea" length="400"></textarea>
         <label for="KText"><font color="blue">K</font>: Insert Text</label>
         </div>
 
         <div class="input-field col l6 s12">
-            <textarea name="MText" rows="3" id="MText" class="materialize-textarea" length="400"><div style='mix-blend-mode: multiply ; color: white ; background: black ; box-shadow: -20px 20px 100px #000 ; font-size: 85px ; width: 100%; height: 100%;'><div class='perfectMiddleText'>THIS IS ANOTHER TEST HEADLINE TO BE CHANGED.</div></div></textarea>
+            <textarea name="M_MText" rows="4" id="MText" class="materialize-textarea" length="400"><div style='mix-blend-mode: multiply ; color: white ; background: black ; box-shadow: -20px 20px 100px #000 ; font-size: 85px ; width: 100%; height: 100%;'><div class='perfectMiddleText'>THIS IS ANOTHER TEST HEADLINE TO BE CHANGED.</div></div></textarea>
         <label for="MText"><font color="blue">M</font>: Insert Text</label>
         </div>
 
         <div class="input-field col l6 s12">
-            <textarea name="NText" rows="3" id="NText" class="materialize-textarea" length="400"><div style='font-family: serif; color:black ; border: 1px solid black ; font-size: 15px ; letter-spacing: 20px ; width:100%; height:100%;'><div class='perfectMiddleText'>DESIGNED BY</div></div></textarea>
+            <textarea name="N_NText" rows="4" id="NText" class="materialize-textarea" length="400"><div style='font-family: serif; color:black ; border: 1px solid black ; font-size: 15px ; letter-spacing: 20px ; width:100%; height:100%;'><div class='perfectMiddleText'>DESIGNED BY</div></div></textarea>
         <label for="NText"><font color="blue">N</font>: Insert Text</label>
         </div>
 
 
         <div class="input-field col l6 s12">
            <label for="ImageUrl1"><font color="blue">A</font>: 1st Image URL (This will be used as the Main Background Image)</label>
-            <input type="text" name="ImageUrl1" id="ImageUrl1" value="https://source.unsplash.com/random">
+            <input type="text" name="A_ImageUrl1" id="ImageUrl1" value="https://source.unsplash.com/random">
         </div>
 
         <div class="input-field col l6 s12">
             <label for="ImageUrl2"><font color="blue">B</font>: 2nd Image URL (<a href="https://source.unsplash.com/" target="_blank">Unsplash Images Listing</a>)</label>
-            <input type="text" name="ImageUrl2" id="ImageUrl2" value="https://source.unsplash.com/category/nature">
+            <input type="text" name="B_ImageUrl2" id="ImageUrl2" value="https://source.unsplash.com/category/nature">
         </div>
 
             <div class="input-field col l6 s12">
        <label for="ImageUrl3"><font color="blue">C</font>: 3rd Image URL </label>
-<input type="text" name="ImageUrl3" id="ImageUrl3" value="https://source.unsplash.com/featured">
+<input type="text" name="C_ImageUrl3" id="ImageUrl3" value="https://source.unsplash.com/featured">
 
 </div>
 
             <div class="input-field col l6 s12">
        <label for="ImageUrl4"><font color="blue">D</font>: 4th Image URL</label>
-<input type="text" name="ImageUrl4" id="ImageUrl4" value="https://source.unsplash.com/category/buildings">
+<input type="text" name="D_ImageUrl4" id="ImageUrl4" value="https://source.unsplash.com/category/buildings">
 </div>
 
             <div class="input-field col l6 s12">
        <label for="ImageUrl5"><font color="blue">E</font>: 5th Image URL</label>
-<input type="text" name="ImageUrl5" id="ImageUrl5" value="https://source.unsplash.com/category/people">
+<input type="text" name="E_ImageUrl5" id="ImageUrl5" value="https://source.unsplash.com/category/people">
 
 </div>
 
             <div class="input-field col l6 s12">
        <label for="ImageUrl6"><font color="blue">F</font>: 6th Image URL</label>
-                <input type="text" name="ImageUrl6" id="ImageUrl6" value="https://source.unsplash.com/category/food">
+                <input type="text" name="F_ImageUrl6" id="ImageUrl6" value="https://source.unsplash.com/category/food">
             </div>
 
                 <div class="input-field col l6 s12">
        <label for="ImageUrl7"><font color="blue">G</font>: 7th Image URL</label>
-                <input type="text" name="ImageUrl7" id="ImageUrl7" value="https://source.unsplash.com/category/technology">
+                <input type="text" name="G_ImageUrl7" id="ImageUrl7" value="https://source.unsplash.com/category/technology">
             </div>
 
                       <div class="input-field col l6 s12">
        <label for="ImageUrl8"><font color="blue">H</font>: 8th Image URL (<a href="https://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/all-lowpoly-backgrounds-index.html" target="_blank">List of Polygonal Backgrounds URLs</a>)</label>
-                <input type="text" name="ImageUrl8" id="ImageUrl8" value="https://source.unsplash.com/aaZ4FSrgzME">
+                <input type="text" name="H_ImageUrl8" id="ImageUrl8" value="https://source.unsplash.com/aaZ4FSrgzME">
             </div>
 
 
 <div class="input-field col l12 s12">
-    <textarea name="quoteText" rows="6" id="quoteText" class="materialize-textarea"   length="200">20,X100
+    <textarea name="FinalArrangement" rows="6" id="quoteText" class="materialize-textarea"   length="200">20,X100
 50,X20,T60,X20
 5,X20,W60,X20
 3,X100
@@ -647,6 +677,7 @@ padding: 10px;
 <!-- ############# FORM ENDS ############# -->
 
 
+
 <div class="row center">
       <h6 class="materialize-red-text"><strong>DESIGN TIP: </strong>To change the color, press the button again, and again, and again...till you are happy.</h6>
 </div>
@@ -659,6 +690,17 @@ padding: 10px;
     <div class="row center">
 
         <h4 class="header center light-blue-text">Press the button above, and your Book Cover should appear below.</h4>
+
+        <div style='border: 5px solid rgba(255,0,0,0.5);'>
+            <h4>JSON Output for all variables. Copy the following text, and save it as a *.json file.</h4>
+            <label for="jsonOutput">
+              <strong>Collecting all variables and their values as JSON format.
+              <br>For PRETTY formatting afterwards: <A HREF="http://jsonlint.com/" target="_blank">JSONlint.com</a>
+              <br>JSON to TABLE here: <a href="http://json2table.com/" target="_blank">JSON2table.com</a></strong>
+              </label>
+              <textarea rows="10" name="Final_JSON_Output" id="jsonOutput" class="materialize-textarea" length="1000"></textarea>
+
+        </div>
 
         <div style='border: 10px solid rgba(90,90,90,1);'>
             <span id="colorPrinting"></span>

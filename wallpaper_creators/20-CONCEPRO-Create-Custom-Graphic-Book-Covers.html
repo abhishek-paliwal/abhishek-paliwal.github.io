@@ -242,7 +242,9 @@ document.getElementById("colorPrinting").innerHTML = "<h4 style='color: " + colo
 /*** STARTS: SAVING ALL VARIABLES AS TEXT FOR REUSE: JSON Bourne saving block through JQUERY ;-) ***/
 $('#jsonOutput').html(''); /* KEEP at TOP: Emptying jsonOutput DOM if already exists. Otherwise, it appends everytime submit button is pressed. */
 
-jsonObj = [];
+jsonObj = []; /** Creating an empty array **/
+jsonObj.length = 0 ; /**** Emptying the array completely, in case already present. ****/
+
 $(" textarea, select, input[type=text] ").each(function() {
 
         var elementType = $(this)[0].tagName ; /** Type of element found **/
@@ -262,8 +264,10 @@ $(" textarea, select, input[type=text] ").each(function() {
 
 /* console.log(jsonObj); */ /* Printing to console */
 
+jsonString = ""; /** Creating an empty string variable **/
 jsonString = JSON.stringify(jsonObj); /* Saving as text string */
-$('#jsonOutput').html(jsonString); /* Printing to screen */
+/* Printing to corresponding DOM ID element */
+$('#jsonOutput').html(jsonString);
 
 /*** ENDS: SAVING ALL VARIABLES AS TEXT FOR REUSE: JSON Bourne saving block through JQUERY ;-) ***/
 /************************************************************************/

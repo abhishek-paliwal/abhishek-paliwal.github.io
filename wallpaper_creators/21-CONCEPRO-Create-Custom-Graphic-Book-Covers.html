@@ -16,10 +16,60 @@
   <script src="js/init.js"></script>
   <script src="https://use.fontawesome.com/8cd0876759.js"></script>
 
+<!-- BEGIN : JSON Downloading data from an existing JSON file -->
+
+  <script>
+
+      function populateFromExistingJson() {
+
+        JsonTemplateFileUrl = document.getElementById("JsonTemplateFileUrl").value ;
+
+          $.getJSON( JsonTemplateFileUrl , function(mydata) {
+
+              downloadedjsonObj = [];
+
+              $.each(mydata, function(key) {
+
+                  $('[id=' + mydata[key].elementID + '], #MyForm').val(mydata[key].elementValue);
+
+
+                downloadedItem={};
+                downloadedItem["downloadedElementName"]= mydata[key].elementName ;
+                downloadedItem["downloadedElementID"]= mydata[key].elementID ;
+                downloadedItem["downloadedElementValue"]= mydata[key].elementValue ;
+
+                downloadedjsonObj.push(downloadedItem)
+
+              });
+
+              downloadedjsonString = ""; /** Creating an empty string variable **/
+              downloadedjsonString = JSON.stringify(downloadedjsonObj);
+
+              downloadedjsonStringFinal = "<textarea rows='10' id='existingJsonOutputFinal' name='existingJsonOutputFinal' class='materialize-textarea' length='50000'>" + downloadedjsonString + "</textarea>" ;
+
+
+              $('#downloadedjsonStringBlock').html(''); /** Emptying if already exists **/
+
+              $('#downloadedjsonStringBlock').html(downloadedjsonStringFinal);
+
+
+          });
+
+      }
+  </script>
+
+  <!-- END : JSON Downloading data from an existing JSON file -->
+
+
 
 <script>
 function randRGBA(min,max)
 {
+
+/** Deleting Existing JSON textarea block generated from prevoius run of populateFromExistingJson() function **/
+$('#downloadedjsonStringBlock').html('');
+
+/* Real magic begins **/
 
 backgroundOpacity = document.getElementById("backgroundOpacity").value ;
 
@@ -240,7 +290,9 @@ document.getElementById("colorPrinting").innerHTML = "<h4 style='color: " + colo
 
 /************************************************************************/
 /*** STARTS: SAVING ALL VARIABLES AS TEXT FOR REUSE: JSON Bourne saving block through JQUERY ;-) ***/
-$('#jsonOutput').html(''); /* KEEP at TOP: Emptying jsonOutput DOM if already exists. Otherwise, it appends everytime submit button is pressed. */
+
+$('#jsonOutput').html('');
+/* KEEP at TOP: Emptying jsonOutput DOM if already exists. Otherwise, it appends everytime submit button is pressed. */
 
 jsonObj = []; /** Creating an empty array **/
 jsonObj.length = 0 ; /**** Emptying the array completely, in case already present. ****/
@@ -267,7 +319,10 @@ $(" textarea, select, input[type=text] ").each(function() {
 jsonString = ""; /** Creating an empty string variable **/
 jsonString = JSON.stringify(jsonObj); /* Saving as text string */
 /* Printing to corresponding DOM ID element */
-$('#jsonOutput').html(jsonString);
+
+jsonStringFinal = "<textarea rows='10' class='materialize-textarea' length='50000'>" + jsonString + "</textarea>" ;
+
+$('#jsonOutput').html(jsonStringFinal);
 
 /*** ENDS: SAVING ALL VARIABLES AS TEXT FOR REUSE: JSON Bourne saving block through JQUERY ;-) ***/
 /************************************************************************/
@@ -409,7 +464,15 @@ padding: 10px;
 
      <div class="row">
 
-      <form class="col s12">
+      <form id="MyForm" class="col s12">
+
+
+        <div class="input-field col l12 s12">
+          <label for="JsonTemplateFileUrl">Template Data: Existing JSON File URL for Form autofilling</label>
+          <input type="text" name="JsonTemplateFileUrl" id="JsonTemplateFileUrl" value="https://abhishek-paliwal.github.io/wallpaper_creators/JSON-templates-for-design/00-default-template.json">
+        </div>
+
+
 
           <div class="input-field col l3 s6">
             <label for="bannerWidth">Cover Width (in pixels)</label>
@@ -674,9 +737,15 @@ padding: 10px;
 </div> <!-- first row ends -->
 
 
+
 <div class="row center">
-      <a class="waves-effect waves-light btn-large materialize-red"  onclick="randRGBA(0,255);"><i class="material-icons right">brush</i>Design My Book Cover</a>
+      <a class="waves-effect waves-light btn-large light-blue-text"  onclick="populateFromExistingJson();"><i class="material-icons right">brush</i>OPTIONAL STEP: Populate form values from existing JSON file</a>
 </div>
+
+<div class="row center">
+      <a class="waves-effect waves-light btn-large materialize-red"  onclick="randRGBA(0,255);"><i class="material-icons right">brush</i>FINAL STEP: Design My Book Cover</a>
+</div>
+
 
 <!-- ############# FORM ENDS ############# -->
 
@@ -695,6 +764,17 @@ padding: 10px;
 
         <h4 class="header center light-blue-text">Press the button above, and your Book Cover should appear below.</h4>
 
+
+
+        <div style='border: 5px solid rgba(0,255,0,0.5);'>
+            <h4>Downloaded data from exising JSON file</h4>
+            <label for="downloadedjsonStringBlock">
+              Downloaded contents below
+              </label>
+              <span id="downloadedjsonStringBlock"></span>
+        </div>
+
+
         <div style='border: 5px solid rgba(255,0,0,0.5);'>
             <h4>JSON Output for all variables. Copy the following text, and save it as a *.json file.</h4>
             <label for="jsonOutput">
@@ -702,9 +782,10 @@ padding: 10px;
               <br>For PRETTY formatting afterwards: <A HREF="http://jsonlint.com/" target="_blank">JSONlint.com</a>
               <br>JSON to TABLE here: <a href="http://json2table.com/" target="_blank">JSON2table.com</a></strong>
               </label>
-              <textarea rows="10" name="Final_JSON_Output" id="jsonOutput" class="materialize-textarea" length="1000"></textarea>
-
+              <span id="jsonOutput"></span>
         </div>
+
+
 
         <div style='border: 10px solid rgba(90,90,90,1);'>
             <span id="colorPrinting"></span>

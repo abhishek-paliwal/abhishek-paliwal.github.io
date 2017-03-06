@@ -24,7 +24,7 @@
 
         JsonTemplateFileUrl = document.getElementById("JsonTemplateFileUrl").value ;
 
-          $.getJSON( JsonTemplateFileUrl , function(mydata) {
+          $.getJSON( JsonTemplateFileUrl + '&callback=?' , function(mydata) {
 
               downloadedjsonObj = [];
 

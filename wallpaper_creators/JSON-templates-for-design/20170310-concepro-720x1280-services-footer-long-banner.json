@@ -144,7 +144,7 @@
 	"elementType": "INPUT",
 	"elementName": "A_ImageUrl1",
 	"elementID": "ImageUrl1",
-	"elementValue": "http://192.168.10.40:8887/concepro_banner_html_files/Concepro-Vimeo.png"
+	"elementValue": "http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/Concepro-Vimeo.png"
 }, {
 	"elementType": "INPUT",
 	"elementName": "B_ImageUrl2",

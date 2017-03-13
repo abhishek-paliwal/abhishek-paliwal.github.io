@@ -7,12 +7,12 @@
 	"elementType": "INPUT",
 	"elementName": "bannerWidth",
 	"elementID": "bannerWidth",
-	"elementValue": "900"
+	"elementValue": "667"
 }, {
 	"elementType": "INPUT",
 	"elementName": "bannerHeight",
 	"elementID": "bannerHeight",
-	"elementValue": "400"
+	"elementValue": "667"
 }, {
 	"elementType": "INPUT",
 	"elementName": "h3Margin",
@@ -22,25 +22,25 @@
 	"elementType": "INPUT",
 	"elementName": "textSize",
 	"elementID": "textSize",
-	"elementValue": "20"
+	"elementValue": "25"
 }, {
 	"elementType": "INPUT",
-	"elementValue": "center"
+	"elementValue": "left"
 }, {
 	"elementType": "SELECT",
 	"elementName": "textAlignment",
 	"elementID": "textAlignment",
-	"elementValue": "center"
+	"elementValue": "left"
 }, {
 	"elementType": "INPUT",
 	"elementName": "lineHeight",
 	"elementID": "lineHeight",
-	"elementValue": "1.2"
+	"elementValue": "1.5"
 }, {
 	"elementType": "INPUT",
 	"elementName": "letterSpacing",
 	"elementID": "letterSpacing",
-	"elementValue": "1"
+	"elementValue": "2"
 }, {
 	"elementType": "INPUT",
 	"elementName": "backgroundOpacity",
@@ -48,12 +48,12 @@
 	"elementValue": "0.9"
 }, {
 	"elementType": "INPUT",
-	"elementValue": "Roboto"
+	"elementValue": "Bebas Neue"
 }, {
 	"elementType": "SELECT",
 	"elementName": "fontFamily",
 	"elementID": "fontFamily",
-	"elementValue": " \"Roboto\", sans-serif"
+	"elementValue": " \"bebas-neue\", sans-serif"
 }, {
 	"elementType": "INPUT",
 	"elementValue": "White"
@@ -64,17 +64,17 @@
 	"elementValue": "white"
 }, {
 	"elementType": "INPUT",
-	"elementValue": "300"
+	"elementValue": "400"
 }, {
 	"elementType": "SELECT",
 	"elementName": "fontWeight",
 	"elementID": "fontWeight",
-	"elementValue": "300"
+	"elementValue": "400"
 }, {
 	"elementType": "INPUT",
 	"elementName": "L_logoImageUrl",
 	"elementID": "logoImageUrl",
-	"elementValue": "ap1"
+	"elementValue": "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-abhishek/Abhishek-Anme-Logo-New-Caps.png"
 }, {
 	"elementType": "INPUT",
 	"elementName": "logoImageWidth",
@@ -84,7 +84,7 @@
 	"elementType": "INPUT",
 	"elementName": "colorCode",
 	"elementID": "colorCode",
-	"elementValue": "Surprise Me"
+	"elementValue": "255,255,255"
 }, {
 	"elementType": "INPUT",
 	"elementName": "UseGradientBackground",
@@ -94,7 +94,7 @@
 	"elementType": "TEXTAREA",
 	"elementName": "T_headingName",
 	"elementID": "headingName",
-	"elementValue": "<div style='text-align: left ; color: #3498db ; background: RGB(250,250,250) ; font-size: 20px ; width: 100%; height: 100%;'><div class='perfectMiddleText'><ul>\n\t<li>• Blog Articles</li>\n\t<li>• Website Development Plus Promotional Images</li>\n\t<li>• Buyer Persona Development</li>\n\t<li>• Call To Action Butons And Landing Pages</li>\n\t<li>• Content Idea Development</li>\n\t<li>• Email Nuturing Series</li>\n\t<li>• Paid Promotions</li>\n\t<li>• Product / Story Videos</li>\n\t<li>• Social Media Management And Distribution</li>\n\t<li>• Website Performance Analysis</li>\n</ul>\n</div></div>"
+	"elementValue": "<div style='color: #c0c0c0 ; background: white ; box-shadow: 0px 0px 70px #000 ; font-size: 55px ; width: 100%; height: 100%;'><div class='perfectMiddleText'><mark>The most difficult thing is the decision to act, the rest is merely tenacity.</mark><br>Amelia Earhart</div></div>"
 }, {
 	"elementType": "TEXTAREA",
 	"elementName": "S_subTitle",
@@ -104,7 +104,7 @@
 	"elementType": "TEXTAREA",
 	"elementName": "W_whatItIs",
 	"elementID": "whatItIs",
-	"elementValue": "<div style=\"background-color: rgba(0,0,0,0.2) ; width: 100%; height: 100%;\"><div class=\"perfectMiddleText\">Concepro Digital Marketing Agency Can Help You With</div></div>"
+	"elementValue": "<div style='background-color: rgba(0,0,0,0.0) ; width: 100%; height: 100%;'><div class='perfectMiddleText'>{ ABHISHEK PALIWAL }</div></div>"
 }, {
 	"elementType": "INPUT",
 	"elementName": "X_dividerText",
@@ -114,7 +114,7 @@
 	"elementType": "INPUT",
 	"elementName": "Y_buttonText",
 	"elementID": "buttonText",
-	"elementValue": "<div style='background: linear-gradient( -45deg, #ff8700, #3498db  ) ;  font-weight: 300; width: 100%; height: 100%;'><div class='perfectMiddleText'>Have questions about how digital marketing can get you more profits, check out www.concepro.com</div></div>"
+	"elementValue": "<div style='text-align:center;'><button style='background-color: #ff8700; height: 50px; width:400px; border-radius:100px;'>Download now</button></div>"
 }, {
 	"elementType": "INPUT",
 	"elementName": "I_iconText",
@@ -129,7 +129,7 @@
 	"elementType": "TEXTAREA",
 	"elementName": "K_KText",
 	"elementID": "KText",
-	"elementValue": "<span style='color: white;font-size: 20px; line-height: 1.2;font-weight: 300;letter-spacing: 1px; font-family:  Roboto ;'><div style='background: linear-gradient( -45deg, #ff8700, #3498db  ) ;  font-weight: 700; width: 100%; height: 100%;'><div class='perfectMiddleText'>••• CHOOSE CONCEPRO •••</div></div></span>"
+	"elementValue": ""
 }, {
 	"elementType": "TEXTAREA",
 	"elementName": "M_MText",
@@ -144,7 +144,7 @@
 	"elementType": "INPUT",
 	"elementName": "A_ImageUrl1",
 	"elementID": "ImageUrl1",
-	"elementValue": "http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/Concepro-Vimeo.png"
+	"elementValue": "https://source.unsplash.com/random"
 }, {
 	"elementType": "INPUT",
 	"elementName": "B_ImageUrl2",
@@ -184,5 +184,5 @@
 	"elementType": "TEXTAREA",
 	"elementName": "FinalArrangement",
 	"elementID": "quoteText",
-	"elementValue": "10,K100\n10,W100\n65,A30,T70\n15,Y100"
+	"elementValue": "80,T100\n5,X100\n15,X43,L57"
 }]

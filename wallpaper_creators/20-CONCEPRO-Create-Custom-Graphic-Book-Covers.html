@@ -15,6 +15,10 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="https://use.fontawesome.com/8cd0876759.js"></script>
+  <script src="js/FileSaver.js"></script>
+  <script src="js/Moment.min.js"></script>
+
+
 
 <!-- BEGIN : JSON Downloading data from an existing JSON file -->
 
@@ -93,6 +97,12 @@ backgroundOpacity = document.getElementById("backgroundOpacity").value ;
       }
 
 /* Getting the text from the form */
+
+jsonFileBrandName = document.getElementById("jsonFileBrandName").value ;
+jsonFileKeyword = document.getElementById("jsonFileKeyword").value ;
+      jsonFileKeyword = jsonFileKeyword.replace(/\s+/g, '-').toLowerCase();
+
+WannaSaveJsonFile = document.getElementById("WannaSaveJsonFile").value ;
 
 bannerWidth = document.getElementById("bannerWidth").value ;
 bannerHeight = document.getElementById("bannerHeight").value ;
@@ -327,10 +337,30 @@ $('#jsonOutput').html(jsonStringFinal);
 /*** ENDS: SAVING ALL VARIABLES AS TEXT FOR REUSE: JSON Bourne saving block through JQUERY ;-) ***/
 /************************************************************************/
 
+/************************************************************************/
+if (WannaSaveJsonFile =="YES") {
+    /** BEGIN: FILESAVER.JS + MOMENT.JS BLOCK BELOW **/
+        jsonFileNameNoExt = "" ;
+        jsonFileNameNoExt = moment().format('YYYYMMDD') + "-" + jsonFileBrandName + "-" + bannerWidth +"x" + bannerHeight + "-" + jsonFileKeyword ;
 
+        var blob = new Blob([jsonString], {type: "text/plain;charset=utf-8"});
+        saveAs(blob, jsonFileNameNoExt+".json");
+    /** END: FILESAVER.JS BLOCK BELOW **/
+} else {
+    imageFileNameNoExt = "" ;
+    imageFileNameNoExt = moment().format('YYYYMMDD') + "-" + jsonFileBrandName + "-" + bannerWidth +"x" + bannerHeight + "-" + jsonFileKeyword ;
+
+    $('#imageNameToUseAfterSave').html(imageFileNameNoExt+".png");
 }
+/************************************************************************/
+
+
+} /** randRGBA Function Ends **/
 
 </script>
+
+
+
 
 
 <!-- CSS  -->
@@ -731,6 +761,30 @@ padding: 10px;
 </div>
 
 
+<div class="input-field col l4 s6">
+ <select id="WannaSaveJsonFile" name="WannaSaveJsonFile">
+   <option value="NO" selected>NO</option>
+    <option value="YES">YES</option>
+  </select>
+     <label for="WannaSaveJsonFile">Wanna save JSON File?</label>
+</div>
+
+<div class="input-field col l4 s6">
+ <select id="jsonFileBrandName" name="jsonFileBrandName">
+   <option value="abhishek-note" selected>abhishek-note</option>
+    <option value="concepro">concepro</option>
+    <option value="mggk">mggk</option>
+    <option value="client">client</option>
+  </select>
+     <label for="jsonFileBrandName">Save JSON File : enter BRAND NAME</label>
+</div>
+
+<div class="input-field col l4 s12">
+<label for="jsonFileKeyword">Save JSON File : enter KEYWORD (SPACES will be converted to HYPHENS)</label>
+<input type="text" name="jsonFileKeyword" id="jsonFileKeyword" placeholder="keyword-goes-here">
+</div>
+
+
             </form>
         </div>
     </div> <!-- form column ends -->
@@ -787,8 +841,15 @@ padding: 10px;
 
 
 
+
+
         <div style='border: 10px solid rgba(90,90,90,1);'>
             <span id="colorPrinting"></span>
+        </div>
+
+        <div style='display: block; padding : 10px; background: linear-gradient(45deg,red,blue); color : white ;'>
+            <h4>- SUGGESTED IMAGE FILE NAME BELOW -</h4>
+            <h5 id="imageNameToUseAfterSave"></h5>
         </div>
 
         <br>

@@ -20,6 +20,7 @@
 
 
 
+
 <!-- BEGIN : JSON Downloading data from an existing JSON file -->
 
   <script>
@@ -432,6 +433,17 @@ img {
   src: url('fonts/misc_fonts/Selima.otf') ;
 }
 
+@font-face {
+  font-family: 'Gineva-Script-Regular';
+  src: url('fonts/misc_fonts/Gineva-Script-Regular.otf') ;
+}
+
+@font-face {
+  font-family: 'Polly-Circular-Regular';
+  src: url('fonts/misc_fonts/Polly-Circular-Regular.otf') ;
+}
+
+
 summary {
 font-size: 30px;
 text-transform: uppercase;
@@ -555,6 +567,8 @@ padding: 10px;
 
               <option value=' "ambroise-francois-std", sans-serif' selected>Ambroise Francois</option>
               <option value=' "bebas-neue", sans-serif'>Bebas Neue</option>
+
+
               <option value=' "Josefin Sans", sans-serif'>Josefin Sans</option>
               <option value=' "Josefin Slab", sans-serif'>Josefin Slab</option>
               <option value=' "league-gothic", sans-serif'>League Gothic</option>
@@ -562,6 +576,8 @@ padding: 10px;
               <option value=' "Oswald", sans-serif'>Oswald</option>
               <option value=' "Playfair Display SC", serif'>Playfair Display SC</option>
               <option value=' "Playfair Display", serif'>Playfair Display</option>
+
+              <option value=' "Polly-Circular-Regular", sans-serif'>Polly Circular</option>
 
               <option value=' "proxima-nova", sans-serif'>Proxima Nova</option>
               <option value=' "proxima-nova-soft", sans-serif'>Proxima Nova - Soft</option>
@@ -585,6 +601,10 @@ padding: 10px;
 
                    <option value=' "Cinzel Decorative", cursive'>Cinzel Decorative, cursive</option>
                    <option value=' "Fredericka the Great", cursive'>Fredericka the Great, cursive</option>
+
+                   <option value=' "Gineva-Script-Regular", sans-serif'>Gineva-Script-Regular, Brushed</option>
+
+
                    <option value=' "Kranky", cursive'>Kranky, cursive</option>
                    <option value=' "League Script", cursive'>League Script, cursive</option>
                    <option value=' "Lobster", cursive'>Lobster, cursive</option>
@@ -857,6 +877,11 @@ padding: 10px;
         </div>
 
         <br>
+
+        <span style='font-weight : 100;' id="timeInWords"></span>
+        <script src="js/TimeInWords.js"></script>
+
+
         <h4>1. Book Cover Layout Grid Planning</h4>
         <span id="bookCoverWithLayout"></span>
 

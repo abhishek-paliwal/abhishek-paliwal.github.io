@@ -239,7 +239,7 @@ for (i = 0; i < arragementArray.length; i++) {
 
             idealTopPadding = Math.floor( ( elementHeight - textSize )/2 ) ;
 
-            features2Print = elementName + " // margin= " +h3Margin+ "px // WxH= " +elementWidth+ " x " +elementHeight+ " px // Ideal-Top-Padding = " + idealTopPadding + "px" ;
+            features2Print = elementName + " | margin= " +h3Margin+ "px | " +elementWidth+ "w X " +elementHeight+ "h px" ;
 
             finalAllText4Layout += "<div style='border: 1px solid #B6806B; float: left; margin: " +h3Margin+ "px; height: " +elementHeight+ "px; width: " +elementWidth+ "px;'>" + features2Print + "</div>" ;
 
@@ -268,8 +268,8 @@ L = logoImageUrlFinal ;
 /*********************************************************************/
 /***** Producing the final outputs for display ******/
 
-NewBannerWidth = Number(bannerWidth) + 2*Number(h3Margin ) ;
-NewBannerHeight = Number(bannerHeight) + 2*Number(h3Margin) ;
+NewBannerWidth = Number(bannerWidth) + 2*Number(h3Margin ) + Number(20) ; /* Added 20px at the end for any borders */
+NewBannerHeight = Number(bannerHeight) + 2*Number(h3Margin) + Number(20) ; /* Added 20px at the end for any borders */
 
 /****** Real output magic *****/
 
@@ -881,21 +881,32 @@ padding: 10px;
         <span style='font-weight : 100;' id="timeInWords"></span>
         <script src="js/TimeInWords.js"></script>
 
-
-        <h4>1. Book Cover Layout Grid Planning</h4>
-        <span id="bookCoverWithLayout"></span>
+        <p style='clear:both;'></p>
 
         <br>
-        <h4>2. Main Book Cover with Background Color</h4>
-        <span id="bookCover"></span>
+        <details>
+          <summary>1. Book Cover Layout Grid Planning</summary>
+          <span id="bookCoverWithLayout"></span>
+          <p style='clear:both;'></p>
+        </details>
 
         <br>
-        <h4>3. Book Cover with Background Image</h4>
-        <span id="bookCoverWithBackgroundImage"></span>
+        <details>
+          <summary>2. Main Book Cover with Background Color</summary>
+          <span id="bookCover"></span>
+        </details>
 
         <br>
-        <h4>4. Book Cover with Background Gradient</h4>
-        <span id="bookCoverWithGradientBackground"></span>
+        <details>
+          <summary>3. Book Cover with Background Image</summary>
+          <span id="bookCoverWithBackgroundImage"></span>
+        </details>
+
+        <br>
+        <details>
+          <summary>4. Book Cover with Background Gradient</summary>
+          <span id="bookCoverWithGradientBackground"></span>
+        </details>
 
       </div>
 

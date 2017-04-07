@@ -297,21 +297,21 @@ for (i = 0; i < alltotalBoxes; i++) {
 
                   hslRandomColor = "hsla(" + hslHue + "," + hslSaturationPerc + "%, " + hslLightnessPerc + "%, " + opacityValue + ")" ;
 
-                  hslRandomColorForGradient = "hsla(" + ( Number(hslHue) + Number(hslAngleForGradientColorDifference) ) + "," + hslSaturationPerc + "%, " + hslLightnessPerc + "%, " + opacityValue + ")" ;
+                  hslRandomColorForGradient = "hsla(" + ( Number(hslHue) + Number(hslAngleForGradientColorDifference) ) + ", " + hslSaturationPerc + "%, " + hslLightnessPerc + "%, " + opacityValue + ")" ;
 
-                  gradientTextToPrint = "<br>&mdash;<br>" + hslRandomColor + ", " + hslRandomColorForGradient ;
+                  gradientTextToPrint = "<br>&mdash;<br>" + RandomGradientAngle + ", " + hslRandomColor + ", " + hslRandomColorForGradient ;
 
       /*** HSL SHADOW BOXES: Generating the final block with gradient using above variables ***/
                   HSLfinalTextWithRandomColorWithGradient += "<div class ='mybox' style='margin: " + BoxMargin + " ; border-radius: " + borderRadius + ";width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background: linear-gradient( " + RandomGradientAngle + ", " + hslRandomColor + ", " + hslRandomColorForGradient + " ) ; font-size:" + textSize + "px; box-shadow: " + BoxShadowVar + " ; '>" + (i+1) + gradientTextToPrint + "</div>" ;
 
       /*** HSL NO SHADOW BOXES: Generating the final block with gradient using above variables ***/
-                  hslHueNoShadow =  hslHueAngleSpectrum + red1 ; /*** First box's hue value will be red1 value ***/
+                  hslHueNoShadow =  hslHueAngleSpectrum + Number(red1) ; /*** First box's hue value will be red1 value ***/
 
                   hslRandomColorNoShadow = "hsla(" + hslHueNoShadow + ", 100%, 50%, " + opacityValue + ")" ;
 
                   hslRandomColorForGradientNoShadow = "hsla(" + ( Number(hslHueNoShadow) + Number(hslAngleForGradientColorDifference) ) + ", 100%, 50%, " + opacityValue + ")" ;
 
-                  gradientTextToPrintNoShadow = "<br>&mdash;<br>" + hslRandomColorNoShadow + ", " + hslRandomColorForGradientNoShadow ;
+                  gradientTextToPrintNoShadow = "<br>&mdash;<br>" + RandomGradientAngle + ", " + hslRandomColorNoShadow + ", " + hslRandomColorForGradientNoShadow ;
 
                   HSLfinalTextWithRandomColorWithGradientNoShadow += "<div class ='mybox' style='margin: " + BoxMargin + " ;  border-radius: " + borderRadius + ";width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background: linear-gradient( " + RandomGradientAngle + ", " + hslRandomColorNoShadow + ", " + hslRandomColorForGradientNoShadow + " ) ; font-size:" + textSize + "px ; '>" + (i+1) + gradientTextToPrintNoShadow + "</div>" ;
 

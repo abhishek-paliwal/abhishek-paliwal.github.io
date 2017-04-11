@@ -23,10 +23,10 @@
 
     .grid-item {
         /* float:left; */
-        width: 220px ;
+        width: 24% ;
         /* height: 220px ;  */
         /* padding: 5px; */
-        margin: 5px;
+        /* margin: 0px; */
         color: black;
         background-color : white ;
         font-family: 'Roboto', sans-serif;
@@ -38,6 +38,24 @@
         box-shadow: 0px 0px 5px #aaa ;
         border-radius : 2px ;
     }
+
+    .grid {
+      width: 96%; /* Can be anything, but has to be less than 100% */
+      margin: 0 auto; /* Centers everything */
+  }
+
+  /* Pali: Using Media Queries for Display on Mobiles */
+      @media (max-width: 567px) {
+          .grid-item {
+              width: 48% ;
+          }
+      }
+
+      @media (min-width:568px) and (max-width:1199px) {
+          .grid-item {
+              width: 32% ;
+          }
+      }
 
 /* PACKERY STYLES END */
 
@@ -128,7 +146,7 @@ hr {clear:both;}
 <h2 class='heading'>Designed by <a href='http://www.AbhishekPaliwal.com'>Abhishek Paliwal</a> for <a href='http://www.concepro.com'>Concepro Digital Marketing Agency</a></h2>
 <!-- HEADING DIV ENDS --> </div>
 <h3 class='thin'>Total Images On This Page (Recursive) = 36</h3>
-<h3 class='thin'>Page last updated: Tue Apr 11 19:04:39 EEST 2017</h3>
+<h3 class='thin'>Page last updated: Tue Apr 11 21:00:55 EEST 2017</h3>
 <hr>
 <div class='toc'>&bull; Table of Contents &bull;</div>
 <div class='toc'><a href='#1-wide+square-templates'> 1-wide+square-templates</a></div> 

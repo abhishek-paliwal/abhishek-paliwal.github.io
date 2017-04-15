@@ -382,6 +382,12 @@ img.footer {
   height: 120px;
 }
 
+@media print {
+    @page {size: 4.4in 4.4in; margin: 10px;}
+    div.mybox  {page-break-before: always;}
+    table, figure { page-break-inside: avoid;}
+}
+
 </style>
 
 </head>

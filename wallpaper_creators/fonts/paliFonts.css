@@ -1,0 +1,62 @@
+/* Pali's Custom Stylesheet */
+/* Add more custom fonts at the end of it */
+@font-face {
+  font-family: 'voga';
+  src: url('misc_fonts/Voga-Medium.otf') ;
+}
+
+@font-face {
+  font-family: 'brusher';
+  src: url('misc_fonts/Brusher-Font.otf') ;
+}
+
+@font-face {
+  font-family: 'great-vibes';
+  src: url('misc_fonts/GreatVibes-Regular.otf') ;
+}
+
+@font-face {
+  font-family: 'playlist-script';
+  src: url('misc_fonts/Playlist-Script.otf') ;
+}
+
+@font-face {
+  font-family: 'selima';
+  src: url('misc_fonts/Selima.otf') ;
+}
+
+@font-face {
+  font-family: 'Gineva-Script-Regular';
+  src: url('misc_fonts/Gineva-Script-Regular.otf') ;
+}
+
+@font-face {
+  font-family: 'Polly-Circular-Regular';
+  src: url('misc_fonts/Polly-Circular-Regular.otf') ;
+}
+
+/*** CIRCULAR SPOTIFY LIKE FONTS ***/
+
+@font-face {
+    font-family: 'Circular';
+    src: url('misc_fonts/Circular/Circular_book.woff') format("woff"), url('misc_fonts/Circular/Circular_book.ttf') format("truetype");
+    font-weight: 400
+}
+
+@font-face {
+    font-family: 'Circular';
+    src: url('misc_fonts/Circular/Circular_medium.woff') format("woff"), url('misc_fonts/Circular/Circular_medium.ttf') format("truetype");
+    font-weight: 500
+}
+
+@font-face {
+    font-family: 'Circular';
+    src: url('misc_fonts/Circular/Circular_bold.woff') format("woff"), url('misc_fonts/Circular/Circular_bold.ttf') format("truetype");
+    font-weight: 700
+}
+
+@font-face {
+    font-family: 'Circular';
+    src: url('misc_fonts/Circular/CircularStd-Black.woff') format("woff"), url('misc_fonts/Circular/CircularStd-Black.otf') format("opentype");
+    font-weight: 900
+}

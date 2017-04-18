@@ -40,23 +40,41 @@
 @font-face {
     font-family: 'Circular';
     src: url('misc_fonts/Circular/Circular_book.woff') format("woff"), url('misc_fonts/Circular/Circular_book.ttf') format("truetype");
-    font-weight: 400
+    font-weight: 400 ;
 }
 
 @font-face {
     font-family: 'Circular';
     src: url('misc_fonts/Circular/Circular_medium.woff') format("woff"), url('misc_fonts/Circular/Circular_medium.ttf') format("truetype");
-    font-weight: 500
+    font-weight: 500 ;
 }
 
 @font-face {
     font-family: 'Circular';
     src: url('misc_fonts/Circular/Circular_bold.woff') format("woff"), url('misc_fonts/Circular/Circular_bold.ttf') format("truetype");
-    font-weight: 700
+    font-weight: 700 ;
 }
 
 @font-face {
     font-family: 'Circular';
     src: url('misc_fonts/Circular/CircularStd-Black.woff') format("woff"), url('misc_fonts/Circular/CircularStd-Black.otf') format("opentype");
-    font-weight: 900
+    font-weight: 900 ;
+}
+
+/*** DIDOT FASHION LIKE FONTS ***/
+@font-face {
+  font-family: 'Didot' ;
+  src: url('misc_fonts/Didot/Didot.ttf') ;
+}
+
+@font-face {
+  font-family: 'Didot' ;
+  src: url('misc_fonts/Didot/Didot-Bold.ttf') ;
+  font-weight: bold ;
+}
+
+@font-face {
+  font-family: 'Didot' ;
+  src: url('misc_fonts/Didot/Didot-Italic.ttf') ;
+  font-style: italic, oblique ;
 }

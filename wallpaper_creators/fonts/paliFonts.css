@@ -1,5 +1,11 @@
 /* Pali's Custom Stylesheet */
 /* Add more custom fonts at the end of it */
+
+@font-face {
+  font-family: 'silicia-florished-script';
+  src: url('misc_fonts/silicia-flourished-script.otf') ;
+}
+
 @font-face {
   font-family: 'voga';
   src: url('misc_fonts/Voga-Medium.otf') ;

@@ -84,3 +84,28 @@
   src: url('misc_fonts/Didot/Didot-Italic.ttf') ;
   font-style: italic, oblique ;
 }
+
+/*** CENTURY GOTHIC FONTS ***/
+@font-face {
+  font-family: 'century-gothic' ;
+  src: url('misc_fonts/century-gothic/century-gothic-regular.ttf') ;
+}
+
+@font-face {
+  font-family: 'century-gothic' ;
+  src: url('misc_fonts/century-gothic/century-gothic-regular-italic.ttf') ;
+  font-style: italic, oblique ;
+}
+
+@font-face {
+  font-family: 'century-gothic' ;
+  src: url('misc_fonts/century-gothic/century-gothic-bold.ttf') ;
+  font-weight: bold ;
+}
+
+@font-face {
+  font-family: 'century-gothic' ;
+  src: url('misc_fonts/century-gothic/century-gothic-bold-italic.ttf') ;
+  font-style: italic, oblique ;
+  font-weight: bold ;
+}

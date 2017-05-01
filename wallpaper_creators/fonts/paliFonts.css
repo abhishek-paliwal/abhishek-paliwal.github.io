@@ -109,3 +109,19 @@
   font-style: italic, oblique ;
   font-weight: bold ;
 }
+
+/*** KING-SIZE-CURSIVE FONTS ***/
+@font-face {
+  font-family: 'kingsize-script' ;
+  src: url('misc_fonts/kingsize-font/kingsize-script.otf') ;
+}
+
+@font-face {
+  font-family: 'kingsize-dots' ;
+  src: url('misc_fonts/kingsize-font/kingsize-dots.otf') ;
+}
+
+@font-face {
+  font-family: 'kingsize-shadow' ;
+  src: url('misc_fonts/kingsize-font/kingsize-shadow.otf') ;
+}

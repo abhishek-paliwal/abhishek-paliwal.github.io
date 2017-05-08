@@ -149,6 +149,12 @@ final_LDJSON_code = "<script type=\"application/ld+json\">" +
 /**************************************************************/
 
 /******* Creating a new PopUp window with the code ready to be copied ********/
+
+        recipeCodePrefix = "\n&lt;!-- HTML RECIPE CODE BLOCK BELOW THIS --&gt;\n" ;
+        recipeCodeSuffix = "\n&lt;!-- HTML RECIPE CODE BLOCK ABOVE THIS --&gt;\n" ;
+
+        CodeContent = recipeCodePrefix +  CodeContent + recipeCodeSuffix ;
+
         var myCodeWindow = window.open("", "_blank", "PlainCodeWindow", "width=800,height=800");
         myCodeWindow.document.write("<pre><code>" + CodeContent + "</code></pre>");
 
@@ -159,6 +165,7 @@ var htmlPreviewCodeContent = htmlPreviewCodeContent.replace(/&gt;/g, ">");
 var htmlPreviewCodeContent = htmlPreviewCodeContent.replace(/&lt;/g, "<");
 var htmlPreviewCodeContent = htmlPreviewCodeContent.replace(/<br \/>/g, "");
 
+
 /******* Writing this code content to the specified element on the main HTML page ********/
 document.getElementById('generatedRecipeMarkupPreview').innerHTML = htmlPreviewCodeContent;
 
@@ -168,7 +175,9 @@ document.getElementById('generatedRecipeMarkupPreview').innerHTML = htmlPreviewC
 
 
 /**** Printing JSON-LD Values ****/
-document.getElementById('final_LDJSON_code_Printing').innerHTML = final_LDJSON_code ;
+JSONLDrecipeCodePrefix = "\n<!-- JSON+LD RECIPE SCHEMA BLOCK BELOW THIS -->\n" ;
+JSONLDrecipeCodeSuffix = "\n<!-- JSON+LD RECIPE SCHEMA BLOCK ABOVE THIS -->\n" ;
+document.getElementById('final_LDJSON_code_Printing').innerHTML = JSONLDrecipeCodePrefix + final_LDJSON_code + JSONLDrecipeCodeSuffix ;
 
 /**************************************************************/
 /*************  CREATING AND OPENING POP-UP WINDOWS END **********/

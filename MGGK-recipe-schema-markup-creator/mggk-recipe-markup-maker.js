@@ -69,10 +69,10 @@
 
                 for(var i = 0;i < arrayOfIngredients.length;i++){
                     //code here using arrayOfIngredients[i] which will give you each line
-                    ingr += "&amp;#10047; &lt;span itemprop=&quot;recipeIngredient&quot;>" + arrayOfIngredients[i] + "&lt;/span&gt; &lt;br&gt;<br>";
+                    ingr += "&#10047; <span itemprop='recipeIngredient'>" + arrayOfIngredients[i] + "</span><br>";
                     LDJSONingr += "\"" + arrayOfIngredients[i] + "\"," ;
                 }
-                recipeIngredients = "<br>" + ingr + "<br>";
+                recipeIngredients = "<p>" + ingr + "</p>";
 
                 LDJSONrecipeIngredients = LDJSONingr + "\"\"" ; /**empty ingredient at the end, otherwise an extra comma appears **/
 
@@ -85,12 +85,10 @@
 
         LDJSONrecipeInstructions = recipeInstructions ; /** JSON+LD Recipe instuctions plain code **/
 
-                recipeInstructions = recipeInstructions.replace(/</g, "&lt;"); /* replacing < html tags */
-                recipeInstructions = recipeInstructions.replace(/>/g, "&gt;"); /* replacing > html tags */
-                recipeInstructions = recipeInstructions.replace(/\n/g, "&lt;br /&gt;<br>");
+            /** Keep the below replacement line after JSON+LD recipe-instructions block **/
+            recipeInstructions = recipeInstructions.replace(/\n/g, "<br>"); /* replacing newline chars with html tags */
 
 /************** INTRUCTIONS BLOCK CALCULATIONS END ******/
-
 
 
         recipeNotes = document.getElementById("recipeNotes").value;
@@ -98,15 +96,126 @@
         recipeAuthor = document.getElementById("recipeAuthor").value;
         datePublished = document.getElementById("datePublished").value.replace(/ /g, "");
 
-/********** Assembling the BIG BIG code from all the values above **********/
-        var CodeContent = "&lt;div id=&quot;recipe-here&quot;&gt;        <br />    &lt;/div&gt;        <br />    &lt;style&gt;        <br />    @import 'https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700'; <br>@import 'https://fonts.googleapis.com/icon?family=Material+Icons';       <br />    &lt;/style&gt;        <br />        <br />    &lt;div id=&quot;recipe-print-block&quot; style=&quot;border: 1px dashed black; padding: 10px; font-size:14px; font-family: 'Roboto Slab', serif;&quot;&gt;        <br />        &lt;div itemscope itemtype=&quot;http://schema.org/Recipe&quot;&gt;        <br />            [print-me target=&quot;div#recipe-print-block&quot;]        <br />        <br />            &lt;h2 itemprop=&quot;name&quot;&gt;" + recipeName + "&lt;/h2&gt;        <br />            &lt;span itemprop=&quot;description&quot;&gt;" + recipeDescription + "&lt;/span&gt;        <br />        <br />            &lt;table border=&quot;0&quot; cellpadding=&quot;10&quot; cellspacing=&quot;10&quot; width=&quot;100%&quot;&gt;        <br />                &lt;tbody&gt;        <br />                    &lt;tr&gt;        <br />                        &lt;td align=&quot;left&quot; valign=&quot;top&quot; width=&quot;40%&quot;&gt;        <br />                            &lt;img itemprop=&quot;image&quot; src=&quot;"+imageUrl+"&quot; width=&quot;150px&quot;&gt;        <br />        <br />                            &lt;div itemprop=&quot;aggregateRating&quot; itemscope itemtype=&quot;http://schema.org/AggregateRating&quot;&gt;        <br />                                &lt;span style=&quot;color: #cd1d63;&quot;&gt;&amp;hearts; &amp;hearts; &amp;hearts; &amp;hearts; &amp;hearts;&lt;/span&gt; (Rating: &lt;span itemprop=&quot;ratingValue&quot;&gt;5&lt;/span&gt; from &lt;span itemprop=&quot;ratingCount&quot;&gt;1&lt;/span&gt; reviews)        <br />                            &lt;/div&gt;        <br />        <br />        <br />                            &lt;h3&gt;INGREDIENTS&lt;/h3&gt;        <br />" + recipeIngredients + "<br />                        &lt;/td&gt;        <br />        <br />                        &lt;td align=&quot;left&quot; valign=&quot;top&quot;&gt;        <br />                            &lt;table border=&quot;0&quot; cellpadding=&quot;1&quot; cellspacing=&quot;5&quot; width=&quot;100%&quot;&gt;        <br />                                &lt;tr&gt;        <br />                                    &lt;th style=&quot;text-align:center; width:33%; color:#cd1d63;&quot;&gt;&amp;#128336; Prep time&lt;/th&gt;        <br />        <br />                                    &lt;th style=&quot;text-align:center; width:33%; color:#cd1d63;&quot;&gt;&amp;#128336; Cook time&lt;/th&gt;        <br />        <br />                                    &lt;th style=&quot;text-align:center; width:33%; color:#cd1d63;&quot;&gt;&amp;#128336; Total time&lt;/th&gt;        <br />                                &lt;/tr&gt;        <br />        <br />        <br />                                &lt;tr&gt;        <br />                                    &lt;td style=&quot;text-align:center&quot;&gt;&lt;time datetime=&quot;" + prepTime + "&quot; itemprop=&quot;prepTime&quot;&gt;" + prepTimeHuman + "&lt;/time&gt;        <br />                                    &lt;/td&gt;        <br />        <br />                                    &lt;td style=&quot;text-align:center&quot;&gt;&lt;time datetime=&quot;" + cookTime + "&quot; itemprop=&quot;cookTime&quot;&gt;" + cookTimeHuman + "&lt;/time&gt;        <br />                                    &lt;/td&gt;        <br />        <br />                                    &lt;td style=&quot;text-align:center&quot;&gt;&lt;time datetime=&quot;" + totalTime + "&quot; itemprop=&quot;totalTime&quot;&gt;" + totalTimeHuman + "&lt;/time&gt;        <br />                                    &lt;/td&gt;        <br />                                &lt;/tr&gt;        <br />        <br />        <br />                                &lt;tr&gt;        <br />                                    &lt;th style=&quot;text-align:center; width:33%; color:#cd1d63;&quot;&gt;&amp;#9782; Category&lt;/th&gt;        <br />        <br />                                    &lt;th style=&quot;text-align:center; width:33%; color:#cd1d63;&quot;&gt;&amp;#9832; Cuisine&lt;/th&gt;        <br />        <br />                                    &lt;th style=&quot;text-align:center; width:33%; color:#cd1d63;&quot;&gt;&amp;#9786; Serves&lt;/th&gt;        <br />                                &lt;/tr&gt;        <br />        <br />        <br />                                &lt;tr&gt;        <br />                                    &lt;td itemprop=&quot;recipeCategory&quot; style=&quot;text-align:center; width:33%;&quot;&gt;" + recipeCategory + "&lt;/td&gt;        <br />        <br />                                    &lt;td itemprop=&quot;recipeCuisine&quot; style=&quot;text-align:center; width:33%;&quot;&gt;" + recipeCuisine + "&lt;/td&gt;        <br />        <br />                                    &lt;td itemprop=&quot;recipeYield&quot; style=&quot;text-align:center; width:33%;&quot;&gt;" + recipeYield + "&lt;/td&gt;        <br />                                &lt;/tr&gt;        <br />                            &lt;/table&gt;        <br />        <br />                            &lt;hr&gt;        <br />        <br />        <br />                            &lt;div itemprop=&quot;nutrition&quot; itemscope itemtype=&quot;http://schema.org/NutritionInformation&quot;&gt;        <br />                                Nutrition Info: &lt;span itemprop=&quot;calories&quot;&gt;" + nutritionCalories + "&lt;/span&gt;, Servings: &lt;span itemprop=&quot;servingSize&quot;&gt;" + nutritionServingSize + "&lt;/span&gt;        <br />                            &lt;/div&gt;        <br />        <br />        <br />                            &lt;h3&gt;INSTRUCTIONS:&lt;/h3&gt;        <br />        <br />        <br />                            &lt;div itemprop=&quot;recipeInstructions&quot;&gt;" + recipeInstructions + "       <br />                            &lt;/div&gt;        <br />        <br />                            &lt;hr&gt;        <br />        <br />        <br />                            &lt;h3&gt;NOTES:&lt;/h3&gt;        <br />                            " + recipeNotes + "       <br />                        &lt;/td&gt;        <br />                    &lt;/tr&gt;        <br />                &lt;/tbody&gt;        <br />            &lt;/table&gt;        <br />        <br />            &lt;hr&gt;        <br />        <br />        <br />            &lt;table border=&quot;0&quot; cellpadding=&quot;1&quot; cellspacing=&quot;5&quot; width=&quot;100%&quot;&gt;        <br />                &lt;tr&gt;        <br />                    &lt;td style=&quot;text-align:left; width:15%;&quot;&gt;&lt;img alt=&quot;Logo&quot; height=&quot;70px&quot; src=&quot;http://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/mggk-new-logo-transparent-150px.png&quot;&gt;        <br />                    &lt;/td&gt;        <br />        <br />                    &lt;td style=&quot;text-align:left;&quot;&gt;        <br />                        &lt;strong&gt;Author:&lt;/strong&gt; &lt;span itemprop=&quot;author&quot;&gt;" + recipeAuthor + "&lt;/span&gt;&lt;br&gt;        <br />                        &lt;strong&gt;Recipe Source Link:&lt;/strong&gt; &lt;a href=&quot;" + recipeUrl + "&quot;&gt;&lt;span itemprop=&quot;url&quot;&gt;" + recipeUrl + "&lt;/span&gt;&lt;/a&gt;&lt;br&gt;        <br />                        &lt;strong&gt;Date Published: &lt;/strong&gt; &lt;span itemprop=&quot;datePublished&quot;&gt;" + datePublished + "&lt;/span&gt;        <br />                    &lt;/td&gt;        <br />                &lt;/tr&gt;        <br />            &lt;/table&gt;        <br />        &lt;/div&gt;        <br />    &lt;/div&gt;" ;
+/********** Assembling the BIG BIG RECIPE code from all the values above **********/
+
+NewCodeContent ="<!-- HTML RECIPE CODE BLOCK BELOW THIS -->\n" +
+"\n <div id='recipe-here'></div>" +
+"\n <!-- /------------/ -->" +
+"\n <div id='recipe-print-block' style='border: 1px dashed black; padding: 10px; font-size: 14px; font-family: sans-serif; '>" +
+"\n     <div itemscope itemtype='http://schema.org/Recipe'>" +
+"\n         [print-me target='div#recipe-print-block']" +
+"\n <!-- /------------/ -->" +
+"\n         <h3><span itemprop='name'>" + recipeName + "</span> [RECIPE]</h3>" +
+"\n         <span itemprop='description'>" + recipeDescription + "</span>" +
+"\n <!-- /------------/ -->" +
+"\n         <div class='flexbox_recipe_container'>" +
+"\n <!-- /------------/ -->" +
+"\n             <div class='flexbox_recipe_left'><!-- recipe left flexbox starts -->" +
+"\n <!-- /------------/ -->" +
+"\n                         <img itemprop='image' src='" + imageUrl + "' width='150px'>" +
+"\n <!-- /------------/ -->" +
+"\n                         <div itemprop='aggregateRating' itemscope itemtype='http://schema.org/AggregateRating'>" +
+"\n                             <span style='color: #cd1d63;'>&hearts; &hearts; &hearts; &hearts; &hearts;</span>" +
+"\n                             (Rating: <span itemprop='ratingValue'>" + ratingValue + "</span> from <span itemprop='ratingCount'>" + ratingCount + "</span> reviews)" +
+"\n                         </div>" +
+"\n <!-- /------------/ -->" +
+"\n                         <h3>INGREDIENTS</h3>" + recipeIngredients + "<hr>" +
+"\n <!-- /------------/ -->" +
+"\n             </div><!-- recipe left flexbox ends -->" +
+"\n <!-- /------------/ -->" +
+"\n             <div class='flexbox_recipe_right'><!-- recipe right flexbox starts -->" +
+"\n                         <table border='0' cellpadding='1' cellspacing='5' width='100%'>" +
+"\n                             <tr>" +
+"\n                                 <th style='text-align:center; width:33%; color:#cd1d63;'>&#128336; Prep time</th>" +
+"\n                                 <th style='text-align:center; width:33%; color:#cd1d63;'>&#128336; Cook time</th>" +
+"\n                                 <th style='text-align:center; width:33%; color:#cd1d63;'>&#128336; Total time</th>" +
+"\n                             </tr>" +
+"\n <!-- /------------/ -->" +
+"\n                             <tr>" +
+"\n                                 <td style='text-align:center'><time datetime='" + prepTime + "' itemprop='prepTime'>" + prepTimeHuman + "</time></td>" +
+"\n                                 <td style='text-align:center'><time datetime='" + cookTime + "' itemprop='cookTime'>" + cookTimeHuman + "</time></td>" +
+"\n                                 <td style='text-align:center'><time datetime='" + totalTime + "' itemprop='totalTime'>" + totalTimeHuman + "</time></td>" +
+"\n                             </tr>" +
+"\n <!-- /------------/ -->" +
+"\n                             <tr>" +
+"\n                                 <th style='text-align:center; width:33%; color:#cd1d63;'>&#9782; Category</th>" +
+"\n                                 <th style='text-align:center; width:33%; color:#cd1d63;'>&#9832; Cuisine</th>" +
+"\n                                 <th style='text-align:center; width:33%; color:#cd1d63;'>&#9786; Serves</th>" +
+"\n                             </tr>" +
+"\n <!-- /------------/ -->" +
+"\n                             <tr>" +
+"\n                                 <td itemprop='recipeCategory' style='text-align:center; width:33%;'>" + recipeCategory + "</td>" +
+"\n                                 <td itemprop='recipeCuisine' style='text-align:center; width:33%;'>" + recipeCuisine + "</td>" +
+"\n                                 <td itemprop='recipeYield' style='text-align:center; width:33%;'>" + recipeYield + "</td>" +
+"\n                             </tr>" +
+"\n                         </table>" +
+"\n <!-- /------------/ -->" +
+"\n                         <hr>" +
+"\n <!-- /------------/ -->" +
+"\n                         <div itemprop='nutrition' itemscope itemtype='http://schema.org/NutritionInformation'>" +
+"\n                             <strong>Nutrition Info:</strong> <span itemprop='calories'>" + nutritionCalories + "</span> // <strong>Servings:</strong> <span itemprop='servingSize'>" + nutritionServingSize + "</span>" + "</div>" +
+"\n <!-- /------------/ -->" +
+"\n                         <h3>INSTRUCTIONS:</h3>" +
+"\n                         <div itemprop='recipeInstructions'>" + recipeInstructions + "</div>" +
+"\n <!-- /------------/ -->" +
+"\n                         <hr>" +
+"\n <!-- /------------/ -->" +
+"\n                         <h3>NOTES:</h3>" + recipeNotes +
+"\n <!-- /------------/ -->" +
+"\n         </div><!-- recipe right flexbox ends -->" +
+"\n <!-- /------------/ -->" +
+"\n      </div><!-- recipe main flexbox container ends -->" +
+"\n <!-- /------------/ -->" +
+"\n         <hr>" +
+"\n <!-- /------------/ -->" +
+"\n         <table border='0' cellpadding='1' cellspacing='5' width='100%'>" +
+"\n             <tr>" +
+"\n                 <td style='text-align:left; width:15%;'><img alt='Logo' height='70px' src='http://www.mygingergarlickitchen.com/wp-content/uploads/2015/02/mggk-new-logo-transparent-150px.png'>" +
+"\n                 </td>" +
+"\n <!-- /------------/ -->" +
+"\n                 <td style='text-align:left;'>" +
+"\n                     <strong>Author:</strong> <span itemprop='author'>" + recipeAuthor + "</span><br>" +
+"\n                     <strong>Recipe Source Link:</strong> <a href='" + recipeUrl + "'><span itemprop='url'>" + recipeUrl + "</span></a><br>" +
+"\n                     <strong>Date Published: </strong> <span itemprop='datePublished'>" + datePublished + "</span>" +
+"\n                 </td>" +
+"\n             </tr>" +
+"\n         </table>" +
+"\n <!-- /------------/ -->" +
+"\n     </div>" +
+"\n <!-- /------------/ -->" +
+"\n </div>" +
+"\n <!-- HTML RECIPE CODE BLOCK ABOVE THIS -->" ;
 
 /******* Writing this code content to the specified element on the main HTML page ********/
-        document.getElementById('generatedRecipeMarkup').innerHTML = CodeContent;
+        document.getElementById('generatedRecipeMarkup').innerHTML = NewCodeContent;
 
+        /******* Writing this code content to the specified element on the main HTML page ********/
+        document.getElementById('generatedRecipeMarkupPreview').innerHTML = NewCodeContent ;
 
+        /*************  CREATING AND OPENING POP-UP WINDOW **********/
+        /**************************************************************/
+        /******* Creating a new PopUp window with added stylesheet for the final display for checking ********/
+
+                var myPreviewWindow = window.open("", "_blank", "HTMLPreviewWindow", "width=800,height=800");
+                myPreviewWindow.document.write("<!DOCTYPE html><html><head><title>Recipe Preview Window</title>" +
+                "<style>" +
+                    ".flexbox_recipe_container{display:-webkit-flex;display:flex;flex-wrap:wrap;width:100%}" +
+                    ".flexbox_recipe_left{padding:5px;width:30%}" +
+                    ".flexbox_recipe_right{padding:5px;width:65%}" +
+                    "@media(max-width:640px){" +
+                    "    .flexbox_recipe_left{width:100%}" +
+                    "    .flexbox_recipe_right{width:100%}" +
+                    "}" +
+                "</style> " +
+                "</head><body>" +
+                NewCodeContent +
+                "</body></html>");
+
+/**************************************************************/
+/*************  CREATING AND OPENING POP-UP WINDOWS END **********/
+
+/**************************************************************/
 /******* Creating official RECIPE LD+JSON code for custom-fields in Wordpress *********/
-
 final_LDJSON_code = "<script type=\"application/ld+json\">" +
 "\n { " +
 "\n   \"@context\": \"http://schema.org/\"," +
@@ -144,42 +253,10 @@ final_LDJSON_code = "<script type=\"application/ld+json\">" +
 "\n } " +
 "\n </script>" ;
 
-
-/*************  CREATING AND OPENING POP-UP WINDOWS **********/
-/**************************************************************/
-
-/******* Creating a new PopUp window with the code ready to be copied ********/
-
-        recipeCodePrefix = "\n&lt;!-- HTML RECIPE CODE BLOCK BELOW THIS --&gt;\n" ;
-        recipeCodeSuffix = "\n&lt;!-- HTML RECIPE CODE BLOCK ABOVE THIS --&gt;\n" ;
-
-        CodeContent = recipeCodePrefix +  CodeContent + recipeCodeSuffix ;
-
-        var myCodeWindow = window.open("", "_blank", "PlainCodeWindow", "width=800,height=800");
-        myCodeWindow.document.write("<pre><code>" + CodeContent + "</code></pre>");
-
-/******* HTML Preview Window Display + Conversion of source-code tags to html symbols **********/
-var htmlPreviewCodeContent = CodeContent.replace(/&amp;/g, "&");
-var htmlPreviewCodeContent = htmlPreviewCodeContent.replace(/&quot;/g, "\"");
-var htmlPreviewCodeContent = htmlPreviewCodeContent.replace(/&gt;/g, ">");
-var htmlPreviewCodeContent = htmlPreviewCodeContent.replace(/&lt;/g, "<");
-var htmlPreviewCodeContent = htmlPreviewCodeContent.replace(/<br \/>/g, "");
-
-
-/******* Writing this code content to the specified element on the main HTML page ********/
-document.getElementById('generatedRecipeMarkupPreview').innerHTML = htmlPreviewCodeContent;
-
-
-        var myPreviewWindow = window.open("", "_blank", "HTMLPreviewWindow", "width=800,height=800");
-        myPreviewWindow.document.write("<!DOCTYPE html><html><head><title>Recipe Preview Window</title></head><body>" + htmlPreviewCodeContent + "</body></html>");
-
-
 /**** Printing JSON-LD Values ****/
 JSONLDrecipeCodePrefix = "\n<!-- JSON+LD RECIPE SCHEMA BLOCK BELOW THIS -->\n" ;
 JSONLDrecipeCodeSuffix = "\n<!-- JSON+LD RECIPE SCHEMA BLOCK ABOVE THIS -->\n" ;
 document.getElementById('final_LDJSON_code_Printing').innerHTML = JSONLDrecipeCodePrefix + final_LDJSON_code + JSONLDrecipeCodeSuffix ;
 
-/**************************************************************/
-/*************  CREATING AND OPENING POP-UP WINDOWS END **********/
-
+/************************ CODE ENDS **************************************/
 }

@@ -69,7 +69,7 @@
 
                 for(var i = 0;i < arrayOfIngredients.length;i++){
                     //code here using arrayOfIngredients[i] which will give you each line
-                    ingr += "&#10047; <span itemprop='recipeIngredient'>" + arrayOfIngredients[i] + "</span><br>";
+                    ingr += "&bull; <span itemprop='recipeIngredient'>" + arrayOfIngredients[i] + "</span><br>";
                     LDJSONingr += "\"" + arrayOfIngredients[i] + "\"," ;
                 }
                 recipeIngredients = "<p>" + ingr + "</p>";
@@ -101,7 +101,7 @@
 NewCodeContent ="<!-- HTML RECIPE CODE BLOCK BELOW THIS -->\n" +
 "\n <div id='recipe-here'></div>" +
 "\n <!-- /------------/ -->" +
-"\n <div id='recipe-print-block' style='border: 1px dashed black; padding: 10px; font-size: 14px; font-family: sans-serif; '>" +
+"\n <div id='recipe-print-block' style='line-height: 1.1; border: 1px dashed black; padding: 10px; font-size: 14px; font-family: sans-serif; '>" +
 "\n     <div itemscope itemtype='http://schema.org/Recipe'>" +
 "\n         [print-me target='div#recipe-print-block']" +
 "\n <!-- /------------/ -->" +

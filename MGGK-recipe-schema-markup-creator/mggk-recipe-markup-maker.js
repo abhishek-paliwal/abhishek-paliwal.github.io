@@ -222,7 +222,6 @@ final_LDJSON_code = "<script type=\"application/ld+json\">" +
 "\n   \"@type\": \"Recipe\"," +
 "\n   \"name\": \"" + recipeName + "\"," +
 "\n   \"image\": \"" + imageUrl + "\"," +
-"\n   \"author\": \"" + recipeAuthor + "\"," +
 "\n   \"description\": \"" + recipeDescription + "\"," +
 "\n   \"recipeIngredient\": [" + LDJSONrecipeIngredients + "]," +
 "\n   \"prepTime\": \"" + prepTime + "\"," +

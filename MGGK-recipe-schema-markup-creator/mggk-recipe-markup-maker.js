@@ -98,7 +98,9 @@
 
 /********** Assembling the BIG BIG RECIPE code from all the values above **********/
 
-NewCodeContent ="<!-- HTML RECIPE CODE BLOCK BELOW THIS -->\n" +
+NewCodeContent = "" ; /*** Defining as empty variable ***/
+        
+NewCodeContent ="\n <!-- HTML RECIPE CODE BLOCK BELOW THIS --> \n" +
 "\n <div id='recipe-here'></div>" +
 "\n <!-- /------------/ -->" +
 "\n <div id='recipe-print-block' style='line-height: 1.1; border: 1px dashed black; padding: 10px; font-size: 14px; font-family: sans-serif; '>" +
@@ -184,7 +186,7 @@ NewCodeContent ="<!-- HTML RECIPE CODE BLOCK BELOW THIS -->\n" +
 "\n     </div>" +
 "\n <!-- /------------/ -->" +
 "\n </div>" +
-"\n <!-- HTML RECIPE CODE BLOCK ABOVE THIS -->" ;
+"\n <!-- HTML RECIPE CODE BLOCK ABOVE THIS --> \n" ;
 
 /******* Writing this code content to the specified element on the main HTML page ********/
         document.getElementById('generatedRecipeMarkup').innerHTML = NewCodeContent;

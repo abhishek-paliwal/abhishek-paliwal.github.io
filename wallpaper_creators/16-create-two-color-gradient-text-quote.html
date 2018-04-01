@@ -286,6 +286,10 @@ document.getElementById("ShowfinalColorcodesArray").innerHTML = "<div class='mai
 
 document.getElementById("ShowfinalColorcodesArrayPrinting").innerHTML = "<h2 style='color:red;'>Total: " + warray.length + " Lines of text.</h2>Below are the RGB codes for all the input color values, from the color array.<br>" + "<table><tr><td width='45%'>" + finalColorCodesArrayPrintingPar1 + "</td><td>" + finalColorCodesArrayPrintingPar2 + "</td></tr></table>" ;
 
+/***** PRINT INSTRUCTIONS FOR MGGK BLOCK*****/
+finalPrintPage = warray.length-1+3 ; /*** Subtraction 1 page from the whole length, because of the blank line at the end. Adding 3 because first page number starts at 4. So page counting should start from there. ***/
+
+document.getElementById("MggkPrintInstructions").innerHTML = "<h3 style='color: #cd1d62;'>Printing Instructions For MGGK:<br>You only need to print pages from: 4-" + finalPrintPage + "</h3>";
 
 }
 
@@ -658,6 +662,8 @@ and some style.
 
 <hr>
 <h2>Press the button above, and your image should appear below.</h2>
+
+<span id="MggkPrintInstructions"></span>
 
 <span id="randcolorRGBADivArray"></span>
 <br><br>

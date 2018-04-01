@@ -83,6 +83,21 @@ function randRGBA(min,max)
 
     /* Obtating the values of the two gradient colors. Keep this block before quoteText calculations. */
 
+    
+    if (colorCode =="Use All White Background Colors") {
+        red1 = green2 = blue3 = 255 ;
+        green1 = blue2 = red3 = 255 ;
+        blue1 = red2 = green3 = 255 ;
+
+
+        color1 = "rgba(" + red1 + "," + green1 + "," + blue1 + ",1)";
+        color2 = "rgba(" + red2 + "," + green2 + "," + blue2 + ",1)";
+        color3 = "rgba(" + red3 + "," + green3 + "," + blue3 + ",1)";
+
+        warrayColor = [ color1, color2, color3] ;
+
+      }
+    
     if (colorCode =="Generate 3 Random RGB Triad Colors") {
         red1 = green2 = blue3 = randnumberRed ;
         green1 = blue2 = red3 = randnumberGreen ;
@@ -415,8 +430,8 @@ img.footer {
           <td>
       <label for="textAlignment">Text Alignment</label>
          <select id="textAlignment" name="textAlignment">
-           <option value="left" selected>Left</option>
-           <option value="center">Center</option>
+           <option value="left">Left</option>
+           <option value="center" selected>Center</option>
            <option value="right">Right</option>
          </select>
 
@@ -510,10 +525,10 @@ img.footer {
                <option value="100">100</option>
                <option value="200">200</option>
                <option value="300">300</option>
-               <option value="400" selected>400</option>
+               <option value="400">400</option>
                <option value="500">500</option>
                <option value="600">600</option>
-               <option value="700">700</option>
+               <option value="700" selected>700</option>
                <option value="800">800</option>
                <option value="900">900</option>
             </select>
@@ -522,8 +537,8 @@ img.footer {
         <td>
           <label for="textColor">Font Color</label>
              <select id="textColor" name="textColor">
-               <option value="white" selected>White</option>
-               <option value="black">Black</option>
+               <option value="white">White</option>
+               <option value="black" selected>Black</option>
                <option value="red">Red</option>
                <option value="green">Green</option>
                <option value="blue">Blue</option>
@@ -567,7 +582,8 @@ img.footer {
 
 <label for="colorCode"><strong>Which colors to use?</strong> (Top 2 Colors Will Be Used For Gradient)</label>
     <select id="colorCode" name="colorCode">
-       <option value='Generate 5 Random Colors' selected>Generate 5 Totally Random Colors</option>
+       <option value='Use All White Background Colors' selected>Use All White Background Colors</option>
+       <option value='Generate 5 Random Colors'>Generate 5 Totally Random Colors</option>
        <option value='Generate 3 Random RGB Triad Colors'>Generate 3 Random RGB Triad Colors</option>
        <option value='Use Following Colors from Color Array List'>Use Following Colors from Color Array List</option>
     </select>

@@ -118,7 +118,7 @@
   </table>
 
   <div class="mui-textfield">
-    <input type="url" id="imageUrl" value="http://www.MyGingerGarlicKitchen.com/your-recipe-IMAGE-url" required>
+    <input type="url" id="imageUrl" value="https://www.MyGingerGarlicKitchen.com/your-recipe-IMAGE-url" required>
     <label>Featured image URL</label>
   </div>
 
@@ -187,33 +187,33 @@
 
   <div class="mui-textfield mui-textfield--float-label">
     <textarea  id="recipeInstructions" rows="10" required></textarea>
-    <label>Recipe instructions (Enter one ingredient per line. HTML tags allowed.) (*required)</label>
+    <label>Recipe instructions (Enter one how-to step per line. HTML tags allowed.) (*required)</label>
   </div>
 
   <div class="mui-textfield">
     <textarea  id="recipeNotes"></textarea>
     <label>Recipe notes</label>
   </div>
-
-  <div class="mui-textfield">
-    <input type="url" id="recipeUrl" value="http://www.MyGingerGarlicKitchen.com/your-recipe-URL" required>
+ 
+ <div class="mui-textfield">
+    <input type="url" id="recipeUrl" value="https://www.MyGingerGarlicKitchen.com/your-recipe-URL" required>
     <label>Recipe URL (*required)</label>
   </div>
-
-
-  <table width="100%">
+     
+          
+<table width="100%">
   <tr><td>
   <div class="mui-textfield">
     <input type="text" id="recipeAuthor" value="Anupama Paliwal" required>
     <label>Recipe Author (*required)</label>
   </div>
-</td>
+      </td>
 
-<td>
+      <td>
 
 <!-- Generating the whole date input block by javascript's automatic calculation to today. -->
-<span id="dateToday"></span>
-      <script>
+    <span id="dateToday"></span>
+       <script>
         function showToday() {
             var utc = new Date().toJSON().slice(0,10);
             document.getElementById("dateToday").innerHTML = "<div class=\"mui-textfield\"><input type=\"text\" id=\"datePublished\" value=" + utc + " required><label>Recipe publishing date as YYYY-MM-DD (*required)</label></div>";
@@ -226,6 +226,20 @@
 </table>
 
 
+<!-- BEGIN: Google markup structure - ADDED after Google's recipe change in May 2018 -->
+
+      <div class="mui-textfield">
+        <textarea  id="recipeGoogleKeywords" rows="2" required></textarea>
+        <label>Recipe Keywords, separated by comma (*required)</label>
+      </div>
+
+ 
+      <div class="mui-textfield">
+        <input type="text" id="recipeVideoYoutubeURLid" value="XXXXX" required>
+        <label>Youtube Video: Recipe Video ID (*required) // Find at <a href='https://www.youtube.com/user/anupamabhishek/'>MGGK Youtube Channel</a>)</label>
+      </div>
+
+<!-- END: Google markup structure - ADDED after Google's recipe change in May 2018 -->          
 
 
 
@@ -247,15 +261,21 @@
       <legend><i class="material-icons">code</i> HTML Preview + Markup Code</legend>
       <h4>Generated recipe markup code for copying would appear below the preview block.</h4>
 
-<!-- HTML Preview of the Recipe code from all the entered recipe details will appear below. -->
-<span id="generatedRecipeMarkupPreview"></span>
+        <!-- HTML Preview of the Youtube Video details entered will appear below. -->
+        <h4>VIDEO DETAILS:</h4>  
+        <span id="generatedYoutubeVideoPreview"></span>
 
-<hr>
+        <hr>
 
-<h4><strong>Copy the JSON+LD code below, and paste to your wordpress Custom_Fields.</strong></h4>
-<textarea id="final_LDJSON_code_Printing" rows="20" style='width: 100%; border: 5px double #cd1d62;'></textarea>
+        <!-- HTML Preview of the Recipe code from all the entered recipe details will appear below. -->        
+        <span id="generatedRecipeMarkupPreview"></span>
 
-<hr>
+        <hr>
+
+        <h4><strong>Copy the JSON+LD code below, and paste to your wordpress Custom_Fields.</strong></h4>
+        <textarea id="final_LDJSON_code_Printing" rows="20" style='width: 100%; border: 5px double #cd1d62;'></textarea>
+
+        <hr>
 
 <!-- Generated code from all the entered recipe details will appear below. -->
 <h4><strong>Copy the HTML code below, and paste to your webpage.</strong></h4>

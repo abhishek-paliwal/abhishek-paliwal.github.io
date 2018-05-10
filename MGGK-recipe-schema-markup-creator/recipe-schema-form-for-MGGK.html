@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MGGK Recipe Schema Maker</title>
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="static/mui.min.css" rel="stylesheet" type="text/css" />
     <link href="static/style.css" rel="stylesheet" type="text/css" />
@@ -24,7 +27,7 @@
         <li><strong><a href="http://abhishekpali.us/google-strtest" target="_blank">Google Recipe Code Testing</a></strong></li>
         <li><strong><a href="https://developers.google.com/search/docs/data-types/recipe" target="_blank">Google Recipe LD-JSON Markup</a></strong></li>
 
-          
+
         <li>
           <strong>Dropdown <i class="material-icons">arrow_downward</i></strong>
           <ul>
@@ -194,13 +197,13 @@
     <textarea  id="recipeNotes"></textarea>
     <label>Recipe notes</label>
   </div>
- 
+
  <div class="mui-textfield">
     <input type="url" id="recipeUrl" value="https://www.MyGingerGarlicKitchen.com/your-recipe-URL" required>
     <label>Recipe URL (*required)</label>
   </div>
-     
-          
+
+
 <table width="100%">
   <tr><td>
   <div class="mui-textfield">
@@ -233,13 +236,13 @@
         <label>Recipe Keywords, separated by comma (*required)</label>
       </div>
 
- 
+
       <div class="mui-textfield">
         <input type="text" id="recipeVideoYoutubeURLid" value="XXXXX" required>
-        <label>Youtube Video: Recipe Video ID (*required) // Find at <a href='https://www.youtube.com/user/anupamabhishek/'>MGGK Youtube Channel</a>)</label>
+        <label>Youtube Video: Recipe Video ID (*required) // Find at <a href='https://www.youtube.com/user/anupamabhishek/' target="_blank">MGGK Youtube Channel</a>)</label>
       </div>
 
-<!-- END: Google markup structure - ADDED after Google's recipe change in May 2018 -->          
+<!-- END: Google markup structure - ADDED after Google's recipe change in May 2018 -->
 
 
 
@@ -262,12 +265,12 @@
       <h4>Generated recipe markup code for copying would appear below the preview block.</h4>
 
         <!-- HTML Preview of the Youtube Video details entered will appear below. -->
-        <h4>VIDEO DETAILS:</h4>  
+        <h4>VIDEO DETAILS:</h4>
         <span id="generatedYoutubeVideoPreview"></span>
 
         <hr>
 
-        <!-- HTML Preview of the Recipe code from all the entered recipe details will appear below. -->        
+        <!-- HTML Preview of the Recipe code from all the entered recipe details will appear below. -->
         <span id="generatedRecipeMarkupPreview"></span>
 
         <hr>

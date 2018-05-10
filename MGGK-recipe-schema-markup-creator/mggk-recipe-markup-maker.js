@@ -1,4 +1,4 @@
-    function showInput() {
+function showInput() {
         recipeName  = document.getElementById("recipeName").value;
         recipeDescription  = document.getElementById("recipeDescription").value;
               recipeDescription = recipeDescription.replace(/\n/g, "&lt;br /&gt;<br>");
@@ -95,6 +95,31 @@
         recipeUrl = document.getElementById("recipeUrl").value.replace(/ /g, "");
         recipeAuthor = document.getElementById("recipeAuthor").value;
         datePublished = document.getElementById("datePublished").value.replace(/ /g, "");
+    
+
+/************** RECIPE VIDEO and KEYWORDS BLOCK BEGIN ******/
+        
+        recipeGoogleKeywords = document.getElementById("recipeGoogleKeywords").value ;
+    
+        recipeVideoYoutubeURLid = document.getElementById("recipeVideoYoutubeURLid").value.replace(/ /g, "");
+                
+            recipeVideoYoutubeURLid_url = "https://youtu.be/" + recipeVideoYoutubeURLid ;
+            recipeVideoYoutubeURLid_embed = "https://www.youtube.com/embed/" + recipeVideoYoutubeURLid ;
+            recipeVideoYoutubeURLid_thumb = "https://i.ytimg.com/vi/" + recipeVideoYoutubeURLid + "/maxresdefault.jpg" ;
+    
+                All_video_related_content = "<strong>Youtube Video URL:</strong> " + "<a href='" + recipeVideoYoutubeURLid_url + "'>" + recipeVideoYoutubeURLid_url + "</a>" +
+                                            "<br><strong>Video Embed URL:</strong> " + "<a href=" + recipeVideoYoutubeURLid_embed + ">" + recipeVideoYoutubeURLid_embed + "</a>" +
+                                            "<br><strong>Video Thumbnail 1:</strong> " + "<a href=" + recipeVideoYoutubeURLid_thumb + ">" + recipeVideoYoutubeURLid_thumb + "</a>" + 
+                                            "<br><strong>Video Thumbnail 2:</strong> " + "<a href=" + imageUrl + ">" + imageUrl + "</a>" ; 
+    
+                
+                /******* Writing this code content to the specified element on the main HTML page ********/
+                document.getElementById('generatedYoutubeVideoPreview').innerHTML = All_video_related_content ;
+    
+    
+/************** RECIPE VIDEO and KEYWORDS BLOCK END ******/
+
+
 
 /********** Assembling the BIG BIG RECIPE code from all the values above **********/
 
@@ -250,7 +275,21 @@ final_LDJSON_code = "<script type=\"application/ld+json\">" +
 "\n   \"name\": \"" + recipeAuthor + "\", " +
 "\n   \"brand\": \"My Ginger Garlic Kitchen\", " +
 "\n   \"url\": \"http://www.MyGingerGarlicKitchen.com\" " +
-"\n   } " +
+"\n   }, " +
+"\n   \"keywords\": \"" + recipeGoogleKeywords + "\", " +
+"\n   \"video\": [" +
+"\n     {" +
+"\n     \"name\": \"" + recipeName + "\"," +
+"\n     \"description\": \"" + recipeDescription + "\"," +
+"\n     \"thumbnailUrl\": [" +
+"\n       \"" + recipeVideoYoutubeURLid_thumb + "\"," +
+"\n       \"" + imageUrl + "\" " +
+"\n       ]," +
+"\n     \"contentUrl\": \"" + recipeVideoYoutubeURLid_url + "\"," +
+"\n     \"embedUrl\": \"" + recipeVideoYoutubeURLid_embed + "\"," +
+"\n     \"uploadDate\": \"" + datePublished + "\" " +
+"\n    }" +
+"\n   ]" + 
 "\n } " +
 "\n </script>" ;
 

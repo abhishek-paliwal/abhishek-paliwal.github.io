@@ -214,7 +214,7 @@ NewCodeContent ="\n <!-- HTML RECIPE CODE BLOCK BELOW THIS --> \n" +
 "\n <!-- HTML RECIPE CODE BLOCK ABOVE THIS --> \n" ;
 
 /******* Writing this code content to the specified element on the main HTML page ********/
-        document.getElementById('generatedRecipeMarkup').innerHTML = "<textarea rows='40' style='width: 100%; border: 5px double #3498db;'>" + NewCodeContent + "</textarea>" ;
+        document.getElementById('generatedRecipeMarkup').innerHTML = NewCodeContent;
 
         /******* Writing this code content to the specified element on the main HTML page ********/
         document.getElementById('generatedRecipeMarkupPreview').innerHTML = NewCodeContent ;
@@ -296,13 +296,7 @@ final_LDJSON_code = "<script type=\"application/ld+json\">" +
 /**** Printing JSON-LD Values ****/
 JSONLDrecipeCodePrefix = "\n<!-- JSON+LD RECIPE SCHEMA BLOCK BELOW THIS -->\n" ;
 JSONLDrecipeCodeSuffix = "\n<!-- JSON+LD RECIPE SCHEMA BLOCK ABOVE THIS -->\n" ;
-document.getElementById('final_LDJSON_code_Printing').innerHTML = "<textarea rows='20' style='width: 100%; border: 5px double #cd1d62;'>" + JSONLDrecipeCodePrefix + final_LDJSON_code + JSONLDrecipeCodeSuffix + "</textarea>" ;
-
-
-/** TIME STAMP AND DATE AT EXECUTION **/
-var TODAY = new Date();
-document.getElementById('timeNow').innerHTML = TODAY ;
-document.getElementById('timeNow1').innerHTML = TODAY ;
+document.getElementById('final_LDJSON_code_Printing').innerHTML = JSONLDrecipeCodePrefix + final_LDJSON_code + JSONLDrecipeCodeSuffix ;
 
 /************************ CODE ENDS **************************************/
 }

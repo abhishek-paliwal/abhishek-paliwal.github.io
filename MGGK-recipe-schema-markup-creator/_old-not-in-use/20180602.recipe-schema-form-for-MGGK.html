@@ -168,7 +168,7 @@
 <table width="100%">
 <tr><td>
   <div class="mui-textfield">
-    <input type="text" id="nutritionCalories" value="5 calories" required>
+    <input type="text" id="nutritionCalories" value="0 calories" required>
     <label>Nutriton calories (*required; keep 0 calories if not sure)</label>
   </div>
 </td>
@@ -275,16 +275,14 @@
 
         <hr>
 
-        <h4><strong>Copy the JSON+LD code below, and paste to your wordpress Custom_Fields.</strong></h4>         
-        Updated: <span id="timeNow" style="color: blue;"></span><br><br>
-        <span id="final_LDJSON_code_Printing"></span>
+        <h4><strong>Copy the JSON+LD code below, and paste to your wordpress Custom_Fields.</strong></h4>
+        <textarea id="final_LDJSON_code_Printing" rows="20" style='width: 100%; border: 5px double #cd1d62;'></textarea>
 
         <hr>
 
 <!-- Generated code from all the entered recipe details will appear below. -->
 <h4><strong>Copy the HTML code below, and paste to your webpage.</strong></h4>
-        Updated: <span id="timeNow1" style="color: blue;"></span><br><br>
-        <span id="generatedRecipeMarkup"></span>
+        <textarea id="generatedRecipeMarkup" rows="40" style='width: 100%; border: 5px double #3498db;'></textarea>
 
 
    </div>

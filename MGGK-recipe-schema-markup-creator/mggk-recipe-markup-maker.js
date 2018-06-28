@@ -103,6 +103,15 @@ function showInput() {
 
         recipeVideoYoutubeURLid = document.getElementById("recipeVideoYoutubeURLid").value.replace(/ /g, "");
 
+        videoPresent = document.getElementById("videoPresent").value ;
+
+        if ( videoPresent == "YES" ) {
+
+            recipeNameVideo = recipeName ;
+            recipeDescriptionVideo = recipeDescription ;
+            datePublishedVideo = datePublished ;
+            imageUrlVideo = imageUrl ;
+
             recipeVideoYoutubeURLid_url = "https://youtu.be/" + recipeVideoYoutubeURLid ;
             recipeVideoYoutubeURLid_embed = "https://www.youtube.com/embed/" + recipeVideoYoutubeURLid ;
             recipeVideoYoutubeURLid_thumb = "https://i.ytimg.com/vi/" + recipeVideoYoutubeURLid + "/maxresdefault.jpg" ;
@@ -112,9 +121,26 @@ function showInput() {
                                             "<br><strong>Video Thumbnail 1:</strong> " + "<a href=" + recipeVideoYoutubeURLid_thumb + ">" + recipeVideoYoutubeURLid_thumb + "</a>" +
                                             "<br><strong>Video Thumbnail 2:</strong> " + "<a href=" + imageUrl + ">" + imageUrl + "</a>" ;
 
+        } else {
 
-                /******* Writing this code content to the specified element on the main HTML page ********/
-                document.getElementById('generatedYoutubeVideoPreview').innerHTML = All_video_related_content ;
+            recipeNameVideo = "" ;
+            recipeDescriptionVideo = "" ;
+            datePublishedVideo = "" ;
+            imageUrlVideo = "" ;
+
+            recipeVideoYoutubeURLid_url = "" ;
+            recipeVideoYoutubeURLid_embed = "" ;
+            recipeVideoYoutubeURLid_thumb = "" ;
+
+                All_video_related_content = "<strong>Youtube Video URL:</strong> " + "<a href='" + recipeVideoYoutubeURLid_url + "'>" + recipeVideoYoutubeURLid_url + "</a>" +
+                                            "<br><strong>Video Embed URL:</strong> " + "<a href=" + recipeVideoYoutubeURLid_embed + ">" + recipeVideoYoutubeURLid_embed + "</a>" +
+                                            "<br><strong>Video Thumbnail 1:</strong> " + "<a href=" + recipeVideoYoutubeURLid_thumb + ">" + recipeVideoYoutubeURLid_thumb + "</a>" +
+                                            "<br><strong>Video Thumbnail 2:</strong> " + "<a href=" + imageUrl + ">" + imageUrl + "</a>" ;
+
+        }
+
+        /******* Writing this code content to the specified element on the main HTML page ********/
+        document.getElementById('generatedYoutubeVideoPreview').innerHTML = All_video_related_content ;
 
 
 /************** RECIPE VIDEO and KEYWORDS BLOCK END ******/
@@ -249,8 +275,8 @@ final_LDJSON_code = "<script type=\"application/ld+json\">" +
 "\n   \"@type\": \"Recipe\"," +
 "\n   \"name\": \"" + recipeName + "\"," +
 "\n     \"image\": [" +
-"\n       \"" + recipeVideoYoutubeURLid_thumb + "\"," +
-"\n       \"" + imageUrl + "\" " +
+"\n       \"" + imageUrl + "\"," +
+"\n       \"" + recipeVideoYoutubeURLid_thumb + "\"" +
 "\n       ]," +
 "\n   \"description\": \"" + recipeDescription + "\"," +
 "\n   \"recipeIngredient\": [" + LDJSONrecipeIngredients + "]," +
@@ -282,15 +308,15 @@ final_LDJSON_code = "<script type=\"application/ld+json\">" +
 "\n   \"keywords\": \"" + recipeGoogleKeywords + "\", " +
 "\n   \"video\": [" +
 "\n     {" +
-"\n     \"name\": \"" + recipeName + "\"," +
-"\n     \"description\": \"" + recipeDescription + "\"," +
+"\n     \"name\": \"" + recipeNameVideo + "\"," +
+"\n     \"description\": \"" + recipeDescriptionVideo + "\"," +
 "\n     \"thumbnailUrl\": [" +
 "\n       \"" + recipeVideoYoutubeURLid_thumb + "\"," +
-"\n       \"" + imageUrl + "\" " +
+"\n       \"" + imageUrlVideo + "\" " +
 "\n       ]," +
 "\n     \"contentUrl\": \"" + recipeVideoYoutubeURLid_url + "\"," +
 "\n     \"embedUrl\": \"" + recipeVideoYoutubeURLid_embed + "\"," +
-"\n     \"uploadDate\": \"" + datePublished + "\" " +
+"\n     \"uploadDate\": \"" + datePublishedVideo + "\" " +
 "\n    }" +
 "\n   ]" +
 "\n } " +

@@ -59,8 +59,11 @@ function showInput() {
 /************** INGREDIENTS BLOCK CALCULATIONS BEGIN ******/
 
         recipeIngredients = document.getElementById("recipeIngredients").value;
-                recipeIngredients = recipeIngredients.replace(/</g, "&lt;"); /* replacing < html tags */
-                recipeIngredients = recipeIngredients.replace(/>/g, "&gt;"); /* replacing > html tags */
+
+                /* replacing < html tags */
+                /* recipeIngredients = recipeIngredients.replace(/</g, "&lt;"); */
+                /* replacing > html tags */
+                /* recipeIngredients = recipeIngredients.replace(/>/g, "&gt;"); */
 
                 arrayOfIngredients = recipeIngredients.split("\n");
 

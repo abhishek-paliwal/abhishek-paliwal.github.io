@@ -172,7 +172,7 @@ NewCodeContent ="\n <!-- HTML RECIPE CODE BLOCK BELOW THIS --> \n" +
 "\n                             (Rating: <span itemprop='ratingValue'>" + ratingValue + "</span> from <span itemprop='ratingCount'>" + ratingCount + "</span> reviews)" +
 "\n                         </div>" +
 "\n <!-- /------------/ -->" +
-"\n                         <h3>INGREDIENTS</h3>" + recipeIngredients + "<hr>" +
+"\n                         <h4>INGREDIENTS</h4>" + recipeIngredients + "<hr>" +
 "\n <!-- /------------/ -->" +
 "\n             </div><!-- recipe left flexbox ends -->" +
 "\n <!-- /------------/ -->" +
@@ -208,7 +208,7 @@ NewCodeContent ="\n <!-- HTML RECIPE CODE BLOCK BELOW THIS --> \n" +
 "\n                         <div itemprop='nutrition' itemscope itemtype='http://schema.org/NutritionInformation'>" +
 "\n                             <strong>Nutrition Info:</strong> <span itemprop='calories'>" + nutritionCalories + "</span> // <strong>Servings:</strong> <span itemprop='servingSize'>" + nutritionServingSize + "</span>" + "</div>" +
 "\n <!-- /------------/ -->" +
-"\n                         <h3>INSTRUCTIONS:</h3>" +
+"\n                         <h4>INSTRUCTIONS:</h4>" +
 "\n                         <div itemprop='recipeInstructions'>" + recipeInstructions + "</div>" +
 "\n <!-- /------------/ -->" +
 "\n                         <hr>" +

@@ -71,8 +71,18 @@ function showInput() {
                 LDJSONingr = "";
 
                 for(var i = 0;i < arrayOfIngredients.length;i++){
+
                     //code here using arrayOfIngredients[i] which will give you each line
-                    ingr += "&bull; <span itemprop='recipeIngredient'>" + arrayOfIngredients[i] + "</span><br>";
+
+                        /*** Checks if the line starts with a '<' (means it's starts with something like <h4>, etc.) **/
+                        var tagORnot = arrayOfIngredients[i].startsWith("<") ;
+
+                        if ( tagORnot ) {
+                            ingr += "<span itemprop='recipeIngredient'>" + arrayOfIngredients[i] + "</span>";
+                        } else {
+                            ingr += "&bull; <span itemprop='recipeIngredient'>" + arrayOfIngredients[i] + "</span><br>";
+                        }
+
                     LDJSONingr += "\"" + arrayOfIngredients[i] + "\"," ;
                 }
                 recipeIngredients = "<p>" + ingr + "</p>";

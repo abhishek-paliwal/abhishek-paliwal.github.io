@@ -23,7 +23,7 @@
       <div id="sidedrawer-brand" class="mui--appbar-line-height">MGGK.EU</div>
       <div class="mui-divider"></div>
       <ul>
-        <li><strong><a href="http://abhishekpali.us/wolfalpha-nutri" target="_blank">Nutrtion Info - Wolfram</a></strong></li>
+        <li><strong><a href="http://abhishekpali.us/wolfalpha-nutri" target="_blank">Nutrition Info - Wolfram</a></strong></li>
         <li><strong><a href="http://abhishekpali.us/google-strtest" target="_blank">Google Recipe Code Testing</a></strong></li>
         <li><strong><a href="https://developers.google.com/search/docs/data-types/recipe" target="_blank">Google Recipe LD-JSON Markup</a></strong></li>
 
@@ -69,15 +69,7 @@
   <strong>Just make sure that you have filled in all the fields correctly before pressing the button.</strong>
 
 
-  <div class="mui-textfield mui-textfield--float-label">
-    <input type="text" id="recipeName" required>
-    <label>Recipe name (*required)</label>
-  </div>
-
-  <div class="mui-textfield mui-textfield--float-label">
-    <textarea  id="recipeDescription" required></textarea>
-    <label>Recipe description (*required)</label>
-  </div>
+  
 
   <table width="100%">
   <tr><td>
@@ -120,10 +112,7 @@
   </td></tr>
   </table>
 
-  <div class="mui-textfield">
-    <input type="url" id="imageUrl" value="https://www.MyGingerGarlicKitchen.com/your-recipe-IMAGE-url" required>
-    <label>Featured image URL</label>
-  </div>
+  
 
   <table width="100%">
   <tr><td>
@@ -181,7 +170,7 @@
 </tr>
 </table>
 
-<hr style="background-color: #CB2363; height:10px; border-radius: 5px;">
+<hr style="background-color: green; height:10px; border-radius: 5px;">
 
   <div class="mui-textfield mui-textfield--float-label">
     <textarea id="recipeIngredients" rows="10" required></textarea>
@@ -230,10 +219,25 @@
 </table>
 
 
-<hr style="background-color: #CB2363; height:10px; border-radius: 5px;">
+<hr style="background-color: red ; height:10px; border-radius: 5px;">
 
 
 <!-- BEGIN: Google markup structure - ADDED after Google's recipe change in May 2018 -->
+          
+       <div class="mui-textfield mui-textfield--float-label">
+            <input type="text" id="recipeName" required>
+            <label>Recipe name (*required)</label>
+        </div>
+
+      <div class="mui-textfield mui-textfield--float-label">
+        <textarea  id="recipeDescription" required></textarea>
+        <label>Recipe description (*required)</label>
+      </div>   
+          
+        <div class="mui-textfield">
+            <input type="url" id="imageUrl" value="https://www.MyGingerGarlicKitchen.com/your-recipe-IMAGE-url" required>
+            <label>Featured image URL</label>
+        </div>
 
       <div class="mui-textfield">
         <textarea  id="recipeGoogleKeywords" rows="2" required></textarea>

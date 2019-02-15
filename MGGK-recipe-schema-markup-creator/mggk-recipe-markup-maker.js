@@ -168,8 +168,7 @@ NewCodeContent ="\n <!-- HTML RECIPE CODE BLOCK BELOW THIS --> \n" +
 "\n <div id='recipe-here'></div>" +
 "\n <!-- /------------/ -->" +
 "\n <div id='recipe-print-block' style='line-height: 1.1; border: 1px dashed black; padding: 10px; font-size: 14px; font-family: sans-serif; '>" +
-"\n     <div itemscope itemtype='http://schema.org/Recipe'>" +
-"\n         [print-me target='div#recipe-print-block']" +
+"\n     <div>" +
 "\n <!-- /------------/ -->" +
 "\n         <h3><span itemprop='name'>" + recipeName + "</span> [RECIPE]</h3>" +
 "\n         <span itemprop='description'>" + recipeDescription + "</span>" +
@@ -180,7 +179,7 @@ NewCodeContent ="\n <!-- HTML RECIPE CODE BLOCK BELOW THIS --> \n" +
 "\n <!-- /------------/ -->" +
 "\n                         <img itemprop='image' src='" + imageUrl + "' width='150px'>" +
 "\n <!-- /------------/ -->" +
-"\n                         <div itemprop='aggregateRating' itemscope itemtype='http://schema.org/AggregateRating'>" +
+"\n                         <div itemprop='aggregateRating'>" +
 "\n                             <span style='color: #cd1d63;'>&hearts; &hearts; &hearts; &hearts; &hearts;</span>" +
 "\n                             (Rating: <span itemprop='ratingValue'>" + ratingValue + "</span> from <span itemprop='ratingCount'>" + ratingCount + "</span> reviews)" +
 "\n                         </div>" +
@@ -218,7 +217,7 @@ NewCodeContent ="\n <!-- HTML RECIPE CODE BLOCK BELOW THIS --> \n" +
 "\n <!-- /------------/ -->" +
 "\n                         <hr>" +
 "\n <!-- /------------/ -->" +
-"\n                         <div itemprop='nutrition' itemscope itemtype='http://schema.org/NutritionInformation'>" +
+"\n                         <div itemprop='nutrition'>" +
 "\n                             <strong>Nutrition Info:</strong> <span itemprop='calories'>" + nutritionCalories + "</span> // <strong>Servings:</strong> <span itemprop='servingSize'>" + nutritionServingSize + "</span>" + "</div>" +
 "\n <!-- /------------/ -->" +
 "\n                         <h4>INSTRUCTIONS:</h4>" +

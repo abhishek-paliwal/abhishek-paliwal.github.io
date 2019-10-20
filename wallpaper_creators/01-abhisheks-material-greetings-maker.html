@@ -78,6 +78,17 @@
       <form class="col s12">
 
         <div class="row">
+
+          <div class="input-field col s6">
+            <input id="divWidth" type="text" class="validate" value="400">
+            <label for="divWidth">Div Width (in px)</label>
+          </div>
+
+          <div class="input-field col s6">
+            <input id="divHeight" type="text" class="validate" value="350">
+            <label for="divHeight">Div Height (in px)</label>
+          </div>
+
           <div class="input-field col s6">
             <input id="headingName" type="text" class="validate">
             <label for="headingName">Heading</label>
@@ -222,6 +233,13 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="customFooterText" class="materialize-textarea" length="200">www.MyGingerGarlicKitchen.com</textarea>
+              <label for="customFooterText">Enter Custom Footer Text Here</label>
+            </div>
+        </div>
+
 
       </form>
 
@@ -244,6 +262,11 @@
     <div class="row center">
 
         <h6 class="header center light-blue-text">Your Designs Will Appear Below</h6>
+
+          <p>Design with specified width and height values</p>
+          <br><span id="randcolorRGBAmggk"></span>
+
+          <p>Designs without specified width and height values</p>
 
           <br><span id="randcolorRGBA"></span>
           <br><br><span id="randcolorRGBAtextBorder"></span>

@@ -8,6 +8,11 @@ function randRGBA(min,max)
     colorRGBA = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 1)";
 
 /* Getting the text from the form */
+
+    divWidth = document.getElementById("divWidth").value ;
+    divHeight = document.getElementById("divHeight").value ;
+    customFooterText = document.getElementById("customFooterText").value ;
+
     headingName = document.getElementById("headingName").value ;
 
     fontFamily = document.getElementById("fontFamily").value ;
@@ -75,5 +80,8 @@ document.getElementById("randcolorRGBAtextBorder").innerHTML = "<div class='pali
 
 /************ Printing out the codes for the random colors generated ********/
 document.getElementById("colorPrinting").innerHTML = "<span style='color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</span>";
+
+/************ Printing Special block with specifications defined for Div width and Div height **********/
+document.getElementById("randcolorRGBAmggk").innerHTML = "<div class='pali' style='font-family: " + fontFamily + ";font-size:" + textSize + "px ;background-color:" + colorRGBA + "; width:" + divWidth + "px ; height:" + divHeight + "px ;'>" + rulerTop + quoteText + rulerBottom + "<p style='font-size: 16px; font-family: sans-serif; letter-spacing: 1px;'>" + customFooterText + "</p>" + logoImageUrl + "</div>";
 
 }

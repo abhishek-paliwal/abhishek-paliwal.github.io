@@ -82,6 +82,6 @@ document.getElementById("randcolorRGBAtextBorder").innerHTML = "<div class='pali
 document.getElementById("colorPrinting").innerHTML = "<span style='color: " + colorRGBA + ";'>Chosen Random Color: " + colorRGBA + "</span>";
 
 /************ Printing Special block with specifications defined for Div width and Div height **********/
-document.getElementById("randcolorRGBAmggk").innerHTML = "<div class='pali' style='font-family: " + fontFamily + ";font-size:" + textSize + "px ;background-color:" + colorRGBA + "; width:" + divWidth + "px ; height:" + divHeight + "px ;'>" + rulerTop + quoteText + rulerBottom + "<p style='font-size: 16px; font-family: sans-serif; letter-spacing: 1px;'>" + customFooterText + "</p>" + logoImageUrl + "</div>";
+document.getElementById("randcolorRGBAmggk").innerHTML = "<div class='pali' style='font-family: " + fontFamily + ";font-size:" + textSize + "px ;background-color:" + colorRGBA + "; width:" + divWidth + "px ; height:" + divHeight + "px ;'>" + rulerTop + quoteText + rulerBottom + "<p style='font-size: 17px; font-family: sans-serif; letter-spacing: 1px;'>" + customFooterText + "</p>" + logoImageUrl + "</div>";
 
 }

@@ -1,0 +1,209 @@
+[{
+  "elementType": "INPUT",
+  "elementName": "JsonTemplateFileUrl",
+  "elementID": "JsonTemplateFileUrl",
+  "elementValue": "https://abhishek-paliwal.github.io/wallpaper_creators/JSON-templates-for-design/00-default-template.json"
+}, {
+  "elementType": "INPUT",
+  "elementName": "bannerWidth",
+  "elementID": "bannerWidth",
+  "elementValue": "564"
+}, {
+  "elementType": "INPUT",
+  "elementName": "bannerHeight",
+  "elementID": "bannerHeight",
+  "elementValue": "1692"
+}, {
+  "elementType": "INPUT",
+  "elementName": "h3Margin",
+  "elementID": "h3Margin",
+  "elementValue": "0"
+}, {
+  "elementType": "INPUT",
+  "elementName": "textSize",
+  "elementID": "textSize",
+  "elementValue": "20"
+}, {
+  "elementType": "INPUT",
+  "elementValue": "center"
+}, {
+  "elementType": "SELECT",
+  "elementName": "textAlignment",
+  "elementID": "textAlignment",
+  "elementValue": "center"
+}, {
+  "elementType": "INPUT",
+  "elementName": "lineHeight",
+  "elementID": "lineHeight",
+  "elementValue": "1"
+}, {
+  "elementType": "INPUT",
+  "elementName": "letterSpacing",
+  "elementID": "letterSpacing",
+  "elementValue": "0"
+}, {
+  "elementType": "INPUT",
+  "elementName": "backgroundOpacity",
+  "elementID": "backgroundOpacity",
+  "elementValue": "0.9"
+}, {
+  "elementType": "INPUT",
+  "elementValue": "Bebas Neue"
+}, {
+  "elementType": "SELECT",
+  "elementName": "fontFamily",
+  "elementID": "fontFamily",
+  "elementValue": " \"bebas-neue\", sans-serif"
+}, {
+  "elementType": "INPUT",
+  "elementValue": "Black"
+}, {
+  "elementType": "SELECT",
+  "elementName": "fontColor",
+  "elementID": "fontColor",
+  "elementValue": "black"
+}, {
+  "elementType": "INPUT",
+  "elementValue": "400"
+}, {
+  "elementType": "SELECT",
+  "elementName": "fontWeight",
+  "elementID": "fontWeight",
+  "elementValue": "400"
+}, {
+  "elementType": "INPUT",
+  "elementName": "L_logoImageUrl",
+  "elementID": "logoImageUrl",
+  "elementValue": "ap1"
+}, {
+  "elementType": "INPUT",
+  "elementName": "logoImageWidth",
+  "elementID": "logoImageWidth",
+  "elementValue": "80px"
+}, {
+  "elementType": "INPUT",
+  "elementName": "colorCode",
+  "elementID": "colorCode",
+  "elementValue": "Surprise Me"
+}, {
+  "elementType": "INPUT",
+  "elementName": "UseGradientBackground",
+  "elementID": "UseGradientBackground",
+  "elementValue": ""
+}, {
+  "elementType": "TEXTAREA",
+  "elementName": "T_headingName",
+  "elementID": "headingName",
+  "elementValue": "<div style='color: blue ; font-size: 70px ; width: 100%; height: 100%;'>\n<div class='perfectMiddleText'>Halwa Chana Poori – Ashtami Prashad</div>\n</div>"
+}, {
+  "elementType": "TEXTAREA",
+  "elementName": "S_subTitle",
+  "elementID": "subTitle",
+  "elementValue": "<div style='font-family: sans-serif ; background-color: rgba(0,0,0,0.3) ; width:100%; height:100%; color: white;'><div class='perfectMiddleText'>VEGAN | VEGETARIAN</div></div>"
+}, {
+  "elementType": "TEXTAREA",
+  "elementName": "W_whatItIs",
+  "elementID": "whatItIs",
+  "elementValue": "<div style='font-family: sans-serif ; background-color: rgba(0,0,0,0.0) ; width: 100%; height: 100%; color:black'><div class='perfectMiddleText'>www.MyGingerGarlicKitchen.com</div></div>"
+}, {
+  "elementType": "INPUT",
+  "elementName": "X_dividerText",
+  "elementID": "dividerText",
+  "elementValue": "<div style='width: 100% ; height: 100% ;'>   </div>"
+}, {
+  "elementType": "INPUT",
+  "elementName": "Y_buttonText",
+  "elementID": "buttonText",
+  "elementValue": ""
+}, {
+  "elementType": "INPUT",
+  "elementName": "I_iconText",
+  "elementID": "iconText",
+  "elementValue": ""
+}, {
+  "elementType": "TEXTAREA",
+  "elementName": "J_JText",
+  "elementID": "JText",
+  "elementValue": "<div style='font-family: serif ; width: 100% ; height: 100% ; line-height:1.1; color: black;'><div class='perfectMiddleText'>This is some long text. This is some long test. This is some long text. This is some long test. This is some long text. This is some long test.</div></div>"
+}, {
+  "elementType": "TEXTAREA",
+  "elementName": "K_KText",
+  "elementID": "KText",
+  "elementValue": ""
+}, {
+  "elementType": "TEXTAREA",
+  "elementName": "M_MText",
+  "elementID": "MText",
+  "elementValue": ""
+}, {
+  "elementType": "TEXTAREA",
+  "elementName": "N_NText",
+  "elementID": "NText",
+  "elementValue": ""
+}, {
+  "elementType": "INPUT",
+  "elementName": "A_ImageUrl1",
+  "elementID": "ImageUrl1",
+  "elementValue": "http://www.mygingergarlickitchen.com/wp-content/uploads/2017/04/03-food-photography-of-tinified-by-my-ginger-garlic-kitchen.jpg"
+}, {
+  "elementType": "INPUT",
+  "elementName": "B_ImageUrl2",
+  "elementID": "ImageUrl2",
+  "elementValue": "http://www.mygingergarlickitchen.com/wp-content/uploads/2017/04/04-food-styling-of-tinified-by-anupama-paliwal.jpg"
+}, {
+  "elementType": "INPUT",
+  "elementName": "C_ImageUrl3",
+  "elementID": "ImageUrl3",
+  "elementValue": ""
+}, {
+  "elementType": "INPUT",
+  "elementName": "D_ImageUrl4",
+  "elementID": "ImageUrl4",
+  "elementValue": ""
+}, {
+  "elementType": "INPUT",
+  "elementName": "E_ImageUrl5",
+  "elementID": "ImageUrl5",
+  "elementValue": ""
+}, {
+  "elementType": "INPUT",
+  "elementName": "F_ImageUrl6",
+  "elementID": "ImageUrl6",
+  "elementValue": ""
+}, {
+  "elementType": "INPUT",
+  "elementName": "G_ImageUrl7",
+  "elementID": "ImageUrl7",
+  "elementValue": ""
+}, {
+  "elementType": "INPUT",
+  "elementName": "H_ImageUrl8",
+  "elementID": "ImageUrl8",
+  "elementValue": ""
+}, {
+  "elementType": "TEXTAREA",
+  "elementName": "FinalArrangement",
+  "elementID": "quoteText",
+  "elementValue": "40,A100\n9,T100\n6,J100\n3,S100\n2,W100\n40,B100"
+}, {
+  "elementType": "INPUT",
+  "elementValue": "NO"
+}, {
+  "elementType": "SELECT",
+  "elementName": "WannaSaveJsonFile",
+  "elementID": "WannaSaveJsonFile",
+  "elementValue": "YES"
+}, {
+  "elementType": "INPUT",
+  "elementValue": "mggk"
+}, {
+  "elementType": "SELECT",
+  "elementName": "jsonFileBrandName",
+  "elementID": "jsonFileBrandName",
+  "elementValue": "mggk"
+}, {
+  "elementType": "INPUT",
+  "elementName": "jsonFileKeyword",
+  "elementID": "jsonFileKeyword",
+  "elementValue": "3-pic-pinterest-collage"
+}]

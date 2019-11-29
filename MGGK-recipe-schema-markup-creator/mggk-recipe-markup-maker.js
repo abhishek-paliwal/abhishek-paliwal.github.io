@@ -127,7 +127,7 @@ function showInput() {
 
             recipeVideoYoutubeURLid_url = "https://youtu.be/" + recipeVideoYoutubeURLid ;
             recipeVideoYoutubeURLid_embed = "https://www.youtube.com/embed/" + recipeVideoYoutubeURLid ;
-            recipeVideoYoutubeURLid_thumb = "https://i.ytimg.com/vi/" + recipeVideoYoutubeURLid + "/maxresdefault.jpg" ;
+            recipeVideoYoutubeURLid_thumb = "https://www.mygingergarlickitchen.com/wp-content/youtube_video_cover_images/" + recipeVideoYoutubeURLid + ".jpg" ;
 
                 All_video_related_content = "<strong>Youtube Video URL:</strong> " + "<a href='" + recipeVideoYoutubeURLid_url + "'>" + recipeVideoYoutubeURLid_url + "</a>" +
                                             "<br><strong>Video Embed URL:</strong> " + "<a href=" + recipeVideoYoutubeURLid_embed + ">" + recipeVideoYoutubeURLid_embed + "</a>" +

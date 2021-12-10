@@ -14,19 +14,19 @@ function randRGBA(min,max)
 
         logoImageUrl = document.getElementById("logoImageUrl").value ;
                 if (logoImageUrl == "ap1") {
-                    logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Abhishek-Paliwal-125-Blacknwhite-Circle-footername.png";
+                    logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Pali-125-Blacknwhite-Circle-Footername.png";
                 } else if (logoImageUrl == "ap2") {
-                  logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Abhishek-Paliwal-125-Circle-fullname.png";
+                  logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Pali-125-Circle-Fullname.png";
                 } else if (logoImageUrl == "ap3") {
                   logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Album-Cover-Abhishek-Paliwal-Lorez.jpg";
                 } else if (logoImageUrl == "ap4") {
-                  logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Signature-Stamp-Abhishek-Paliwal-Name-Logo-Wide-New-Dark.png";
+                  logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Signature-Stamp-Pali-Name-Logo-Wide-New-Dark.png";
                 } else if (logoImageUrl == "anu1") {
                   logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Black-White-Fullname.png";
                 } else if (logoImageUrl == "anu2") {
                   logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Colored-Fullname.png";
                 } else if (logoImageUrl == "ap0") {
-                  logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Abhishek-Name-Stamp-Gold.png";
+                  logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Pali-Name-Stamp-Gold.png";
                 } else if (logoImageUrl == "concepro1") {
                   logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/Concepro-Shadow.png";
                 } else if (logoImageUrl == "concepro2") {

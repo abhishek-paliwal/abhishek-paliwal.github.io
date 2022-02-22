@@ -60,7 +60,7 @@ function randRGBA(min,max)
         i=0;
         text ="";
         text1 ="";
-        //
+        // Reading each word
         for (i = 0; i < warr.length; i++) {
             remlength = 15 - warr[i].length;
             randstart = Math.floor((Math.random() * remlength) );
@@ -71,7 +71,7 @@ function randRGBA(min,max)
             ///////
             warr_letter_array = warr[i].split('') ;  
 
-            main_div_block = "<div style='margin: 3px; display: inline-flex ; width: 30px ; height: 30px; color: white; font-family: sans-serif; align-items: center; vertical-align: middle; justify-content: center; line-height: 30px ; font-weight: bold ; background-color: " 
+            main_div_block = "<div style='margin: 1px; display: inline-flex ; width: 30px ; height: 30px; color: white; font-family: sans-serif; align-items: center; vertical-align: middle; justify-content: center; line-height: 30px ; font-weight: bold ; background-color: " 
             
             wordle_yellow = "#c9b458" ; 
             wordle_green = "#6aaa64" ;
@@ -108,7 +108,7 @@ function randRGBA(min,max)
                 if ( last_word_letter_array.includes(warr_letter_array[j]) ) {
                     console.log('Present: ' +  typeof(warr_letter_array[j]) + ' = ' + typeof(last_word_letter_array) ) ;
                     ////// Formatting for exact positional match for alphabet
-                    if (j === last_word_letter_array.indexOf(warr_letter_array[j]) ) {
+                    if ( warr_letter_array[j] === last_word_letter_array[j] ) {
                       text1 += style_green + warr_letter_array[j] + "</div>" ;
                     } else { // Formatting for non-positional match for alphabet
                       text1 += style_yellow + warr_letter_array[j] + "</div>" ;

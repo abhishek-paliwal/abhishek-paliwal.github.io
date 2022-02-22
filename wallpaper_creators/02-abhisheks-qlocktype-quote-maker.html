@@ -19,6 +19,16 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 <style>
+
+:root {
+  --wordle_yellow:#c9b458 ; 
+  --wordle_green: #6aaa64 ;
+  --wordle_darkgrey: #787c7e ;
+  --wordle_lightgrey: #c0c0c0 ;
+  --wordle_white: #ffffff ;
+  --wordle_border_color: #d3d6da ;
+}
+
 .pali {
 /* width: 500px; */
 padding: 5px;
@@ -57,6 +67,28 @@ font-size: 16px;
 line-height:1.5;
 text-align:center;
 }
+
+.wordletile {
+  margin: 1px; 
+  display: inline-flex ; 
+  width: 35px ; 
+  height: 35px; 
+  line-height: 35px ; 
+  color: white; 
+  font-family: sans-serif; 
+  align-items: center; 
+  vertical-align: middle; 
+  justify-content: center;
+  font-weight: bold ; 
+  background-color: var(--wordle_darkgrey) ;
+}
+
+.tile_wordle_green { background-color: var(--wordle_green) ; }
+.tile_wordle_yellow { background-color: var(--wordle_yellow) ; }
+.tile_wordle_white { background-color: var(--wordle_white) ; }
+.tile_wordle_lightgrey{ background-color: var(--wordle_lightgrey) ; }
+.tile_wordle_darkgrey{ background-color: var(--wordle_darkgrey) ; }
+.tile_wordle_border_color{ background-color: var(--wordle_white) ; border: 1px solid var(--wordle_border_color) ; }
 
 </style>
 

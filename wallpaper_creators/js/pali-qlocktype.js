@@ -5,8 +5,20 @@ function randRGBA(min,max)
       randnumberRed = Math.floor(Math.random()*(max-min+1)+min);
       randnumberGreen = Math.floor(Math.random()*(max-min+1)+min);
       randnumberBlue = Math.floor(Math.random()*(max-min+1)+min);
-
       colorRGBA = "rgba(" + randnumberRed + ", " + randnumberBlue +", "+ randnumberGreen + ", 1)";
+      //  
+      rand_hsl_hue1 = Math.floor(Math.random()*360) ;
+      rand_hsl_hue2 = rand_hsl_hue1 + 60 ;
+      rand_hsl_hue3 = rand_hsl_hue1 + 180 ;
+      rand_hsl_saturation_percent = 100 ;
+      rand_hsl_lightness_percentage = 50;
+      tmp_randomHSLcolor1 = "hsl(" + rand_hsl_hue1 + "," + rand_hsl_saturation_percent +"%, " + rand_hsl_lightness_percentage +"%)" ;
+      tmp_randomHSLcolor2 = "hsl(" + rand_hsl_hue2 + "," + rand_hsl_saturation_percent +"%, " + rand_hsl_lightness_percentage +"%)" ;
+      tmp_randomHSLcolor3 = "hsl(" + rand_hsl_hue3 + "," + rand_hsl_saturation_percent +"%, " + rand_hsl_lightness_percentage +"%)" ;
+
+      randomHSLcolor1 = "45deg , " + tmp_randomHSLcolor1 + ", " + tmp_randomHSLcolor2 ;
+      randomHSLcolor2 = "45deg , " + tmp_randomHSLcolor1 + ", " + tmp_randomHSLcolor3 ;
+
 
         /* Getting the text from the form */
 
@@ -60,6 +72,7 @@ function randRGBA(min,max)
         i=0;
         text ="";
         text1 ="";
+        text2 ="";
         // Reading each word
         for (i = 0; i < warr.length; i++) {
             remlength = 15 - warr[i].length;
@@ -85,6 +98,7 @@ function randRGBA(min,max)
               // Formatting for last word in array
               if ( i === warr.length -1 ) {
                 text1 += "<div class='wordletile tile_wordle_green'>" + warr_letter_array[j] + "</div>" ;
+                text2 += "<div class='wordletile' style='background: linear-gradient(" + randomHSLcolor1 + ") ;'>" + warr_letter_array[j] + "</div>" ;
               //console.log(warr_letter_array[j]) ;
               } else {
                 /* Check if current alphabet is present in last word of array, then format accordingly */
@@ -93,12 +107,15 @@ function randRGBA(min,max)
                     ////// Formatting for exact positional match for alphabet
                     if ( warr_letter_array[j] === last_word_letter_array[j] ) {
                       text1 += "<div class='wordletile tile_wordle_green'>" + warr_letter_array[j] + "</div>" ;
+                      text2 += "<div class='wordletile' style='background: linear-gradient(" + randomHSLcolor1 + ") ;'>" + warr_letter_array[j] + "</div>" ;
                     } else { // Formatting for non-positional match for alphabet
                       text1 += "<div class='wordletile tile_wordle_yellow'>" + warr_letter_array[j] + "</div>" ;
+                      text2 += "<div class='wordletile' style='background: linear-gradient(" + randomHSLcolor2 + ") ;'>" + warr_letter_array[j] + "</div>" ;
                     } ;
                     ////// 
                 } else { // Formatting for no match for alphabet
                   text1 += "<div class='wordletile tile_wordle_darkgrey'>" + warr_letter_array[j] + "</div>" ;
+                  text2 += "<div class='wordletile tile_wordle_darkgrey'>" + warr_letter_array[j] + "</div>" ;
                   console.log('Not present: ' +  typeof(warr_letter_array[j]) + ' = ' + typeof(last_word_letter_array) ) ;
                 }
                 /* ////////// */               
@@ -108,11 +125,13 @@ function randRGBA(min,max)
             //////////
             // Formatting for empty blocks (preferably use one of these: tile_wordle_darkgrey // tile_wordle_border_color // tile_wordle_white)
             for (k = 0; k < insert_more_letters; k++) {
-              text1 += "<div class='wordletile tile_wordle_darkgrey'>" + "" + "</div>" ; 
+              text1 += "<div class='wordletile tile_wordle_darkgrey'>" + "" + "</div>" ;
+              text2 += "<div class='wordletile tile_wordle_darkgrey'>" + "" + "</div>" ;
               //text1 += "<div class='wordletile tile_wordle_white'>" + "" + "</div>" ; 
               //text1 += "<div class='wordletile tile_wordle_border_color'>" + "" + "</div>" ; 
             }
             text1 += "<br>" ; 
+            text2 += "<br>" ; 
            /////////
 
         }
@@ -123,5 +142,7 @@ function randRGBA(min,max)
         document.getElementById("demo1text").innerHTML = "<p class='dark'>" + headingName + "<br>&mdash;</p>" + "<div class='pali' style=\"color:" + colorRGBA + ";\">" + text + "</div>"+ "<p class='dark'>&mdash;</p>" + logoImageUrl ;
 
         document.getElementById("demowordle1").innerHTML = "<p class='dark'>" + headingName + "<br>&mdash;</p>" + "<div class='paliwordle' style=\"background-color: white ;\">" + text1 + "</div>" + "<br>" + logoImageUrl ;
+
+        document.getElementById("demowordle2").innerHTML = "<p class='dark'>" + headingName + "<br>&mdash;</p>" + "<div class='paliwordle' style=\"background-color: white ;\">" + text2 + "</div>" + "<br>" + logoImageUrl ;
 
 }

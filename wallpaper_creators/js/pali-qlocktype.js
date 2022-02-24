@@ -22,7 +22,8 @@ function randRGBA(min,max)
 
         /* Getting the text from the form */
 
-        headingName = document.getElementById("headingName").value.toUpperCase(); ;
+        headingName = document.getElementById("headingName").value.toUpperCase() ;
+        headingName = headingName.trim() ;
 
         logoImageUrl = document.getElementById("logoImageUrl").value ;
                 if (logoImageUrl == "ap1") {
@@ -47,6 +48,10 @@ function randRGBA(min,max)
                   logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/christmas-concepro-logo-with-santa-reindeer.png";
                 } else if (logoImageUrl == "conceproc2") {
                   logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/christmas-concepro-hat-logo.png";
+                } else if (logoImageUrl == "ad1") {
+                  logoImageUrl = "https://downloads.concepro.com/dropbox-public-files/logos/3-logos-adoria/Adoria-Name-Stamp-golden.png" ; 
+                } else if (logoImageUrl == "ad2") {
+                  logoImageUrl = "https://downloads.concepro.com/dropbox-public-files/logos/3-logos-adoria/Adoria-Name-Stamp-black.png" ; 
                 } else {
                   logoImageUrl = logoImageUrl;
                 }
@@ -60,7 +65,8 @@ function randRGBA(min,max)
                       }
 
 
-        quoteText = document.getElementById("quoteText").value.toUpperCase(); ;
+        quoteText = document.getElementById("quoteText").value.toUpperCase() ;
+        quoteText = quoteText.trim() ; 
 
         /* Calculations begin */
         warr = quoteText.split(' ');

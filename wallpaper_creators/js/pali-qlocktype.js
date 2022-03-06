@@ -48,10 +48,22 @@ function randRGBA(min,max)
                   logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/christmas-concepro-logo-with-santa-reindeer.png";
                 } else if (logoImageUrl == "conceproc2") {
                   logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/christmas-concepro-hat-logo.png";
+                } else if (logoImageUrl == "ad0") {
+                  logoImageUrl = "https://downloads.concepro.com/dropbox-public-files/logos/3-logos-adoria/adoria-gradient-logos-0.png" ; 
                 } else if (logoImageUrl == "ad1") {
                   logoImageUrl = "https://downloads.concepro.com/dropbox-public-files/logos/3-logos-adoria/Adoria-Name-Stamp-golden.png" ; 
                 } else if (logoImageUrl == "ad2") {
                   logoImageUrl = "https://downloads.concepro.com/dropbox-public-files/logos/3-logos-adoria/Adoria-Name-Stamp-black.png" ; 
+                } else if (logoImageUrl == "ad3") {
+                  logoImageUrl = "https://downloads.concepro.com/dropbox-public-files/logos/3-logos-adoria/adoria-gradient-logos-1.png" ; 
+                } else if (logoImageUrl == "ad4") {
+                  logoImageUrl = "https://downloads.concepro.com/dropbox-public-files/logos/3-logos-adoria/adoria-gradient-logos-2.png" ; 
+                } else if (logoImageUrl == "ad5") {
+                  logoImageUrl = "https://downloads.concepro.com/dropbox-public-files/logos/3-logos-adoria/adoria-gradient-logos-3.png" ; 
+                } else if (logoImageUrl == "ad6") {
+                  logoImageUrl = "https://downloads.concepro.com/dropbox-public-files/logos/3-logos-adoria/adoria-gradient-logos-4.png" ; 
+                } else if (logoImageUrl == "ad7") {
+                  logoImageUrl = "https://downloads.concepro.com/dropbox-public-files/logos/3-logos-adoria/Kisses-From-Adoria-Sticker-150dpi.png" ; 
                 } else {
                   logoImageUrl = logoImageUrl;
                 }

@@ -3,6 +3,8 @@
 <title>Abhishek | Text on Image Wallpaper Creator</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<script src="js/selectCorrectLogoFromLogoCodes.js"></script>
+
 <script>
 function randRGBA(min,max)
 {
@@ -37,18 +39,31 @@ function randRGBA(min,max)
 
     quoteText = document.getElementById("quoteText").value ;
 
+    websiteUrl = document.getElementById("websiteUrl").value;
+
 /* ******** Printing the formmated text to an ID in the HTML page ***** */
 
 color1 = "rgba(0,0,0," + backgroundOpacity + ")";
 color2 = "rgba(255,255,255," + backgroundOpacity + ")";
 
-document.getElementById("randcolorRGBA").innerHTML = "<h2 style='letter-spacing: " + letterSpacing + ";line-height: " + lineHeight + ";font-weight: " + fontWeight + ";text-align: " + textAlign + ";background-color: " + color1 + "; color: white; border: 2px solid white; outline: 15px solid " + color1 + "; font-size: " + textSize + "rem;'>" + quoteText + headingName + "</h2>" ;
+  /***************************************************/
+  // Get the correct logo from selectCorrectLogoFromLogoCodes.js
+  /***************************************************/
+  logoImageUrl = document.getElementById("logoImageUrl").value;
+  logoImageUrl = selectLogoFromLogoCodes(logoImageUrl);
+    //console.log(logoImageUrl) ;
+  /***************************************************/
 
-document.getElementById("randcolorRGBAtext").innerHTML = "<h2 style='letter-spacing: " + letterSpacing + ";line-height: " + lineHeight + ";font-weight: " + fontWeight + ";text-align: " + textAlign + ";background-color: " + color2 + "; color: black; border: 2px solid black; outline: 15px solid " + color2 + "; font-size: " + textSize + "rem;'>" + quoteText + headingName + "</h2>" ;
 
-document.getElementById("randcolorRGBAtext2").innerHTML = "<h2 style='letter-spacing: " + letterSpacing + ";line-height: " + lineHeight + ";font-weight: " + fontWeight + ";text-align: " + textAlign + ";background-color: " + color2 + "; color: black; border: 15px solid " + color2 + "; outline: 5px solid black; font-size: " + textSize + "rem;'>" + quoteText + headingName + "</h2>" ;
+let logoImageText = '<span class="bottom"><img class="footer" src="' + logoImageUrl + '">'+ websiteUrl + '<span>' ; 
 
-document.getElementById("randcolorRGBAtext3").innerHTML = "<h2 style='letter-spacing: " + letterSpacing + ";line-height: " + lineHeight + ";font-weight: " + fontWeight + ";text-align: " + textAlign + ";background-color: " + color1 + "; color: white; border: 15px solid " + color2 + "; outline: 5px solid black; font-size: " + textSize + "rem;'>" + quoteText + headingName + "</h2>" ;
+document.getElementById("randcolorRGBA").innerHTML = "<h2 style='letter-spacing: " + letterSpacing + ";line-height: " + lineHeight + ";font-weight: " + fontWeight + ";text-align: " + textAlign + ";background-color: " + color1 + "; color: white; border: 2px solid white; outline: 15px solid " + color1 + "; font-size: " + textSize + "rem;'>" + quoteText + headingName + "</h2>" + logoImageText ;
+
+document.getElementById("randcolorRGBAtext").innerHTML = "<h2 style='letter-spacing: " + letterSpacing + ";line-height: " + lineHeight + ";font-weight: " + fontWeight + ";text-align: " + textAlign + ";background-color: " + color2 + "; color: black; border: 2px solid black; outline: 15px solid " + color2 + "; font-size: " + textSize + "rem;'>" + quoteText + headingName + "</h2>"  + logoImageText;
+
+document.getElementById("randcolorRGBAtext2").innerHTML = "<h2 style='letter-spacing: " + letterSpacing + ";line-height: " + lineHeight + ";font-weight: " + fontWeight + ";text-align: " + textAlign + ";background-color: " + color2 + "; color: black; border: 15px solid " + color2 + "; outline: 5px solid black; font-size: " + textSize + "rem;'>" + quoteText + headingName + "</h2>"  + logoImageText;
+
+document.getElementById("randcolorRGBAtext3").innerHTML = "<h2 style='letter-spacing: " + letterSpacing + ";line-height: " + lineHeight + ";font-weight: " + fontWeight + ";text-align: " + textAlign + ";background-color: " + color1 + "; color: white; border: 15px solid " + color2 + "; outline: 5px solid black; font-size: " + textSize + "rem;'>" + quoteText + headingName + "</h2>"  + logoImageText;
 
 
 }
@@ -204,6 +219,9 @@ BACKGROUND OPACITY (AS RGB ALPHA VALUE)*<br><input type="text" name="message" id
 
 <br>LOGO URL *<br><input type="text" name="message" size="50" id="logoImageUrl" value="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Pali-125-Blacknwhite-Circle-Footername.png">
 
+<br><br>
+WEBSITE URL *<br><input type="text" name="message" size="50" id="websiteUrl" value="www.AbhishekPaliwal.com">
+
   </form>
 
 QUOTE TEXT *<br>
@@ -221,10 +239,7 @@ QUOTE TEXT *<br>
 
 <span id="randcolorRGBA"></span>
 
-<span class="bottom">
-  <img class="footer" src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Favicon-Pali-Website.png">
-www.AbhishekPaliwal.com
-<span>
+
 </div>
 
 </div>
@@ -235,10 +250,6 @@ www.AbhishekPaliwal.com
 
 <span id="randcolorRGBAtext"></span>
 
-<span class="bottom">
-  <img class="footer" src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Favicon-Pali-Website.png">
-  www.AbhishekPaliwal.com
-  <span>
 </div>
 </div>
 
@@ -247,10 +258,6 @@ www.AbhishekPaliwal.com
 
 <span id="randcolorRGBAtext2"></span>
 
-<span class="bottom">
-  <img class="footer" src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Favicon-Pali-Website.png">
-  www.AbhishekPaliwal.com
-  <span>
 </div>
 </div>
 
@@ -259,11 +266,7 @@ www.AbhishekPaliwal.com
 
 <span id="randcolorRGBAtext3"></span>
 
-<span class="bottom">
-  <img class="footer" src="http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Favicon-Pali-Website.png">
-  www.AbhishekPaliwal.com
-  <span>
-</div>
+  </div>
 </div>
 
 

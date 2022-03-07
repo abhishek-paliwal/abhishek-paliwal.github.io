@@ -3,6 +3,8 @@
 <title>CONCEPRO | Create Custom Banner Image </title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<script src="js/selectCorrectLogoFromLogoCodes.js"></script>
+
 <script>
 function randRGBA(min,max)
 {
@@ -66,29 +68,13 @@ bookCoverColumnArea = document.getElementById("bookCoverColumnArea").value ;
 
     fontWeight = document.getElementById("fontWeight").value ;
 
-    logoImageUrl = document.getElementById("logoImageUrl").value ;
-            if (logoImageUrl == "ap1") {
-                logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Pali-125-Blacknwhite-Circle-Footername.png";
-            } else if (logoImageUrl == "ap2") {
-              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Pali-125-Circle-Fullname.png";
-            } else if (logoImageUrl == "ap3") {
-              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/6-logos-album-covers/Album-Cover-Abhishek-Paliwal-Lorez.jpg";
-            } else if (logoImageUrl == "ap4") {
-              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Signature-Stamp-Pali-Name-Logo-Wide-New-Dark.png";
-            } else if (logoImageUrl == "anu1") {
-              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Black-White-Fullname.png";
-            } else if (logoImageUrl == "anu2") {
-              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Colored-Fullname.png";
-            } else if (logoImageUrl == "mggk1") {
-              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/5-logos-mggk/Mggk-New-Logo-Transparent-4000Px.png";
-            } else if (logoImageUrl == "ap0") {
-              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Pali-Name-Stamp-Black.png";
-            } else if (logoImageUrl == "") {
-              logoImageUrl = "";
-
-            } else {
-              logoImageUrl = logoImageUrl;
-            }
+  /***************************************************/
+  // Get the correct logo from selectCorrectLogoFromLogoCodes.js
+  /***************************************************/
+  logoImageUrl = document.getElementById("logoImageUrl").value;
+  logoImageUrl = selectLogoFromLogoCodes(logoImageUrl);
+    //console.log(logoImageUrl) ;
+  /***************************************************/
 
 
     imageBorder = document.getElementById("imageBorder").value ;
@@ -310,7 +296,7 @@ h1 {
 
         <td>
         <label for="bookCoverImageURL">Book Cover Image URL</label>
-        <input type="text" name="bookCoverImageURL" id="bookCoverImageURL" value="http://www.concepro.com/wp-content/uploads/2015/08/21st-century-report-BOOK-COVER-ABHISHEK-PALIWAL.png">
+        <input type="text" name="bookCoverImageURL" id="bookCoverImageURL" value="https://downloads.concepro.com/dropbox-public-files/logos/5-logos-mggk/Short-Ebook-Amazing-Tips-Mockup-Cover.png">
         </td>
 
         <td>
@@ -322,7 +308,7 @@ h1 {
 </table>
 
 <label for="whatItIs">What is it?</label>
-<input type="text" name="whatItIs" id="whatItIs" value="<br><br><i class='fa fa-file-pdf-o fa-lg'></i><br><br><span style='color: rgba(0,0,0,0.5);'> CAMPAIGN REPORTS </span>">
+<input type="text" name="whatItIs" id="whatItIs" value="<br><span style='color: rgba(0,0,0,0.5);'> CAMPAIGN REPORTS </span>">
 
 <label for="headingName">Main Heading Name</label>
 <input type="text" name="headingName" id="headingName" value="<span style='font-size: 35px;'>GET THE MOST OUT OF LINKEDIN</span>">
@@ -462,7 +448,7 @@ h1 {
 <br>
 
 
-<table border="0"><tbody><tr><td width="30%" align="right"><img src="http://www.concepro.com/wp-content/uploads/2015/08/21st-century-report-BOOK-COVER-ABHISHEK-PALIWAL.png" height="300px"></td><td align="left"><div class="module opp" style="height: 300px;width: 900px; background: url(http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/1-Low-Poly-Only-JPGs/low-poly-texture-44.jpg);border: 0px solid rgba(58, 144, 249, 1);"><h3 style="padding: 10px;top: 20;left: 20px;width: 840px;background-color: rgba(58, 144, 249, 1);color: white;font-size: 20px; line-height: 1.3;font-weight: 700;letter-spacing: 2px;"><i class="material-icons md-size">file_download</i><br><span style="color: rgba(0,0,0,0.5);"> F R E E &nbsp; G U I D E </span><hr style="border: 0px; background-color: #ff8700; height:5px; width:700px;"><span style="font-size: 35px;">GET THE MOST OUT OF LINKEDIN</span><hr style="border: 0px; background-color: #ff8700; height:5px; width:700px;"><span style="color: rgba(0,0,0,0.5);"> This is the best book you will read this year.</span><br><button style="background-color: #ff8700; width:300px;">Download now</button></h3></div></td></tr></tbody></table>
+<table border="0"><tbody><tr><td width="30%" align="right"><img src="https://downloads.concepro.com/dropbox-public-files/logos/5-logos-mggk/Short-Ebook-Amazing-Tips-Mockup-Cover.png" height="300px"></td><td align="left"><div class="module opp" style="height: 300px;width: 900px; background: url(http://downloads.concepro.com/dropbox-public-files/all-polygonal-backgrounds/1-Low-Poly-Only-JPGs/low-poly-texture-44.jpg);border: 0px solid rgba(58, 144, 249, 1);"><h3 style="padding: 10px;top: 20;left: 20px;width: 840px;background-color: rgba(58, 144, 249, 1);color: white;font-size: 20px; line-height: 1.3;font-weight: 700;letter-spacing: 2px;"><i class="material-icons md-size">file_download</i><br><span style="color: rgba(0,0,0,0.5);"> F R E E &nbsp; G U I D E </span><hr style="border: 0px; background-color: #ff8700; height:5px; width:700px;"><span style="font-size: 35px;">GET THE MOST OUT OF LINKEDIN</span><hr style="border: 0px; background-color: #ff8700; height:5px; width:700px;"><span style="color: rgba(0,0,0,0.5);"> This is the best book you will read this year.</span><br><button style="background-color: #ff8700; width:300px;">Download now</button></h3></div></td></tr></tbody></table>
 
 
 <br><br><hr>

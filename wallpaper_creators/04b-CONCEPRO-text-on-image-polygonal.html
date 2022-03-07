@@ -3,6 +3,8 @@
 <title>Abhishek | Text on Image - Polygonal Wallpaper Creator</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<script src="js/selectCorrectLogoFromLogoCodes.js"></script>
+
 <script>
 function randRGBA(min,max)
 {
@@ -33,7 +35,14 @@ function randRGBA(min,max)
 
     logoSize = document.getElementById("logoSize").value ;
 
-    logoImageUrl = document.getElementById("logoImageUrl").value ;
+  /***************************************************/
+  // Get the correct logo from selectCorrectLogoFromLogoCodes.js
+  /***************************************************/
+  logoImageUrl = document.getElementById("logoImageUrl").value;
+  logoImageUrl = selectLogoFromLogoCodes(logoImageUrl);
+    //console.log(logoImageUrl) ;
+  /***************************************************/
+
         endlogo = "<span class='bottom'><img class='footer' src='" + logoImageUrl + "' style='width:" + logoSize + ";'>" + webAddress + "<span>";
 
     backgroundOpacity = document.getElementById("backgroundOpacity").value ;

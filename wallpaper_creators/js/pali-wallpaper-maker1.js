@@ -29,32 +29,13 @@ function randRGBA(min,max)
 
     quoteText = document.getElementById("quoteText").value ;
 
+    /***************************************************/
+    // Get the correct logo from selectCorrectLogoFromLogoCodes.js
+    /***************************************************/
     logoImageUrl = document.getElementById("logoImageUrl").value ;
-            if (logoImageUrl == "ap1") {
-                logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Pali-125-Blacknwhite-Circle-Footername.png";
-            } else if (logoImageUrl == "ap2") {
-              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Pali-125-Circle-Fullname.png";
-            } else if (logoImageUrl == "ap3") {
-              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Album-Cover-Abhishek-Paliwal-Lorez.jpg";
-            } else if (logoImageUrl == "ap4") {
-              logoImageUrl  = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Signature-Stamp-Pali-Name-Logo-Wide-New-Dark.png";
-            } else if (logoImageUrl == "anu1") {
-              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Black-White-Fullname.png";
-            } else if (logoImageUrl == "anu2") {
-              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/2-logos-anupama/Anupama-Paliwal-787Px-Colored-Fullname.png";
-            } else if (logoImageUrl == "ap0") {
-              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/1-logos-pali/Pali-Name-Stamp-Gold.png";
-            } else if (logoImageUrl == "concepro1") {
-              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/Concepro-Shadow.png";
-            } else if (logoImageUrl == "concepro2") {
-              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/I-Love-Concepro-Blue.png";
-            } else if (logoImageUrl == "conceproc1") {
-              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/christmas-concepro-logo-with-santa-reindeer.png";
-            } else if (logoImageUrl == "conceproc2") {
-              logoImageUrl = "http://downloads.concepro.com/dropbox-public-files/logos/4-logos-concepro/christmas-concepro-hat-logo.png";
-            } else {
-              logoImageUrl = logoImageUrl;
-            }
+    logoImageUrl = selectLogoFromLogoCodes(logoImageUrl) ; 
+    //console.log(logoImageUrl) ; 
+    /***************************************************/
 
             logoImageUrl = "<img src='" + logoImageUrl + "' height='90px'>" ;
 

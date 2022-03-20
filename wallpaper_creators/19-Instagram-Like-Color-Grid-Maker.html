@@ -295,7 +295,7 @@ for (i = 0; i < alltotalBoxes; i++) {
 
                   hslRandomColorForGradientNoShadow = "hsla(" + ( Number(hslHueNoShadow) + Number(hslAngleForGradientColorDifference) ) + ", 100%, 50%, " + opacityValue + ")" ;
 
-                  gradientTextToPrintNoShadow = "<br>&mdash;<br>" + RandomGradientAngle + ", " + hslRandomColorNoShadow + ", " + hslRandomColorForGradientNoShadow ;
+                  gradientTextToPrintNoShadow = "<br>&mdash;<br>" + RandomGradientAngle + ",<br> " + hslRandomColorNoShadow + ",<br> " + hslRandomColorForGradientNoShadow ;
 
                   HSLfinalTextWithRandomColorWithGradientNoShadow += "<div class ='mybox' style='margin: " + BoxMargin + " ;  border-radius: " + borderRadius + ";width: " + DivBoxWidth + " ; height: " + DivBoxHeight + " ; float:left; text-align: " + textAlignment + ";line-height: " + lineHeight + "; color: " + textColor + "; font-weight: "+ fontWeight + "; background: linear-gradient( " + RandomGradientAngle + ", " + hslRandomColorNoShadow + ", " + hslRandomColorForGradientNoShadow + " ) ; font-size:" + textSize + "px ; '>" + (i+1) + gradientTextToPrintNoShadow + "</div>" ;
 

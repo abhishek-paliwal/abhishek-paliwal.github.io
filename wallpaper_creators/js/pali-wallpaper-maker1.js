@@ -96,9 +96,9 @@ function randRGBA(min,max)
 
     /***************** Gradients ******************/
     /* If not a logo */
-    randcolorHSLAgradient1_content = "<div class='pali' style='font-family: " + fontFamily + ";font-size:" + textSize + "px ;background: " + randomHSLgradient1 + ";'>" + greetingType + "<p class='light'>" + headingName + "</p>" + rulerTop + quoteText + rulerBottom + "<p class='light'>" + footerText + "</p>" + logoImageUrl + "</div>" ; 
+    randcolorHSLAgradient1_content = "<div class='pali' style='font-family: " + fontFamily + ";font-size:" + textSize + "px ;background: " + randomHSLgradient1 + "; border-radius: " + borderRadius + "% ;'>" + greetingType + "<p class='light'>" + headingName + "</p>" + rulerTop + quoteText + rulerBottom + "<p class='light'>" + footerText + "</p>" + logoImageUrl + "</div>" ; 
     //
-    randcolorHSLAgradient2_content = "<div class='pali' style='font-family: " + fontFamily + ";font-size:" + textSize + "px ;background: " + randomHSLgradient2 + ";'>" + greetingType + "<p class='light'>" + headingName + "</p>" + rulerTop + quoteText + rulerBottom + "<p class='light'>" + footerText + "</p>" + logoImageUrl + "</div>" ;
+    randcolorHSLAgradient2_content = "<div class='pali' style='font-family: " + fontFamily + ";font-size:" + textSize + "px ;background: " + randomHSLgradient2 + "; border-radius: " + borderRadius + "% ;'>" + greetingType + "<p class='light'>" + headingName + "</p>" + rulerTop + quoteText + rulerBottom + "<p class='light'>" + footerText + "</p>" + logoImageUrl + "</div>" ;
     //
     /* If it is a logo */
     randcolorHSLAgradient1_contentLogo = "<div class='pali' style='font-family: " + fontFamily + ";font-size:" + (5*textSize) + "px ;background: " + randomHSLgradient1 + "; line-height: "+ lineHeight + "; letter-spacing: " + letterSpacing + "px ; border-radius: " + borderRadius + "% ; width:" + divWidth + "px ; height:" + divWidth + "px ;'>" + quoteText + "</div>" ; 

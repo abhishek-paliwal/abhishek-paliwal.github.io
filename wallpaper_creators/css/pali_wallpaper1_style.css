@@ -10,7 +10,7 @@ div.pali {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     line-height:1;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     text-align:center;
 }
 

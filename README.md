@@ -195,11 +195,6 @@ The repository includes an extensive collection of **pre-designed templates**:
 - Typography experimentation
 - Color scheme exploration
 
-## 🔗 Related Projects
-
-- **[My Ginger Garlic Kitchen](http://www.MyGingerGarlicKitchen.com)** - Food blog utilizing the recipe schema tool
-- **[Concepro Digital Marketing](http://www.concepro.com)** - Digital agency tools and templates
-- **[AbhishekPaliwal.com](http://www.AbhishekPaliwal.com)** - Personal portfolio website
 
 ## 📱 Browser Compatibility
 
@@ -226,40 +221,6 @@ Contributions are welcome! Here's how you can help:
 - Test on multiple devices and browsers
 - Document any new dependencies or features
 
-## 📄 License
-
-This project is licensed under the **MIT License** - see below for details:
-
-```
-MIT License
-
-Copyright (c) 2024 Abhishek Paliwal
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-## 👤 Author
-
-**Abhishek Paliwal**
-- **GitHub:** [@abhishek-paliwal](https://github.com/abhishek-paliwal)
-- **Website:** [AbhishekPaliwal.com](http://www.AbhishekPaliwal.com)
-- **LinkedIn:** [Abhishek Paliwal](https://linkedin.com/in/abhishekpaliwal)
 
 ## 🙏 Acknowledgments
 
@@ -272,4 +233,4 @@ SOFTWARE.
 
 ---
 
-**Made with ♥ by Abhishek Paliwal** | Last updated: July 2025
+**Made by Abhishek** | Last updated: July 2025

@@ -1,11 +1,11 @@
-# Abhishek Paliwal's GitHub Pages Portfolio
+# GitHub Pages Portfolio for Wallpaper Creations
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-green)](https://abhishek-paliwal.github.io/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](#license)
 
 ## 🎨 Overview
 
-This repository hosts **Abhishek Paliwal's personal portfolio website** on GitHub Pages. It's a comprehensive collection of **creative web-based tools** and **wallpaper generators** designed for digital designers, bloggers, and content creators. The website serves as both a showcase of web development skills and a practical toolkit for creating visual content.
+This repository hosts **GitHub Pages Portfolio for Wallpaper Creations** on GitHub Pages. It's a comprehensive collection of **creative web-based tools** and **wallpaper generators** designed for digital designers, bloggers, and content creators. The website serves as both a showcase of web development skills and a practical toolkit for creating visual content.
 
 **Live Website:** [https://abhishek-paliwal.github.io/](https://abhishek-paliwal.github.io/)
 
@@ -233,4 +233,4 @@ Contributions are welcome! Here's how you can help:
 
 ---
 
-**Made by Abhishek** | Last updated: July 2025
+Last updated | July 2025
